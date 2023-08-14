@@ -3,7 +3,7 @@ from openpyxl.styles import Font, Alignment, PatternFill
 import datetime
 from date_variables import date, mnth, yr
 
-append = 0       # increment this daily. 0 is for 14 AUG 2023
+append = 2       # increment this daily. 2 is for 16-AUG-2023
 
 i = 0       # main iterator variable
 

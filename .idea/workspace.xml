@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="308761e4-5648-47f3-bc32-acb2059bab82" name="Changes" comment="till 30 min done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NOTES.txt" beforeDir="false" afterPath="$PROJECT_DIR$/NOTES.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cash high low.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/cash high low.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cash.py" beforeDir="false" afterPath="$PROJECT_DIR$/cash.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data feed.py" beforeDir="false" afterPath="$PROJECT_DIR$/data feed.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/date_variables.py" beforeDir="false" afterPath="$PROJECT_DIR$/date_variables.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fo high low.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/fo high low.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fo.py" beforeDir="false" afterPath="$PROJECT_DIR$/fo.py" afterDir="false" />
     </list>
@@ -129,7 +132,15 @@
       <option name="project" value="LOCAL" />
       <updated>1692036974309</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="till 30 min done">
+      <option name="closed" value="true" />
+      <created>1692045128633</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1692045128633</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

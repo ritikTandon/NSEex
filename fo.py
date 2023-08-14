@@ -8,8 +8,8 @@ fo_share_list = ["ADANI", "APORT", "APOLLO", "AURO", "AXIS", "BAJAJ", "BARODA", 
                  "SBIN", "TCHEM", "TCON", "TM", "TS", "TCS", "TITAN", "ULTRA", "VEDL"]
 # fo_share_list = ["ADANI"]
 
-fo_daily_aggregate_list = ["APORT", "AURO", "BN", "CANBK", "DLF", "HIND", "ICICI", "JIND", "NIFTY",
-                 "REL", "SBIN", "TCON", "TM", "TS", "TCS", "TITAN"]
+fo_daily_aggregate_list = ["APORT", "AURO", "BN", "CANBK", "DLF", "HIND", "ICICI", "JIND", "NIFTY","REL", "SBIN",
+                           "TCON", "TM", "TS", "TCS", "TITAN"]
 
 
 foHL_wb = xl.load_workbook(r'C:\Users\admin\PycharmProjects\daily data\fo high low.xlsx')
@@ -110,8 +110,10 @@ for share in fo_share_list:
         foHL_row += 1
         fo1_row += 1
 
-    # 30 MIN FORMATTING IN 1 MIN SHEETS
+    HIGH = 0
+    LOW = 9999999
 
+    # 30 MIN FORMATTING IN 1 MIN SHEETS
     sheet.cell(1, 14).value = "HIGH"
     sheet.cell(1, 15).value = "LOW"
     sheet.cell(1, 16).value = "CLOSE"
