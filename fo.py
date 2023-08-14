@@ -1,6 +1,6 @@
 import openpyxl as xl
 import datetime
-from date_variables import date, mnth
+from date_variables import date, mnth, yr
 
 fo_share_list = ["ADANI", "APORT", "APOLLO", "AURO", "AXIS", "BAJAJ", "BARODA", "AIRTEL", "BHEL", "BN", "CANBK", "COALIND",
                  "DLF", "DRREDDY", "EICHER", "HCL", "HDFC", "HIND", "IBUL", "ICICI", "INDUSIND", "JIND", "NIFTY", "REL",
@@ -19,7 +19,7 @@ fo1_sheet = fo1_wb['fo1-Sheet1']
 fo1_row = 2
 
 for share in fo_share_list:
-    path = rf"E:\Daily Data work\hourlys 1 minute FO\2023\{mnth}\{date}\{share}.xlsx"
+    path = rf"E:\Daily Data work\hourlys 1 minute FO\{yr}\{mnth}\{date}\{share}.xlsx"
 
     wb = xl.load_workbook(path)
     sheet = wb[f"{share}-Sheet1"]
@@ -95,7 +95,7 @@ for share in fo_share_list:
     print(f"{share} done")
 
 
-md_path = rf"E:\Daily Data work\MD files\2023\{mnth}\fo{date[:2]}{mnth}20{date[6:]}bhav.xlsx"
+md_path = rf"E:\Daily Data work\MD files\{yr}\{mnth}\fo{date[:2]}{mnth}20{date[6:]}bhav.xlsx"
 md_wb = xl.load_workbook(md_path)
 
 md_sheet = md_wb[rf"fo{date[:2]}{mnth}20{date[6:]}bhav"]

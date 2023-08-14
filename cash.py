@@ -1,6 +1,6 @@
 import openpyxl as xl
 import datetime
-from date_variables import date, mnth
+from date_variables import date, mnth, yr
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
@@ -24,7 +24,7 @@ csh_sheet = csh_wb['csh-Sheet1']
 csh_row = 2
 
 for share in cash_share_list:
-    path = rf"E:\Daily Data work\hourlys 1 minute CASH\2023\{mnth}\{date}\{share}.xlsx"
+    path = rf"E:\Daily Data work\hourlys 1 minute CASH\{yr}\{mnth}\{date}\{share}.xlsx"
 
     wb = xl.load_workbook(path)
     sheet = wb[f"{share}-Sheet1"]
