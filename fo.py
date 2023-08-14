@@ -6,6 +6,7 @@ from date_variables import date, mnth, yr
 fo_share_list = ["ADANI", "APORT", "APOLLO", "AURO", "AXIS", "BAJAJ", "BARODA", "AIRTEL", "BHEL", "BN", "CANBK", "COALIND",
                  "DLF", "DRREDDY", "EICHER", "HCL", "HDFC", "HIND", "IBUL", "ICICI", "INDUSIND", "JIND", "NIFTY", "REL",
                  "SBIN", "TCHEM", "TCON", "TM", "TS", "TCS", "TITAN", "ULTRA", "VEDL"]
+# fo_share_list = ["ADANI"]
 
 fo_daily_aggregate_list = ["APORT", "AURO", "BN", "CANBK", "DLF", "HIND", "ICICI", "JIND", "NIFTY",
                  "REL", "SBIN", "TCON", "TM", "TS", "TCS", "TITAN"]
@@ -19,14 +20,24 @@ fo1_wb = xl.load_workbook(r'E:\Daily Data work\fo1.xlsx')
 fo1_sheet = fo1_wb['fo1-Sheet1']
 fo1_row = 2
 
+fl_9_25 = 0.392361111       # 9:25 time value in general format
+
 for share in fo_share_list:
     path = rf"E:\Daily Data work\hourlys 1 minute FO\{yr}\{mnth}\{date}\{share}.xlsx"
 
     wb = xl.load_workbook(path)
     sheet = wb[f"{share}-Sheet1"]
 
-    start_row = 11
+    start_row = 2
     time_cell = sheet.cell(start_row, 7)
+
+    while time_cell.value < fl_9_25:
+        start_row += 1
+        time_cell = sheet.cell(start_row, 7)
+
+    print(f"starting row is {start_row}")
+
+    start_row_2 = start_row
 
     # loop for changing the time cells format (have to close and reopen otherwise it doesn't change format)
     while time_cell.value is not None:
@@ -41,7 +52,7 @@ for share in fo_share_list:
     wb = xl.load_workbook(path)
     sheet = wb[f"{share}-Sheet1"]
 
-    start_row = 11
+    start_row = start_row_2
 
     time_cell = sheet.cell(start_row, 7)
     cur_time = time_cell.value
@@ -99,9 +110,71 @@ for share in fo_share_list:
         foHL_row += 1
         fo1_row += 1
 
+    # 30 MIN FORMATTING IN 1 MIN SHEETS
+
+    sheet.cell(1, 14).value = "HIGH"
+    sheet.cell(1, 15).value = "LOW"
+    sheet.cell(1, 16).value = "CLOSE"
+
+    start_row = start_row_2     # actual start row
+
+    time_cell = sheet.cell(start_row, 7)
+    cur_time = time_cell.value
+
+    count = 0
+
+    while cur_time is not None and cur_time <= end_time:
+        high_cell = sheet.cell(start_row, 4)
+        low_cell = sheet.cell(start_row, 5)
+
+        # print(cur_time)
+
+        if high_cell.value is not None and high_cell.value > HIGH:
+            HIGH = high_cell.value
+
+        if low_cell.value is not None and low_cell.value < LOW and low_cell.value != 0:
+            LOW = low_cell.value
+
+        # resetting after 30 mins
+        if count == 30:
+            sheet.cell(start_row, 14).value = HIGH
+            sheet.cell(start_row, 15).value = LOW
+
+            # if 30 min close is empty or 0
+            if sheet.cell(start_row, 3).value == 0 or sheet.cell(start_row, 3).value is None:
+                temp_row = start_row
+
+                while sheet.cell(temp_row, 3).value == 0 or sheet.cell(temp_row, 3).value is None:
+                    temp_row -= 1
+
+                sheet.cell(start_row, 16).value = sheet.cell(temp_row, 3).value  # close
+
+            else:
+                sheet.cell(start_row, 16).value = sheet.cell(start_row, 3).value  # close
+
+            count = 1
+            HIGH = 0
+            LOW = 9999999
+            start_row += 1
+            continue
+
+        start_row += 1
+        count += 1
+
+        time_cell = sheet.cell(start_row, 7)
+        cur_time = time_cell.value
+
+    # last any left aggregate (< 30 mins)
+    sheet.cell(start_row-1, 14).value = HIGH
+    sheet.cell(start_row-1, 15).value = LOW
+    sheet.cell(start_row-1, 16).value = sheet.cell(start_row-1, 3).value  # close
+
+    wb.save(path)
+    # wb.save(rf'E:\Daily Data work\hourlys 1 minute FO\{yr}\{mnth}\{date}\{share}1.xlsx')
     print(f"{share} done")
 
 
+# MD file
 md_path = rf"E:\Daily Data work\MD files\{yr}\{mnth}\fo{date[:2]}{mnth}20{date[6:]}bhav.xlsx"
 md_wb = xl.load_workbook(md_path)
 

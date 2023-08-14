@@ -1,11 +1,9 @@
 challenges:
-doing the 30 min aggregates in 1 min sheets
-cutting 4:00 pm rows from 30 min if they arrive
+doing the 30 min aggregates in 1 min sheets(issues: it's including 1 above row in hl, some values are 0) DONE
 not messing up data filling
-automatically doing all 30 min sheets, daily chart sheets except chart NIFTY and BN cash. (open chart at the end, after 30 min cash.py has finished executing)
-highlighting 9:25 close
-NO FORMAT FOR SOME SHARES IN 30 MINS
+highlighting 9:25 close DONE
+NO FORMAT FOR SOME SHARES IN 30 MINS DONE
 
 WHAT IF THERE'S ERROR IN THE RAW DATA:
-no 9:25 close
-THE 9:25 ROW IS NOT ROW 11 BUT LESS THAN THAT (loop from time start and check when time >= 9:25 and use that row as start row, highlight that close)
+no 9:25 close DONE
+THE 9:25 ROW IS NOT ROW 11 BUT LESS THAN THAT (loop from time start and check when time >= 9:25 and use that row as start row, highlight that close) DONE
