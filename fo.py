@@ -1,4 +1,5 @@
 import openpyxl as xl
+from openpyxl.styles import Font, Alignment, PatternFill
 import datetime
 from date_variables import date, mnth, yr
 
@@ -14,7 +15,7 @@ foHL_wb = xl.load_workbook(r'C:\Users\admin\PycharmProjects\daily data\fo high l
 foHL_sheet = foHL_wb['Sheet1']
 foHL_row = 2
 
-fo1_wb = xl.load_workbook(r'C:\Users\admin\PycharmProjects\daily data\fo1.xlsx') # will have to change this when actually doing work on Monday
+fo1_wb = xl.load_workbook(r'E:\Daily Data work\fo1.xlsx')
 fo1_sheet = fo1_wb['fo1-Sheet1']
 fo1_row = 2
 
@@ -48,6 +49,12 @@ for share in fo_share_list:
 
     # 9:25 close value
     cl_9_25 = sheet.cell(start_row, 3).value
+    sheet.cell(start_row, 3).fill = PatternFill("solid", 'FFFF00')
+
+    # reloading wb otherwise pattern fill doesn't work
+    wb.save(path)
+    wb = xl.load_workbook(path)
+    sheet = wb[f"{share}-Sheet1"]
 
     HIGH = 0
     LOW = 9999999

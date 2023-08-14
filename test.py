@@ -117,3 +117,14 @@
 #               "TATASTEEL": 15, "TCS": 16, "TITAN": 17}
 #
 # print(share_dict.keys()[0])
+
+import openpyxl as xl
+from openpyxl.styles import Font, Alignment, PatternFill
+
+wb = xl.load_workbook(r'C:\Users\admin\PycharmProjects\daily data\test.xlsx')
+
+s = wb['Sheet1']
+
+s.cell(1,1).fill = PatternFill("solid", "FFFF00")
+
+wb.save(r'C:\Users\admin\PycharmProjects\daily data\test.xlsx')

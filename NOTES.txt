@@ -7,3 +7,4 @@ highlighting 9:25 close
 
 WHAT IF THERE'S ERROR IN THE RAW DATA:
 no 9:25 close
+THE 9:25 ROW IS NOT ROW 11 BUT LESS THAN THAT (loop from time start and check when time >= 9:25 and use that row as start row, highlight that close)

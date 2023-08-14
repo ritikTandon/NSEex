@@ -1,4 +1,5 @@
 import openpyxl as xl
+from openpyxl.styles import Font, Alignment, PatternFill
 import datetime
 from date_variables import date, mnth, yr
 from time import sleep
@@ -19,7 +20,7 @@ cashHL_wb = xl.load_workbook(r'C:\Users\admin\PycharmProjects\daily data\cash hi
 cashHL_sheet = cashHL_wb['Sheet1']
 cashHL_row = 2
 
-csh_wb = xl.load_workbook(r'C:\Users\admin\PycharmProjects\daily data\csh.xlsx') # will have to change this when actually doing work on Monday
+csh_wb = xl.load_workbook(r'E:\Daily Data work\csh.xlsx')
 csh_sheet = csh_wb['csh-Sheet1']
 csh_row = 2
 
@@ -53,6 +54,12 @@ for share in cash_share_list:
 
     # 9:25 close value
     cl_9_25 = sheet.cell(start_row, 3).value
+    sheet.cell(start_row, 3).fill = PatternFill("solid", 'FFFF00')
+
+    # reloading wb otherwise pattern fill doesn't work
+    wb.save(path)
+    wb = xl.load_workbook(path)
+    sheet = wb[f"{share}-Sheet1"]
 
     HIGH = 0
     LOW = 9999999
@@ -109,8 +116,8 @@ cash_close_list = ["ADANIENT", "APOLLOTYRE", "BAJAJFINSV", "BAJFINANCE", "BANDHA
 
 cash_close_list1 = ["M%26M"]
 
-ltp = []
-# ltp = ['2538.0', '395.0', '', '7037.0', '226.9', '192.7', '235.25', '480.9', '3385.1', '133.15', '1167.55', '1620.9', '461.9', '954.35', '1395.3', '1372.95', '693.9', '425.0', '1544.45', '1544.45', '2542.0', '574.5', '544.5', '1007.0', '611.9', '235.7', '120.55', '8128.1']
+close = []
+# close = ['2446.95', '398.5', '1478.0', '7005.0', '227.65', '188.4', '234.15', '470.1', '3337.8', '132.8', '1170.0', '1608.5', '448.85', '959.0', '1387.8', '1392.95', '662.9', '421.45', '1544.95', '1544.95', '2573.2', '561.0', '548.9', '1000.05', '606.8', '230.95', '117.85', '8024.95']
 
 for share in cash_close_list:
     driver = webdriver.Chrome(options=options)
@@ -121,34 +128,34 @@ for share in cash_close_list:
         sleep(2)
         myElem = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'quoteLtp')))
         sleep(5)
-        ltp_val = driver.find_element(By.ID, "quoteLtp").text
-        ltp_val = ltp_val.replace(",", "")
+        close_val = driver.find_element(By.ID, "quoteLtp").text
+        close_val = close_val.replace(",", "")
 
         # truncating last 0
-        if ltp_val[len(ltp_val)-1:len(ltp_val)] == '0':
-            ltp_val = ltp_val[:len(ltp_val)-1]
+        if close_val[len(close_val)-1:len(close_val)] == '0':
+            close_val = close_val[:len(close_val)-1]
 
-        ltp.append(ltp_val)
+        close.append(close_val)
 
-        print(f'{share}: {ltp_val}')
+        print(f'{share}: {close_val}')
 
     except TimeoutException:
         print("Loading took too much time!")
 
     driver.close()
 
-print(ltp)
+print(close)
 
 i = 0
 
 while i < len(cash_close_list):
     close_cell = cashHL_sheet.cell(i+2, 4)
 
-    if ltp[i] == '':
+    if close[i] == '':
         close_cell.value = 0
 
     else:
-        close_cell.value = float(ltp[i])
+        close_cell.value = float(close[i])
         close_cell.number_format = "0.00"
 
     i += 1

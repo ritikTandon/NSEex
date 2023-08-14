@@ -1,5 +1,5 @@
 import openpyxl as xl
-from openpyxl.styles import Font, Alignment
+from openpyxl.styles import Font, Alignment, PatternFill
 import datetime
 from date_variables import date, mnth, yr
 
@@ -9,13 +9,15 @@ cashHL_sheet = cashHL_wb['Sheet1']
 foHL_wb = xl.load_workbook(r'C:\Users\admin\PycharmProjects\daily data\fo high low.xlsx')
 foHL_sheet = foHL_wb['Sheet1']
 
-# cash_30_min_list = ["ADANI", "APOLLO", "BAJFINSV", "BAJFIN", "BANBK", "BARODA", "BN", "DLF", "EICHER", "FEDBANK", "HCL",
-#                     "INDUSIND", "JIND", "LIC", "M&M", "M&MFIN", "NIFTY", "SBIN", "SUNTV", "TM", "TP", "TS"]
+cash_30_min_list = ["ADANI", "APOLLO", "BAJFINSV", "BAJFIN", "BANBK", "BARODA", "BN", "DLF", "EICHER", "FEDBANK", "HCL",
+                    "INDUSIND", "JIND", "LIC", "M&M", "M&MFIN", "NIFTY", "SBIN", "SUNTV", "TM", "TP", "TS"]
+
+format_list = ["NIFTY", "M&M", "EICHER", "BN", "BAJFINSV", "BAJFIN", "ADANI", "INDUSIND"]
 
 # index for getting values from cash/fo high low sheets
 index_30_min = [2, 3, 4, 5, 6, 7, 4, 9, 10, 11, 12, 16, 18, 19, 20, 21, 10, 23, 24, 26, 27, 28]
 
-cash_30_min_list = ["ADANI"]
+# cash_30_min_list = ["ADANI"]
 
 idx = 0
 
@@ -38,9 +40,6 @@ while ltp_row <= len(ltp_sheet["A"]):
 
 idx = 0
 ltp_row = 2
-
-ltp_wb.save(rf'C:\Users\admin\PycharmProjects\daily data\LTP PREV.xlsx')
-
 
 for share in cash_30_min_list:
     path = rf"E:\Daily Data work\hourlys 30 minute CASH\{yr}\{mnth}\{date}\{share}.xlsx"
@@ -88,13 +87,22 @@ for share in cash_30_min_list:
             new_30_min_sheet.cell(i+1, j+1).font = Font(bold=True)
             new_30_min_sheet.cell(i+1, j+1).alignment = Alignment(horizontal='center')
 
-    # Filling the data
+            # formatting to 0 decimal places if they are in format_list
+            if share in format_list:
+                if j > 5:
+                    new_30_min_sheet.cell(i+1, j+1).number_format = '0'
+
+    new_30_min_sheet.cell(7, 6).number_format = '0'     # for the 9:25 cl formatting
+
+    # deleting 4:00 pm row
+    new_30_min_sheet.delete_rows(22, 1)
 
     # filling LTP and PREV
     new_30_min_sheet.cell(7, 9).value = ltp_sheet.cell(ltp_row, 2).value  # LTP
     new_30_min_sheet.cell(7, 10).value = ltp_sheet.cell(ltp_row, 3).value  # PREV
     ltp_row += 1
 
+    # filling rest of the data
     if share in ["BN", "NIFTY"]:    # separate for NIFTY and BN as their data will come from 'fo high low.xlsx'
         new_30_min_sheet.cell(7, 6).value = foHL_sheet.cell(index_30_min[idx], 7).value   # 9:25 cl
         new_30_min_sheet.cell(7, 7).value = foHL_sheet.cell(index_30_min[idx], 2).value   # HIGH
@@ -108,3 +116,5 @@ for share in cash_30_min_list:
     idx += 1
 
     cash_30_min_wb.save(path)
+
+ltp_wb.save(rf'C:\Users\admin\PycharmProjects\daily data\LTP PREV.xlsx')
