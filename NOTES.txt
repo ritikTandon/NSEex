@@ -1,0 +1,9 @@
+challenges:
+doing the 30 min aggregates in 1 min sheets
+cutting 4:00 pm rows from 30 min if they arrive
+not messing up data filling
+automatically doing all 30 min sheets, daily chart sheets except chart NIFTY and BN cash. (open chart at the end, after 30 min cash.py has finished executing)
+highlighting 9:25 close
+
+WHAT IF THERE'S ERROR IN THE RAW DATA:
+no 9:25 close

@@ -24,7 +24,7 @@ ltp_wb = xl.load_workbook(rf'C:\Users\admin\PycharmProjects\daily data\LTP PREV.
 ltp_sheet = ltp_wb["ltp"]
 ltp_row = 2
 
-while ltp_row < len(ltp_sheet["A"]):
+while ltp_row <= len(ltp_sheet["A"]):
     ltp_sheet.cell(ltp_row, 3).value = ltp_sheet.cell(ltp_row, 2).value  # moving last day's LTP to 'PREV'
 
     if ltp_sheet.cell(ltp_row, 1).value in ["BN", "NIFTY"]:    # separate for NIFTY and BN as their data LTP come from 'fo high low.xlsx'
@@ -37,6 +37,7 @@ while ltp_row < len(ltp_sheet["A"]):
     idx += 1
 
 idx = 0
+ltp_row = 2
 
 ltp_wb.save(rf'C:\Users\admin\PycharmProjects\daily data\LTP PREV.xlsx')
 
@@ -79,6 +80,8 @@ for share in cash_30_min_list:
 
         old_sheet_row += 1
 
+    del cash_30_min_wb[f"{share}-Sheet1"]
+
     # bolding the sheet
     for i in range(25):
         for j in range(15):
@@ -86,16 +89,22 @@ for share in cash_30_min_list:
             new_30_min_sheet.cell(i+1, j+1).alignment = Alignment(horizontal='center')
 
     # Filling the data
+
+    # filling LTP and PREV
+    new_30_min_sheet.cell(7, 9).value = ltp_sheet.cell(ltp_row, 2).value  # LTP
+    new_30_min_sheet.cell(7, 10).value = ltp_sheet.cell(ltp_row, 3).value  # PREV
+    ltp_row += 1
+
     if share in ["BN", "NIFTY"]:    # separate for NIFTY and BN as their data will come from 'fo high low.xlsx'
-        new_30_min_sheet.cell(7, 6).value = cashHL_sheet.cell(index_30_min[idx], 7).value   # 9:25 cl
-        new_30_min_sheet.cell(7, 7).value = cashHL_sheet.cell(index_30_min[idx], 2).value   # HIGH
-        new_30_min_sheet.cell(7, 8).value = cashHL_sheet.cell(index_30_min[idx], 3).value   # LOW
-        # new_30_min_sheet.cell(7, 9).value = cashHL_sheet.cell(index_30_min[idx], 7).value   # LTP
-        # new_30_min_sheet.cell(7, 10).value = cashHL_sheet.cell(index_30_min[idx], 7).value   # PREV
+        new_30_min_sheet.cell(7, 6).value = foHL_sheet.cell(index_30_min[idx], 7).value   # 9:25 cl
+        new_30_min_sheet.cell(7, 7).value = foHL_sheet.cell(index_30_min[idx], 2).value   # HIGH
+        new_30_min_sheet.cell(7, 8).value = foHL_sheet.cell(index_30_min[idx], 3).value   # LOW
 
     else:
-        pass
+        new_30_min_sheet.cell(7, 6).value = cashHL_sheet.cell(index_30_min[idx], 7).value  # 9:25 cl
+        new_30_min_sheet.cell(7, 7).value = cashHL_sheet.cell(index_30_min[idx], 2).value  # HIGH
+        new_30_min_sheet.cell(7, 8).value = cashHL_sheet.cell(index_30_min[idx], 3).value  # LOW
 
     idx += 1
 
-    cash_30_min_wb.save(rf'C:\Users\admin\PycharmProjects\daily data\{share}1.xlsx')
+    cash_30_min_wb.save(path)
