@@ -12,7 +12,7 @@ foHL_sheet = foHL_wb['Sheet1']
 cash_30_min_list = ["ADANI", "APOLLO", "BAJFINSV", "BAJFIN", "BANBK", "BARODA", "BN", "DLF", "EICHER", "FEDBANK", "HCL",
                     "INDUSIND", "JIND", "LIC", "M&M", "M&MFIN", "NIFTY", "SBIN", "SUNTV", "TM", "TP", "TS"]
 
-format_list = ["NIFTY", "M&M", "EICHER", "BN", "BAJFINSV", "BAJFIN", "ADANI", "INDUSIND"]
+format_list = ["NIFTY", "EICHER", "BN"]
 
 # index for getting values from cash/fo high low sheets
 index_30_min = [2, 3, 4, 5, 6, 7, 4, 9, 10, 11, 12, 16, 18, 19, 20, 21, 10, 23, 24, 26, 27, 28]
