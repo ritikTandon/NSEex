@@ -6,7 +6,7 @@ fo_share_list = ["ADANI", "APORT", "APOLLO", "AURO", "AXIS", "BAJAJ", "BARODA", 
                  "DLF", "DRREDDY", "EICHER", "HCL", "HDFC", "HIND", "IBUL", "ICICI", "INDUSIND", "JIND", "NIFTY", "REL",
                  "SBIN", "TCHEM", "TCON", "TM", "TS", "TCS", "TITAN", "ULTRA", "VEDL"]
 
-fo_daily_aggregate_list = ["ADANI", "AURO", "BN", "CANBK", "DLF", "HIND", "ICICI", "JIND", "NIFTY",
+fo_daily_aggregate_list = ["APORT", "AURO", "BN", "CANBK", "DLF", "HIND", "ICICI", "JIND", "NIFTY",
                  "REL", "SBIN", "TCON", "TM", "TS", "TCS", "TITAN"]
 
 
@@ -77,7 +77,7 @@ for share in fo_share_list:
         foHL_sheet.cell(foHL_row, 3).value = LOW
 
         # close
-        foHL_sheet.cell(foHL_row, 5).value = fo1_sheet.cell(fo1_row, 5).value
+        foHL_sheet.cell(foHL_row, 4).value = fo1_sheet.cell(fo1_row, 5).value
 
         # vol
         volume = fo1_sheet.cell(fo1_row, 6).value
@@ -94,6 +94,34 @@ for share in fo_share_list:
 
     print(f"{share} done")
 
+
+md_path = rf"E:\Daily Data work\MD files\2023\{mnth}\fo{date[:2]}{mnth}20{date[6:]}bhav.xlsx"
+md_wb = xl.load_workbook(md_path)
+
+md_sheet = md_wb[rf"fo{date[:2]}{mnth}20{date[6:]}bhav"]
+
+k = 0       # variable to iterate over all shares in share_list and index_list
+md_row = 2  # starting row of md file
+
+# lists for shares as per their names in md file and their respective indices in the 'fo high low.xlsx' sheet
+share_list = ["BANKNIFTY", "NIFTY", "ADANIPORTS", "AUROPHARMA", "CANBK", "DLF", "HINDALCO",
+              "ICICIBANK", "JINDALSTEL", "RELIANCE", "SBIN", "TATACONSUM", "TATAMOTORS",
+              "TATASTEEL", "TCS", "TITAN"]
+
+index_list = [4, 10, 2, 3, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17]
+
+while k < len(share_list):
+    # print(md_row)
+
+    name_cell = md_sheet.cell(md_row, 2)
+
+    if name_cell.value == share_list[k]:
+        foHL_sheet.cell(index_list[k], 5).value = md_sheet.cell(md_row, 10).value
+
+        k += 1
+        md_row += 2     # to skip the next 2 expires of the share
+
+    md_row += 1
 
 foHL_wb.save(r'C:\Users\admin\PycharmProjects\daily data\fo high low.xlsx')
 

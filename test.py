@@ -60,12 +60,12 @@
 #
 # print(ltp)
 
-cash_share_list = ["ADANI", "APOLLO", "BAJFINSV", "BAJFIN", "BANBK", "BARODA", "COALIND", "DLF", "EICHER", "FEDBANK",
-                   "HCL", "HDFC", "HIND", "ICICI", "INDUSIND", "INFY", "JIND", "LIC", "M&M", "M&MFIN", "REL", "SBIN",
-                   "SUNTV", "TCHEM", "TM", "TP", "TS", "ULTRA"]
-
-for share in cash_share_list:
-    print(share)
+# cash_share_list = ["ADANI", "APOLLO", "BAJFINSV", "BAJFIN", "BANBK", "BARODA", "COALIND", "DLF", "EICHER", "FEDBANK",
+#                    "HCL", "HDFC", "HIND", "ICICI", "INDUSIND", "INFY", "JIND", "LIC", "M&M", "M&MFIN", "REL", "SBIN",
+#                    "SUNTV", "TCHEM", "TM", "TP", "TS", "ULTRA"]
+#
+# for share in cash_share_list:
+#     print(share)
 
 # def isValid(s: str) -> bool:
 #     stack = []
@@ -111,4 +111,9 @@ for share in cash_share_list:
 #
 # print(s[len(s)-1:len(s)])
 # print(s[:len(s)-1])
-
+#
+# share_dict = {"BANKNIFTY": 4, "NIFTY": 10, "ADANIENT": 2, "AUROPHARMA": 3, "CANBK": 5, "DLF": 6, "HINDALCO": 7,
+#               "ICICIBANK": 8, "JINDALSTEL": 9, "RELIANCE": 11, "SBIN": 12, "TATACONSUM": 13, "TATAMOTORS": 14,
+#               "TATASTEEL": 15, "TCS": 16, "TITAN": 17}
+#
+# print(share_dict.keys()[0])
