@@ -60,46 +60,52 @@
 #
 # print(ltp)
 
+cash_share_list = ["ADANI", "APOLLO", "BAJFINSV", "BAJFIN", "BANBK", "BARODA", "COALIND", "DLF", "EICHER", "FEDBANK",
+                   "HCL", "HDFC", "HIND", "ICICI", "INDUSIND", "INFY", "JIND", "LIC", "M&M", "M&MFIN", "REL", "SBIN",
+                   "SUNTV", "TCHEM", "TM", "TP", "TS", "ULTRA"]
 
-def isValid(s: str) -> bool:
-    stack = []
-    bol = False
+for share in cash_share_list:
+    print(share)
 
-    if len(s) == 1:
-        return bol
-
-    for i in s:
-        stack.append(i)
-        top = len(stack) - 1
-
-        if len(stack) == 1 and i in [')', '}', ']']:
-            return False
-
-        if len(stack) > 1:
-            if i in [')', '}', ']']:
-                if i == ')' and stack[top-1] == "(":
-                    stack.pop()
-                    stack.pop()
-                    bol = True
-                elif i == '}' and stack[top-1] == "{":
-                    stack.pop()
-                    stack.pop()
-                    bol = True
-                elif i == ']' and stack[top-1] == "[":
-                    stack.pop()
-                    stack.pop()
-                    bol = True
-
-                else:
-                    return False
-
-    if len(stack) > 0:
-        return False
-
-    return bol
-
-
-print(isValid("([]){"))
+# def isValid(s: str) -> bool:
+#     stack = []
+#     bol = False
+#
+#     if len(s) == 1:
+#         return bol
+#
+#     for i in s:
+#         stack.append(i)
+#         top = len(stack) - 1
+#
+#         if len(stack) == 1 and i in [')', '}', ']']:
+#             return False
+#
+#         if len(stack) > 1:
+#             if i in [')', '}', ']']:
+#                 if i == ')' and stack[top-1] == "(":
+#                     stack.pop()
+#                     stack.pop()
+#                     bol = True
+#                 elif i == '}' and stack[top-1] == "{":
+#                     stack.pop()
+#                     stack.pop()
+#                     bol = True
+#                 elif i == ']' and stack[top-1] == "[":
+#                     stack.pop()
+#                     stack.pop()
+#                     bol = True
+#
+#                 else:
+#                     return False
+#
+#     if len(stack) > 0:
+#         return False
+#
+#     return bol
+#
+#
+# print(isValid("([]){"))
 
 # s = "1234"
 #
