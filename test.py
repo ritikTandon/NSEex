@@ -118,13 +118,38 @@
 #
 # print(share_dict.keys()[0])
 
-import openpyxl as xl
-from openpyxl.styles import Font, Alignment, PatternFill
+# import openpyxl as xl
+# from openpyxl.styles import Font, Alignment, PatternFill
+#
+# wb = xl.load_workbook(r'C:\Users\admin\PycharmProjects\daily data\test.xlsx')
+#
+# s = wb['Sheet1']
+#
+# s.cell(1,1).fill = PatternFill("solid", "FFFF00")
+#
+# wb.save(r'C:\Users\admin\PycharmProjects\daily data\test.xlsx')
 
-wb = xl.load_workbook(r'C:\Users\admin\PycharmProjects\daily data\test.xlsx')
-
-s = wb['Sheet1']
-
-s.cell(1,1).fill = PatternFill("solid", "FFFF00")
-
-wb.save(r'C:\Users\admin\PycharmProjects\daily data\test.xlsx')
+# def wordPattern(pattern: str, s: str) -> bool:
+#     l = s.split(" ")
+#     i = 0
+#     d = {}
+#
+#     if len(s) != len(l):
+#         return False
+#
+#     for ele in pattern:
+#         try:
+#             if ele not in d and l[i] not in d.values():
+#                 d[ele] = l[i]
+#
+#             elif d[ele] != l[i]:
+#                 return False
+#
+#             i += 1
+#         except KeyError:
+#             return False
+#
+#     return True
+#
+#
+# print(wordPattern("abba", "dog cat cat dog"))

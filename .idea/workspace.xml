@@ -4,14 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="308761e4-5648-47f3-bc32-acb2059bab82" name="Changes" comment="till 30 min done">
+    <list default="true" id="308761e4-5648-47f3-bc32-acb2059bab82" name="Changes" comment="done finally xD">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cash high low.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/cash high low.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cash.py" beforeDir="false" afterPath="$PROJECT_DIR$/cash.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data feed.py" beforeDir="false" afterPath="$PROJECT_DIR$/data feed.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/date_variables.py" beforeDir="false" afterPath="$PROJECT_DIR$/date_variables.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fo high low.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/fo high low.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fo.py" beforeDir="false" afterPath="$PROJECT_DIR$/fo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ltp prev.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/ltp prev.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +140,15 @@
       <option name="project" value="LOCAL" />
       <updated>1692045128633</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="done finally xD">
+      <option name="closed" value="true" />
+      <created>1692047801594</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1692047801594</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -170,7 +178,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="first" />
     <MESSAGE value="till 30 min done" />
-    <option name="LAST_COMMIT_MESSAGE" value="till 30 min done" />
+    <MESSAGE value="done finally xD" />
+    <option name="LAST_COMMIT_MESSAGE" value="done finally xD" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -186,6 +195,7 @@
       <configuration name="PythonConfigurationType">
         <watch expression="ltp_sheet.cell(ltp_row, 2).value" language="Python" />
         <watch expression="ltp_sheet.cell(ltp_row, 1).value" language="Python" />
+        <watch expression="len(s)" language="Python" />
       </configuration>
     </watches-manager>
   </component>

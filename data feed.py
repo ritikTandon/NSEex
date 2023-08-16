@@ -3,7 +3,7 @@ from openpyxl.styles import Font, Alignment, PatternFill
 import datetime
 from date_variables import date, mnth, yr
 
-append = 2       # increment this daily. 2 is for 16-AUG-2023
+append = 2       # increment this daily. 3 is for 17-AUG-2023
 
 i = 0       # main iterator variable
 
@@ -39,7 +39,7 @@ for share in cash_share_names:
     wb = xl.load_workbook(path)
     sheet = wb['D']
 
-    input_row = cash_share_rows[i]
+    input_row = cash_share_rows[i]+append     # incrementing row values from base row(start row)
 
     # data filling
     sheet.cell(cash_share_rows[i], 2).value = cashHL_sheet.cell(cashHL_row, 2).value    # high
@@ -106,7 +106,7 @@ for share in fo_share_names:
     wb = xl.load_workbook(path)
     sheet = wb['D']
 
-    input_row = fo_share_rows[i]
+    input_row = fo_share_rows[i]+append
 
     # data filling
     sheet.cell(fo_share_rows[i], 2).value = foHL_sheet.cell(foHL_row, 2).value    # high
