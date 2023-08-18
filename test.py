@@ -153,3 +153,288 @@
 #
 #
 # print(wordPattern("abba", "dog cat cat dog"))
+
+# def deleteGreatestValue(grid: list[list[int]]) -> int:
+#     tot = 0
+#     while grid != [[]]:
+#         m = []
+#
+#         for l in grid:
+#             if not l:
+#                 return tot
+#
+#             m.append(l.pop(l.index(max(l))))
+#
+#         tot += max(m)
+#
+#     return tot
+#
+#
+# print(deleteGreatestValue([[1, 2, 4], [3, 3, 1]]))
+
+
+# def lengthOfLongestSubstring(s: str) -> int:
+#     mx = []
+#     l = 0
+#     vis = []
+#     i = 0
+#
+#     if s == "":
+#         return 0
+#
+#     if len(s) == 1:
+#         return 1
+#
+#     if len(s) == 2:
+#         return 2 if s[0] != s[1] else 1
+#
+#     while i < len(s):
+#         char = s[i]
+#         if char in vis:
+#             l = len(vis)
+#             mx.append(l)
+#             vis = []
+#             i = i - l+1
+#             continue
+#
+#         else:
+#             vis.append(char)
+#
+#         i += 1
+#
+#     if len(mx) > 0:
+#         return max(max(mx), len(vis))
+#     else:
+#         return len(vis)
+#
+#
+#
+# print(lengthOfLongestSubstring("bwf"))
+
+
+# def lengthOfLastWord(s: str) -> int:
+#     i = len(s) - 1
+#     enc = False
+#     count = 0
+#
+#     if s == " ":
+#         return 0
+#
+#     # if " " not in s:
+#     #     return len(s)
+#
+#     while True:
+#         if i == -1:
+#             return count
+#
+#         if s[i] == " " and not enc:
+#             i -= 1
+#
+#         elif s[i] != " ":
+#             enc = True
+#             count += 1
+#             i -= 1
+#
+#         elif s[i] == " ":
+#             return count
+
+# def lengthOfLastWord(s: str) -> int:
+#     l = len(s) - 1
+#     count = 0
+#
+#     if s == " ":
+#         return 0
+#
+#     for i in range(l, -1, -1):
+#         if s[i] != " ":
+#             count += 1
+#         elif s[i] == " " and count > 0:
+#             return count
+#     return count
+#
+#
+# print(lengthOfLastWord("a msas "))
+
+
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+#
+#
+# def addTwoNumbers(l1: list, l2: list): # list
+#     p1 = 0
+#     p2 = 0
+#     i = 0
+#     sum = 0
+#     carry = 0
+#
+#     res = []
+#
+#     while True:
+#         if p1 == len(l1):
+#             while p2 < len(l2):
+#                 sum = l2[p2] + carry
+#                 if sum > 9:
+#                     sum %= 10
+#                     carry = 1
+#                 else:
+#                     carry = 0
+#                 res.append(sum)
+#                 p2 += 1
+#
+#             break
+#
+#         if p2 == len(l2):
+#             while p1 < len(l1):
+#                 sum = l1[p1]+carry
+#                 if sum > 9:
+#                     sum %= 10
+#                     carry = 1
+#                 else:
+#                     carry = 0
+#                 res.append(sum)
+#                 p1 += 1
+#
+#             break
+#
+#         sum = l1[p1] + l2[p2] + carry
+#
+#         if sum > 9:
+#             sum = sum % 10
+#             carry = 1
+#         else:
+#             carry = 0
+#
+#         res.append(sum)
+#
+#         i += 1
+#         p1 += 1
+#         p2 += 1
+#
+#     if carry == 1:
+#         res.append(carry)
+#
+#     return res
+
+
+# print(addTwoNumbers([1,1], [1,1,1]))
+
+
+# def addTwoNumbers(l1, l2):      # linked list
+#     p1 = l1
+#     p2 = l2
+#
+#     sum = 0
+#     carry = 0
+#
+#     res = []
+#
+#
+#     # print(len1, len2)
+#
+#     while True:
+#         if p1 is None and p2 is None:
+#             break
+#
+#         if p1 is None and p2 is not None:
+#             while p2 is not None:
+#                 sum = p2.val + carry
+#                 if sum > 9:
+#                     sum %= 10
+#                     carry = 1
+#                 else:
+#                     carry = 0
+#                 res.append(ListNode(sum))
+#                 p2 = p2.next
+#
+#             break
+#
+#         if p2 is None and p1 is not None:
+#             while p1 is not None:
+#                 sum = p1.val + carry
+#                 if sum > 9:
+#                     sum %= 10
+#                     carry = 1
+#                 else:
+#                     carry = 0
+#                 res.append(ListNode(sum))
+#                 p1 = p1.next
+#
+#             break
+#
+#         sum = p1.val + p2.val + carry
+#
+#         if sum > 9:
+#             sum = sum % 10
+#             carry = 1
+#         else:
+#             carry = 0
+#
+#         res.append(ListNode(sum))
+#
+#         p1 = p1.next
+#         p2 = p2.next
+#
+#     if carry == 1:
+#         res.append(ListNode(1))
+#
+#     for i in range(len(res)-1):
+#         if res[i].next is None:
+#             res[i].next = res[i+1]
+#
+#     return res[0]
+#
+#
+# l2 = ListNode(2, next=ListNode(4, next=None))
+# l1 = ListNode(5, next=ListNode(6, next=ListNode(4, next=None)))
+#
+# print(addTwoNumbers(l1, l2))
+
+
+# l2 = ListNode(2, next=ListNode(4, next=None))
+# l1 = ListNode(5, next=ListNode(6, next=ListNode(4, next=None)))
+#
+# print(addTwoNumbers(l1, l2))
+
+def isPalindrome(s: str) -> bool:
+    new = ""
+    valid = ['a', 'A', 'b', 'B', 'c', 'C', 'd', 'D', 'e', 'E', 'f', 'F', 'g', 'G', 'h', 'H', 'i', 'I', 'j', 'J', 'k',
+             'K', 'l', 'L', 'm', 'M', 'n', 'N', 'o', 'O', 'p', 'P', 'q', 'Q', 'r', 'R', 's', 'S', 't', 'T', 'u', 'U',
+             'v', 'V', 'w', 'W', 'x', 'X', 'y', 'Y', 'z', 'Z']
+
+    if s == " ":
+        return True
+
+    if len(s) < 3:
+        return True
+
+    b = False
+    for ch in s:
+        if ch in valid:
+            new += ch.lower()
+
+    if len(new) == 1:
+        return True
+
+    i = 0
+    j = len(new) - 1
+
+    while i < j:
+        first = new[i]
+        last = new[j]
+
+        if first == last:
+            b = True
+
+        else:
+            b = False
+            return b
+
+        i += 1
+        j -= 1
+
+    return b
+
+
+print(isPalindrome(".,"))

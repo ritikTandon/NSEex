@@ -76,7 +76,7 @@ for share in cash_share_list:
     LOW = 9999999
 
     # HIGH and LOW value finding loop
-    while cur_time <= end_time:
+    while cur_time and cur_time <= end_time:
         time_cell = sheet.cell(start_row, 7)
         high_cell = sheet.cell(start_row, 4)
         low_cell = sheet.cell(start_row, 5)
@@ -203,7 +203,7 @@ for share in cash_close_list:
     driver.get(f"https://www.nseindia.com/get-quotes/equity?symbol={share}")
 
     try:
-        sleep(2)
+        sleep(5)
         myElem = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'quoteLtp')))
         sleep(5)
         close_val = driver.find_element(By.ID, "quoteLtp").text
