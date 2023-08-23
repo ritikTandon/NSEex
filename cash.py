@@ -1,11 +1,11 @@
 import openpyxl as xl
-from openpyxl.styles import Font, Alignment, PatternFill
+from openpyxl.styles import PatternFill
 import datetime
 from date_variables import date, mnth, yr
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import TimeoutException
@@ -204,7 +204,7 @@ for share in cash_close_list:
 
     try:
         sleep(5)
-        myElem = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'quoteLtp')))
+        myElem = WebDriverWait(driver, 10).until(ec.presence_of_element_located((By.ID, 'quoteLtp')))
         sleep(5)
         close_val = driver.find_element(By.ID, "quoteLtp").text
         close_val = close_val.replace(",", "")

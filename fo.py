@@ -1,5 +1,5 @@
 import openpyxl as xl
-from openpyxl.styles import Font, Alignment, PatternFill
+from openpyxl.styles import PatternFill
 import datetime
 from date_variables import date, mnth, yr
 
@@ -8,7 +8,7 @@ fo_share_list = ["ADANI", "APORT", "APOLLO", "AURO", "AXIS", "BAJAJ", "BARODA", 
                  "SBIN", "TCHEM", "TCON", "TM", "TS", "TCS", "TITAN", "ULTRA", "VEDL"]
 # fo_share_list = ["ADANI"]
 
-fo_daily_aggregate_list = ["APORT", "AURO", "BN", "CANBK", "DLF", "HIND", "ICICI", "JIND", "NIFTY","REL", "SBIN",
+fo_daily_aggregate_list = ["APORT", "AURO", "BN", "CANBK", "DLF", "HIND", "ICICI", "JIND", "NIFTY", "REL", "SBIN",
                            "TCON", "TM", "TS", "TCS", "TITAN"]
 
 
@@ -206,6 +206,3 @@ while k < len(share_list):
     md_row += 1
 
 foHL_wb.save(r'C:\Users\admin\PycharmProjects\daily data\fo high low.xlsx')
-
-
-

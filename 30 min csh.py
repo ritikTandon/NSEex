@@ -1,6 +1,5 @@
 import openpyxl as xl
-from openpyxl.styles import Font, Alignment, PatternFill
-import datetime
+from openpyxl.styles import Font, Alignment
 from date_variables import date, mnth, yr
 
 cashHL_wb = xl.load_workbook(r'C:\Users\admin\PycharmProjects\daily data\cash high low.xlsx')
