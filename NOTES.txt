@@ -7,3 +7,12 @@ NO FORMAT FOR SOME SHARES IN 30 MINS DONE
 WHAT IF THERE'S ERROR IN THE RAW DATA:
 no 9:25 close DONE
 THE 9:25 ROW IS NOT ROW 11 BUT LESS THAN THAT (loop from time start and check when time >= 9:25 and use that row as start row, highlight that close) DONE
+
+
+Sonia work notes:
+highlight 9:40 row
+check if close can be taken from 1 min
+take h,l,c,v data from daily api and 9:40 cl from 1 min and correct high and low from 1 minute sheet calculation
+do all high and low calc in pandas df itself and not in Excel (its way easier this way)
+doing 30 min aggregate in 1 min sheets
+formatting 30 min sheets and daily chart

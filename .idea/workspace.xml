@@ -5,14 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="308761e4-5648-47f3-bc32-acb2059bab82" name="Changes" comment="done finally xD">
-      <change afterPath="$PROJECT_DIR$/sonia.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AAPL.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cash high low.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/cash high low.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data feed.py" beforeDir="false" afterPath="$PROJECT_DIR$/data feed.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/date_variables.py" beforeDir="false" afterPath="$PROJECT_DIR$/date_variables.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fo high low.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/fo high low.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ltp prev.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/ltp prev.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NOTES.txt" beforeDir="false" afterPath="$PROJECT_DIR$/NOTES.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonia.py" beforeDir="false" afterPath="$PROJECT_DIR$/sonia.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
