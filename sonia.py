@@ -23,7 +23,7 @@ cur_date_datetime = parser.parse(cur_date).date()
 
 key = "bf5204b93cd4e38625e4d899fc6d5e9f"
 
-shares = ['AAPL', 'AMZN', 'META', 'MSFT', 'NFLX', 'NVDA', 'QQQ', 'TSLA']
+shares = ['AAPL', 'AMZN', 'META', 'MSFT', 'NFLX', 'NVDA', 'NDAQ', 'QQQ', 'TSLA']
 
 # shares = ['AAPL']
 
@@ -98,7 +98,7 @@ for share in shares:
 
     time_cell = sheet.cell(start_row, 1)
     cur_time = time_cell.value
-    end_time = datetime.datetime(1900, 1, 1,16, 0, 0)
+    end_time = datetime.datetime(1900, 1, 1, 16, 0, 0)
 
     # 9:40 close value
     cl_9_40_dict[share] = sheet.cell(start_row, 4).value
@@ -222,14 +222,14 @@ for share in shares:
 
     df = pd.DataFrame(data)
 
-    # close = round(df['historical'][0]['close'], 2)
-    # prev = round(df['historical'][1]['close'], 2)
-    # vol = df['historical'][0]['volume'] // 100000
+    close = round(df['historical'][0]['close'], 2)
+    prev = round(df['historical'][1]['close'], 2)
+    vol = df['historical'][0]['volume'] // 100000
 
     # delete this because this is just for when making data after market start of next day
-    close = round(df['historical'][1]['close'], 2)
-    prev = round(df['historical'][2]['close'], 2)
-    vol = df['historical'][1]['volume'] // 100000
+    # close = round(df['historical'][1]['close'], 2)
+    # prev = round(df['historical'][2]['close'], 2)
+    # vol = df['historical'][1]['volume'] // 100000
 
     daily_wb = xl.load_workbook(daily_path)
     daily_sheet = daily_wb['D']
@@ -334,3 +334,5 @@ for share in shares:
 
     wb.save(path)
     daily_wb.save(daily_path)
+
+    print(f"{share} 30 min done")
