@@ -397,44 +397,76 @@
 #
 # print(addTwoNumbers(l1, l2))
 
-def isPalindrome(s: str) -> bool:
-    new = ""
-    valid = ['a', 'A', 'b', 'B', 'c', 'C', 'd', 'D', 'e', 'E', 'f', 'F', 'g', 'G', 'h', 'H', 'i', 'I', 'j', 'J', 'k',
-             'K', 'l', 'L', 'm', 'M', 'n', 'N', 'o', 'O', 'p', 'P', 'q', 'Q', 'r', 'R', 's', 'S', 't', 'T', 'u', 'U',
-             'v', 'V', 'w', 'W', 'x', 'X', 'y', 'Y', 'z', 'Z']
+# def isPalindrome(s: str) -> bool:
+#     new = ""
+#     valid = ['a', 'A', 'b', 'B', 'c', 'C', 'd', 'D', 'e', 'E', 'f', 'F', 'g', 'G', 'h', 'H', 'i', 'I', 'j', 'J', 'k',
+#              'K', 'l', 'L', 'm', 'M', 'n', 'N', 'o', 'O', 'p', 'P', 'q', 'Q', 'r', 'R', 's', 'S', 't', 'T', 'u', 'U',
+#              'v', 'V', 'w', 'W', 'x', 'X', 'y', 'Y', 'z', 'Z']
+#
+#     if s == " ":
+#         return True
+#
+#     if len(s) < 3:
+#         return True
+#
+#     b = False
+#     for ch in s:
+#         if ch in valid:
+#             new += ch.lower()
+#
+#     if len(new) == 1:
+#         return True
+#
+#     i = 0
+#     j = len(new) - 1
+#
+#     while i < j:
+#         first = new[i]
+#         last = new[j]
+#
+#         if first == last:
+#             b = True
+#
+#         else:
+#             b = False
+#             return b
+#
+#         i += 1
+#         j -= 1
+#
+#     return b
+#
+#
+# print(isPalindrome(".,"))
 
-    if s == " ":
-        return True
 
-    if len(s) < 3:
-        return True
-
-    b = False
-    for ch in s:
-        if ch in valid:
-            new += ch.lower()
-
-    if len(new) == 1:
-        return True
-
-    i = 0
-    j = len(new) - 1
-
-    while i < j:
-        first = new[i]
-        last = new[j]
-
-        if first == last:
-            b = True
-
-        else:
-            b = False
-            return b
-
-        i += 1
-        j -= 1
-
-    return b
-
-
-print(isPalindrome(".,"))
+# def convertToTitle(columnNumber: int) -> str:
+#     res = ''
+#     alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+#     while columnNumber > 26:
+#         rem = columnNumber % 26
+#         columnNumber = columnNumber // 26
+#         if rem == 0:
+#             columnNumber -= 1
+#         res = alpha[rem - 1] + res
+#
+#     res = alpha[columnNumber - 1] + res
+#
+#     return res
+#
+#
+# print(convertToTitle(11))
+#
+#
+# def titleToNumber(columnTitle: str) -> int:
+#     i = len(columnTitle) - 1
+#     tot = 0
+#     alpha = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+#     for s in columnTitle:
+#         tot += (26 ** i) * (alpha.index(s)+1)
+#
+#         i -= 1
+#
+#     return tot
+#
+# print(titleToNumber("K"))
