@@ -16,3 +16,32 @@ take h,l,c,v data from daily api and 9:40 cl from 1 min and correct high and low
 do all high and low calc in pandas df itself and not in Excel (its way easier this way)
 doing 30 min aggregate in 1 min sheets
 
+
+Data extraction from nest trader:
+positioning the mouse and clicking
+adding correct share names and making sure the share is saved in the correct place (select today's appropriate folder at the start of each(1 min, 30 min, etc))
+2 ESC after saving and down arrow(if i(counter variable of share name loop) is equal to last length of the share list, move to next section(fo, 30 min, etc))
+maximizing first file and saving and closing.
+closing share excel file after each save then ESC ESC
+waiting appropriate times in between shares and tabs
+check for change in pixel color using screenshot functionality of pyautogui and click accordingly: while (x, y) is not desired_color:
+
+-> AFTER FIRST ITERATION OF EVERY SECTION, JUST DO -> CTRL+SHIFT+H -> ENTER -> SAVING PROCEDURE
+
+-> MAKE SEPARATE DICTS FOR SEPARATE WINDOW COORDINATES
+
+-> MAKE A SAVING FUNCTION TO AVOID CODE REPETITION
+
+-> def save(name, path=''):
+    if path != '':
+        click the path box, enter correct path and press enter or whatever
+
+    save as usual
+
+==> CHALLENGES
+expiry day
+next day of expiry
+
+
+USE A EVENT LISTNER LIB TO DETECT THE PRESS OF A PAUSE BUTTON AND RUN AN input() command to pause exe1cution
+PUT THE MOUSE BACK WHERE IT WAS BEFORE UNPAUSING

@@ -17,6 +17,8 @@
 #
 # cell = sheet.cell(1,1)
 # print(cell.value)
+# import random
+
 
 # from time import sleep
 # from selenium import webdriver
@@ -470,3 +472,90 @@
 #     return tot
 #
 # print(titleToNumber("K"))
+
+# def numIdenticalPairs(nums):
+#     hashMap = {}
+#     res = 0
+#     for number in nums:
+#         if number in hashMap:
+#             res += hashMap[number]
+#             hashMap[number] += 1
+#         else:
+#             hashMap[number] = 1
+#     return res
+#
+#
+# l = []
+#
+# for i in range(1000000):
+#     l.append(random.randint(0, 10000))
+#
+# # print(l)
+# print(numIdenticalPairs(l))
+
+# def reverseString(s) -> None:
+#     """
+#     Do not return anything, modify s in-place instead.
+#     """
+#     for i in range(len(s)-1):
+#         t = s.pop(0)
+#         s.insert(len(s)-i, t)
+#
+#         # print(i)
+
+
+# def shuffle(nums: list, n: int) -> list[int]:
+#     for i in range(n):
+#         nums[i] += nums[n + i] * 10000
+#
+#     i = n - 1
+#
+#     # after this iteration, the list will be [40001, 50002, 60003, 4, 5, 6] essentially storing both numbers in 1 number and preserving it
+#
+#     while i >= 0:       # here, we are going in reverse and taking the mod/integer division to extract the numbers
+#         nums[2 * i + 1] = nums[i] // 10000  # for even digits, the y1 part
+#         nums[2 * i] = nums[i] % 10000       # for odd digits, the x1 part
+#         i -= 1
+#
+#     return nums
+#
+#
+# print(shuffle([1, 2, 3, 4, 5, 6], 3))
+#
+# class ListNode:
+#     def __init__(self, x, next=None):
+#         self.val = x
+#         self.next = next
+#
+#
+# def deleteNode(node):
+#     while node and node.next:
+#         node.val = node.next.val
+#         node.next = node.next.next
+#         node = node.next
+#
+#
+# l = ListNode(4, ListNode(5, ListNode(1, ListNode(9, None))))
+#
+# deleteNode(ListNode(1, ListNode(9, None)))
+# print(l)
+
+
+# def rotate(matrix):
+#     # reverse
+#     l = 0
+#     r = len(matrix) - 1
+#     while l < r:
+#         matrix[l], matrix[r] = matrix[r], matrix[l]
+#         l += 1
+#         r -= 1
+#     # transpose
+#     for i in range(len(matrix)):
+#         for j in range(i):
+#             matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+# 
+#
+# rotate([[1,2,3],[4,5,6],[7,8,9]])
+s = "APOLLO BAJFINSV BAJFIN BARODA BN COALIND DLF EICHER FEDBANK HCL HDFC ICICI INDUSIND INFY JIND M&M M&MFIN NIFTY REL SBIN SUNTV TCON TM TP TS TITAN ULTRA VEDL"
+
+print(s.split(" "))
