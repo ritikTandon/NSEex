@@ -18,7 +18,9 @@
 # cell = sheet.cell(1,1)
 # print(cell.value)
 # import random
+import shutil
 
+from date_variables import yr, mnth, date
 
 # from time import sleep
 # from selenium import webdriver
@@ -555,7 +557,10 @@
 #             matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
 # 
 #
-# rotate([[1,2,3],[4,5,6],[7,8,9]])
-s = "APOLLO BAJFINSV BAJFIN BARODA BN COALIND DLF EICHER FEDBANK HCL HDFC ICICI INDUSIND INFY JIND M&M M&MFIN NIFTY REL SBIN SUNTV TCON TM TP TS TITAN ULTRA VEDL"
+# # rotate([[1,2,3],[4,5,6],[7,8,9]])
+# s = "APOLLO BAJFINSV BAJFIN BARODA BN COALIND DLF EICHER FEDBANK HCL HDFC ICICI INDUSIND INFY JIND M&M M&MFIN NIFTY REL SBIN SUNTV TCON TM TP TS TITAN ULTRA VEDL"
+#
+# print(s.split(" "))
 
-print(s.split(" "))
+# shutil.copy(rf"E:\Daily Data work\hourlys 30 minute FO\{yr}\{mnth}\{date}\NIFTY.xls", rf"E:\Daily Data work\hourlys 30 minute CASH\{yr}\{mnth}\{date}")
+# shutil.copy(rf"E:\Daily Data work\hourlys 30 minute FO\{yr}\{mnth}\{date}\BN.xls", rf"E:\Daily Data work\hourlys 30 minute CASH\{yr}\{mnth}\{date}")

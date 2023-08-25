@@ -1,5 +1,4 @@
-import os
-import openpyxl as xl
+import shutil
 import pyautogui as pg
 import pyperclip as pc
 from date_variables import date, mnth, yr
@@ -74,10 +73,10 @@ imp_coord_dict = {"nest icon taskbar": (787, 1079), "EQ": (152, 992), "first sha
 
 currentMouseX, currentMouseY = pg.position()  # Returns two integers, the x and y of the mouse cursor's current position.
 
-# EQ_shares = ["ADANI", "APOLLO", "BAJFINSV", "BAJFIN", "BANBK", "BARODA", "COALIND", "DLF", "EICHER", "FEDBANK",
-#              "HCL", "HDFC", "HIND", "ICICI", "INDUSIND", "INFY", "JIND", "LIC", "M&M", "M&MFIN", "REL", "SBIN",
-#              "SUNTV", "TCHEM", "TM", "TP", "TS", "ULTRA"]
-# EQ_shares = ["ADANI"]
+EQ_shares = ["ADANI", "APOLLO", "BAJFINSV", "BAJFIN", "BANBK", "BARODA", "COALIND", "DLF", "EICHER", "FEDBANK",
+             "HCL", "HDFC", "HIND", "ICICI", "INDUSIND", "INFY", "JIND", "LIC", "M&M", "M&MFIN", "REL", "SBIN",
+             "SUNTV", "TCHEM", "TM", "TP", "TS", "ULTRA"]
+# EQ_shares = ["ADANI", "APOLLO", "BAJFINSV", "BAJFIN"]
 
 FO_shares = ["ADANI", "APORT", "APOLLO", "AURO", "AXIS", "BAJAJ", "BARODA", "BN", "AIRTEL", "BHEL", "CANBK", "COALIND",
              "DLF", "DRREDDY", "EICHER", "HCL", "HDFC", "HIND", "IBUL", "ICICI", "INDUSIND", "JIND", "NIFTY", "REL",
@@ -88,7 +87,7 @@ FO_30_min_shares = ['APOLLO', 'BAJFINSV', 'BAJFIN', 'BARODA', 'BN', 'COALIND', '
                     'ICICI', 'INDUSIND', 'INFY', 'JIND', 'M&M', 'M&MFIN', 'NIFTY', 'REL', 'SBIN', 'SUNTV', 'TCON', 'TM',
                     'TP', 'TS', 'TITAN', 'ULTRA', 'VEDL']
 
-EQ_30_min_shares = ["BN", "NIFTY", "ADANI", "APOLLO", "BAJFINSV", "BAJFIN", "BANBK", "BARODA", "DLF", "EICHER",
+EQ_30_min_shares = ["ADANI", "APOLLO", "BAJFINSV", "BAJFIN", "BANBK", "BARODA", "DLF", "EICHER",
                     "FEDBANK",
                     "HCL", "INDUSIND", "JIND", "LIC", "M&M", "M&MFIN", "SBIN", "SUNTV", "TM", "TP", "TS"]
 
@@ -137,34 +136,103 @@ for share in EQ_shares:
         save_share(share)
         sleep(1)
 
-# # FO 1 min
-# pg.click(imp_coord_dict["FO"])
-# sleep(1)
-# pg.click(imp_coord_dict["first share"])
-# sleep(1)
-#
-# first = True
-# for share in FO_shares:
-#     print(share)
-#     vwap()
-#     sleep(1)
-#
-#     # if it's the first share, follow the first share protocol
-#     if first:
-#         path = PATHS_DICT["FO"]         # setting path for first share
-#
-#         pg.doubleClick(imp_coord_dict["time interval"])
-#         pg.press("1")
-#         pg.press('enter')
-#
-#         check_change()
-#         save_share(share, path)
-#         first = False
-#         sleep(1)
-#
-#     else:
-#         print('after first')
-#         pg.press('enter')
-#         check_change()
-#         save_share(share)
-#         sleep(1)
+# FO 1 min
+pg.click(imp_coord_dict["FO"])
+sleep(1)
+pg.click(imp_coord_dict["first share"])
+sleep(1)
+
+first = True
+for share in FO_shares:
+    print(share)
+    vwap()
+    sleep(1)
+
+    # if it's the first share, follow the first share protocol
+    if first:
+        path = PATHS_DICT["FO"]         # setting path for first share
+
+        pg.doubleClick(imp_coord_dict["time interval"])
+        pg.press("1")
+        pg.press('enter')
+
+        check_change()
+        save_share(share, path)
+        first = False
+        sleep(1)
+
+    else:
+        print('after first')
+        pg.press('enter')
+        check_change()
+        save_share(share)
+        sleep(1)
+
+# FO 30 min
+pg.click(imp_coord_dict["30minFO"])
+sleep(1)
+pg.click(imp_coord_dict["first share"])
+sleep(1)
+
+first = True
+for share in FO_30_min_shares:
+    print(share)
+    vwap()
+    sleep(1)
+
+    # if it's the first share, follow the first share protocol
+    if first:
+        path = PATHS_DICT["30minFO"]         # setting path for first share
+
+        pg.doubleClick(imp_coord_dict["time interval"])
+        write("30")
+        pg.press('enter')
+
+        check_change()
+        save_share(share, path)
+        first = False
+        sleep(1)
+
+    else:
+        print('after first')
+        pg.press('enter')
+        check_change()
+        save_share(share)
+        sleep(1)
+
+# EQ 30 min
+pg.click(imp_coord_dict["30minCash"])
+sleep(1)
+pg.click(imp_coord_dict["first share"])
+sleep(1)
+
+first = True
+for share in EQ_30_min_shares:
+    print(share)
+    vwap()
+    sleep(1)
+
+    # if it's the first share, follow the first share protocol
+    if first:
+        path = PATHS_DICT["30minCash"]         # setting path for first share
+
+        pg.doubleClick(imp_coord_dict["time interval"])
+        write("30")
+        pg.press('enter')
+
+        check_change()
+        save_share(share, path)
+        first = False
+        sleep(1)
+
+    else:
+        print('after first')
+        pg.press('enter')
+        check_change()
+        save_share(share)
+        sleep(1)
+
+# copying NIFTY and BN from 30 min FO to 30 minute cash
+shutil.copy(rf"E:\Daily Data work\hourlys 30 minute FO\{yr}\{mnth}\{date}\NIFTY.xls", rf"E:\Daily Data work\hourlys 30 minute CASH\{yr}\{mnth}\{date}")
+shutil.copy(rf"E:\Daily Data work\hourlys 30 minute FO\{yr}\{mnth}\{date}\BN.xls", rf"E:\Daily Data work\hourlys 30 minute CASH\{yr}\{mnth}\{date}")
+
