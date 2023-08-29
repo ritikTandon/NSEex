@@ -22,6 +22,7 @@ import shutil
 
 from date_variables import yr, mnth, date
 
+
 # from time import sleep
 # from selenium import webdriver
 # from selenium.webdriver.support.ui import WebDriverWait
@@ -564,3 +565,60 @@ from date_variables import yr, mnth, date
 
 # shutil.copy(rf"E:\Daily Data work\hourlys 30 minute FO\{yr}\{mnth}\{date}\NIFTY.xls", rf"E:\Daily Data work\hourlys 30 minute CASH\{yr}\{mnth}\{date}")
 # shutil.copy(rf"E:\Daily Data work\hourlys 30 minute FO\{yr}\{mnth}\{date}\BN.xls", rf"E:\Daily Data work\hourlys 30 minute CASH\{yr}\{mnth}\{date}")
+
+# def hammingWeight(n: int) -> int:
+#     count = 0
+#
+#     while n:
+#         count += n%2
+#         n = n >> 1
+#
+#     return count
+# print(hammingWeight(0000000000000000000000010000000))
+
+
+# def moveZeroes(nums) -> None:
+#     slow = 0
+#     for fast in range(len(nums)):
+#         if nums[fast] != 0 and nums[slow] == 0:
+#             nums[slow], nums[fast] = nums[fast], nums[slow]
+#
+#         # wait while we find a non-zero element to
+#         # swap with you
+#         if nums[slow] != 0:
+#             slow += 1
+#
+#
+# l = [0, 1, 0, 3, 12]
+# moveZeroes(l)
+# print(l)
+
+
+# def buildArray(nums):   # O(1) - In-place
+#     for i in range(len(nums)):
+#         nums[i] = (nums[nums[i]] % 10000) * 10000 + nums[i]
+#
+#     return [num // 10000 for num in nums]
+#
+#
+#
+# print(buildArray([0, 2, 1, 5, 3, 4]))
+
+# Code to Measure time taken by program to execute.
+import time
+begin = time.time()
+
+
+def bestClosingTime(customers: str) -> int:
+    h = m = s = 0
+    for i, ch in enumerate(customers):  # [1] compute running profit where
+        s += (ch == "Y") * 2 - 1  # we add +1 for Y, -1 for N
+        if s > m:  # [2] keep track of the maximal
+            m, h = s, i + 1  # profit and its hour
+
+    return h
+
+
+print(bestClosingTime("YYNY"))
+end = time.time()
+print(f"Total runtime of the program is {end - begin}s")

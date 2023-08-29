@@ -1,4 +1,5 @@
 import openpyxl as xl
+import requests
 from openpyxl.styles import PatternFill
 import datetime
 from date_variables import date, mnth, yr
@@ -9,6 +10,8 @@ from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import TimeoutException
+
+# headers = {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0'}
 
 cash_share_list = ["ADANI", "APOLLO", "BAJFINSV", "BAJFIN", "BANBK", "BARODA", "COALIND", "DLF", "EICHER", "FEDBANK",
                    "HCL", "HDFC", "HIND", "ICICI", "INDUSIND", "INFY", "JIND", "LIC", "M&M", "M&MFIN", "REL", "SBIN",
@@ -184,6 +187,13 @@ for share in cash_share_list:
 # for close filling
 options = Options()
 options.add_argument('--headless=new')
+options.add_argument("--disable-blink-features=AutomationControlled")
+
+# Exclude the collection of enable-automation switches
+options.add_experimental_option("excludeSwitches", ["enable-automation"])
+
+# Turn-off userAutomationExtension
+options.add_experimental_option("useAutomationExtension", False)
 
 cash_close_list = ["ADANIENT", "APOLLOTYRE", "BAJAJFINSV", "BAJFINANCE", "BANDHANBNK", "BANKBARODA", "COALINDIA", "DLF",
                    "EICHERMOT", "FEDERALBNK", "HCLTECH", "HDFCBANK", "HINDALCO", "ICICIBANK", "INDUSINDBK", "INFY",
@@ -192,6 +202,7 @@ cash_close_list = ["ADANIENT", "APOLLOTYRE", "BAJAJFINSV", "BAJFINANCE", "BANDHA
 
 # cash_close_list1 = ["M%26M"]
 
+manual = []         # list to keep track of the shares whose values selenium couldn't get
 close = []
 # close = ['2446.95', '398.5', '1478.0', '7005.0', '227.65', '188.4', '234.15', '470.1', '3337.8', '132.8', '1170.0',
 # '1608.5', '448.85', '959.0', '1387.8', '1392.95', '662.9', '421.45', '1544.95', '1544.95', '2573.2', '561.0', '548.9',
@@ -216,6 +227,8 @@ for share in cash_close_list:
         close.append(close_val)
 
         print(f'{share}: {close_val}')
+        if close_val == '':
+            manual.append(share)
 
     except TimeoutException:
         print("Loading took too much time!")
@@ -223,6 +236,7 @@ for share in cash_close_list:
     driver.close()
 
 print(close)
+print(manual)
 
 i = 0
 

@@ -8,6 +8,9 @@ WHAT IF THERE'S ERROR IN THE RAW DATA:
 no 9:25 close DONE
 THE 9:25 ROW IS NOT ROW 11 BUT LESS THAN THAT (loop from time start and check when time >= 9:25 and use that row as start row, highlight that close) DONE
 
+-> make it so that if a cash share's close is '', add the share name to a manual_write list and print it in the end so I
+know which share to manually fill, instead of scanning through all the shares manually
+
 
 Sonia work notes:
 highlight 9:40 row
