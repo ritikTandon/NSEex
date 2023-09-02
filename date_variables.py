@@ -1,4 +1,4 @@
-date = r"29.08.23"
-mnth = r"AUG"
+date = r"04.09.23"
+mnth = r"SEP"
 yr = r'2023'
 

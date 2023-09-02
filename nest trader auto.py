@@ -241,4 +241,4 @@ shutil.copy(rf"E:\Daily Data work\hourlys 30 minute FO\{yr}\{mnth}\{date}\BN.xls
 
 
 end = time.time()
-print(f"Total runtime of the program is {end - begin}s")
+print(f"Total runtime of the program is {(end - begin) // 60} minutes and {(end - begin) % 60} seconds")

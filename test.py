@@ -18,6 +18,7 @@
 # cell = sheet.cell(1,1)
 # print(cell.value)
 # import random
+import cProfile
 import shutil
 
 from date_variables import yr, mnth, date
@@ -133,6 +134,23 @@ from date_variables import yr, mnth, date
 # s.cell(1,1).fill = PatternFill("solid", "FFFF00")
 #
 # wb.save(r'C:\Users\admin\PycharmProjects\daily data\test.xlsx')
+
+
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+    def print(self):
+        l = []
+        temp = self
+
+        while temp:
+            l.append(temp.val)
+            temp = temp.next
+
+        print(l)
+
 
 # def wordPattern(pattern: str, s: str) -> bool:
 #     l = s.split(" ")
@@ -605,20 +623,119 @@ from date_variables import yr, mnth, date
 # print(buildArray([0, 2, 1, 5, 3, 4]))
 
 # Code to Measure time taken by program to execute.
-import time
-begin = time.time()
+# import time
+# begin = time.time()
+#
+#
+# def bestClosingTime(customers: str) -> int:
+#     h = m = s = 0
+#     for i, ch in enumerate(customers):  # [1] compute running profit where
+#         s += (ch == "Y") * 2 - 1  # we add +1 for Y, -1 for N
+#         if s > m:  # [2] keep track of the maximal
+#             m, h = s, i + 1  # profit and its hour
+#
+#     return h
+#
+#
+# print(bestClosingTime("YYNY"))
+# end = time.time()
+# print(f"Total runtime of the program is {end - begin}s")
 
 
-def bestClosingTime(customers: str) -> int:
-    h = m = s = 0
-    for i, ch in enumerate(customers):  # [1] compute running profit where
-        s += (ch == "Y") * 2 - 1  # we add +1 for Y, -1 for N
-        if s > m:  # [2] keep track of the maximal
-            m, h = s, i + 1  # profit and its hour
-
-    return h
+# Definition for singly-linked list.
 
 
-print(bestClosingTime("YYNY"))
-end = time.time()
-print(f"Total runtime of the program is {end - begin}s")
+# def mergeTwoLists(l1, l2):
+#     if not l1:
+#         return l2
+#     if not l2:
+#         return l1
+#
+#     out = ListNode()
+#     head = out
+#     while l1 and l2:
+#         if l1.val < l2.val:
+#             out.val = l1.val
+#             out.next = ListNode()
+#             out = out.next
+#             l1 = l1.next
+#
+#         else:
+#             out.val = l2.val
+#             out.next = ListNode()
+#             out = out.next
+#             l2 = l2.next
+#
+#     if l1:
+#         out.val = l1.val
+#         out.next = l1.next
+#     if l2:
+#         out.val = l2.val
+#         out.next = l2.next
+#
+#     return head
+#
+#
+# li1 = ListNode(1, ListNode(2, ListNode(4)))
+# li2 = ListNode(5, ListNode(6))
+#
+# o = mergeTwoLists(li1, li2)
+# ListNode.print(o)
+
+
+# def maximum69Number(num: int) -> int:
+#     i = 0
+#     numm = num
+#     l = len(str(numm))
+#     idx_6 = -1
+#     while numm > 0:
+#         cur = numm % 10
+#         if cur == 6:
+#             idx_6 = i
+#         numm = numm // 10
+#         i += 1
+#
+#     return num if idx_6 == -1 else int(num + 3 * (10 ** idx_6))
+
+
+# print(maximum69Number(9999))
+
+
+# def hasCycle(head) -> bool:
+#     if not head or not head.next:
+#         return False
+#     slow = head
+#     fast = head.next
+#     while True:
+#         if slow == fast:
+#             return True
+#
+#         if slow.next is None or fast.next is None or fast.next.next is None:
+#             return False
+#
+#         slow = slow.next
+#         fast = fast.next.next
+
+
+# node = ListNode(3, ListNode(2, ListNode(0, ListNode(-4, None))))
+# node.next.next.next.next = node.next
+
+# node = ListNode(1, ListNode(2))
+#
+# # node = ListNode(3)
+#
+# print(hasCycle(node))
+
+
+def countBits(n):
+    out = []
+
+    for i in range(n+1):
+        out.append(str(bin(i)).count('1'))
+
+    return out
+
+
+l = countBits(64)
+for i, k in enumerate(l):
+    print(f"{i}: {k}")

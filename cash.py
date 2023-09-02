@@ -214,7 +214,7 @@ for share in cash_close_list:
     driver.get(f"https://www.nseindia.com/get-quotes/equity?symbol={share}")
 
     try:
-        sleep(5)
+        # sleep(5)
         myElem = WebDriverWait(driver, 10).until(ec.presence_of_element_located((By.ID, 'quoteLtp')))
         sleep(5)
         close_val = driver.find_element(By.ID, "quoteLtp").text

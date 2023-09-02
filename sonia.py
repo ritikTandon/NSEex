@@ -11,15 +11,16 @@ blue = Font("Arial", 11, color="0000ff", bold=True)
 bold = Font("Arial", 11, bold=True)
 alignment = Alignment(horizontal='center')
 
-cur_date = '29.08.23'
-cur_month = 'AUG'
+cur_date = '04.09.23'
+cur_month = 'SEP'
 cur_year = 2023
 
-offset = 5                          # 5 is 29-AUG-2023(30-AUG-2023 India date)
+offset = 9                          # 9 is 04-SEP-2023(5-SEP-2023 India date)
 
 daily_start_row = 1592+offset
 
-cur_date_datetime = parser.parse(cur_date).date()
+# cur_date_datetime = parser.parse(cur_date).date()
+cur_date_datetime = datetime.date(int(cur_year), int(cur_date[3:5]), int(cur_date[:2]))
 
 key = "bf5204b93cd4e38625e4d899fc6d5e9f"
 
