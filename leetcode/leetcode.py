@@ -1,78 +1,3 @@
-# import openpyxl as xl
-#
-# wb = xl.load_workbook(r'C:\Users\admin\PycharmProjects\daily data\test.xlsx')
-# sheet = wb["Sheet1"]
-#
-# cell = sheet.cell(1,1)
-# cell.number_format = 'hh:mm AM/PM'
-#
-# print(cell.value)
-# print(cell.number_format)
-#
-# wb.save(r'C:\Users\admin\PycharmProjects\daily data\test.xlsx')
-# wb.close()
-#
-# wb = xl.load_workbook(r'C:\Users\admin\PycharmProjects\daily data\test.xlsx')
-# sheet = wb["Sheet1"]
-#
-# cell = sheet.cell(1,1)
-# print(cell.value)
-# import random
-import cProfile
-import shutil
-
-from date_variables import yr, mnth, date
-
-
-# from time import sleep
-# from selenium import webdriver
-# from selenium.webdriver.support.ui import WebDriverWait
-# from selenium.webdriver.support import expected_conditions as EC
-# from selenium.webdriver.common.by import By
-# from selenium.webdriver.chrome.options import Options
-# from selenium.common.exceptions import TimeoutException
-#
-#
-# options = Options()
-# options.add_argument('--headless=new')
-#
-# cash_close_list = ["ADANIENT", "APOLLOTYRE", "BAJAJFINSV", "BAJFINANCE", "BANDHANBNK", "BANKBARODA", "COALINDIA", "DLF",
-#                    "EICHERMOT", "FEDERALBNK", "HCLTECH", "HDFCBANK", "HINDALCO", "ICICIBANK", "INDUSINDBK", "INFY",
-#                    "JINDALSTEL", "LICHSGFIN", "M%26M", "M%26M", "RELIANCE", "SBIN", "SUNTV", "TATACHEM", "TATAMOTORS",
-#                    "TATAPOWER", "TATASTEEL", "ULTRACEMCO"]
-#
-# cash_close_list1 = ["M%26M"]
-#
-# ltp = []
-#
-# for share in cash_close_list:
-#     driver = webdriver.Chrome(options=options)
-#
-#     driver.get(f"https://www.nseindia.com/get-quotes/equity?symbol={share}")
-#
-#     try:
-#         sleep(2)
-#         myElem = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'quoteLtp')))
-#         sleep(5)
-#         ltp_val = driver.find_element(By.ID, "quoteLtp").text
-#         ltp.append(ltp_val)
-#
-#         print(f'{share}: {ltp_val}')
-#
-#     except TimeoutException:
-#         print("Loading took too much time!")
-#
-#     driver.close()
-#
-# print(ltp)
-
-# cash_share_list = ["ADANI", "APOLLO", "BAJFINSV", "BAJFIN", "BANBK", "BARODA", "COALIND", "DLF", "EICHER", "FEDBANK",
-#                    "HCL", "HDFC", "HIND", "ICICI", "INDUSIND", "INFY", "JIND", "LIC", "M&M", "M&MFIN", "REL", "SBIN",
-#                    "SUNTV", "TCHEM", "TM", "TP", "TS", "ULTRA"]
-#
-# for share in cash_share_list:
-#     print(share)
-
 # def isValid(s: str) -> bool:
 #     stack = []
 #     bol = False
@@ -112,6 +37,8 @@ from date_variables import yr, mnth, date
 #
 #
 # print(isValid("([]){"))
+import random
+
 
 # s = "1234"
 #
@@ -136,20 +63,48 @@ from date_variables import yr, mnth, date
 # wb.save(r'C:\Users\admin\PycharmProjects\daily data\test.xlsx')
 
 
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
-
-    def print(self):
-        l = []
-        temp = self
-
-        while temp:
-            l.append(temp.val)
-            temp = temp.next
-
-        print(l)
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+#
+#     def __str__(self):
+#         l = []
+#         temp = self
+#
+#         while temp:
+#             l.append(temp.val)
+#             temp = temp.next
+#
+#         # print(l)
+#         return str(l)
+#
+#     def print(self):
+#         l = []
+#         temp = self
+#
+#         while temp:
+#             l.append(temp.val)
+#             temp = temp.next
+#
+#         print(l)
+#
+#
+# def create_linked_list(val_list: list=None, count: int=0):
+#     if val_list is None:
+#         val_list = []
+#         for i in range(count):
+#             val_list.append(random.randint(0, 10))
+#
+#     linked_list = ListNode()
+#     temp = linked_list
+#
+#     for i in range(len(val_list)):
+#         temp.val = val_list[i]
+#         temp.next = ListNode() if i < len(val_list)-1 else None
+#         temp = temp.next
+#
+#     return linked_list
 
 
 # def wordPattern(pattern: str, s: str) -> bool:
@@ -574,7 +529,7 @@ class ListNode:
 #     for i in range(len(matrix)):
 #         for j in range(i):
 #             matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
-# 
+#
 #
 # # rotate([[1,2,3],[4,5,6],[7,8,9]])
 # s = "APOLLO BAJFINSV BAJFIN BARODA BN COALIND DLF EICHER FEDBANK HCL HDFC ICICI INDUSIND INFY JIND M&M M&MFIN NIFTY REL SBIN SUNTV TCON TM TP TS TITAN ULTRA VEDL"
@@ -727,15 +682,188 @@ class ListNode:
 # print(hasCycle(node))
 
 
-def countBits(n):
-    out = []
+# def countBits(n):
+#     out = []
+#
+#     for i in range(n+1):
+#         out.append(str(bin(i)).count('1'))
+#
+#     return out
+#
+#
+# l = countBits(64)
+# for i, k in enumerate(l):
+#     print(f"{i}: {k}")
 
-    for i in range(n+1):
-        out.append(str(bin(i)).count('1'))
 
-    return out
+# def strStr(hs: str, n: str) -> int:
+#     start = 0
+#     end = len(n)
+#
+#     i = end
+#     for i in range(len(hs)):
+#         cur = hs[start:end]
+#
+#         if cur == n:
+#             return i
+#
+#         start += 1
+#         end += 1
+#
+#     return -1
+#
+#
+# print(strStr("sadbutsad", "tsa"))
 
 
-l = countBits(64)
-for i, k in enumerate(l):
-    print(f"{i}: {k}")
+# def isValidSudoku(board: list[list[str]]) -> bool:
+#     grid = [[], [], [], [], [], [], [], [], []]
+#     col = [[], [], [], [], [], [], [], [], []]
+#     b = 0
+#     for r, row in enumerate(board):
+#         if r > 5:
+#             b = 2
+#
+#         elif r > 2:
+#             b = 1
+#
+#         temp = []
+#         k = 0
+#         a = 0
+#         for c, ele in enumerate(row):
+#             if c > 5:
+#                 a = 2
+#
+#             elif c > 2:
+#                 a = 1
+#
+#             if ele in temp:
+#                 return False
+#             elif ele != ".":
+#                 temp.append(ele)
+#
+#                 if ele in col[k]:
+#                     return False
+#                 else:
+#                     col[k].append(ele)
+#
+#                 grid_index = a+(b*3)
+#
+#                 if ele in grid[grid_index]:
+#                     return False
+#                 else:
+#                     grid[grid_index].append(ele)
+#
+#             k += 1
+#
+#     return True
+#
+#
+# print(isValidSudoku([["5","3",".",".","7",".",".",".","."]
+# ,["6",".",".","1","9","5",".",".","."]
+# ,[".","9","8",".",".",".",".","6","."]
+# ,["8",".",".",".","6",".",".",".","3"]
+# ,["4",".",".","8",".","3",".",".","1"]
+# ,["7",".",".",".","2",".",".",".","6"]
+# ,[".","6",".",".",".",".","2","8","."]
+# ,[".",".",".","4","1","9",".",".","5"]
+# ,[".",".",".",".","8",".",".","7","9"]]))
+#
+# # count = 0
+# # for i in range(9):
+# #     for j in range(9):
+# #         print((i+j)%9, end="    ")
+# #         count += 1
+# #     print()
+
+
+# def reverseList(head):
+#     if head is None:
+#         return head
+#
+#     else:
+#         node_list = []
+#
+#         temp = head
+#         while temp:
+#             node_list.append(temp.val)
+#             temp = temp.next
+#
+#         i = len(node_list) - 1
+#         temp = head
+#         while temp:
+#             temp.val = node_list[i]
+#             i -= 1
+#             temp = temp.next
+#
+#     return head
+#
+#
+# def reverseList(head):
+#     prev = None
+#
+#     while head:
+#         next_node = head.next
+#         head.next = prev
+#         prev = head
+#         head = next_node
+#
+#     return prev
+#
+#
+# node = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5, None)))))
+# print(reverseList(node))
+
+# def divide_equally(items, k):
+#     len_list = []
+#     estimate = math.ceil(items / k)
+#     actual = estimate * k
+#     difference = items - actual
+#
+#     for i in range(k):
+#         if i == k+difference:
+#             len_list.append(estimate-1)
+#             difference += 1
+#
+#         else:
+#             len_list.append(estimate)
+#
+#     return len_list
+
+
+# def splitListToParts(head, k):
+#     node_count = 0
+#     length_list = []
+#     ll_list = []
+#
+#     temp = head
+#     while temp:
+#         node_count += 1
+#         temp = temp.next
+#
+#     length_list = divide_equaly(node_count, k)
+#
+#     for i in range(len(length_list)):
+#         cur = head
+#
+#         if not cur:
+#             ll_list.append(None)
+#             continue
+#
+#         for j in range(length_list[i]-1):
+#             head = head.next
+#
+#         next_node = head.next
+#         head.next = None
+#
+#         ll_list.append(cur)
+#         head = next_node
+#
+#     return ll_list
+#
+#
+# node = create_linked_list([12, 2, 3])
+# out = splitListToParts(node, 4)
+#
+# for ele in out:
+#     print(ele)

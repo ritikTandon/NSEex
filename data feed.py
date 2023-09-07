@@ -1,7 +1,7 @@
 import openpyxl as xl
 from openpyxl.styles import Font, Alignment
 
-append = 15          # increment this daily. 15 is for 04-SEP-2023
+append = 18          # increment this daily. 18 is for 07-SEP-2023
 
 i = 0       # main iterator variable
 
@@ -18,7 +18,7 @@ cash_share_names = ['ADANIENT', 'APOLLOTYRE', 'BAJAJFINSERV', 'BAJAJFINANCE', 'B
                     'TATACHEM', '07 TATAMOTOR CHL', 'TATAPOWER', '05 TATASTEEL chl', 'ULTRACHEM']
 
 cash_share_rows = [1579, 2946, 1579, 1579, 1579, 1579, 3232, 4058, 2715, 1579, 1579, 3936, 1579, 1579, 2765, 5195, 1579,
-                   1579, 1579, 4793, 4860, 1579, 1579, 4433, 1579, 4570, 2696]
+                   1579, 1579, 4793, 4860, 1579, 1579, 4434, 1579, 4570, 2696]
 
 cash_no_format_list = ['APOLLOTYRE', 'BANDHANBANK', 'BANKBARODA', 'COAL INDIA', 'DLF CHL', '07 TATAMOTOR CHL',
                        '05 TATASTEEL chl', 'TATAPOWER', 'M&MFINANCE', 'FEDRAL BANK']
