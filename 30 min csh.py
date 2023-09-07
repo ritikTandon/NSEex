@@ -1,5 +1,10 @@
+import os
+import shutil
+
 import openpyxl as xl
 from openpyxl.styles import Font, Alignment
+from xls2xlsx import XLS2XLSX
+
 from date_variables import date, mnth, yr
 
 cashHL_wb = xl.load_workbook(r'C:\Users\admin\PycharmProjects\daily data\cash high low.xlsx')
@@ -12,6 +17,18 @@ cash_30_min_list = ["ADANI", "APOLLO", "BAJFINSV", "BAJFIN", "BANBK", "BARODA", 
                     "INDUSIND", "JIND", "LIC", "M&M", "M&MFIN", "NIFTY", "SBIN", "SUNTV", "TM", "TP", "TS"]
 
 format_list = ["NIFTY", "EICHER", "BN"]
+
+# copying hourlys (.xls) as backup
+# path to source directory
+src_dir = rf"E:\Daily Data work\hourlys 30 minute CASH\{yr}\{mnth}\{date}"
+
+# path to destination directory
+dest_dir = rf"C:\Users\admin\PycharmProjects\daily data\Daily Backup hourlys\30 min csh"
+
+# getting all the files in the source directory
+files = os.listdir(src_dir)
+shutil.copytree(src_dir, dest_dir)
+print("Files copied as backup!")
 
 # index for getting values from cash/fo high low sheets
 index_30_min = [2, 3, 4, 5, 6, 7, 4, 9, 10, 11, 12, 16, 18, 19, 20, 21, 10, 23, 24, 26, 27, 28]
@@ -42,8 +59,10 @@ ltp_row = 2
 
 for share in cash_30_min_list:
     path = rf"E:\Daily Data work\hourlys 30 minute CASH\{yr}\{mnth}\{date}\{share}.xlsx"
+    xls_path = rf"E:\Daily Data work\hourlys 30 minute CASH\{yr}\{mnth}\{date}\{share}.xls"
+    x2x = XLS2XLSX(xls_path)
 
-    cash_30_min_wb = xl.load_workbook(path)
+    cash_30_min_wb = x2x.to_xlsx()
     old_30_min_sheet = cash_30_min_wb[f"{share}-Sheet1"]
 
     new_30_min_sheet = cash_30_min_wb.create_sheet(f"{share}")
@@ -115,5 +134,6 @@ for share in cash_30_min_list:
     idx += 1
 
     cash_30_min_wb.save(path)
+    os.remove(xls_path)
 
 ltp_wb.save(rf'C:\Users\admin\PycharmProjects\daily data\LTP PREV.xlsx')

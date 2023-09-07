@@ -1,7 +1,13 @@
+import shutil
+
 import openpyxl as xl
+import os
 import requests
 from openpyxl.styles import PatternFill
 import datetime
+
+from xls2xlsx import XLS2XLSX
+
 from date_variables import date, mnth, yr
 from time import sleep
 from selenium import webdriver
@@ -29,11 +35,26 @@ csh_row = 2
 
 fl_9_25 = 0.392361111       # 9:25 time value in general format
 
+# copying hourlys (.xls) as backup
+# path to source directory
+src_dir = rf"E:\Daily Data work\hourlys 1 minute CASH\{yr}\{mnth}\{date}"
+
+# path to destination directory
+dest_dir = rf"C:\Users\admin\PycharmProjects\daily data\Daily Backup hourlys\1 min csh"
+
+# getting all the files in the source directory
+files = os.listdir(src_dir)
+shutil.copytree(src_dir, dest_dir)
+print("Files copied as backup!")
+
 
 for share in cash_share_list:
     path = rf"E:\Daily Data work\hourlys 1 minute CASH\{yr}\{mnth}\{date}\{share}.xlsx"
+    xls_path = rf"E:\Daily Data work\hourlys 1 minute CASH\{yr}\{mnth}\{date}\{share}.xls"
+    x2x = XLS2XLSX(xls_path)
 
-    wb = xl.load_workbook(path)
+    wb = x2x.to_xlsx()
+    # wb = xl.load_workbook(path)
     sheet = wb[f"{share}-Sheet1"]
 
     start_row = 2
@@ -181,6 +202,7 @@ for share in cash_share_list:
     sheet.cell(start_row-1, 16).value = sheet.cell(start_row-1, 3).value  # close
 
     wb.save(path)
+    os.remove(xls_path)
 
     print(f"{share} done")
 

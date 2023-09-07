@@ -1,3 +1,4 @@
+from DataStructures import *
 # def isValid(s: str) -> bool:
 #     stack = []
 #     bol = False
@@ -867,3 +868,33 @@ import random
 #
 # for ele in out:
 #     print(ele)
+
+# def traverse(root, type='in'):
+#     out_list = list()
+#
+#     def postorderTraversal(root):
+#         if not root:
+#             return None
+#
+#         out_list.append(root.val)
+#         postorderTraversal(root.left)
+#         postorderTraversal(root.right)
+#
+#     def inorderTraversal(root):
+#         if not root:
+#             return None
+#
+#         inorderTraversal(root.left)
+#         out_list.append(root.val)
+#         inorderTraversal(root.right)
+#
+#     if type == 'in':
+#         inorderTraversal(root)
+#
+#     elif type == 'po':
+#         postorderTraversal(root)
+#
+#     return out_list
+#
+#
+# print(traverse(TreeNode(1, TreeNode(2, TreeNode(4), TreeNode(5)), TreeNode(3, TreeNode(6), TreeNode(7))), 'po'))

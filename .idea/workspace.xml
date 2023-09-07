@@ -4,16 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="308761e4-5648-47f3-bc32-acb2059bab82" name="Changes" comment="sonia.py date issue fixed(was looking at months as dates)">
-      <change afterPath="$PROJECT_DIR$/taskbar layout for nest automation.PNG" afterDir="false" />
+    <list default="true" id="308761e4-5648-47f3-bc32-acb2059bab82" name="Changes" comment="added leetcode sheets to practice leetcode">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cash high low.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/cash high low.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data feed.py" beforeDir="false" afterPath="$PROJECT_DIR$/data feed.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/date_variables.py" beforeDir="false" afterPath="$PROJECT_DIR$/date_variables.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fo high low.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/fo high low.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ltp prev.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/ltp prev.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/30 min csh.py" beforeDir="false" afterPath="$PROJECT_DIR$/30 min csh.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cash.py" beforeDir="false" afterPath="$PROJECT_DIR$/cash.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fo.py" beforeDir="false" afterPath="$PROJECT_DIR$/fo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leetcode/LinkedList.py" beforeDir="false" afterPath="$PROJECT_DIR$/leetcode/DataStructures.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leetcode/leetcode.py" beforeDir="false" afterPath="$PROJECT_DIR$/leetcode/leetcode.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leetcode/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/leetcode/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sonia.py" beforeDir="false" afterPath="$PROJECT_DIR$/sonia.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +47,9 @@
       </UrlAndAccount>
     </option>
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -67,12 +69,16 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/admin/PycharmProjects/daily data&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/admin/PycharmProjects/daily data&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\admin\PycharmProjects\daily data" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\PycharmProjects\daily data\leetcode" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -268,7 +274,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693641361629</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="added leetcode sheets to practice leetcode">
+      <option name="closed" value="true" />
+      <created>1694069907343</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1694069907343</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -306,41 +320,13 @@
     <MESSAGE value="done for 1 min csh" />
     <MESSAGE value="DONE NEST AUTOMATION(VER 1)" />
     <MESSAGE value="sonia.py date issue fixed(was looking at months as dates)" />
-    <option name="LAST_COMMIT_MESSAGE" value="sonia.py date issue fixed(was looking at months as dates)" />
+    <MESSAGE value="added leetcode sheets to practice leetcode" />
+    <option name="LAST_COMMIT_MESSAGE" value="added leetcode sheets to practice leetcode" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test.py</url>
-          <line>84</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test.py</url>
-          <line>243</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test.py</url>
-          <line>514</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test.py</url>
-          <line>608</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test.py</url>
-          <line>760</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="head.next" language="Python" />
+        <watch expression="out_list" language="Python" />
       </configuration>
     </watches-manager>
   </component>
