@@ -239,6 +239,5 @@ for share in EQ_30_min_shares:
 shutil.copy(rf"E:\Daily Data work\hourlys 30 minute FO\{yr}\{mnth}\{date}\NIFTY.xls", rf"E:\Daily Data work\hourlys 30 minute CASH\{yr}\{mnth}\{date}")
 shutil.copy(rf"E:\Daily Data work\hourlys 30 minute FO\{yr}\{mnth}\{date}\BN.xls", rf"E:\Daily Data work\hourlys 30 minute CASH\{yr}\{mnth}\{date}")
 
-
 end = time.time()
 print(f"Total runtime of the program is {(end - begin) // 60} minutes and {(end - begin) % 60} seconds")

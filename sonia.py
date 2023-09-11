@@ -11,11 +11,11 @@ blue = Font("Arial", 11, color="0000ff", bold=True)
 bold = Font("Arial", 11, bold=True)
 alignment = Alignment(horizontal='center')
 
-cur_date = '07.09.23'
+cur_date = '11.09.23'
 cur_month = 'SEP'
 cur_year = 2023
 
-offset = 12                          # 12 is 07-SEP-2023(8-SEP-2023 India date)
+offset = 14                          # 14 is 11-SEP-2023(12-SEP-2023 India date)
 
 daily_start_row = 1592+offset
 

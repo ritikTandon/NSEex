@@ -898,3 +898,34 @@ import random
 #
 #
 # print(traverse(TreeNode(1, TreeNode(2, TreeNode(4), TreeNode(5)), TreeNode(3, TreeNode(6), TreeNode(7))), 'po'))
+
+# def plusOne(digits):
+#     length = len(digits)
+#
+#     i = length - 1
+#     first = True
+#     carry = 0
+#
+#     while i >= 0:
+#         if first:
+#             digits[i] = digits[i] + 1
+#             first = False
+#
+#         else:
+#             digits[i] += carry
+#
+#         carry = 0
+#
+#         if digits[i] >= 10:
+#             digits[i] %= 10
+#             carry = 1
+#
+#         i -= 1
+#
+#     if carry == 1:
+#         digits.insert(0, 1)
+#
+#     return digits
+#
+#
+# print(plusOne([8,9,9,9]))

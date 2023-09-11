@@ -34,8 +34,11 @@ src_dir = rf"E:\Daily Data work\hourlys 1 minute FO\{yr}\{mnth}\{date}"
 dest_dir = rf"C:\Users\admin\PycharmProjects\daily data\Daily Backup hourlys\1 min fo"
 
 # getting all the files in the source directory
-files = os.listdir(src_dir)
-shutil.copytree(src_dir, dest_dir)
+src_files = os.listdir(src_dir)
+for file_name in src_files:
+    full_file_name = os.path.join(src_dir, file_name)
+    if os.path.isfile(full_file_name):
+        shutil.copy(full_file_name, dest_dir)
 print("Files copied as backup!")
 
 for share in fo_share_list:
