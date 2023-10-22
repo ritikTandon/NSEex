@@ -1,4 +1,9 @@
 import datetime
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.mime.base import MIMEBase
+from email import encoders
 from dateutil import parser
 import openpyxl as xl
 import pandas as pd
@@ -11,13 +16,13 @@ blue = Font("Arial", 11, color="0000ff", bold=True)
 bold = Font("Arial", 11, bold=True)
 alignment = Alignment(horizontal='center')
 
-cur_date = '18.09.23'
-cur_month = 'SEP'
+cur_date = '06.10.23'
+cur_month = 'OCT'
 cur_year = 2023
 
-offset = 19                          # 19 is 18-SEP-2023(19-SEP-2023 India date)
+offset = 33  # 33 is 06-OCT-2023(07-OCT-2023 India date)
 
-daily_start_row = 1592+offset
+daily_start_row = 1592 + offset
 
 # cur_date_datetime = parser.parse(cur_date).date()
 cur_date_datetime = datetime.date(int(cur_year), int(cur_date[3:5]), int(cur_date[:2]))
@@ -32,9 +37,13 @@ high_dict = {'AAPL': 0, 'AMZN': 0, 'META': 0, 'MSFT': 0, 'NFLX': 0, 'NVDA': 0, '
 low_dict = {'AAPL': 0, 'AMZN': 0, 'META': 0, 'MSFT': 0, 'NFLX': 0, 'NVDA': 0, 'QQQ': 0, 'TSLA:': 0}
 cl_9_40_dict = {'AAPL': 0, 'AMZN': 0, 'META': 0, 'MSFT': 0, 'NFLX': 0, 'NVDA': 0, 'QQQ': 0, 'TSLA:': 0}
 
+attachment_path_list = []
+
 for share in shares:
     url = rf'https://financialmodelingprep.com/api/v3/historical-chart/1min/{share}?apikey={key}'
     path = rf'E:\sonia daily data\1 min cash\{cur_year}\{cur_month}\{cur_date}\{share} 1 min csh.xlsx'
+
+    attachment_path_list.append(path)
 
     response = requests.get(url)
     data = response.json()
@@ -217,6 +226,8 @@ for share in shares:
     daily_url = rf'https://financialmodelingprep.com/api/v3/historical-price-full/{share}?apikey={key}'
     daily_path = rf'E:\sonia daily data\cash\{share} csh.xlsx'
 
+    attachment_path_list.append(daily_path)
+
     response = requests.get(daily_url)
 
     data = response.json()
@@ -267,6 +278,8 @@ for share in shares:
     url = rf'https://financialmodelingprep.com/api/v3/historical-chart/30min/{share}?apikey={key}'
     path = rf'E:\sonia daily data\30 min cash\{cur_year}\{cur_month}\{cur_date}\{share} 30 min csh.xlsx'
 
+    attachment_path_list.append(path)
+
     response = requests.get(url)
 
     data = response.json()
@@ -302,7 +315,7 @@ for share in shares:
             if j == 4:
                 old = datetime.datetime.strptime(old, "%H:%M:%S").strftime("%I:%M %p")
                 old_cell.number_format = 'h:mm AM/PM'
-            new_cell = new_sheet.cell(i+7, j+3)
+            new_cell = new_sheet.cell(i + 7, j + 3)
             new_cell.value = old
 
     # fixed headings
@@ -337,3 +350,47 @@ for share in shares:
     daily_wb.save(daily_path)
 
     print(f"{share} 30 min done")
+
+# mail
+mail_content = f"{cur_date[0:2]}-{cur_month}-{cur_year}"
+
+# The mail addresses and password
+sender_address = 'ritikmukta@gmail.com'
+# sender_pass = 'deeP@8393'
+sender_pass = 'tolh kftf oofa tzcp'
+receiver_address = 'soni1_soni1@yahoo.com'
+# receiver_address = 'ritikmukta123@gmail.com'
+
+
+# Setup the MIME
+message = MIMEMultipart()
+message['From'] = sender_address
+message['To'] = receiver_address
+message['Subject'] = 'Daily Data Work'
+
+# The subject line
+# The body and the attachments for the mail
+message.attach(MIMEText(mail_content, 'plain'))
+
+daily_path = rf'E:\sonia daily data\cash\AAPL csh.xlsx'
+
+for each_file_path in attachment_path_list:
+    try:
+        file_name = each_file_path.split("\\")[-1]
+        part = MIMEBase('application', "octet-stream")
+        part.set_payload(open(each_file_path, "rb").read())
+
+        encoders.encode_base64(part)
+        part.add_header('Content-Disposition', 'attachment', filename=file_name)
+        message.attach(part)
+    except:
+        print("could not attache file")
+
+# Create SMTP session for sending the mail
+session = smtplib.SMTP('smtp.gmail.com', 587)  # use gmail with port
+session.starttls()  # enable security
+session.login(sender_address, sender_pass)  # login with mail_id and password
+text = message.as_string()
+session.sendmail(sender_address, receiver_address, text)
+session.quit()
+print('Mail Sent')

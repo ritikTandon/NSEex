@@ -113,6 +113,14 @@ sleep(1)
 pg.click(imp_coord_dict["first share"])
 sleep(1)
 
+# # saving csh.xls  
+# pg.hotkey('shift', "e")
+# pg.click(imp_coord_dict["path"])
+# write(PATHS_DICT["daily data work"])
+# pg.click(imp_coord_dict["save"])
+# pg.hotkey("esc")
+# pg.hotkey("esc")
+
 first = True
 for share in EQ_shares:
     print(share)

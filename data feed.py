@@ -1,7 +1,7 @@
 import openpyxl as xl
 from openpyxl.styles import Font, Alignment
 
-append = 25          # increment this daily. 25 is for 18-SEP-2023
+append = 50          # increment this daily. 50 is for 23-OCT-2023
 
 i = 0       # main iterator variable
 
@@ -93,7 +93,7 @@ fo_share_rows = [2279, 2789, 3309, 2016, 2831, 3989, 1093, 2274, 2795, 2792, 279
 
 fo_no_format_list = ['04 TATASTEEL']
 
-# loading 'cash high low.xlsx'
+# loading 'fo high low.xlsx'
 foHL_wb = xl.load_workbook(r'C:\Users\admin\PycharmProjects\daily data\fo high low.xlsx')
 foHL_sheet = foHL_wb['Sheet1']
 foHL_row = 2

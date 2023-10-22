@@ -26,6 +26,8 @@ fo1_row = 2
 
 fl_9_25 = 0.392361111       # 9:25 time value in general format
 
+# bhav_link = rf"archives.nseindia.com/content/historical/DEREVATIVES/2023/SEP/fo{date[:2]}{mnth}20{date[6:]}bhav.csv.zip"
+
 # copying hourlys (.xls) as backup
 # path to source directory
 src_dir = rf"E:\Daily Data work\hourlys 1 minute FO\{yr}\{mnth}\{date}"
