@@ -1,7 +1,7 @@
 import openpyxl as xl
 from openpyxl.styles import Font, Alignment
 
-append = 50          # increment this daily. 50 is for 23-OCT-2023
+append = 52          # increment this daily. 52 is for 25-OCT-2023
 
 i = 0       # main iterator variable
 

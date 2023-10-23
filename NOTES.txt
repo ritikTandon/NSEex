@@ -56,3 +56,13 @@ USE LIST OF WEEKLY END ROWS AND INCREMENT THAT EVERY WEEK
 KEEP A WEEK_LENGTH VARIABLE IN CASE IT'S A 4/3-DAY WEEK
 
 ADD CSH30, FO1 and CSH excel automation
+
+
+TRADING ALG NOTES:
+to keep prev date, save old date variables in file and at the end of the program, update these variables in .txt file
+
+1. open current date and format
+2 next day, first format current day's sheet and then look for each share in prev day if we enter a buy or sell, write that
+to sheet 2 in prev day. Calculate if we reached tgt or sl. If neither, keep empty. depending on buy or sell, calculate the
+
+Note: round off share prices to 0.05 up(buy entry, buy sl) and down(sell entry, sell sl) and down (buy tgt) and up(sell tgt) // confirm these with papa
