@@ -66,3 +66,4 @@ to keep prev date, save old date variables in file and at the end of the program
 to sheet 2 in prev day. Calculate if we reached tgt or sl. If neither, keep empty. depending on buy or sell, calculate the
 
 Note: round off share prices to 0.05 up(buy entry, buy sl) and down(sell entry, sell sl) and down (buy tgt) and up(sell tgt) // confirm these with papa
+Note: dynamic rows( change 135 to a dynamic var)

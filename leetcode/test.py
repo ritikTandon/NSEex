@@ -166,8 +166,8 @@ VOLTAS
 ZEEL
 ZYDUSLIFE"""
 
-L = sh.split("\n")
-print(L)
+# L = sh.split("\n")
+# print(L)
 # j = 1
 # for i in L:
 #     print(i, end=" ")
@@ -183,6 +183,17 @@ print(L)
 # for i in range(0, 11):
 #     print(i**109)
 
+
+
+
+
+
+
+y = round_up(12.16)
+print(y)
+
+x = Decimal("3.456")
+(x * 2).quantize(Decimal('.05'), rounding=ROUND_UP) / 2
 
 
 
