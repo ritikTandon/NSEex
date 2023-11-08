@@ -73,12 +73,14 @@ all_tr_sheet.cell(1, 5).value = "Buy Entry"
 all_tr_sheet.cell(1, 6).value = "Buy Target"
 all_tr_sheet.cell(1, 7).value = "Buy Stoploss"
 all_tr_sheet.cell(1, 8).value = "Buy Quantity"
+all_tr_sheet.cell(1, 9).value = "Buy Amount"
 
-all_tr_sheet.cell(1, 10).value = "Sell Entry"
-all_tr_sheet.cell(1, 11).value = "Sell Target"
-all_tr_sheet.cell(1, 12).value = "Sell Stoploss"
-all_tr_sheet.cell(1, 13).value = "Sell Quantity"
-all_tr_sheet.cell(1, 15).value = "3:30 Price"
+all_tr_sheet.cell(1, 11).value = "Sell Entry"
+all_tr_sheet.cell(1, 12).value = "Sell Target"
+all_tr_sheet.cell(1, 13).value = "Sell Stoploss"
+all_tr_sheet.cell(1, 14).value = "Sell Quantity"
+all_tr_sheet.cell(1, 15).value = "Sell Amount"
+all_tr_sheet.cell(1, 17).value = "3:30 Price"
 
 
 # Fixed headings to be put in actual_tr_sheet sheet
@@ -113,27 +115,29 @@ for i in range(len(df)):
         b_entry = round_up((high + (high * 0.01)))
         b_tgt = round_down((b_entry + (b_entry * 0.015)))
         b_sl = round_up((b_entry - (b_entry * 0.0125)))
-        b_qty = 100000 // b_entry
+        # b_qty = 100000 // b_entry
 
         s_entry = round_down((low - (low * 0.01)))
         s_tgt = round_up((s_entry - (s_entry * 0.015)))
         s_sl = round_down((s_entry + (s_entry * 0.0125)))
-        s_qty = 100000 // s_entry
+        # s_qty = 100000 // s_entry
 
         # BUY
         all_tr_sheet.cell(row, 5).value = b_entry           # Buy Entry
         all_tr_sheet.cell(row, 6).value = b_tgt             # Buy Target
         all_tr_sheet.cell(row, 7).value = b_sl              # Buy Stoploss
-        all_tr_sheet.cell(row, 8).value = b_qty             # Buy Quantity
+        all_tr_sheet.cell(row, 8).value = f'=INT(I{row}/E{row})'             # Buy Quantity
+        all_tr_sheet.cell(row, 9).value = 100000            # Buy Amount (100000 default)
 
         # SELL
-        all_tr_sheet.cell(row, 10).value = s_entry           # Sell Entry
-        all_tr_sheet.cell(row, 11).value = s_tgt             # Sell Target
-        all_tr_sheet.cell(row, 12).value = s_sl              # Sell Stoploss
-        all_tr_sheet.cell(row, 13).value = s_qty             # Sell Quantity
+        all_tr_sheet.cell(row, 11).value = s_entry           # Sell Entry
+        all_tr_sheet.cell(row, 12).value = s_tgt             # Sell Target
+        all_tr_sheet.cell(row, 13).value = s_sl              # Sell Stoploss
+        all_tr_sheet.cell(row, 14).value = f'=INT(O{row}/K{row})'             # Sell Quantity
+        all_tr_sheet.cell(row, 15).value = 100000            # Sell Amount (100000 default)
 
         # 3:30 Value
-        all_tr_sheet.cell(row, 15).value = val_330           # LTP/ 3:30 close value
+        all_tr_sheet.cell(row, 17).value = val_330           # LTP/ 3:30 close value
 
         row += 1
 

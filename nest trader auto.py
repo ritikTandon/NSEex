@@ -72,7 +72,7 @@ def save_share(name, path=None):
 imp_coord_dict = {"nest icon taskbar": (787, 1079), "EQ": (152, 992), "first share": (73, 173), "FO": (184, 992),
                   "FO1": (213, 992), "30minFO": (266, 992), "30minCash": (33, 992), "time interval": (537, 58),
                   "get stats": (629, 55), "color change": (935, 295), "path": (647, 547), "share name textbox": (297, 931),
-                  "save": (789, 1003), "excel icon taskbar": (901, 1054), "excel close": (897, 1014), "": (), "": (), "": (), "": (), }
+                  "save": (789, 1003), "excel icon taskbar": (901, 1054), "excel close": (897, 1014), "TL": (18, 495), "BR": (962, 1026)}
 
 currentMouseX, currentMouseY = pg.position()  # Returns two integers, the x and y of the mouse cursor's current position.
 
