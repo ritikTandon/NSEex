@@ -20,14 +20,21 @@ from selenium.common.exceptions import TimeoutException
 # headers = {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0'}
 
 cash_share_list = ["ADANI", "APOLLO", "BAJFINSV", "BAJFIN", "BANBK", "BARODA", "COALIND", "DLF", "EICHER", "FEDBANK",
-                   "HCL", "HDFC", "HIND", "ICICI", "INDUSIND", "INFY", "JIND", "LIC", "M&M", "M&MFIN", "REL", "SBIN",
-                   "SUNTV", "TCHEM", "TM", "TP", "TS", "ULTRA"]
+                   "HCL", "HDFC", "HIND", "ICICI", "INDUSIND", "INFY", "JIND", "LIC", "M&M", "M&MFIN", "NTPC",
+                   "REL", "SBIN", "SUNTV", "TCHEM", "TM", "TP", "TS", "ULTRA"]
 
 # cash_share_list = ["ADANI"]
 
 cashHL_wb = xl.load_workbook(r'C:\Users\admin\PycharmProjects\daily data\cash high low.xlsx')
 cashHL_sheet = cashHL_wb['Sheet1']
 cashHL_row = 2
+
+
+# converting xls to xlsx for csh sheet
+x2x = XLS2XLSX(r'E:\Daily Data work\csh.xls')
+
+wb = x2x.to_xlsx()
+wb.save(r'E:\Daily Data work\csh.xlsx')
 
 csh_wb = xl.load_workbook(r'E:\Daily Data work\csh.xlsx')
 csh_sheet = csh_wb['csh-Sheet1']
@@ -54,6 +61,10 @@ print("Files copied as backup!")
 for share in cash_share_list:
     path = rf"E:\Daily Data work\hourlys 1 minute CASH\{yr}\{mnth}\{date}\{share}.xlsx"
     xls_path = rf"E:\Daily Data work\hourlys 1 minute CASH\{yr}\{mnth}\{date}\{share}.xls"
+    # try:      # cant use this skip unless I update cash high low values of a share and reload wb after every loop
+    #     x2x = XLS2XLSX(xls_path)
+    # except FileNotFoundError:
+    #     continue
     x2x = XLS2XLSX(xls_path)
 
     wb = x2x.to_xlsx()
@@ -130,8 +141,7 @@ for share in cash_share_list:
 
     # vol
     volume = csh_sheet.cell(csh_row, 5).value
-    volume = str(volume)
-    volume = int(volume[0:len(volume)-5])   # truncating volume to display in lakhs
+    volume = volume // 100000
 
     cashHL_sheet.cell(cashHL_row, 6).value = volume
 
@@ -222,7 +232,7 @@ options.add_experimental_option("useAutomationExtension", False)
 
 cash_close_list = ["ADANIENT", "APOLLOTYRE", "BAJAJFINSV", "BAJFINANCE", "BANDHANBNK", "BANKBARODA", "COALINDIA", "DLF",
                    "EICHERMOT", "FEDERALBNK", "HCLTECH", "HDFCBANK", "HINDALCO", "ICICIBANK", "INDUSINDBK", "INFY",
-                   "JINDALSTEL", "LICHSGFIN", "M%26M", "M%26MFIN", "RELIANCE", "SBIN", "SUNTV", "TATACHEM", "TATAMOTORS",
+                   "JINDALSTEL", "LICHSGFIN", "M%26M", "M%26MFIN", "NTPC", "RELIANCE", "SBIN", "SUNTV", "TATACHEM", "TATAMOTORS",
                    "TATAPOWER", "TATASTEEL", "ULTRACEMCO"]
 
 # cash_close_list1 = ["M%26M"]
@@ -276,6 +286,5 @@ while i < len(cash_close_list):
         close_cell.number_format = "0.00"
 
     i += 1
-
 
 cashHL_wb.save(r'C:\Users\admin\PycharmProjects\daily data\cash high low.xlsx')

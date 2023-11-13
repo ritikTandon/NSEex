@@ -1,10 +1,10 @@
 import ctypes
 import math
+import os
 import random
 import time
 
 from DataStructures import *
-
 
 # def getIntersectionNode(headA, headB):
 #     temp = headA
@@ -184,19 +184,189 @@ ZYDUSLIFE"""
 #     print(i**109)
 
 
+#
+#
+#
+# y = round_up(12.16)
+# print(y)
+#
+# x = Decimal("3.456")
+# (x * 2).quantize(Decimal('.05'), rounding=ROUND_UP) / 2
+#
+# r = """AARTIIND
+# ABB
+# ABCAPITAL
+# ABFRL
+# ADANIENT
+# ADANIPORTS
+# ALKEM
+# AMBUJACEM
+# APOLLOHOSP
+# APOLLOTYRE
+# ASHOKLEY
+# ASTRAL
+# ATUL
+# AUBANK
+# AUROPHARMA
+# BAJAJFINSV
+# BAJFINANCE
+# BALKRISIND
+# BALRAMCHIN
+# BANDHANBNK
+# BANKBARODA
+# BATAINDIA
+# BEL
+# BHARATFORG
+# BIOCON
+# BRITANNIA
+# BSOFT
+# CANBK
+# CANFINHOME
+# CHAMBLFERT
+# CHOLAFIN
+# CIPLA
+# COFORGE
+# CONCOR
+# COROMANDEL
+# CROMPTON
+# CUMMINSIND
+# DABUR
+# DALBHARAT
+# DEEPAKFERT
+# DEEPAKNTR
+# DELTACORP
+# DIVISLAB
+# DIXON
+# DLF
+# DRREDDY
+# ESCORTS
+# EXIDEIND
+# GLENMARK
+# GLS
+# GNFC
+# GODREJCP
+# GODREJPROP
+# GRANULES
+# GRASIM
+# GUJGASLTD
+# HAL
+# HAVELLS
+# HCLTECH
+# HDFCAMC
+# HDFCLIFE
+# HINDALCO
+# HINDCOPPER
+# ICICIGI
+# ICICIPRULI
+# IEX
+# IGL
+# INDHOTEL
+# INDIACEM
+# INDIAMART
+# INDIGO
+# INDUSINDBK
+# INDUSTOWER
+# INTELLECT
+# IPCALAB
+# JINDALSTEL
+# JKCEMENT
+# JSWSTEEL
+# JUBLFOOD
+# KOTAKBANK
+# LALPATHLAB
+# LAURUSLABS
+# LICHSGFIN
+# LTIM
+# LTTS
+# LUPIN
+# M&MFIN
+# MANAPPURAM
+# MARICO
+# MCDOWELL-N
+# MCX
+# METROPOLIS
+# MFSL
+# MGL
+# MPHASIS
+# MUTHOOTFIN
+# NAM-INDIA
+# NAUKRI
+# NAVINFLUOR
+# NMDC
+# NTPC
+# OBEROIRLTY
+# PEL
+# PERSISTENT
+# PETRONET
+# PIDILITIND
+# POLYCAB
+# POWERGRID
+# RAIN
+# RAMCOCEM
+# RBLBANK
+# RECLTD
+# SBICARD
+# SBILIFE
+# SIEMENS
+# SRF
+# STAR
+# SUNPHARMA
+# SYNGENE
+# TATACOMM
+# TATAMOTORS
+# TECHM
+# TORNTPHARM
+# TORNTPOWER
+# TRENT
+# TVSMOTOR
+# UBL
+# ULTRACEMCO
+# UPL
+# VEDL
+# VOLTAS
+# ZEEL
+# ZYDUSLIFE"""
+# ALGO_1_min_shares = r.split("\n")
+#
+# print(ALGO_1_min_shares)
+# print(len(ALGO_1_min_shares))
 
 
+# cash_share_names = ['ADANIENT', 'APOLLOTYRE', 'BAJAJFINSERV', 'BAJAJFINANCE', 'BANDHANBANK', 'BANKBARODA', 'COAL INDIA',
+#                     'DLF CHL', 'EICHERMOTOR', 'FEDRAL BANK', 'HCLTECH', 'HDFC', 'ICICIBANK', 'INDUSINDBANK', 'INFY',
+#                     'JINDALS chl', 'LICHSGFIN', 'M&M', 'M&MFINANCE', '03 RELIANCE CHL', '04 SBIN CHL', 'SUNTV',
+#                     'TATACHEM', '07 TATAMOTOR CHL', 'TATAPOWER', '05 TATASTEEL chl', 'ULTRACHEM']
+#
+# cash_share_rows = [1579, 2946, 1579, 1579, 1579, 1579, 3232, 4058, 2715, 1579, 1579, 3936, 1579, 1579, 2765, 5195, 1579,
+#                    1579, 1579, 4793, 4860, 1579, 1579, 4434, 1579, 4570, 2696]
+# fo_share_names = ['ADANI PORT', 'AUROPHARMA', '02 BANKNIFTY F', 'CANBK', 'DLF', 'HINDALCO', 'ICICIBANK', 'JINDS',
+#                   '01 NIFTY F', '03 RELIANCE', 'SBIN', 'TATACONSUM', '05 TATAMOTOR', '04 TATASTEEL', 'TCS', 'TITAN']
+#
+# fo_share_rows = [2279, 2789, 3309, 2016, 2831, 3989, 1093, 2274, 2795, 2792, 2793, 2276, 2791, 2793, 4826, 1762]
+#
+# d = {}
+# i = 0
+# for s in fo_share_names:
+#     d[s] = fo_share_rows[i]
+#     i+= 1
+#
+# print(d)
 
 
-
-y = round_up(12.16)
-print(y)
-
-x = Decimal("3.456")
-(x * 2).quantize(Decimal('.05'), rounding=ROUND_UP) / 2
-
-
-
-
-
-
+# for s in d:
+#     print(s)
+#
+# count = 0
+# insert_rows = [40, 52, 69, 71, 75, 77, 90, 106, 200, 231, 241, 260, 282, 314, 326, 330, 338, 343, 359, 408, 429, 445,
+#                470, 485,
+#                495, 543, 569, 580, 599, 600, 612, 682, 686, 698, 723, 738, 747, 804, 832, 849, 852, 855, 860, 871, 914,
+#                947, 972,
+#                981, 997]
+#
+# wb = xl.load_workbook(rf'C:\Users\admin\Downloads\current\{share}.xlsx')
+# sheet = wb['D']
+#
+# for row in insert_rows:
+#     sheet.insert_rows(row)
+#
+# wb.save(rf'C:\Users\admin\Downloads\current\{share}.xlsx')

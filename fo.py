@@ -1,5 +1,7 @@
 import os
 import shutil
+import pandas as pd
+from zipfile import ZipFile
 
 import openpyxl as xl
 from openpyxl.styles import PatternFill
@@ -19,6 +21,13 @@ fo_daily_aggregate_list = ["APORT", "AURO", "BN", "CANBK", "DLF", "HIND", "ICICI
 foHL_wb = xl.load_workbook(r'C:\Users\admin\PycharmProjects\daily data\fo high low.xlsx')
 foHL_sheet = foHL_wb['Sheet1']
 foHL_row = 2
+
+
+# converting xls to xlsx for fo1 sheet
+x2x = XLS2XLSX(r'E:\Daily Data work\fo1.xls')
+
+wb = x2x.to_xlsx()
+wb.save(r'E:\Daily Data work\fo1.xlsx')
 
 fo1_wb = xl.load_workbook(r'E:\Daily Data work\fo1.xlsx')
 fo1_sheet = fo1_wb['fo1-Sheet1']
@@ -46,6 +55,7 @@ print("Files copied as backup!")
 for share in fo_share_list:
     path = rf"E:\Daily Data work\hourlys 1 minute FO\{yr}\{mnth}\{date}\{share}.xlsx"
     xls_path = rf"E:\Daily Data work\hourlys 1 minute FO\{yr}\{mnth}\{date}\{share}.xls"
+
     x2x = XLS2XLSX(xls_path)
 
     wb = x2x.to_xlsx()
@@ -201,10 +211,22 @@ for share in fo_share_list:
 
 
 # MD file
-md_path = rf"E:\Daily Data work\MD files\{yr}\{mnth}\fo{date[:2]}{mnth}20{date[6:]}bhav.xlsx"
-md_wb = xl.load_workbook(md_path)
+md_path_zipped = rf"E:\chrome downloads\fo{date[:2]}{mnth}20{date[6:]}bhav.csv.zip"     # .zip file path of downloaded cash bhavcpoy
+md_path = rf"E:\chrome downloads"
 
-md_sheet = md_wb[rf"fo{date[:2]}{mnth}20{date[6:]}bhav"]
+# extracting .zip file
+with ZipFile(md_path_zipped, 'r') as zObject:
+    zObject.extractall(path=md_path)
+
+md_file_path = rf"E:\Daily Data work\MD files\{yr}\{mnth}\fo{date[:2]}{mnth}20{date[6:]}bhav.xlsx"
+
+df = pd.read_csv(md_path_zipped[:-4])
+df = df.iloc[:600]
+df.to_excel(md_file_path, index=False)
+
+md_wb = xl.load_workbook(md_file_path)
+
+md_sheet = md_wb["Sheet1"]
 
 k = 0       # variable to iterate over all shares in share_list and index_list
 md_row = 2  # starting row of md file
