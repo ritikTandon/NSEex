@@ -4,75 +4,148 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="308761e4-5648-47f3-bc32-acb2059bab82" name="Changes" comment="updated daily data">
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/ADANI.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/APOLLO.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/BAJFIN.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/BAJFINSV.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/BANBK.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/BARODA.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/COALIND.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/DLF.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/EICHER.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/FEDBANK.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/HCL.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/HDFC.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/HIND.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/ICICI.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/INDUSIND.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/INFY.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/JIND.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/LIC.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/M&amp;M.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/M&amp;MFIN.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/NTPC.xls" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/NTPC.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/REL.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/SBIN.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/SUNTV.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/TCHEM.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/TM.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/TP.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/TS.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/ULTRA.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/ADANI.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/AIRTEL.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/APOLLO.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/APORT.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/AURO.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/AXIS.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/BAJAJ.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/BARODA.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/BHEL.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/BN.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/CANBK.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/COALIND.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/DLF.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/DRREDDY.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/EICHER.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/HCL.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/HDFC.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/HIND.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/IBUL.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/ICICI.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/INDUSIND.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/JIND.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/NIFTY.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/REL.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/SBIN.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/TCHEM.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/TCON.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/TCS.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/TITAN.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/TM.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/TS.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/ULTRA.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/VEDL.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/new share create daily.py" afterDir="false" />
+    <list default="true" id="308761e4-5648-47f3-bc32-acb2059bab82" name="Changes" comment="completed creation of 1 min sheets with formatting">
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/AARTIIND.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ABB.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ABCAPITAL.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ABFRL.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ADANIENT.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ADANIPORTS.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ALKEM.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/AMBUJACEM.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/APOLLOHOSP.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/APOLLOTYRE.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ASHOKLEY.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ASTRAL.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ATUL.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/AUBANK.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/AUROPHARMA.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BAJAJFINSV.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BAJFINANCE.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BALKRISIND.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BALRAMCHIN.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BANDHANBNK.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BANKBARODA.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BATAINDIA.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BEL.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BHARATFORG.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BIOCON.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BRITANNIA.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BSOFT.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/CANBK.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/CANFINHOME.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/CHAMBLFERT.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/CHOLAFIN.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/CIPLA.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/COFORGE.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/CONCOR.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/COROMANDEL.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/CROMPTON.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/CUMMINSIND.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/DABUR.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/DALBHARAT.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/DEEPAKFERT.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/DEEPAKNTR.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/DELTACORP.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/DIVISLAB.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/DIXON.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/DLF.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/DRREDDY.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ESCORTS.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/EXIDEIND.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/GLENMARK.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/GLS.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/GNFC.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/GODREJCP.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/GODREJPROP.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/GRANULES.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/GRASIM.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/GUJGASLTD.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/HAL.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/HAVELLS.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/HCLTECH.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/HDFCAMC.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/HDFCLIFE.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/HINDALCO.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/HINDCOPPER.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ICICIGI.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ICICIPRULI.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/IEX.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/IGL.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/INDHOTEL.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/INDIACEM.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/INDIAMART.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/INDIGO.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/INDUSINDBK.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/INDUSTOWER.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/INTELLECT.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/IPCALAB.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/JINDALSTEL.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/JKCEMENT.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/JSWSTEEL.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/JUBLFOOD.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/KOTAKBANK.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/LALPATHLAB.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/LAURUSLABS.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/LICHSGFIN.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/LTIM.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/LTTS.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/LUPIN.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/M&amp;MFIN.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/MANAPPURAM.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/MARICO.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/MCDOWELL-N.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/MCX.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/METROPOLIS.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/MFSL.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/MGL.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/MPHASIS.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/MUTHOOTFIN.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/NAM-INDIA.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/NAUKRI.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/NAVINFLUOR.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/NMDC.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/NTPC.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/OBEROIRLTY.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/PEL.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/PERSISTENT.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/PETRONET.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/PIDILITIND.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/POLYCAB.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/POWERGRID.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/RAIN.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/RAMCOCEM.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/RBLBANK.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/RECLTD.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/SBICARD.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/SBILIFE.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/SIEMENS.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/SRF.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/STAR.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/SUNPHARMA.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/SYNGENE.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/TATACOMM.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/TATAMOTORS.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/TECHM.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/TORNTPHARM.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/TORNTPOWER.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/TRENT.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/TVSMOTOR.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/UBL.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ULTRACEMCO.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/UPL.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/VEDL.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/VOLTAS.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ZEEL.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ZYDUSLIFE.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algo high low.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cash high low.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/cash high low.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NOTES.txt" beforeDir="false" afterPath="$PROJECT_DIR$/NOTES.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data feed.py" beforeDir="false" afterPath="$PROJECT_DIR$/data feed.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/date_variables.py" beforeDir="false" afterPath="$PROJECT_DIR$/date_variables.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/leetcode/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/leetcode/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/new share create.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/new share create daily.py" beforeDir="false" afterPath="$PROJECT_DIR$/new share create daily.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -423,7 +496,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699915778295</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="completed creation of 1 min sheets with formatting">
+      <option name="closed" value="true" />
+      <created>1699960800710</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1699960800710</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -469,7 +550,8 @@
     <MESSAGE value="added modular amount option to calc" />
     <MESSAGE value="created 2 new share but with no formatting and only daily" />
     <MESSAGE value="updated daily data" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated daily data" />
+    <MESSAGE value="completed creation of 1 min sheets with formatting" />
+    <option name="LAST_COMMIT_MESSAGE" value="completed creation of 1 min sheets with formatting" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -478,6 +560,11 @@
           <url>file://$PROJECT_DIR$/fo.py</url>
           <line>213</line>
           <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/new share create daily.py</url>
+          <line>46</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -78,24 +78,34 @@ DAILY DATA:
     @-adding and removing shares papa asked for
     -Improving daily data code
     @-automatically saving csh, csh30 and fo1 and converting them
-    -automatically saving weekly data along with making scripts to save monthly and closing data
+    -todo automatically saving weekly, monthly and closing data along with making scripts to save monthly and closing data
     -waiting for fo bhav copy using try-except (if file not present, wait code execution via input()/ makes sound to indicate file not present and when file is present,
     take input from user and auto extract file)
-    -convert name, row lists to dicts
+    @-convert name, row lists to dicts
     -appropriate code commenting
     -more function based code(cleaner code)
-    -put all files in one so that easy for raghav to execute
+    -TODO put all files in one so that easy for raghav to execute
     -weekly flag to ensure the weekly code isn't being run when it shouldn't
 
 150 SHARE DATA AND ALGO:
     - ************* @todo 27 jan - 1 feb 2020 is 6-day week instead of 5 for weekly****************************
     - ************* @todo some repeated columns in 2020 ****************************
     @-ensuring the 1-min files are being properly made
-    -creating separate 1 min and daily data for these 150 shares
-    -format 1 min and take the csh150 file and take close from nse site and save data.
+    @-creating separate 1 min and daily data for these 150 shares
+    @-format 1 min and take the csh150 file and take close from nse site and save data.
     -create script to save weekly data from start to end
-    -FIND A WAY TO AUTOMATE CREATION OF SHEETS FOR THE FIRST TIME AS THAT'S THE MOST TIME CONSUMING PROCESS(pandas???)
+    @-FIND A WAY TO AUTOMATE CREATION OF SHEETS FOR THE FIRST TIME AS THAT'S THE MOST TIME CONSUMING PROCESS(pandas???)
     -after data is made, do the checking of previous day to see what actual trades happened or not(use less confusing names)
+
+
+todo:   running order
+download fo and cash bhavcopy
+cash - algo - fo (concurrent)
+30 min cash
+cash bhavcopy
+data feed(todo don't forget to increment daily offset and weekly offset and weekly, monthly or closing flags)
+changing date variables
+
 
 ACTUAL ALGO TRADING APP(CLI Probably)
     -
