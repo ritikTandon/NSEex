@@ -4,16 +4,75 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="308761e4-5648-47f3-bc32-acb2059bab82" name="Changes" comment="algo only works till providing wha calcs to do for next day's trade">
+    <list default="true" id="308761e4-5648-47f3-bc32-acb2059bab82" name="Changes" comment="updated daily data">
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/ADANI.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/APOLLO.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/BAJFIN.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/BAJFINSV.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/BANBK.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/BARODA.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/COALIND.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/DLF.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/EICHER.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/FEDBANK.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/HCL.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/HDFC.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/HIND.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/ICICI.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/INDUSIND.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/INFY.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/JIND.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/LIC.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/M&amp;M.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/M&amp;MFIN.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/NTPC.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/NTPC.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/REL.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/SBIN.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/SUNTV.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/TCHEM.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/TM.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/TP.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/TS.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/ULTRA.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/ADANI.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/AIRTEL.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/APOLLO.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/APORT.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/AURO.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/AXIS.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/BAJAJ.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/BARODA.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/BHEL.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/BN.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/CANBK.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/COALIND.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/DLF.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/DRREDDY.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/EICHER.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/HCL.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/HDFC.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/HIND.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/IBUL.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/ICICI.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/INDUSIND.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/JIND.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/NIFTY.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/REL.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/SBIN.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/TCHEM.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/TCON.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/TCS.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/TITAN.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/TM.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/TS.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/ULTRA.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/VEDL.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/new share create daily.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm/cash bhavcopy.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/cash bhavcopy.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cash high low.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/cash high low.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cash.py" beforeDir="false" afterPath="$PROJECT_DIR$/cash.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data feed.py" beforeDir="false" afterPath="$PROJECT_DIR$/data feed.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/date_variables.py" beforeDir="false" afterPath="$PROJECT_DIR$/date_variables.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fo high low.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/fo high low.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ltp prev.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/ltp prev.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nest trader auto.py" beforeDir="false" afterPath="$PROJECT_DIR$/nest trader auto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leetcode/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/leetcode/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/new share create.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +130,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/admin/PycharmProjects/daily data&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.gutterIcons&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -332,7 +391,39 @@
       <option name="project" value="LOCAL" />
       <updated>1698142932753</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="added modular amount option to calc">
+      <option name="closed" value="true" />
+      <created>1699451822958</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1699451822958</updated>
+    </task>
+    <task id="LOCAL-00032" summary="created 2 new share but with no formatting and only daily">
+      <option name="closed" value="true" />
+      <created>1699910898984</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1699910898984</updated>
+    </task>
+    <task id="LOCAL-00033" summary="updated daily data">
+      <option name="closed" value="true" />
+      <created>1699915751479</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1699915751479</updated>
+    </task>
+    <task id="LOCAL-00034" summary="updated daily data">
+      <option name="closed" value="true" />
+      <created>1699915778295</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1699915778295</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -375,6 +466,26 @@
     <MESSAGE value="added algo" />
     <MESSAGE value="completed algo" />
     <MESSAGE value="algo only works till providing wha calcs to do for next day's trade" />
-    <option name="LAST_COMMIT_MESSAGE" value="algo only works till providing wha calcs to do for next day's trade" />
+    <MESSAGE value="added modular amount option to calc" />
+    <MESSAGE value="created 2 new share but with no formatting and only daily" />
+    <MESSAGE value="updated daily data" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated daily data" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/fo.py</url>
+          <line>213</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="old.value" language="Python" />
+        <watch expression="new.value" language="Python" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
