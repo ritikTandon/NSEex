@@ -99,6 +99,7 @@ DAILY DATA:
 
 
 todo:   running order
+nest trader till all shares are properly saved
 download fo and cash bhavcopy
 cash - algo - fo (concurrent)
 30 min cash
