@@ -71,10 +71,15 @@ Note: dynamic rows( change 135 to a dynamic var)
 
 =================================================================================================================================================================================================
 
+ADDING FREE PANES TO ALL ! MIN SHEETS
+
+not enter trades after 2:55
+
 DAILY DATA WORK OVERHAUL AND 150 SHARE DAILY DATA + ACTUAL ALGO TRADE REPORT SHEET
 
 DAILY DATA:
     !!!!!!!!!!!!! @todo maybe csh30.xlsx is not being used anywhere!!!!!!!!!!!!!
+    todo add NTPC and HINDALCO in 30 min
     @-adding and removing shares papa asked for
     -Improving daily data code
     @-automatically saving csh, csh30 and fo1 and converting them
@@ -88,6 +93,7 @@ DAILY DATA:
     -weekly flag to ensure the weekly code isn't being run when it shouldn't
 
 150 SHARE DATA AND ALGO:
+    - increase fonts and bold cash bhav copy shares
     - ************* @todo 27 jan - 1 feb 2020 is 6-day week instead of 5 for weekly****************************
     - ************* @todo some repeated columns in 2020 ****************************
     @-ensuring the 1-min files are being properly made

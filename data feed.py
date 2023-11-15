@@ -1,5 +1,4 @@
 import os
-
 import openpyxl as xl
 import send2trash
 from openpyxl.styles import Font, Alignment
