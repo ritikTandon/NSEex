@@ -45,10 +45,10 @@ cashHL_row = 2
 
 
 # converting xls to xlsx for algo sheet
-# x2x = XLS2XLSX(r'E:\Daily Data work\algo.xls')
-#
-# wb = x2x.to_xlsx()
-# wb.save(r'E:\Daily Data work\algo.xlsx')
+x2x = XLS2XLSX(r'E:\Daily Data work\algo.xls')
+
+wb = x2x.to_xlsx()
+wb.save(r'E:\Daily Data work\algo.xlsx')
 
 csh_wb = xl.load_workbook(r'E:\Daily Data work\algo.xlsx')
 csh_sheet = csh_wb['algo-Sheet1']
@@ -232,90 +232,92 @@ for share in cash_share_list:
     sheet.cell(start_row-1, 15).value = LOW
     sheet.cell(start_row-1, 16).value = sheet.cell(start_row-1, 3).value  # close
 
+    sheet.freeze_panes = sheet["A2"]
+
     wb.save(path)
     os.remove(xls_path)
 
     print(f"{share} done")
 
 # for close filling
-# options = Options()
-# # options.add_argument('--headless=new')
-# options.add_argument("--disable-blink-features=AutomationControlled")
-#
-# # Exclude the collection of enable-automation switches
-# options.add_experimental_option("excludeSwitches", ["enable-automation"])
-#
-# # Turn-off userAutomationExtension
-# options.add_experimental_option("useAutomationExtension", False)
-#
-# cash_close_list = ['AARTIIND', 'ABB', 'ABCAPITAL', 'ABFRL', 'ADANIENT', 'ADANIPORTS', 'ALKEM', 'AMBUJACEM',
-#                      'APOLLOHOSP', 'APOLLOTYRE', 'ASHOKLEY', 'ASTRAL', 'ATUL', 'AUBANK', 'AUROPHARMA', 'BAJAJFINSV',
-#                      'BAJFINANCE', 'BALKRISIND', 'BALRAMCHIN', 'BANDHANBNK', 'BANKBARODA', 'BATAINDIA', 'BEL',
-#                      'BHARATFORG', 'BIOCON', 'BRITANNIA', 'BSOFT', 'CANBK', 'CANFINHOME', 'CHAMBLFERT', 'CHOLAFIN',
-#                      'CIPLA', 'COFORGE', 'CONCOR', 'COROMANDEL', 'CROMPTON', 'CUMMINSIND', 'DABUR', 'DALBHARAT',
-#                      'DEEPAKFERT', 'DEEPAKNTR', 'DELTACORP', 'DIVISLAB', 'DIXON', 'DLF', 'DRREDDY', 'ESCORTS',
-#                      'EXIDEIND', 'GLENMARK', 'GLS', 'GNFC', 'GODREJCP', 'GODREJPROP', 'GRANULES', 'GRASIM', 'GUJGASLTD',
-#                      'HAL', 'HAVELLS', 'HCLTECH', 'HDFCAMC', 'HDFCLIFE', 'HINDALCO', 'HINDCOPPER', 'ICICIGI',
-#                      'ICICIPRULI', 'IEX', 'IGL', 'INDHOTEL', 'INDIACEM', 'INDIAMART', 'INDIGO', 'INDUSINDBK',
-#                      'INDUSTOWER', 'INTELLECT', 'IPCALAB', 'JINDALSTEL', 'JKCEMENT', 'JSWSTEEL', 'JUBLFOOD',
-#                      'KOTAKBANK', 'LALPATHLAB', 'LAURUSLABS', 'LICHSGFIN', 'LTIM', 'LTTS', 'LUPIN', 'M%26MFIN',
-#                      'MANAPPURAM', 'MARICO', 'MCDOWELL-N', 'MCX', 'METROPOLIS', 'MFSL', 'MGL', 'MPHASIS', 'MUTHOOTFIN',
-#                      'NAM-INDIA', 'NAUKRI', 'NAVINFLUOR', 'NMDC', 'NTPC', 'OBEROIRLTY', 'PEL', 'PERSISTENT', 'PETRONET',
-#                      'PIDILITIND', 'POLYCAB', 'POWERGRID', 'RAIN', 'RAMCOCEM', 'RBLBANK', 'RECLTD', 'SBICARD',
-#                      'SBILIFE', 'SIEMENS', 'SRF', 'STAR', 'SUNPHARMA', 'SYNGENE', 'TATACOMM', 'TATAMOTORS', 'TECHM',
-#                      'TORNTPHARM', 'TORNTPOWER', 'TRENT', 'TVSMOTOR', 'UBL', 'ULTRACEMCO', 'UPL', 'VEDL', 'VOLTAS',
-#                      'ZEEL', 'ZYDUSLIFE']
-#
-# # cash_close_list1 = ["M%26M"]
-#
-# manual = []         # list to keep track of the shares whose values selenium couldn't get
-# close = []
-# # close = ['2446.95', '398.5', '1478.0', '7005.0', '227.65', '188.4', '234.15', '470.1', '3337.8', '132.8', '1170.0',
-# # '1608.5', '448.85', '959.0', '1387.8', '1392.95', '662.9', '421.45', '1544.95', '1544.95', '2573.2', '561.0', '548.9',
-# # '1000.05', '606.8', '230.95', '117.85', '8024.95']
-#
-# for share in cash_close_list:
-#     driver = webdriver.Chrome(options=options)
-#
-#     driver.get(f"https://www.nseindia.com/get-quotes/equity?symbol={share}")
-#
-#     try:
-#         sleep(2)
-#         myElem = WebDriverWait(driver, 10).until(ec.presence_of_element_located((By.ID, 'quoteLtp')))
-#         # sleep(5)
-#         close_val = driver.find_element(By.ID, "quoteLtp").text
-#         close_val = close_val.replace(",", "")
-#
-#         # truncating last 0
-#         if close_val[len(close_val)-1:len(close_val)] == '0':
-#             close_val = close_val[:len(close_val)-1]
-#
-#         close.append(close_val)
-#
-#         print(f'{share}: {close_val}')
-#         if close_val == '':
-#             manual.append(share)
-#
-#     except TimeoutException:
-#         print("Loading took too much time!")
-#
-#     driver.close()
-#
-# print(close)
-# print(manual)
-#
-# i = 0
-#
-# while i < len(cash_close_list):
-#     close_cell = cashHL_sheet.cell(i+2, 4)
-#
-#     if close[i] == '':
-#         close_cell.value = 0
-#
-#     else:
-#         close_cell.value = float(close[i])
-#         close_cell.number_format = "0.00"
-#
-#     i += 1
-#
-# cashHL_wb.save(r'C:\Users\admin\PycharmProjects\daily data\algo high low.xlsx')
+options = Options()
+# options.add_argument('--headless=new')
+options.add_argument("--disable-blink-features=AutomationControlled")
+
+# Exclude the collection of enable-automation switches
+options.add_experimental_option("excludeSwitches", ["enable-automation"])
+
+# Turn-off userAutomationExtension
+options.add_experimental_option("useAutomationExtension", False)
+
+cash_close_list = ['AARTIIND', 'ABB', 'ABCAPITAL', 'ABFRL', 'ADANIENT', 'ADANIPORTS', 'ALKEM', 'AMBUJACEM',
+                     'APOLLOHOSP', 'APOLLOTYRE', 'ASHOKLEY', 'ASTRAL', 'ATUL', 'AUBANK', 'AUROPHARMA', 'BAJAJFINSV',
+                     'BAJFINANCE', 'BALKRISIND', 'BALRAMCHIN', 'BANDHANBNK', 'BANKBARODA', 'BATAINDIA', 'BEL',
+                     'BHARATFORG', 'BIOCON', 'BRITANNIA', 'BSOFT', 'CANBK', 'CANFINHOME', 'CHAMBLFERT', 'CHOLAFIN',
+                     'CIPLA', 'COFORGE', 'CONCOR', 'COROMANDEL', 'CROMPTON', 'CUMMINSIND', 'DABUR', 'DALBHARAT',
+                     'DEEPAKFERT', 'DEEPAKNTR', 'DELTACORP', 'DIVISLAB', 'DIXON', 'DLF', 'DRREDDY', 'ESCORTS',
+                     'EXIDEIND', 'GLENMARK', 'GLS', 'GNFC', 'GODREJCP', 'GODREJPROP', 'GRANULES', 'GRASIM', 'GUJGASLTD',
+                     'HAL', 'HAVELLS', 'HCLTECH', 'HDFCAMC', 'HDFCLIFE', 'HINDALCO', 'HINDCOPPER', 'ICICIGI',
+                     'ICICIPRULI', 'IEX', 'IGL', 'INDHOTEL', 'INDIACEM', 'INDIAMART', 'INDIGO', 'INDUSINDBK',
+                     'INDUSTOWER', 'INTELLECT', 'IPCALAB', 'JINDALSTEL', 'JKCEMENT', 'JSWSTEEL', 'JUBLFOOD',
+                     'KOTAKBANK', 'LALPATHLAB', 'LAURUSLABS', 'LICHSGFIN', 'LTIM', 'LTTS', 'LUPIN', 'M%26MFIN',
+                     'MANAPPURAM', 'MARICO', 'MCDOWELL-N', 'MCX', 'METROPOLIS', 'MFSL', 'MGL', 'MPHASIS', 'MUTHOOTFIN',
+                     'NAM-INDIA', 'NAUKRI', 'NAVINFLUOR', 'NMDC', 'NTPC', 'OBEROIRLTY', 'PEL', 'PERSISTENT', 'PETRONET',
+                     'PIDILITIND', 'POLYCAB', 'POWERGRID', 'RAIN', 'RAMCOCEM', 'RBLBANK', 'RECLTD', 'SBICARD',
+                     'SBILIFE', 'SIEMENS', 'SRF', 'STAR', 'SUNPHARMA', 'SYNGENE', 'TATACOMM', 'TATAMOTORS', 'TECHM',
+                     'TORNTPHARM', 'TORNTPOWER', 'TRENT', 'TVSMOTOR', 'UBL', 'ULTRACEMCO', 'UPL', 'VEDL', 'VOLTAS',
+                     'ZEEL', 'ZYDUSLIFE']
+
+# cash_close_list1 = ["M%26M"]
+
+manual = []         # list to keep track of the shares whose values selenium couldn't get
+close = []
+# close = ['2446.95', '398.5', '1478.0', '7005.0', '227.65', '188.4', '234.15', '470.1', '3337.8', '132.8', '1170.0',
+# '1608.5', '448.85', '959.0', '1387.8', '1392.95', '662.9', '421.45', '1544.95', '1544.95', '2573.2', '561.0', '548.9',
+# '1000.05', '606.8', '230.95', '117.85', '8024.95']
+
+for share in cash_close_list:
+    driver = webdriver.Chrome(options=options)
+
+    driver.get(f"https://www.nseindia.com/get-quotes/equity?symbol={share}")
+
+    try:
+        sleep(2)
+        myElem = WebDriverWait(driver, 10).until(ec.presence_of_element_located((By.ID, 'quoteLtp')))
+        # sleep(5)
+        close_val = driver.find_element(By.ID, "quoteLtp").text
+        close_val = close_val.replace(",", "")
+
+        # truncating last 0
+        if close_val[len(close_val)-1:len(close_val)] == '0':
+            close_val = close_val[:len(close_val)-1]
+
+        close.append(close_val)
+
+        print(f'{share}: {close_val}')
+        if close_val == '':
+            manual.append(share)
+
+    except TimeoutException:
+        print("Loading took too much time!")
+
+    driver.close()
+
+print(close)
+print(manual)
+
+i = 0
+
+while i < len(cash_close_list):
+    close_cell = cashHL_sheet.cell(i+2, 4)
+
+    if close[i] == '':
+        close_cell.value = 0
+
+    else:
+        close_cell.value = float(close[i])
+        close_cell.number_format = "0.00"
+
+    i += 1
+
+cashHL_wb.save(r'C:\Users\admin\PycharmProjects\daily data\algo high low.xlsx')

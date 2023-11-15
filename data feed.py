@@ -3,7 +3,7 @@ import openpyxl as xl
 import send2trash
 from openpyxl.styles import Font, Alignment
 
-append = 67  # increment this daily. 67 is for 15-NOV-2023
+append = 68  # increment this daily. 68 is for 16-NOV-2023
 
 # styles
 red = Font("Arial", 11, color='ff0000', bold=True)
@@ -191,7 +191,7 @@ def algo():
     algoHL_row = 2
 
     for share in algo_share_list:
-        path = rf'E:\Daily Data work\ALGO\{share}.xlsx'
+        path = rf'E:\Daily Data work\ALGORITHM\{share}.xlsx'
 
         wb = xl.load_workbook(path)
         sheet = wb['D']

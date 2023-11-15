@@ -204,6 +204,8 @@ for share in fo_share_list:
     sheet.cell(start_row-1, 15).value = LOW
     sheet.cell(start_row-1, 16).value = sheet.cell(start_row-1, 3).value  # close
 
+    sheet.freeze_panes = sheet["A2"]
+
     wb.save(path)
     os.remove(xls_path)
     # wb.save(rf'E:\Daily Data work\hourlys 1 minute FO\{yr}\{mnth}\{date}\{share}1.xlsx')

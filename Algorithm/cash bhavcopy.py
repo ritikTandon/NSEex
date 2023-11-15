@@ -7,6 +7,7 @@ from date_variables import date, mnth, yr
 from zipfile import ZipFile
 from decimal import Decimal, ROUND_UP
 
+
 # up and down rounding functions (to nearest 0.05)
 def round_up(var):
     x = Decimal(str(var))
@@ -145,8 +146,8 @@ for i in range(len(df)):
 # formatting file
 for i in range(200):
     for j in range(20):
-        all_tr_sheet.cell(i + 1, j + 1).font = Font('Arial', 14, bold=True)
-        actual_tr_sheet.cell(i + 1, j + 1).font = Font('Arial', 14, bold=True)
+        all_tr_sheet.cell(i + 1, j + 1).font = Font('Arial', 12, bold=True)
+        actual_tr_sheet.cell(i + 1, j + 1).font = Font('Arial', 12, bold=True)
 
 # fixing top heading row to be always visible
 all_tr_sheet.freeze_panes = all_tr_sheet['A2']

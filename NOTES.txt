@@ -73,7 +73,8 @@ Note: dynamic rows( change 135 to a dynamic var)
 
 ADDING FREE PANES TO ALL ! MIN SHEETS
 
-not enter trades after 2:55
+not enter trades after 2:55 (done)
+todo !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! make sure all 1 min sheets are fully forming
 
 DAILY DATA WORK OVERHAUL AND 150 SHARE DAILY DATA + ACTUAL ALGO TRADE REPORT SHEET
 

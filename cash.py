@@ -214,6 +214,8 @@ for share in cash_share_list:
     sheet.cell(start_row-1, 15).value = LOW
     sheet.cell(start_row-1, 16).value = sheet.cell(start_row-1, 3).value  # close
 
+    sheet.freeze_panes = sheet["A2"]
+
     wb.save(path)
     os.remove(xls_path)
 
