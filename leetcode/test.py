@@ -3166,5 +3166,27 @@ r = """01-01-2020
 # print(t < datetime.time(15, 25, 00))
 # print(type(t))
 
-if(10 >= 5 >= 5):
-    print("yes")
+# if(10 >= 5 >= 5):
+#     print("yes")
+
+# i = 2000
+# while (i <2024):
+#     print(f'"{i}", ', end="")
+#     i += 1
+from zipfile import ZipFile
+import pandas as pd
+from date_variables import date, mnth, yr
+
+# MD file
+md_path_zipped = rf"E:\chrome downloads\fo{date[:2]}{mnth}20{date[6:]}bhav.csv.zip"     # .zip file path of downloaded cash bhavcpoy
+md_path = rf"E:\chrome downloads"
+
+# extracting .zip file
+with ZipFile(md_path_zipped, 'r') as zObject:
+    zObject.extractall(path=md_path)
+
+md_file_path = rf"E:\Daily Data work\MD files\{yr}\{mnth}\fo{date[:2]}{mnth}20{date[6:]}bhav.xlsx"
+
+df = pd.read_csv(md_path_zipped[:-4])
+# df = df.iloc[:600]
+df.to_excel(md_file_path, index=False)

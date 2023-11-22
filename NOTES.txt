@@ -79,8 +79,8 @@ todo !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! make sure all
 DAILY DATA WORK OVERHAUL AND 150 SHARE DAILY DATA + ACTUAL ALGO TRADE REPORT SHEET
 
 DAILY DATA:
-    !!!!!!!!!!!!! @todo maybe csh30.xlsx is not being used anywhere!!!!!!!!!!!!!
-    todo add NTPC and HINDALCO in 30 min
+    !!!!!!!!!!!!! add a input() current date and prev date read so I know all is good !!!!!!!!!!!!!
+    add NTPC and HINDALCO in 30 min
     @-adding and removing shares papa asked for
     -Improving daily data code
     @-automatically saving csh, csh30 and fo1 and converting them

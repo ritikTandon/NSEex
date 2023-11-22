@@ -223,7 +223,7 @@ with ZipFile(md_path_zipped, 'r') as zObject:
 md_file_path = rf"E:\Daily Data work\MD files\{yr}\{mnth}\fo{date[:2]}{mnth}20{date[6:]}bhav.xlsx"
 
 df = pd.read_csv(md_path_zipped[:-4])
-df = df.iloc[:600]
+# df = df.iloc[:600]
 df.to_excel(md_file_path, index=False)
 
 md_wb = xl.load_workbook(md_file_path)

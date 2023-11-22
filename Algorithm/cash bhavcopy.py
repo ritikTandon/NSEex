@@ -84,21 +84,21 @@ all_tr_sheet.cell(1, 15).value = "Sell Amount"
 all_tr_sheet.cell(1, 17).value = "3:30 Price"
 
 
-# Fixed headings to be put in actual_tr_sheet sheet
-actual_tr_sheet.cell(1, 1).value = "Share Name"
-actual_tr_sheet.cell(1, 2).value = "New High Value"
-actual_tr_sheet.cell(1, 3).value = "New Low Value"
-
-actual_tr_sheet.cell(1, 5).value = "Entry Price"
-actual_tr_sheet.cell(1, 6).value = "Trade Type"
-actual_tr_sheet.cell(1, 7).value = "Target Price"
-actual_tr_sheet.cell(1, 8).value = "Stoploss Price"
-actual_tr_sheet.cell(1, 9).value = "3:30 Price"
-actual_tr_sheet.cell(1, 10).value = "Exit P&L"
-
-actual_tr_sheet.cell(1, 12).value = "Peak Exit P&L"
-
-actual_tr_sheet.cell(1, 14).value = "3:30 Exit P&L"
+# # Fixed headings to be put in actual_tr_sheet sheet
+# actual_tr_sheet.cell(1, 1).value = "Share Name"
+# actual_tr_sheet.cell(1, 2).value = "New High Value"
+# actual_tr_sheet.cell(1, 3).value = "New Low Value"
+#
+# actual_tr_sheet.cell(1, 5).value = "Entry Price"
+# actual_tr_sheet.cell(1, 6).value = "Trade Type"
+# actual_tr_sheet.cell(1, 7).value = "Target Price"
+# actual_tr_sheet.cell(1, 8).value = "Stoploss Price"
+# actual_tr_sheet.cell(1, 9).value = "3:30 Price"
+# actual_tr_sheet.cell(1, 10).value = "Exit P&L"
+#
+# actual_tr_sheet.cell(1, 12).value = "Peak Exit P&L"
+#
+# actual_tr_sheet.cell(1, 14).value = "3:30 Exit P&L"
 
 for i in range(len(df)):
     share = str(df.iloc[i, 0])          # share name
