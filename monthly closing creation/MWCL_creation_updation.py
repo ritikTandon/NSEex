@@ -25,11 +25,14 @@ algo_share_list = ['AARTIIND', 'ABB', 'ABCAPITAL', 'ABFRL', 'ADANIENT', 'ADANIPO
                      'TORNTPHARM', 'TORNTPOWER', 'TRENT', 'TVSMOTOR', 'UBL', 'ULTRACEMCO', 'UPL', 'VEDL', 'VOLTAS',
                      'ZEEL', 'ZYDUSLIFE']
 
+cash_share_list = ['ADANIENT', 'APOLLOTYRE', 'BAJAJFINSERV', 'BAJAJFINANCE', 'BANDHANBANK', 'BANKBARODA', 'COAL INDIA',
+                   'DLF CHL', 'EICHERMOTOR', 'FEDRAL BANK', 'HCLTECH', 'HDFC', 'HINDALCO', 'ICICIBANK', 'INDUSINDBANK',
+                   'INFY', 'JINDALS chl', 'LICHSGFIN', 'M&M', 'M&MFINANCE', 'NTPC', '03 RELIANCE CHL', '04 SBIN CHL',
+                   'SUNTV', 'TATACHEM', '07 TATAMOTOR CHL', 'TATAPOWER', '05 TATASTEEL chl', 'ULTRACHEM']
+
 add_share_list = []
 
-cash_share_list = []
-
-algo_share_list = ['ADANIENT']
+# algo_share_list = ['ADANIENT']
 
 red = Font("Arial", 11, color='ff0000', bold=True)
 blue = Font("Arial", 11, color="0000ff", bold=True)
@@ -480,6 +483,7 @@ def weekly_update(typ):  # todo closing sheetnames different for cash and algo
 
         w_row = get_last_row(w_sheet)
         d_row = get_last_row(d_sheet, empty=False)
+        print(w_row)
 
         high = 0
         low = 999999
@@ -506,8 +510,16 @@ def weekly_update(typ):  # todo closing sheetnames different for cash and algo
             d_row -= 1
 
         w_sheet.cell(w_row, 2).value = high
+        w_sheet.cell(w_row, 2).font = blue
+        w_sheet.cell(w_row, 2).alignment = alignment
+
         w_sheet.cell(w_row, 3).value = low
+        w_sheet.cell(w_row, 3).font = red
+        w_sheet.cell(w_row, 3).alignment = alignment
+
         w_sheet.cell(w_row, 4).value = close
+        w_sheet.cell(w_row, 4).font = bold
+        w_sheet.cell(w_row, 4).alignment = alignment
 
         wb.save(path)
         # wb.save('m_test.xlsx')
@@ -562,13 +574,95 @@ def monthly_update(typ):  # todo closing sheetnames different for cash and algo
 
             d_row -= 1
 
-        m_sheet.cell(m_row, 2).value = high
-        m_sheet.cell(m_row, 3).value = low
-        m_sheet.cell(m_row, 4).value = close
+        m_sheet.cell(m_row, 3).value = high
+        m_sheet.cell(m_row, 3).font = blue
+        m_sheet.cell(m_row, 3).alignment = alignment
+
+        m_sheet.cell(m_row, 4).value = low
+        m_sheet.cell(m_row, 4).font = red
+        m_sheet.cell(m_row, 4).alignment = alignment
+
+        m_sheet.cell(m_row, 5).value = close
+        m_sheet.cell(m_row, 5).font = bold
+        m_sheet.cell(m_row, 5).alignment = alignment
+
+        wb.save(path)
+        # wb.save('m_test.xlsx')
+        print(f'{share} done')
+
+
+def closing_update(typ):  # todo closing sheetnames different for cash and algo
+    if typ == 'C':
+        share_list = cash_share_list
+    else:
+        share_list = algo_share_list
+
+    for share in share_list:
+        if typ == 'C':
+            path = rf'E:\Daily Data work\CASH\{share}.xlsx'
+        else:
+            path = rf'E:\Daily Data work\ALGORITHM\{share}.xlsx'
+
+        wb = xl.load_workbook(path)
+
+        d_sheet = wb['D']
+        cl_sheet = wb['Cl']
+
+        cl_row = get_last_row(cl_sheet)
+        d_row = get_last_row(d_sheet, empty=False)
+
+        high = 0
+        low = 999999
+        close = 0
+        cl_found = False
+        date_format = "%d-%m-%y"
+
+        # Extract start and end dates
+        date_range = str(cl_sheet.cell(cl_row, 1).value)
+        start_date_str, end_date_str = date_range.split(" TO ")
+
+        # Convert strings to datetime objects
+        start_date = datetime.datetime.strptime(start_date_str, date_format)
+        end_date = datetime.datetime.strptime(end_date_str, date_format)
+
+        while start_date <= end_date:
+            try:
+                h = float(d_sheet.cell(d_row, 2).value)
+                l = float(d_sheet.cell(d_row, 3).value)
+
+                if not cl_found:
+                    close = float(d_sheet.cell(d_row, 4).value)
+                    cl_found = True
+            except TypeError:
+                d_row -= 1
+                end_date = datetime.datetime.strptime(d_sheet.cell(d_row, 1).value, "%d-%b-%y")
+                continue
+
+            if h > high:
+                high = h
+
+            if l < low and l != 0:
+                low = l
+
+            d_row -= 1
+            end_date = datetime.datetime.strptime(d_sheet.cell(d_row, 1).value, "%d-%b-%y")
+
+        cl_sheet.cell(cl_row, 3).value = high
+        cl_sheet.cell(cl_row, 3).font = blue
+        cl_sheet.cell(cl_row, 3).alignment = alignment
+
+        cl_sheet.cell(cl_row, 4).value = low
+        cl_sheet.cell(cl_row, 4).font = red
+        cl_sheet.cell(cl_row, 4).alignment = alignment
+
+        cl_sheet.cell(cl_row, 5).value = close
+        cl_sheet.cell(cl_row, 5).font = bold
+        cl_sheet.cell(cl_row, 5).alignment = alignment
 
         # wb.save(path)
         wb.save('m_test.xlsx')
         print(f'{share} done')
+
 
 # weekly_create()
 # monthly_create()
@@ -576,6 +670,10 @@ def monthly_update(typ):  # todo closing sheetnames different for cash and algo
 
 # weekly_update("A")
 # weekly_update("C")
-monthly_update("A")
 
+# monthly_update("A")
+# monthly_update("C")
+
+# closing_update("A")
+# closing_update("C")
 
