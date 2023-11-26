@@ -3177,16 +3177,49 @@ from zipfile import ZipFile
 import pandas as pd
 from date_variables import date, mnth, yr
 
-# MD file
-md_path_zipped = rf"E:\chrome downloads\fo{date[:2]}{mnth}20{date[6:]}bhav.csv.zip"     # .zip file path of downloaded cash bhavcpoy
-md_path = rf"E:\chrome downloads"
+# # MD file
+# md_path_zipped = rf"E:\chrome downloads\fo{date[:2]}{mnth}20{date[6:]}bhav.csv.zip"     # .zip file path of downloaded cash bhavcpoy
+# md_path = rf"E:\chrome downloads"
+#
+# # extracting .zip file
+# with ZipFile(md_path_zipped, 'r') as zObject:
+#     zObject.extractall(path=md_path)
+#
+# md_file_path = rf"E:\Daily Data work\MD files\{yr}\{mnth}\fo{date[:2]}{mnth}20{date[6:]}bhav.xlsx"
+#
+# df = pd.read_csv(md_path_zipped[:-4])
+# # df = df.iloc[:600]
+# df.to_excel(md_file_path, index=False)
 
-# extracting .zip file
-with ZipFile(md_path_zipped, 'r') as zObject:
-    zObject.extractall(path=md_path)
+import openpyxl as xl
 
-md_file_path = rf"E:\Daily Data work\MD files\{yr}\{mnth}\fo{date[:2]}{mnth}20{date[6:]}bhav.xlsx"
+ALGO_1_min_shares = ['AARTIIND', 'ABB', 'ABCAPITAL', 'ABFRL', 'ADANIENT', 'ADANIPORTS', 'ALKEM', 'AMBUJACEM',
+                     'APOLLOHOSP', 'APOLLOTYRE', 'ASHOKLEY', 'ASTRAL', 'ATUL', 'AUBANK', 'AUROPHARMA', 'BAJAJFINSV',
+                     'BAJFINANCE', 'BALKRISIND', 'BALRAMCHIN', 'BANDHANBNK', 'BANKBARODA', 'BATAINDIA', 'BEL',
+                     'BHARATFORG', 'BIOCON', 'BRITANNIA', 'BSOFT', 'CANBK', 'CANFINHOME', 'CHAMBLFERT', 'CHOLAFIN',
+                     'CIPLA', 'COFORGE', 'CONCOR', 'COROMANDEL', 'CROMPTON', 'CUMMINSIND', 'DABUR', 'DALBHARAT',
+                     'DEEPAKFERT', 'DEEPAKNTR', 'DELTACORP', 'DIVISLAB', 'DIXON', 'DLF', 'DRREDDY', 'ESCORTS',
+                     'EXIDEIND', 'GLENMARK', 'GLS', 'GNFC', 'GODREJCP', 'GODREJPROP', 'GRANULES', 'GRASIM', 'GUJGASLTD',
+                     'HAL', 'HAVELLS', 'HCLTECH', 'HDFCAMC', 'HDFCLIFE', 'HINDALCO', 'HINDCOPPER', 'ICICIGI',
+                     'ICICIPRULI', 'IEX', 'IGL', 'INDHOTEL', 'INDIACEM', 'INDIAMART', 'INDIGO', 'INDUSINDBK',
+                     'INDUSTOWER', 'INTELLECT', 'IPCALAB', 'JINDALSTEL', 'JKCEMENT', 'JSWSTEEL', 'JUBLFOOD',
+                     'KOTAKBANK', 'LALPATHLAB', 'LAURUSLABS', 'LICHSGFIN', 'LTIM', 'LTTS', 'LUPIN', 'M&MFIN',
+                     'MANAPPURAM', 'MARICO', 'MCDOWELL-N', 'MCX', 'METROPOLIS', 'MFSL', 'MGL', 'MPHASIS', 'MUTHOOTFIN',
+                     'NAM-INDIA', 'NAUKRI', 'NAVINFLUOR', 'NMDC', 'NTPC', 'OBEROIRLTY', 'PEL', 'PERSISTENT', 'PETRONET',
+                     'PIDILITIND', 'POLYCAB', 'POWERGRID', 'RAIN', 'RAMCOCEM', 'RBLBANK', 'RECLTD', 'SBICARD',
+                     'SBILIFE', 'SIEMENS', 'SRF', 'STAR', 'SUNPHARMA', 'SYNGENE', 'TATACOMM', 'TATAMOTORS', 'TECHM',
+                     'TORNTPHARM', 'TORNTPOWER', 'TRENT', 'TVSMOTOR', 'UBL', 'ULTRACEMCO', 'UPL', 'VEDL', 'VOLTAS',
+                     'ZEEL', 'ZYDUSLIFE', 'zzzzzzzzzzzzzzzzzz']
 
-df = pd.read_csv(md_path_zipped[:-4])
-# df = df.iloc[:600]
-df.to_excel(md_file_path, index=False)
+
+path = r'E:\Daily Data work\hourlys 1 minute ALGO\2023\NOV\22.11.23'
+names = os.listdir(path)
+
+s = 0
+for s in range(len(ALGO_1_min_shares)-1):
+    wb = xl.load_workbook(path + rf'\{ALGO_1_min_shares[s]}.xlsx')
+
+    sheet = wb[f'{ALGO_1_min_shares[s]}-Sheet1']
+    sheet.title = f'{ALGO_1_min_shares[s+1]}-Sheet1'
+
+    wb.save(rf'E:\Daily Data work\hourlys 1 minute ALGO\2023\NOV\23.11.23\{ALGO_1_min_shares[s+1]}.xlsx')
