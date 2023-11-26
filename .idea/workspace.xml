@@ -4,12 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="308761e4-5648-47f3-bc32-acb2059bab82" name="Changes" comment="final touch ups">
-      <change afterPath="$PROJECT_DIR$/monthly closing creation/formats.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monthly closing creation/monthly and closing.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monthly closing creation/test.xlsx" afterDir="false" />
+    <list default="true" id="308761e4-5648-47f3-bc32-acb2059bab82" name="Changes" comment="ign">
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/ADANI.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/APOLLO.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/BAJFIN.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/BAJFINSV.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/BANBK.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/BARODA.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/BN.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/DLF.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/EICHER.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/FEDBANK.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/HCL.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/HINDALCO.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/INDUSIND.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/JIND.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/LIC.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/M&amp;M.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/M&amp;MFIN.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/NIFTY.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/NTPC.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/SBIN.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/SUNTV.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/TM.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/TP.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/TS.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MWCL_creation_updation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monthly closing creation/m_test.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm/cash bhavcopy.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/cash bhavcopy.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Algorithm/date.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/date.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/AARTIIND.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/AARTIIND.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ABB.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ABB.xls" afterDir="false" />
@@ -153,9 +175,10 @@
       <change beforePath="$PROJECT_DIR$/data feed.py" beforeDir="false" afterPath="$PROJECT_DIR$/data feed.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/date_variables.py" beforeDir="false" afterPath="$PROJECT_DIR$/date_variables.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fo high low.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/fo high low.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fo.py" beforeDir="false" afterPath="$PROJECT_DIR$/fo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/leetcode/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/leetcode/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ltp prev.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/ltp prev.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/monthly closing creation/monthly and closing.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/monthly closing creation/test.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/monthly closing creation/test.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,24 +227,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/admin/PycharmProjects/daily data/monthly closing creation",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/admin/PycharmProjects/daily data/monthly closing creation&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\admin\PycharmProjects\daily data\monthly closing creation" />
       <recent name="C:\Users\admin\PycharmProjects\daily data" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\PycharmProjects\daily data" />
       <recent name="C:\Users\admin\PycharmProjects\daily data\monthly closing creation" />
       <recent name="C:\Users\admin\PycharmProjects\daily data\Algorithm" />
       <recent name="C:\Users\admin\PycharmProjects\daily data\leetcode" />
@@ -548,7 +572,23 @@
       <option name="project" value="LOCAL" />
       <updated>1700079395616</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="added weekly to algo data">
+      <option name="closed" value="true" />
+      <created>1700685516057</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1700685516057</updated>
+    </task>
+    <task id="LOCAL-00041" summary="ign">
+      <option name="closed" value="true" />
+      <created>1700996997673</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1700996997673</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -598,7 +638,9 @@
     <MESSAGE value="completed daily share creation for new shares and saving of 1 min and daily data for algo" />
     <MESSAGE value="finished daily actual trade algo automation and added NTPC and HINDALCO to 30 min as well" />
     <MESSAGE value="final touch ups" />
-    <option name="LAST_COMMIT_MESSAGE" value="final touch ups" />
+    <MESSAGE value="added weekly to algo data" />
+    <MESSAGE value="ign" />
+    <option name="LAST_COMMIT_MESSAGE" value="ign" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -613,13 +655,17 @@
           <line>97</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/MWCL_creation_updation.py</url>
+          <line>542</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/MWCL_creation_updation.py</url>
+          <line>564</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="PythonConfigurationType">
-        <watch expression="old.value" language="Python" />
-        <watch expression="new.value" language="Python" />
-      </configuration>
-    </watches-manager>
   </component>
 </project>

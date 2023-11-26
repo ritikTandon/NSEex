@@ -3212,14 +3212,16 @@ ALGO_1_min_shares = ['AARTIIND', 'ABB', 'ABCAPITAL', 'ABFRL', 'ADANIENT', 'ADANI
                      'ZEEL', 'ZYDUSLIFE', 'zzzzzzzzzzzzzzzzzz']
 
 
-path = r'E:\Daily Data work\hourlys 1 minute ALGO\2023\NOV\22.11.23'
-names = os.listdir(path)
+# path = r'E:\Daily Data work\hourlys 1 minute ALGO\2023\NOV\22.11.23'
+# names = os.listdir(path)
+#
+# s = 0
+# for s in range(len(ALGO_1_min_shares)-1):
+#     wb = xl.load_workbook(path + rf'\{ALGO_1_min_shares[s]}.xlsx')
+#
+#     sheet = wb[f'{ALGO_1_min_shares[s]}-Sheet1']
+#     sheet.title = f'{ALGO_1_min_shares[s+1]}-Sheet1'
+#
+#     wb.save(rf'E:\Daily Data work\hourlys 1 minute ALGO\2023\NOV\23.11.23\{ALGO_1_min_shares[s+1]}.xlsx')
 
-s = 0
-for s in range(len(ALGO_1_min_shares)-1):
-    wb = xl.load_workbook(path + rf'\{ALGO_1_min_shares[s]}.xlsx')
 
-    sheet = wb[f'{ALGO_1_min_shares[s]}-Sheet1']
-    sheet.title = f'{ALGO_1_min_shares[s+1]}-Sheet1'
-
-    wb.save(rf'E:\Daily Data work\hourlys 1 minute ALGO\2023\NOV\23.11.23\{ALGO_1_min_shares[s+1]}.xlsx')

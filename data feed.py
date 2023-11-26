@@ -19,7 +19,6 @@ def delete_file(path):
     except FileNotFoundError:
         print(f"No file in {path}")
 
-
 # CASH
 def cash():
     i = 0  # main iterator variable
@@ -44,6 +43,9 @@ def cash():
 
         wb = xl.load_workbook(path)
         sheet = wb['D']
+        w_sheet = wb['W']
+        m_sheet = wb['M']
+        cl_sheet = wb['CL']
 
         input_row = cash_shares[share] + append  # incrementing row values from base row(start row)
 

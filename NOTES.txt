@@ -79,6 +79,7 @@ todo !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! make sure all
 DAILY DATA WORK OVERHAUL AND 150 SHARE DAILY DATA + ACTUAL ALGO TRADE REPORT SHEET
 
 DAILY DATA:
+    todo seperate the 1 min sheet generation and the close generation as I have to regenerate 1 min whenever there's error in close value taking from NSE
     !!!!!!!!!!!!! add a input() current date and prev date read so I know all is good !!!!!!!!!!!!!
     add NTPC and HINDALCO in 30 min
     @-adding and removing shares papa asked for
