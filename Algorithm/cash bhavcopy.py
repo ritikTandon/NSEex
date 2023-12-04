@@ -199,6 +199,8 @@ old_actual_tr_sheet.cell(1, 11).value = "Trade Count"
 
 old_actual_tr_sheet.cell(1, 14).value = "BUY"
 old_actual_tr_sheet.cell(1, 15).value = "SELL"
+old_actual_tr_sheet.cell(1, 17).value = "Trade Period"
+old_actual_tr_sheet.cell(1, 18).value = "Holding Time"
 old_actual_tr_sheet.cell(2, 13).value = "Target"
 old_actual_tr_sheet.cell(3, 13).value = "Stoploss"
 old_actual_tr_sheet.cell(4, 13).value = "3:15 exit"
@@ -220,6 +222,8 @@ while old_all_row < 135:       # todo WILL NEED TO MAKE IT DYNAMIC OR CHANGE WHE
     trade_type = ''
     exit_type = ''  # exit on target, stoploss or 3:15 pm
     profit_pts = 0
+    entry_time = None
+    exit_time = None
 
     # fetching data
     share_name = old_all_tr_sheet.cell(old_all_row, 1).value
@@ -259,11 +263,13 @@ while old_all_row < 135:       # todo WILL NEED TO MAKE IT DYNAMIC OR CHANGE WHE
             if high >= old_buy_entry >= low != 0:
                 trade_type = 'B'
                 inTrade = True
+                entry_time = time
                 min_1_start_row += 1
                 continue
             elif high >= old_sell_entry >= low != 0:
                 trade_type = 'S'
                 inTrade = True
+                entry_time = time
                 min_1_start_row += 1
                 continue
 
@@ -272,20 +278,24 @@ while old_all_row < 135:       # todo WILL NEED TO MAKE IT DYNAMIC OR CHANGE WHE
                 if high >= buy_tgt >= low != 0:
                     exit_type = 'tgt'
                     inTrade = False
+                    exit_time = time
                     completed = True
                 elif high >= buy_sl >= low != 0:
                     exit_type = 'sl'
-                    completed = True
                     inTrade = False
+                    exit_time = time
+                    completed = True
 
             if trade_type == 'S':
                 if high >= sell_tgt >= low != 0:
                     exit_type = 'tgt'
                     inTrade = False
+                    exit_time = time
                     completed = True
                 elif high >= sell_sl >= low != 0:
                     exit_type = 'sl'
                     completed = True
+                    exit_time = time
                     inTrade = False
 
         min_1_start_row += 1
@@ -361,6 +371,27 @@ while old_all_row < 135:       # todo WILL NEED TO MAKE IT DYNAMIC OR CHANGE WHE
         old_actual_tr_sheet.cell(9, 15).number_format = '0'
         old_actual_tr_sheet.cell(10, 15).value = "=sum(I2:I200)"
         old_actual_tr_sheet.cell(10, 15).number_format = '0'
+
+        # entry, exit times and holding time
+        if exit_time is None:
+            exit_time = datetime.time(15, 15)
+
+        # if share_name == "APOLLOHOSP":
+        #     print("er")
+
+        # converting to datetime.datetime for easier subtraction
+        entry_time = datetime.datetime.combine(datetime.datetime.today(), entry_time)
+        exit_time = datetime.datetime.combine(datetime.datetime.today(), exit_time)
+
+        old_actual_tr_sheet.cell(old_all_row, 17).value = f"{entry_time.time().strftime('%I:%M %p')}-{exit_time.time().strftime('%I:%M %p')}"
+
+        time_difference = exit_time - entry_time
+
+        # Get hours and minutes from the time difference
+        hours = time_difference.seconds // 3600
+        minutes = (time_difference.seconds % 3600) // 60
+
+        old_actual_tr_sheet.cell(old_all_row, 18).value = f"{hours}h-{minutes}m"
 
     old_all_row += 1
 

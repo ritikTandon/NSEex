@@ -34,9 +34,9 @@ add_share_list = []
 
 # algo_share_list = ['ADANIENT']
 
-red = Font("Arial", 11, color='ff0000', bold=True)
-blue = Font("Arial", 11, color="0000ff", bold=True)
-bold = Font("Arial", 11, bold=True)
+red = Font("Arial", 12, color='ff0000', bold=True)
+blue = Font("Arial", 12, color="0000ff", bold=True)
+bold = Font("Arial", 12, bold=True)
 alignment = Alignment(horizontal='center')
 
 
@@ -464,7 +464,7 @@ def get_last_row(sheet, empty=True):
         row -= 1
 
 
-def weekly_update(typ):  # todo closing sheetnames different for cash and algo
+def weekly_update(typ):
     if typ == 'C':
         share_list = cash_share_list
     else:
@@ -526,7 +526,7 @@ def weekly_update(typ):  # todo closing sheetnames different for cash and algo
         print(f'{share} done')
 
 
-def monthly_update(typ):  # todo closing sheetnames different for cash and algo
+def monthly_update(typ):
     if typ == 'C':
         share_list = cash_share_list
     else:
@@ -591,7 +591,7 @@ def monthly_update(typ):  # todo closing sheetnames different for cash and algo
         print(f'{share} done')
 
 
-def closing_update(typ):  # todo closing sheetnames different for cash and algo
+def closing_update(typ):
     if typ == 'C':
         share_list = cash_share_list
     else:
@@ -635,7 +635,10 @@ def closing_update(typ):  # todo closing sheetnames different for cash and algo
                     cl_found = True
             except TypeError:
                 d_row -= 1
-                end_date = datetime.datetime.strptime(d_sheet.cell(d_row, 1).value, "%d-%b-%y")
+                if type(d_sheet.cell(d_row, 1).value) == str:
+                    end_date = datetime.datetime.strptime(d_sheet.cell(d_row, 1).value, "%d-%b-%y")
+                else:  # if already in datetime.datetime format
+                    end_date = d_sheet.cell(d_row, 1).value
                 continue
 
             if h > high:
@@ -645,7 +648,10 @@ def closing_update(typ):  # todo closing sheetnames different for cash and algo
                 low = l
 
             d_row -= 1
-            end_date = datetime.datetime.strptime(d_sheet.cell(d_row, 1).value, "%d-%b-%y")
+            if type(d_sheet.cell(d_row, 1).value) == str:
+                end_date = datetime.datetime.strptime(d_sheet.cell(d_row, 1).value, "%d-%b-%y")
+            else:       # if already in datetime.datetime format
+                end_date = d_sheet.cell(d_row, 1).value
 
         cl_sheet.cell(cl_row, 3).value = high
         cl_sheet.cell(cl_row, 3).font = blue
@@ -659,8 +665,8 @@ def closing_update(typ):  # todo closing sheetnames different for cash and algo
         cl_sheet.cell(cl_row, 5).font = bold
         cl_sheet.cell(cl_row, 5).alignment = alignment
 
-        # wb.save(path)
-        wb.save('m_test.xlsx')
+        wb.save(path)
+        # wb.save('m_test.xlsx')
         print(f'{share} done')
 
 

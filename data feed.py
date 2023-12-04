@@ -3,7 +3,7 @@ import openpyxl as xl
 import send2trash
 from openpyxl.styles import Font, Alignment
 
-append = 76  # increment this daily. 76 is for 28-NOV-2023
+append = 81  # increment this daily. 81 is for 05-DEC-2023
 
 # styles
 red = Font("Arial", 11, color='ff0000', bold=True)
@@ -18,6 +18,7 @@ def delete_file(path):
         send2trash.send2trash(path)
     except FileNotFoundError:
         print(f"No file in {path}")
+
 
 # CASH
 def cash():
@@ -43,9 +44,6 @@ def cash():
 
         wb = xl.load_workbook(path)
         sheet = wb['D']
-        w_sheet = wb['W']
-        m_sheet = wb['M']
-        cl_sheet = wb['CL']
 
         input_row = cash_shares[share] + append  # incrementing row values from base row(start row)
 
