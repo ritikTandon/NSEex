@@ -499,6 +499,7 @@ def weekly_update(typ):
                     close = float(d_sheet.cell(d_row, 4).value)
                     cl_found = True
             except TypeError:
+                d_row -= 1
                 continue
 
             if h > high:
@@ -512,14 +513,17 @@ def weekly_update(typ):
         w_sheet.cell(w_row, 2).value = high
         w_sheet.cell(w_row, 2).font = blue
         w_sheet.cell(w_row, 2).alignment = alignment
+        w_sheet.cell(w_row, 2).number_format = '0'
 
         w_sheet.cell(w_row, 3).value = low
         w_sheet.cell(w_row, 3).font = red
         w_sheet.cell(w_row, 3).alignment = alignment
+        w_sheet.cell(w_row, 3).number_format = '0'
 
         w_sheet.cell(w_row, 4).value = close
         w_sheet.cell(w_row, 4).font = bold
         w_sheet.cell(w_row, 4).alignment = alignment
+        w_sheet.cell(w_row, 4).number_format = '0'
 
         wb.save(path)
         # wb.save('m_test.xlsx')
@@ -564,6 +568,7 @@ def monthly_update(typ):
                     close = float(d_sheet.cell(d_row, 4).value)
                     cl_found = True
             except TypeError:
+                d_row -= 1
                 continue
 
             if h > high:
@@ -674,7 +679,7 @@ def closing_update(typ):
 # monthly_create()
 # closing_create()
 
-# weekly_update("A")
+weekly_update("A")
 # weekly_update("C")
 
 # monthly_update("A")

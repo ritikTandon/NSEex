@@ -3,7 +3,7 @@ import openpyxl as xl
 import send2trash
 from openpyxl.styles import Font, Alignment
 
-append = 81  # increment this daily. 81 is for 05-DEC-2023
+append = 85  # increment this daily. 85 is for 11-DEC-2023
 
 # styles
 red = Font("Arial", 11, color='ff0000', bold=True)
@@ -26,9 +26,9 @@ def cash():
 
     cash_shares = {'ADANIENT': 1579, 'APOLLOTYRE': 2946, 'BAJAJFINSERV': 1579, 'BAJAJFINANCE': 1579,
                    'BANDHANBANK': 1579, 'BANKBARODA': 1579, 'COAL INDIA': 3232, 'DLF CHL': 4058, 'EICHERMOTOR': 2715,
-                   'FEDRAL BANK': 1579, 'HCLTECH': 1579, 'HDFC': 3936, 'HINDALCO': 946,'ICICIBANK': 1579, 'INDUSINDBANK': 1579,
+                   'FEDRAL BANK': 1579, 'HCLTECH': 1579, 'HDFC': 3936, 'HINDALCO': 947, 'ICICIBANK': 1579, 'INDUSINDBANK': 1579,
                    'INFY': 2765, 'JINDALS chl': 5195, 'LICHSGFIN': 1579, 'M&M': 1579, 'M&MFINANCE': 1579,
-                   'NTPC': 946, '03 RELIANCE CHL': 4793, '04 SBIN CHL': 4860, 'SUNTV': 1579, 'TATACHEM': 1579,
+                   'NTPC': 947, '03 RELIANCE CHL': 4793, '04 SBIN CHL': 4860, 'SUNTV': 1579, 'TATACHEM': 1579,
                    '07 TATAMOTOR CHL': 4434, 'TATAPOWER': 1579, '05 TATASTEEL chl': 4570, 'ULTRACHEM': 2696}
 
     cash_no_format_list = ['APOLLOTYRE', 'BANDHANBANK', 'BANKBARODA', 'COAL INDIA', 'DLF CHL', '07 TATAMOTOR CHL',

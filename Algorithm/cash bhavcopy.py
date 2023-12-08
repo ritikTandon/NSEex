@@ -376,9 +376,6 @@ while old_all_row < 135:       # todo WILL NEED TO MAKE IT DYNAMIC OR CHANGE WHE
         if exit_time is None:
             exit_time = datetime.time(15, 15)
 
-        # if share_name == "APOLLOHOSP":
-        #     print("er")
-
         # converting to datetime.datetime for easier subtraction
         entry_time = datetime.datetime.combine(datetime.datetime.today(), entry_time)
         exit_time = datetime.datetime.combine(datetime.datetime.today(), exit_time)
@@ -394,6 +391,19 @@ while old_all_row < 135:       # todo WILL NEED TO MAKE IT DYNAMIC OR CHANGE WHE
         old_actual_tr_sheet.cell(old_all_row, 18).value = f"{hours}h-{minutes}m"
 
     old_all_row += 1
+
+old_all_row = 2
+sum_str = ""
+
+while old_all_row < 135:       # todo WILL NEED TO MAKE IT DYNAMIC OR CHANGE WHEN ADDING NEW SHARES
+    if old_actual_tr_sheet.cell(old_all_row, 2).value == "B":
+        sum_str += f"F{old_all_row}, "
+
+    old_all_row += 1
+
+# buy profit/loss
+old_actual_tr_sheet.cell(6, 13).value = "Buy Net"
+old_actual_tr_sheet.cell(6, 14).value = f"=SUM({sum_str[:-2]})"
 
 # finally saving the old workbook
 old_wb.save(rf"E:\Daily Data work\Trading Algorithm\{old_yr}\{old_mnth}\{old_date[:2]}{old_mnth}20{old_date[6:]}algo.xlsx")

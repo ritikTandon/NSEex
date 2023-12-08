@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="308761e4-5648-47f3-bc32-acb2059bab82" name="Changes" comment="added facility to update closing, monthly and weekly values in both cash and algo(need to test monthly and closing)">
+    <list default="true" id="308761e4-5648-47f3-bc32-acb2059bab82" name="Changes" comment="added {entry-exit} and holding time to algo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Algorithm/cash bhavcopy.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/cash bhavcopy.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Algorithm/date.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/date.txt" afterDir="false" />
@@ -149,9 +149,9 @@
       <change beforePath="$PROJECT_DIR$/data feed.py" beforeDir="false" afterPath="$PROJECT_DIR$/data feed.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/date_variables.py" beforeDir="false" afterPath="$PROJECT_DIR$/date_variables.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fo high low.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/fo high low.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leetcode/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/leetcode/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ltp prev.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/ltp prev.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/monthly closing creation/MWCL_creation_updation.py" beforeDir="false" afterPath="$PROJECT_DIR$/monthly closing creation/MWCL_creation_updation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/monthly closing creation/m_test.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/monthly closing creation/m_test.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,7 +190,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
   </component>
   <component name="ProjectId" id="2TvtOrELfKxTv9YhlnKSibFCptm" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -577,7 +577,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701026525997</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="added {entry-exit} and holding time to algo">
+      <option name="closed" value="true" />
+      <created>1701712194027</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1701712194027</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -605,7 +613,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="till 30 min done" />
     <MESSAGE value="done finally xD" />
     <MESSAGE value="done till 1 min formatting and high low extraction" />
     <MESSAGE value="final done sonia data" />
@@ -630,7 +637,8 @@
     <MESSAGE value="ign" />
     <MESSAGE value="safety commit" />
     <MESSAGE value="added facility to update closing, monthly and weekly values in both cash and algo(need to test monthly and closing)" />
-    <option name="LAST_COMMIT_MESSAGE" value="added facility to update closing, monthly and weekly values in both cash and algo(need to test monthly and closing)" />
+    <MESSAGE value="added {entry-exit} and holding time to algo" />
+    <option name="LAST_COMMIT_MESSAGE" value="added {entry-exit} and holding time to algo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -647,13 +655,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/monthly closing creation/MWCL_creation_updation.py</url>
-          <line>655</line>
+          <line>658</line>
           <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Algorithm/cash bhavcopy.py</url>
-          <line>379</line>
-          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

@@ -3231,4 +3231,10 @@ cash_share_list = ['ADANIENT', 'APOLLOTYRE', 'BAJAJFINSERV', 'BAJAJFINANCE', 'BA
 #     print(s)
 #     wb.save(path)
 
+rows = [1, 3, 4,7]
+l =""
+for r in rows:
+    l += f"F{r}, "
+
+print(f"=SUM({l[:-2]})")
 
