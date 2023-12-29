@@ -554,12 +554,20 @@ def monthly_update(typ):
         low = 999999
         close = 0
         cl_found = False
+        date_format = "%d-%m-%y"
 
-        # -5 days to ensure its working even if doing 1 or 2 day after when the month has changed
-        date = datetime.datetime.now() - timedelta(days=5)
-        month_length = (calendar.monthrange(date.year, date.month)[1])
+        # Extract start and end dates
+        date_range = str(m_sheet.cell(m_row, 1).value)
+        start_date_str, end_date_str = date_range.split(" TO ")
 
-        for i in range(month_length):
+        # Convert strings to datetime objects
+        start_date = datetime.datetime.strptime(start_date_str, date_format)
+        end_date = datetime.datetime.strptime(end_date_str, date_format)
+
+        # # -5 days to ensure its working even if doing 1 or 2 day after when the month has changed
+        # date = datetime.datetime.now() - timedelta(days=5)
+        # month_length = (calendar.monthrange(date.year, date.month)[1])
+        while start_date <= end_date:
             try:
                 h = float(d_sheet.cell(d_row, 2).value)
                 l = float(d_sheet.cell(d_row, 3).value)
@@ -569,6 +577,10 @@ def monthly_update(typ):
                     cl_found = True
             except TypeError:
                 d_row -= 1
+                if type(d_sheet.cell(d_row, 1).value) == str:
+                    end_date = datetime.datetime.strptime(d_sheet.cell(d_row, 1).value, "%d-%b-%y")
+                else:  # if already in datetime.datetime format
+                    end_date = d_sheet.cell(d_row, 1).value
                 continue
 
             if h > high:
@@ -578,6 +590,29 @@ def monthly_update(typ):
                 low = l
 
             d_row -= 1
+            if type(d_sheet.cell(d_row, 1).value) == str:
+                end_date = datetime.datetime.strptime(d_sheet.cell(d_row, 1).value, "%d-%b-%y")
+            else:       # if already in datetime.datetime format
+                end_date = d_sheet.cell(d_row, 1).value
+        # for i in range(month_length):
+        #     try:
+        #         h = float(d_sheet.cell(d_row, 2).value)
+        #         l = float(d_sheet.cell(d_row, 3).value)
+        #
+        #         if not cl_found:
+        #             close = float(d_sheet.cell(d_row, 4).value)
+        #             cl_found = True
+        #     except TypeError:
+        #         d_row -= 1
+        #         continue
+        #
+        #     if h > high:
+        #         high = h
+        #
+        #     if l < low and l != 0:
+        #         low = l
+        #
+        #     d_row -= 1
 
         m_sheet.cell(m_row, 3).value = high
         m_sheet.cell(m_row, 3).font = blue
@@ -630,6 +665,11 @@ def closing_update(typ):
         start_date = datetime.datetime.strptime(start_date_str, date_format)
         end_date = datetime.datetime.strptime(end_date_str, date_format)
 
+        if typ != 'C':
+            start_date = start_date - timedelta(days=1)     # todo untested hotfix for closing dates being wrong
+            cl_sheet.cell(cl_row, 1).value = f'{start_date.date()} TO {end_date.date()}'
+            print(f'{start_date.date().strftime(date_format)} TO {end_date.date().strftime(date_format)}')
+
         while start_date <= end_date:
             try:
                 h = float(d_sheet.cell(d_row, 2).value)
@@ -679,12 +719,12 @@ def closing_update(typ):
 # monthly_create()
 # closing_create()
 
-weekly_update("A")
+# weekly_update("A")
 # weekly_update("C")
 
 # monthly_update("A")
 # monthly_update("C")
 
-# closing_update("A")
+closing_update("A")
 # closing_update("C")
 
