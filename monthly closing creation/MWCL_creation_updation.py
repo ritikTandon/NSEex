@@ -490,7 +490,7 @@ def weekly_update(typ):
         close = 0
         cl_found = False
 
-        for i in range(5):
+        for i in range(4):  # change this accordingly to adjust for shorter week
             try:
                 h = float(d_sheet.cell(d_row, 2).value)
                 l = float(d_sheet.cell(d_row, 3).value)
@@ -726,5 +726,5 @@ def closing_update(typ):
 # monthly_update("C")
 
 closing_update("A")
-# closing_update("C")
+closing_update("C")
 

@@ -1,3 +1,5 @@
+# todo add multithreading to cash close extraction
+
 challenges:
 doing the 30 min aggregates in 1 min sheets(issues: it's including 1 above row in hl, some values are 0) DONE
 not messing up data filling

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="308761e4-5648-47f3-bc32-acb2059bab82" name="Changes" comment="fixed bug where weekly hcl wouldnt compute if there was a gap in data">
+    <list default="true" id="308761e4-5648-47f3-bc32-acb2059bab82" name="Changes" comment="closing dates were wrong for algo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Algorithm/date.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/date.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/AARTIIND.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/AARTIIND.xls" afterDir="false" />
@@ -141,32 +141,9 @@
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ZEEL.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ZEEL.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ZYDUSLIFE.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ZYDUSLIFE.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/NTPC.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/NTPC.xls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/ADANI.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/ADANI.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/APOLLO.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/APOLLO.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/BAJFIN.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/BAJFIN.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/BAJFINSV.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/BAJFINSV.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/BANBK.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/BANBK.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/BARODA.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/BARODA.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/BN.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/BN.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/DLF.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/DLF.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/EICHER.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/EICHER.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/FEDBANK.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/FEDBANK.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/HCL.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/HCL.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/HINDALCO.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/HINDALCO.xls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/HINDALCO.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/HINDALCO.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/INDUSIND.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/INDUSIND.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/JIND.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/JIND.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/LIC.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/LIC.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/M&amp;M.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/M&amp;M.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/M&amp;MFIN.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/M&amp;MFIN.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/NIFTY.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/NIFTY.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/NTPC.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/NTPC.xls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/NTPC.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/NTPC.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/SBIN.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/SBIN.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/SUNTV.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/SUNTV.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/TM.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/TM.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/TP.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/TP.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/TS.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/TS.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NOTES.txt" beforeDir="false" afterPath="$PROJECT_DIR$/NOTES.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/algo high low.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/algo high low.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cash high low.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/cash high low.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data feed.py" beforeDir="false" afterPath="$PROJECT_DIR$/data feed.py" afterDir="false" />
@@ -174,7 +151,6 @@
       <change beforePath="$PROJECT_DIR$/fo high low.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/fo high low.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ltp prev.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/ltp prev.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/monthly closing creation/MWCL_creation_updation.py" beforeDir="false" afterPath="$PROJECT_DIR$/monthly closing creation/MWCL_creation_updation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/monthly closing creation/test.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/monthly closing creation/test.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -616,7 +592,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702058479845</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="closing dates were wrong for algo">
+      <option name="closed" value="true" />
+      <created>1703877867421</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1703877867421</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -644,7 +628,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="done till 1 min formatting and high low extraction" />
     <MESSAGE value="final done sonia data" />
     <MESSAGE value="final done sonia data, cleaned the files for warnings" />
     <MESSAGE value="started work on nest automation" />
@@ -669,7 +652,8 @@
     <MESSAGE value="added facility to update closing, monthly and weekly values in both cash and algo(need to test monthly and closing)" />
     <MESSAGE value="added {entry-exit} and holding time to algo" />
     <MESSAGE value="fixed bug where weekly hcl wouldnt compute if there was a gap in data" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed bug where weekly hcl wouldnt compute if there was a gap in data" />
+    <MESSAGE value="closing dates were wrong for algo" />
+    <option name="LAST_COMMIT_MESSAGE" value="closing dates were wrong for algo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -688,11 +672,6 @@
           <url>file://$PROJECT_DIR$/monthly closing creation/MWCL_creation_updation.py</url>
           <line>467</line>
           <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/monthly closing creation/MWCL_creation_updation.py</url>
-          <line>670</line>
-          <option name="timeStamp" value="29" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
