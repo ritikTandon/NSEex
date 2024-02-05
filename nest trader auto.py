@@ -123,7 +123,7 @@ EQ_shares = ["ADANI", "APOLLO", "BAJFINSV", "BAJFIN", "BANBK", "BARODA", "COALIN
 # EQ_shares = ["ADANI", "APOLLO", "BAJFINSV", "BAJFIN"]
 
 FO_shares = ["ADANI", "APORT", "APOLLO", "AURO", "AXIS", "BAJAJ", "BARODA", "BN", "AIRTEL", "BHEL", "CANBK", "COALIND",
-             "DLF", "DRREDDY", "EICHER", "HCL", "HDFC", "HIND", "IBUL", "ICICI", "INDUSIND", "JIND", "NIFTY", "REL",
+             "DLF", "DRREDDY", "EICHER", "HCL", "HDFC", "HIND", "HINDUNLVR", "ICICI", "INDUSIND", "JIND", "NIFTY", "REL",
              "SBIN", "TCHEM", "TCON", "TM", "TS", "TCS", "TITAN", "ULTRA", "VEDL"]
 
 FO_30_min_shares = ['APOLLO', 'BAJFINSV', 'BAJFIN', 'BARODA', 'BN', 'COALIND', 'DLF', 'EICHER', 'FEDBANK', 'HCL',
@@ -353,4 +353,4 @@ shutil.copy(rf"E:\Daily Data work\hourlys 30 minute FO\{yr}\{mnth}\{date}\BN.xls
             rf"E:\Daily Data work\hourlys 30 minute CASH\{yr}\{mnth}\{date}")
 
 end = time.time()
-print(f"Total runtime of the program is {(end - begin) // 60} minutes and {(end - begin) % 60} seconds")
+print(f"Total runtime of the program is {int((end - begin) // 60)} minutes and {int((end - begin) % 60)} seconds")
