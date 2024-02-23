@@ -13,8 +13,10 @@ cashHL_sheet = cashHL_wb['Sheet1']
 foHL_wb = xl.load_workbook(r'C:\Users\admin\PycharmProjects\daily data\fo high low.xlsx')
 foHL_sheet = foHL_wb['Sheet1']
 
-cash_30_min_list = ["ADANI", "APOLLO", "BAJFINSV", "BAJFIN", "BANBK", "BARODA", "BN", "DLF", "EICHER", "FEDBANK", "HCL",
-                    "HINDALCO", "INDUSIND", "JIND", "LIC", "M&M", "M&MFIN", "NIFTY", "NTPC", "SBIN", "SUNTV", "TM", "TP", "TS"]
+cash_30_min_list = {"AARTIIND": 2, "ADANI": 3, "APOLLO": 4, "BAJFINSV": 5, "BAJFIN": 6, "BANBK": 7, "BARODA": 8, "BN": 4,
+                    "DLF": 10, "EICHER": 11, "FEDBANK": 12, "HCL": 13, "HINDALCO": 15, "INDUSIND": 17, "JIND": 19,
+                    "LIC": 20, "M&M": 21, "M&MFIN": 22, "NIFTY": 10, "NTPC": 23, "SBIN": 25, "SUNTV": 26, "TM": 28,
+                    "TP": 29, "TS": 30}
 
 format_list = ["NIFTY", "EICHER", "BN"]
 
@@ -34,11 +36,11 @@ for file_name in src_files:
 print("Files copied as backup!")
 
 # index for getting values from cash/fo high low sheets
-index_30_min = [2, 3, 4, 5, 6, 7, 4, 9, 10, 11, 12, 14, 16, 18, 19, 20, 21, 10, 22, 24, 25, 27, 28, 29]
+# index_30_min = [2, 3, 4, 5, 6, 7, 4, 9, 10, 11, 12, 14, 16, 18, 19, 20, 21, 10, 22, 24, 25, 27, 28, 29]
 
 # cash_30_min_list = ["ADANI"]
 
-idx = 0
+# idx = 0
 
 # LTP and PREV
 ltp_wb = xl.load_workbook(rf'C:\Users\admin\PycharmProjects\daily data\LTP PREV.xlsx')
@@ -48,14 +50,16 @@ ltp_row = 2
 while ltp_row <= len(ltp_sheet["A"]):
     ltp_sheet.cell(ltp_row, 3).value = ltp_sheet.cell(ltp_row, 2).value  # moving last day's LTP to 'PREV'
 
-    if ltp_sheet.cell(ltp_row, 1).value in ["BN", "NIFTY"]:    # separate for NIFTY and BN as their data LTP come from 'fo high low.xlsx'
-        ltp_sheet.cell(ltp_row, 2).value = foHL_sheet.cell(index_30_min[idx], 5).value
+    share_name = ltp_sheet.cell(ltp_row, 1).value
+
+    if share_name in ["BN", "NIFTY"]:    # separate for NIFTY and BN as their data LTP come from 'fo high low.xlsx'
+        ltp_sheet.cell(ltp_row, 2).value = foHL_sheet.cell(cash_30_min_list[share_name], 5).value
 
     else:
-        ltp_sheet.cell(ltp_row, 2).value = cashHL_sheet.cell(index_30_min[idx], 5).value
+        ltp_sheet.cell(ltp_row, 2).value = cashHL_sheet.cell(cash_30_min_list[share_name], 5).value
 
     ltp_row += 1
-    idx += 1
+    # idx += 1
 
 idx = 0
 ltp_row = 2
@@ -125,14 +129,14 @@ for share in cash_30_min_list:
 
     # filling rest of the data
     if share in ["BN", "NIFTY"]:    # separate for NIFTY and BN as their data will come from 'fo high low.xlsx'
-        new_30_min_sheet.cell(7, 6).value = foHL_sheet.cell(index_30_min[idx], 7).value   # 9:25 cl
-        new_30_min_sheet.cell(7, 7).value = foHL_sheet.cell(index_30_min[idx], 2).value   # HIGH
-        new_30_min_sheet.cell(7, 8).value = foHL_sheet.cell(index_30_min[idx], 3).value   # LOW
+        new_30_min_sheet.cell(7, 6).value = foHL_sheet.cell(cash_30_min_list[share], 7).value   # 9:25 cl
+        new_30_min_sheet.cell(7, 7).value = foHL_sheet.cell(cash_30_min_list[share], 2).value   # HIGH
+        new_30_min_sheet.cell(7, 8).value = foHL_sheet.cell(cash_30_min_list[share], 3).value   # LOW
 
     else:
-        new_30_min_sheet.cell(7, 6).value = cashHL_sheet.cell(index_30_min[idx], 7).value  # 9:25 cl
-        new_30_min_sheet.cell(7, 7).value = cashHL_sheet.cell(index_30_min[idx], 2).value  # HIGH
-        new_30_min_sheet.cell(7, 8).value = cashHL_sheet.cell(index_30_min[idx], 3).value  # LOW
+        new_30_min_sheet.cell(7, 6).value = cashHL_sheet.cell(cash_30_min_list[share], 7).value  # 9:25 cl
+        new_30_min_sheet.cell(7, 7).value = cashHL_sheet.cell(cash_30_min_list[share], 2).value  # HIGH
+        new_30_min_sheet.cell(7, 8).value = cashHL_sheet.cell(cash_30_min_list[share], 3).value  # LOW
 
     idx += 1
 

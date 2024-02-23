@@ -105,6 +105,12 @@ def save_daily_sheet(save_name):
     sleep(1)
 
 
+def sheetSave():
+    save_daily_sheet("csh")
+    save_daily_sheet("fo1")
+    save_daily_sheet("algo")
+    excel_close()
+
 # DO NOT TOUCH THE 'SAVE AS' WINDOW IN NEST AND IF YOU DO, CHANGE THE 'path' AND 'share name' COORDINATES ACCORDINGLY
 
 
@@ -117,7 +123,7 @@ imp_coord_dict = {"nest icon taskbar": (787, 1079), "EQ": (152, 992), "first sha
 
 currentMouseX, currentMouseY = pg.position()  # Returns two integers, the x and y of the mouse cursor's current position.
 
-EQ_shares = ["ADANI", "APOLLO", "BAJFINSV", "BAJFIN", "BANBK", "BARODA", "COALIND", "DLF", "EICHER", "FEDBANK",
+EQ_shares = ["AARTIIND", "ADANI", "APOLLO", "BAJFINSV", "BAJFIN", "BANBK", "BARODA", "COALIND", "DLF", "EICHER", "FEDBANK",
              "HCL", "HDFC", "HIND", "ICICI", "INDUSIND", "INFY", "JIND", "LIC", "M&M", "M&MFIN", "NTPC", "REL", "SBIN",
              "SUNTV", "TCHEM", "TM", "TP", "TS", "ULTRA"]
 # EQ_shares = ["ADANI", "APOLLO", "BAJFINSV", "BAJFIN"]
@@ -131,7 +137,7 @@ FO_30_min_shares = ['APOLLO', 'BAJFINSV', 'BAJFIN', 'BARODA', 'BN', 'COALIND', '
                     'ICICI', 'INDUSIND', 'INFY', 'JIND', 'M&M', 'M&MFIN', 'NIFTY', 'REL', 'SBIN', 'SUNTV', 'TCON', 'TM',
                     'TP', 'TS', 'TITAN', 'ULTRA', 'VEDL']
 
-EQ_30_min_shares = ["ADANI", "APOLLO", "BAJFINSV", "BAJFIN", "BANBK", "BARODA", "DLF", "EICHER",
+EQ_30_min_shares = ["AARTIIND", "ADANI", "APOLLO", "BAJFINSV", "BAJFIN", "BANBK", "BARODA", "DLF", "EICHER",
                     "FEDBANK",
                     "HCL", "HINDALCO", "INDUSIND", "JIND", "LIC", "M&M", "M&MFIN", "NTPC", "SBIN", "SUNTV", "TM", "TP", "TS"]
 
@@ -167,11 +173,7 @@ pg.press('esc')
 sleep(1)
 
 # saving consolidated sheets
-save_daily_sheet("csh")
-save_daily_sheet("fo1")
-save_daily_sheet("algo")
-
-excel_close()
+sheetSave()
 
 # EQ 1 min
 pg.click(imp_coord_dict["EQ"])

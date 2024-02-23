@@ -3,7 +3,7 @@ import openpyxl as xl
 import send2trash
 from openpyxl.styles import Font, Alignment
 
-append = 118  # increment this daily. 118 is for 25-JAN-2024
+append = 140  # increment this daily. 140 is for 26-FEB-2024
 
 # styles
 red = Font("Arial", 11, color='ff0000', bold=True)
@@ -24,15 +24,15 @@ def delete_file(path):
 def cash():
     i = 0  # main iterator variable
 
-    cash_shares = {'ADANIENT': 1579, 'APOLLOTYRE': 2946, 'BAJAJFINSERV': 1579, 'BAJAJFINANCE': 1579,
-                   'BANDHANBANK': 1579, 'BANKBARODA': 1579, 'COAL INDIA': 3232, 'DLF CHL': 4058, 'EICHERMOTOR': 2715,
+    cash_shares = {'03 AARTIIND': 947, 'ADANIENT': 1579, '04 APOLLOTYRE': 2946, 'BAJAJFINSERV': 1579, 'BAJAJFINANCE': 1579,
+                   'BANDHANBANK': 1579, '05 BANKBARODA': 1579, 'COAL INDIA': 3232, '06 DLF CHL': 4058, 'EICHERMOTOR': 2715,
                    'FEDRAL BANK': 1579, 'HCLTECH': 1579, 'HDFC': 3936, 'HINDALCO': 947, 'ICICIBANK': 1579, 'INDUSINDBANK': 1579,
-                   'INFY': 2765, 'JINDALS chl': 5195, 'LICHSGFIN': 1579, 'M&M': 1579, 'M&MFINANCE': 1579,
-                   'NTPC': 947, '03 RELIANCE CHL': 4793, '04 SBIN CHL': 4860, 'SUNTV': 1579, 'TATACHEM': 1579,
-                   '07 TATAMOTOR CHL': 4434, 'TATAPOWER': 1579, '05 TATASTEEL chl': 4570, 'ULTRACHEM': 2696}
+                   'INFY': 2765, 'JINDALS chl': 5195, '07 LICHSGFIN': 1579, 'M&M': 1579, 'M&MFINANCE': 1579,
+                   '08 NTPC': 947, 'RELIANCE CHL': 4793, 'SBIN CHL': 4860, 'SUNTV': 1579, 'TATACHEM': 1579,
+                   '09 TATAMOTOR CHL': 4434, 'TATAPOWER': 1579, 'TATASTEEL chl': 4570, 'ULTRACHEM': 2696}
 
-    cash_no_format_list = ['APOLLOTYRE', 'BANDHANBANK', 'BANKBARODA', 'COAL INDIA', 'DLF CHL', '07 TATAMOTOR CHL',
-                           '05 TATASTEEL chl', 'TATAPOWER', 'M&MFINANCE', 'FEDRAL BANK', 'HINDALCO', 'NTPC']
+    cash_no_format_list = ['04 APOLLOTYRE', 'BANDHANBANK', '05 BANKBARODA', 'COAL INDIA', '06 DLF CHL', '09 TATAMOTOR CHL',
+                           'TATASTEEL chl', 'TATAPOWER', 'M&MFINANCE', 'FEDRAL BANK', 'HINDALCO', '08 NTPC']
 
     # loading 'cash high low.xlsx'
     cashHL_wb = xl.load_workbook(r'C:\Users\admin\PycharmProjects\daily data\cash high low.xlsx')
