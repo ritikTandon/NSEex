@@ -114,12 +114,12 @@ def sheetSave():
 # DO NOT TOUCH THE 'SAVE AS' WINDOW IN NEST AND IF YOU DO, CHANGE THE 'path' AND 'share name' COORDINATES ACCORDINGLY
 
 
-imp_coord_dict = {"nest icon taskbar": (787, 1079), "EQ": (152, 992), "first share": (73, 173), "FO": (184, 992),
+imp_coord_dict = {"nest icon taskbar": (797, 1058), "EQ": (152, 992), "first share": (73, 173), "FO": (184, 992),
                   "FO1": (213, 992), "30minFO": (266, 992), "30minCash": (33, 992), "time interval": (537, 58),
-                  "get stats": (629, 55), "color change": (935, 295), "path": (647, 547),
-                  "share name textbox": (297, 931),
-                  "save": (789, 1003), "excel icon taskbar": (901, 1054), "excel close": (897, 1014), "TL": (18, 495),
-                  "BR": (962, 1026), "ALGO": (311, 993)}
+                  "get stats": (629, 55), "color change": (933, 206), "path": (1298, 312),
+                  "share name textbox": (831, 699),
+                  "save": (1415, 774), "excel icon taskbar": (901, 1054), "excel close": (897, 1014), "TL": (635, 265),
+                  "BR": (1579, 796), "ALGO": (311, 993)}    # TL and BR are "save as" window cords
 
 currentMouseX, currentMouseY = pg.position()  # Returns two integers, the x and y of the mouse cursor's current position.
 

@@ -1,3 +1,3 @@
-date = r"23.02.24"
-mnth = r"FEB"
+date = r"05.03.24"
+mnth = r"MAR"
 yr = r'2024'

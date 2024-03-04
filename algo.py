@@ -155,7 +155,7 @@ for share in cash_share_list:
     cashHL_sheet.cell(cashHL_row, 3).value = LOW
 
     # LTP
-    cashHL_sheet.cell(cashHL_row, 5).value = csh_sheet.cell(csh_row, 4).value
+    cashHL_sheet.cell(cashHL_row, 5).value = csh_sheet.cell(csh_row, 2).value
 
     # vol
     volume = csh_sheet.cell(csh_row, 5).value

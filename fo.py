@@ -128,12 +128,11 @@ for share in fo_share_list:
         foHL_sheet.cell(foHL_row, 3).value = LOW
 
         # close
-        foHL_sheet.cell(foHL_row, 4).value = fo1_sheet.cell(fo1_row, 5).value
+        foHL_sheet.cell(foHL_row, 4).value = fo1_sheet.cell(fo1_row, 2).value
 
         # vol
-        volume = fo1_sheet.cell(fo1_row, 6).value
-        volume = str(volume)
-        volume = int(volume[0:len(volume)-5])   # truncating volume to display in lakhs
+        volume = fo1_sheet.cell(fo1_row, 5).value
+        volume //= 100000   # truncating volume to display in lakhs
 
         foHL_sheet.cell(foHL_row, 6).value = volume
 
