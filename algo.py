@@ -283,9 +283,16 @@ for share in cash_close_list:
 
     try:
         sleep(2)
-        myElem = WebDriverWait(driver, 10).until(ec.presence_of_element_located((By.ID, 'quoteLtp')))
+        myElem = WebDriverWait(driver, 20).until(ec.presence_of_element_located((By.ID, 'quoteLtp')))
         # sleep(5)
         close_val = driver.find_element(By.ID, "quoteLtp").text
+
+        while close_val == '':
+            driver.refresh()
+            WebDriverWait(driver, 10).until(ec.presence_of_element_located((By.ID, 'quoteLtp')))
+            close_val = driver.find_element(By.ID, "quoteLtp").text
+            sleep(0.5)
+
         close_val = close_val.replace(",", "")
 
         # truncating last 0

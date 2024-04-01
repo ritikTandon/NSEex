@@ -252,9 +252,16 @@ for share in cash_close_list:
 
     try:
         sleep(2)
-        myElem = WebDriverWait(driver, 10).until(ec.presence_of_element_located((By.ID, 'quoteLtp')))
+        myElem = WebDriverWait(driver, 20).until(ec.presence_of_element_located((By.ID, 'quoteLtp')))
         # sleep(5)
         close_val = driver.find_element(By.ID, "quoteLtp").text
+
+        while close_val == '':
+            driver.refresh()
+            WebDriverWait(driver, 10).until(ec.presence_of_element_located((By.ID, 'quoteLtp')))
+            close_val = driver.find_element(By.ID, "quoteLtp").text
+            sleep(0.5)
+
         close_val = close_val.replace(",", "")
 
         # truncating last 0
@@ -267,8 +274,10 @@ for share in cash_close_list:
         if close_val == '':
             manual.append(share)
 
-    except TimeoutException:
-        print("Loading took too much time!")
+    except TimeoutException:        # added temp fix for timeoutexception, will need to check if it works properly or nah
+        close.append('')
+        manual.append(share)
+        print(f"Loading took too much time for {share}!")
 
     driver.close()
 
