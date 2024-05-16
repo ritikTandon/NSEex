@@ -26,9 +26,10 @@ algo_share_list = ['AARTIIND', 'ABB', 'ABCAPITAL', 'ABFRL', 'ADANIENT', 'ADANIPO
                      'ZEEL', 'ZYDUSLIFE']
 
 cash_share_list = ['03 AARTIIND', 'ADANIENT', '04 APOLLOTYRE', 'BAJAJFINSERV', 'BAJAJFINANCE', 'BANDHANBANK',
-                   '05 BANKBARODA', 'COAL INDIA', '06 DLF CHL', 'EICHERMOTOR', 'HDFC', 'HINDALCO', 'ICICIBANK',
-                   'INDUSINDBANK', 'INFY', 'JINDALS chl', '07 LICHSGFIN', 'M&M', 'M&MFINANCE', '08 NTPC', 'RELIANCE CHL',
-                   'SBIN CHL', 'SUNTV', 'TATACHEM', '09 TATAMOTOR CHL', 'TATAPOWER', 'TATASTEEL chl', 'ULTRACHEM']
+                   '05 BANKBARODA', 'COAL INDIA', '06 DLF CHL', 'EICHERMOTOR', 'FEDRAL BANK', 'HCLTECH', 'HDFC', 'HINDALCO',
+                   'ICICIBANK', 'INDUSINDBANK', 'INFY', 'JINDALS chl', '07 LICHSGFIN', 'M&M', 'M&MFINANCE', '08 NTPC',
+                   'RELIANCE CHL', 'SBIN CHL', 'SUNTV', 'TATACHEM', '09 TATAMOTOR CHL', 'TATAPOWER', 'TATASTEEL chl',
+                   'ULTRACHEM']
 
 add_share_list = []
 
@@ -464,7 +465,7 @@ def get_last_row(sheet, empty=True):
         row -= 1
 
 
-def weekly_update(typ):
+def weekly_update(typ, val=0):
     if typ == 'C':
         share_list = cash_share_list
     else:
@@ -482,8 +483,9 @@ def weekly_update(typ):
         w_sheet = wb['W']
 
         w_row = get_last_row(w_sheet)
-        d_row = get_last_row(d_sheet, empty=False)
+        d_row = get_last_row(d_sheet, empty=False)-val      # modify this row if more than 1 week ago weekly updation
         print(w_row)
+        print(d_row)
 
         high = 0
         low = 999999
@@ -548,7 +550,7 @@ def monthly_update(typ):
         m_sheet = wb['M']
 
         m_row = get_last_row(m_sheet)
-        d_row = get_last_row(d_sheet, empty=False)
+        d_row = get_last_row(d_sheet, empty=False)  # this gets the date end of month, adj accordingly
 
         high = 0
         low = 999999
@@ -650,6 +652,7 @@ def closing_update(typ):
 
         cl_row = get_last_row(cl_sheet)
         d_row = get_last_row(d_sheet, empty=False)
+        # d_row = 1130  # 1090 1110 1130
 
         high = 0
         low = 999999
@@ -667,7 +670,7 @@ def closing_update(typ):
 
         if typ != 'C':
             start_date = start_date - timedelta(days=1)     # todo untested hotfix for closing dates being wrong
-            cl_sheet.cell(cl_row, 1).value = f'{start_date.date()} TO {end_date.date()}'
+            cl_sheet.cell(cl_row, 1).value = f'{start_date.date().strftime(date_format)} TO {end_date.date().strftime(date_format)}'
             print(f'{start_date.date().strftime(date_format)} TO {end_date.date().strftime(date_format)}')
 
         while start_date <= end_date:
