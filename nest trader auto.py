@@ -4,6 +4,8 @@ import pyperclip as pc
 from date_variables import date, mnth, yr
 from time import sleep
 import time
+import numpy as np
+
 
 begin = time.time()
 
@@ -26,10 +28,14 @@ def check_change():
     # waiting for screen to change before saving
     while not changed:
         PIXEL = pg.screenshot(
-            region=(imp_coord_dict["color change"][0], imp_coord_dict["color change"][1], 1, 1))  # taking pixel
-        color = PIXEL.getcolors()
+            region=(imp_coord_dict["color change"][0], imp_coord_dict["color change"][1], 6, 8))  # taking pixel average
 
-        if color[0][1] == (0, 255, 0):  # if color is green (screen has updated)
+        pixels = np.array(PIXEL)
+
+        # Calculate the average color
+        average_color = pixels.mean(axis=(0, 1)).astype(int)
+
+        if 200 > average_color[1] > 10:  # if color is green (screen has updated)
             print("Displayed the vwap data")
             changed = True
 
@@ -116,7 +122,7 @@ def sheetSave():
 
 imp_coord_dict = {"nest icon taskbar": (797, 1058), "EQ": (152, 992), "first share": (73, 173), "FO": (184, 992),
                   "FO1": (213, 992), "30minFO": (266, 992), "30minCash": (33, 992), "time interval": (537, 58),
-                  "get stats": (629, 55), "color change": (933, 206), "path": (1298, 312),
+                  "get stats": (629, 55), "color change": (929, 212), "path": (1298, 312),
                   "share name textbox": (831, 699),
                   "save": (1415, 774), "excel icon taskbar": (901, 1054), "excel close": (897, 1014), "TL": (635, 265),
                   "BR": (1579, 796), "ALGO": (311, 993)}    # TL and BR are "save as" window cords
