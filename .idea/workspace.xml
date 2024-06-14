@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="308761e4-5648-47f3-bc32-acb2059bab82" name="Changes" comment="added fix for close scraping from NSE">
+    <list default="true" id="308761e4-5648-47f3-bc32-acb2059bab82" name="Changes" comment="potential fix for color checking issue">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Algorithm/date.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/date.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/AARTIIND.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/AARTIIND.xls" afterDir="false" />
@@ -146,13 +146,12 @@
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/HINDALCO.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/HINDALCO.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/NTPC.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/NTPC.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/algo high low.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/algo high low.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algo.py" beforeDir="false" afterPath="$PROJECT_DIR$/algo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cash high low.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/cash high low.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data feed.py" beforeDir="false" afterPath="$PROJECT_DIR$/data feed.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/date_variables.py" beforeDir="false" afterPath="$PROJECT_DIR$/date_variables.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fo high low.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/fo high low.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ltp prev.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/ltp prev.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nest trader auto.py" beforeDir="false" afterPath="$PROJECT_DIR$/nest trader auto.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -236,14 +235,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1691935354080</updated>
-    </task>
-    <task id="LOCAL-00004" summary="first">
-      <option name="closed" value="true" />
-      <created>1692006280540</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1692006280540</updated>
     </task>
     <task id="LOCAL-00005" summary="first">
       <option name="closed" value="true" />
@@ -629,7 +620,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715868585405</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="potential fix for color checking issue">
+      <option name="closed" value="true" />
+      <created>1717085175905</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1717085175905</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -673,7 +672,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="sonia.py date issue fixed(was looking at months as dates)" />
     <MESSAGE value="added leetcode sheets to practice leetcode" />
     <MESSAGE value="added xls to xlsx in python itself and a running backup of xls hourlys every day" />
     <MESSAGE value="added algo" />
@@ -698,7 +696,8 @@
     <MESSAGE value="cleanup commit" />
     <MESSAGE value="modified according to samco, changed coordinates in nest trader auto, changed vol calc in fo" />
     <MESSAGE value="added fix for close scraping from NSE" />
-    <option name="LAST_COMMIT_MESSAGE" value="added fix for close scraping from NSE" />
+    <MESSAGE value="potential fix for color checking issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="potential fix for color checking issue" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
