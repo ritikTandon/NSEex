@@ -211,9 +211,16 @@ for share in fo_share_list:
     print(f"{share} done")
 
 
-# MD file
-md_path_zipped = rf"E:\chrome downloads\fo{date[:2]}{mnth}20{date[6:]}bhav.csv.zip"     # .zip file path of downloaded cash bhavcpoy
+# MD file (new (changed on 8 jul 2024)) BhavCopy_NSE_FO_0_0_0_20240708_F_0000.csv
+# dict containing share names (NSE) and their respective rows in 'fo high low.xlsx'
+share_list = {"BANKNIFTY": 4, "NIFTY": 10, "ADANIPORTS": 2, "AUROPHARMA": 3, "CANBK": 5, "DLF": 6, "HINDALCO": 7,
+              "ICICIBANK": 8, "JINDALSTEL": 9, "RELIANCE": 11, "SBIN": 12, "TATACONSUM": 13, "TATAMOTORS": 14,
+              "TATASTEEL": 15, "TCS": 16, "TITAN": 17}
+
+md_path_zipped = rf"E:\chrome downloads\BhavCopy_NSE_FO_0_0_0_{yr}{date[3:5]}{date[:2]}_F_0000.csv.zip"     # .zip file path of downloaded cash bhavcopy
 md_path = rf"E:\chrome downloads"
+
+# take data from col 22 and col 14 has month as cur month in caps and col 13 is null
 
 # extracting .zip file
 with ZipFile(md_path_zipped, 'r') as zObject:
@@ -221,35 +228,15 @@ with ZipFile(md_path_zipped, 'r') as zObject:
 
 md_file_path = rf"E:\Daily Data work\MD files\{yr}\{mnth}\fo{date[:2]}{mnth}20{date[6:]}bhav.xlsx"
 
-df = pd.read_csv(md_path_zipped[:-4])
-# df = df.iloc[:600]
-df.to_excel(md_file_path, index=False)
+df = pd.read_csv(md_path_zipped[:-4])       # removing the .zip extension after unzipping
+df = df.drop(df.columns[-9:], axis=1)
+df = df.drop(columns=['BizDt', 'Src', 'FinInstrmTp', 'FinInstrmId', 'ISIN', 'SctySrs', 'OpnIntrst', 'ChngInOpnIntrst'])
+df2 = df.copy()     # this one will actually be saved as md file
+df = df[df['OptnTp'].isnull()]
 
-md_wb = xl.load_workbook(md_file_path)
+for share in share_list:
+    ltp = df.loc[df['FinInstrmNm'].str.contains(share) & df['FinInstrmNm'].str.contains(mnth), 'SttlmPric'].iloc[0]
+    foHL_sheet.cell(share_list[share], 5).value = ltp
 
-md_sheet = md_wb["Sheet1"]
-
-k = 0       # variable to iterate over all shares in share_list and index_list
-md_row = 2  # starting row of md file
-
-# lists for shares as per their names in md file and their respective indices in the 'fo high low.xlsx' sheet
-share_list = ["BANKNIFTY", "NIFTY", "ADANIPORTS", "AUROPHARMA", "CANBK", "DLF", "HINDALCO",
-              "ICICIBANK", "JINDALSTEL", "RELIANCE", "SBIN", "TATACONSUM", "TATAMOTORS",
-              "TATASTEEL", "TCS", "TITAN"]
-
-index_list = [4, 10, 2, 3, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17]
-
-while k < len(share_list):
-    # print(md_row)
-
-    name_cell = md_sheet.cell(md_row, 2)
-
-    if name_cell.value == share_list[k]:
-        foHL_sheet.cell(index_list[k], 5).value = md_sheet.cell(md_row, 10).value
-
-        k += 1
-        md_row += 2     # to skip the next 2 expires of the share
-
-    md_row += 1
-
+df2.to_excel(md_file_path, index=False)
 foHL_wb.save(r'C:\Users\admin\PycharmProjects\daily data\fo high low.xlsx')

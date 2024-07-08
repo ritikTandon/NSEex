@@ -13,12 +13,20 @@ cashHL_sheet = cashHL_wb['Sheet1']
 foHL_wb = xl.load_workbook(r'C:\Users\admin\PycharmProjects\daily data\fo high low.xlsx')
 foHL_sheet = foHL_wb['Sheet1']
 
-cash_30_min_list = {"AARTIIND": 2, "ADANI": 3, "APOLLO": 4, "BAJFINSV": 5, "BAJFIN": 6, "BANBK": 7, "BARODA": 8, "BN": 4,
-                    "DLF": 10, "EICHER": 11, "FEDBANK": 12, "HCL": 13, "HINDALCO": 15, "INDUSIND": 17, "JIND": 19,
-                    "LIC": 20, "M&M": 21, "M&MFIN": 22, "NIFTY": 10, "NTPC": 23, "SBIN": 25, "SUNTV": 26, "TM": 28,
-                    "TP": 29, "TS": 30}
+algoHL_wb = xl.load_workbook(r'C:\Users\admin\PycharmProjects\daily data\algo high low.xlsx')
+algoHL_sheet = algoHL_wb['Sheet1']
 
+# dict to store share names with their row in 'cash/algo/fo high low.xlsx' sheets respectively
+cash_30_min_list = {"AARTIIND": 2, "ADANI": 3, "APOLLO": 4, "BAJFINSV": 5, "BAJFIN": 6, "BANBK": 7, "BARODA": 8, "BN": 4,
+                    "DLF": 10, "EICHER": 11, "ESCORTS": 48, "FEDBANK": 12, "HCL": 13, "HINDALCO": 15, "IGL": 68, "INDUSIND": 17, "JIND": 19,
+                    "LIC": 20, "M&M": 21, "M&MFIN": 22, "NIFTY": 10, "NTPC": 23, "SBIN": 25, "SUNTV": 26, "TM": 28,
+                    "TP": 29, "TS": 30, "VEDL": 131}
+
+# no decimal points in display
 format_list = ["NIFTY", "EICHER", "BN"]
+
+# shares that get their data from 'algo high low.xlsx', when adding shares that are in algo and not in cash, add to this
+algo_shares = ["ESCORTS", "IGL", "VEDL"]
 
 # copying hourlys (.xls) as backup
 # path to source directory
@@ -55,6 +63,8 @@ while ltp_row <= len(ltp_sheet["A"]):
     if share_name in ["BN", "NIFTY"]:    # separate for NIFTY and BN as their data LTP come from 'fo high low.xlsx'
         ltp_sheet.cell(ltp_row, 2).value = foHL_sheet.cell(cash_30_min_list[share_name], 5).value
 
+    elif share_name in algo_shares:  # separate for shares who's LTP come from 'algo high low.xlsx'
+        ltp_sheet.cell(ltp_row, 2).value = algoHL_sheet.cell(cash_30_min_list[share_name], 5).value
     else:
         ltp_sheet.cell(ltp_row, 2).value = cashHL_sheet.cell(cash_30_min_list[share_name], 5).value
 
@@ -132,6 +142,11 @@ for share in cash_30_min_list:
         new_30_min_sheet.cell(7, 6).value = foHL_sheet.cell(cash_30_min_list[share], 7).value   # 9:25 cl
         new_30_min_sheet.cell(7, 7).value = foHL_sheet.cell(cash_30_min_list[share], 2).value   # HIGH
         new_30_min_sheet.cell(7, 8).value = foHL_sheet.cell(cash_30_min_list[share], 3).value   # LOW
+
+    elif share in algo_shares:
+        new_30_min_sheet.cell(7, 6).value = algoHL_sheet.cell(cash_30_min_list[share], 7).value  # 9:25 cl
+        new_30_min_sheet.cell(7, 7).value = algoHL_sheet.cell(cash_30_min_list[share], 2).value  # HIGH
+        new_30_min_sheet.cell(7, 8).value = algoHL_sheet.cell(cash_30_min_list[share], 3).value  # LOW
 
     else:
         new_30_min_sheet.cell(7, 6).value = cashHL_sheet.cell(cash_30_min_list[share], 7).value  # 9:25 cl

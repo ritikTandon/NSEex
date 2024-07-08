@@ -722,12 +722,12 @@ def closing_update(typ):
 # monthly_create()
 # closing_create()
 
-# weekly_update("A")
 # weekly_update("C")
+# weekly_update("A")
 
-# monthly_update("A")
 # monthly_update("C")
+# monthly_update("A")
 
-# closing_update("A")
 # closing_update("C")
+# closing_update("A")
 

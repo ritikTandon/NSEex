@@ -1,3 +1,3 @@
-date = r"17.06.24"
-mnth = r"JUN"
+date = r"09.07.24"
+mnth = r"JUL"
 yr = r'2024'

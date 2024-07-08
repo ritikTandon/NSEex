@@ -19,7 +19,7 @@ from selenium.common.exceptions import TimeoutException
 
 # headers = {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0'}
 
-cash_share_list = ['AARTIIND', 'ABB', 'ABCAPITAL', 'ABFRL', 'ADANIENT', 'ADANIPORTS', 'ALKEM', 'AMBUJACEM',
+algo_share_list = ['AARTIIND', 'ABB', 'ABCAPITAL', 'ABFRL', 'ADANIENT', 'ADANIPORTS', 'ALKEM', 'AMBUJACEM',
                      'APOLLOHOSP', 'APOLLOTYRE', 'ASHOKLEY', 'ASTRAL', 'ATUL', 'AUBANK', 'AUROPHARMA', 'BAJAJFINSV',
                      'BAJFINANCE', 'BALKRISIND', 'BALRAMCHIN', 'BANDHANBNK', 'BANKBARODA', 'BATAINDIA', 'BEL',
                      'BHARATFORG', 'BIOCON', 'BRITANNIA', 'BSOFT', 'CANBK', 'CANFINHOME', 'CHAMBLFERT', 'CHOLAFIN',
@@ -37,11 +37,11 @@ cash_share_list = ['AARTIIND', 'ABB', 'ABCAPITAL', 'ABFRL', 'ADANIENT', 'ADANIPO
                      'TORNTPHARM', 'TORNTPOWER', 'TRENT', 'TVSMOTOR', 'UBL', 'ULTRACEMCO', 'UPL', 'VEDL', 'VOLTAS',
                      'ZEEL', 'ZYDUSLIFE']
 
-# cash_share_list = ["ADANI"]
+# algo_share_list = ["ADANI"]
 
-cashHL_wb = xl.load_workbook(r'C:\Users\admin\PycharmProjects\daily data\algo high low.xlsx')
-cashHL_sheet = cashHL_wb['Sheet1']
-cashHL_row = 2
+algoHL_wb = xl.load_workbook(r'C:\Users\admin\PycharmProjects\daily data\algo high low.xlsx')
+algoHL_sheet = algoHL_wb['Sheet1']
+algoHL_row = 2
 
 
 # converting xls to xlsx for algo sheet
@@ -72,10 +72,10 @@ for file_name in src_files:
 print("Files copied as backup!")
 
 
-for share in cash_share_list:
+for share in algo_share_list:
     path = rf"E:\Daily Data work\hourlys 1 minute ALGO\{yr}\{mnth}\{date}\{share}.xlsx"
     xls_path = rf"E:\Daily Data work\hourlys 1 minute ALGO\{yr}\{mnth}\{date}\{share}.xls"
-    # try:      # cant use this skip unless I update cash high low values of a share and reload wb after every loop
+    # try:      # cant use this skip unless I update algo high low values of a share and reload wb after every loop
     #     x2x = XLS2XLSX(xls_path)
     # except FileNotFoundError:
     #     continue
@@ -149,24 +149,24 @@ for share in cash_share_list:
         start_row += 1
 
     # high
-    cashHL_sheet.cell(cashHL_row, 2).value = HIGH
+    algoHL_sheet.cell(algoHL_row, 2).value = HIGH
 
     # low
-    cashHL_sheet.cell(cashHL_row, 3).value = LOW
+    algoHL_sheet.cell(algoHL_row, 3).value = LOW
 
     # LTP
-    cashHL_sheet.cell(cashHL_row, 5).value = csh_sheet.cell(csh_row, 2).value
+    algoHL_sheet.cell(algoHL_row, 5).value = csh_sheet.cell(csh_row, 2).value
 
     # vol
     volume = csh_sheet.cell(csh_row, 5).value
     volume = volume // 100000
 
-    cashHL_sheet.cell(cashHL_row, 6).value = volume
+    algoHL_sheet.cell(algoHL_row, 6).value = volume
 
     # 9:25 close
-    cashHL_sheet.cell(cashHL_row, 7).value = cl_9_25
+    algoHL_sheet.cell(algoHL_row, 7).value = cl_9_25
 
-    cashHL_row += 1
+    algoHL_row += 1
     csh_row += 1
 
     HIGH = 0
@@ -250,7 +250,7 @@ options.add_experimental_option("excludeSwitches", ["enable-automation"])
 # Turn-off userAutomationExtension
 options.add_experimental_option("useAutomationExtension", False)
 
-cash_close_list = ['AARTIIND', 'ABB', 'ABCAPITAL', 'ABFRL', 'ADANIENT', 'ADANIPORTS', 'ALKEM', 'AMBUJACEM',
+algo_close_list = ['AARTIIND', 'ABB', 'ABCAPITAL', 'ABFRL', 'ADANIENT', 'ADANIPORTS', 'ALKEM', 'AMBUJACEM',
                      'APOLLOHOSP', 'APOLLOTYRE', 'ASHOKLEY', 'ASTRAL', 'ATUL', 'AUBANK', 'AUROPHARMA', 'BAJAJFINSV',
                      'BAJFINANCE', 'BALKRISIND', 'BALRAMCHIN', 'BANDHANBNK', 'BANKBARODA', 'BATAINDIA', 'BEL',
                      'BHARATFORG', 'BIOCON', 'BRITANNIA', 'BSOFT', 'CANBK', 'CANFINHOME', 'CHAMBLFERT', 'CHOLAFIN',
@@ -268,7 +268,7 @@ cash_close_list = ['AARTIIND', 'ABB', 'ABCAPITAL', 'ABFRL', 'ADANIENT', 'ADANIPO
                      'TORNTPHARM', 'TORNTPOWER', 'TRENT', 'TVSMOTOR', 'UBL', 'ULTRACEMCO', 'UPL', 'VEDL', 'VOLTAS',
                      'ZEEL', 'ZYDUSLIFE']
 
-# cash_close_list1 = ["M%26M"]
+# algo_close_list1 = ["M%26M"]
 
 manual = []         # list to keep track of the shares whose values selenium couldn't get
 close = []
@@ -276,7 +276,7 @@ close = []
 # '1608.5', '448.85', '959.0', '1387.8', '1392.95', '662.9', '421.45', '1544.95', '1544.95', '2573.2', '561.0', '548.9',
 # '1000.05', '606.8', '230.95', '117.85', '8024.95']
 
-for share in cash_close_list:
+for share in algo_close_list:
     driver = webdriver.Chrome(options=options)
 
     driver.get(f"https://www.nseindia.com/get-quotes/equity?symbol={share}")
@@ -317,8 +317,8 @@ print(manual)
 
 i = 0
 # close = ['627.0', '8318.0', '222.0', '263.95', '3034.05', '1342.0', '5301.15', '615.0', '5920.0', '489.0', '206.55', '2276.0', '5900.1', '621.5', '1160.1', '1593.95', '6731.0', '2590.0', '378.4', '180.2', '263.8', '1334.95', '239.75', '1489.75', '308.95', '5142.8', '616.9', '113.9', '762.0', '403.5', '1268.8', '1420.65', '4675.9', '1037.9', '1246.7', '338.6', '3737.3', '543.0', '1793.45', '557.9', '2453.0', '120.9', '3918.3', '8235.0', '845.05', '5829.0', '3749.0', '473.25', '1009.0', '825.6', '666.0', '1301.05', '2872.0', '402.0', '2379.0', '553.15', '4637.9', '1776.9', '1347.15', '3855.9', '566.1', '652.3', '378.5', '1675.05', '590.15', '148.4', '441.5', '568.25', '208.6', '2633.0', '4299.9', '1410.0', '341.5', '879.9', '1286.35', '1005.5', '3864.0', '884.0', '471.5', '1670.9', '2515.9', '445.0', '655.8', '4764.1', '4515.0', '1658.55', '267.75', '185.7', '593.9', '1179.0', '3940.0', '1862.0', '1000.95', '1312.9', '2370.0', '1694.0', '582.0', '5875.3', '3310.65', '265.1', '361.0', '1721.0', '826.4', '3518.0', '312.5', '3017.35', '6478.0', '312.3', '161.9', '768.75', '252.05', '541.1', '713.9', '1450.2', '7070.0', '2274.0', '869.5', '1530.05', '687.1', '1800.0', '939.2', '1304.0', '2703.95', '1345.9', '4596.5', '2124.3', '1902.5', '9700.0', '510.15', '433.6', '1322.95', '133.0', '1009.0']
-while i < len(cash_close_list):
-    close_cell = cashHL_sheet.cell(i+2, 4)
+while i < len(algo_close_list):
+    close_cell = algoHL_sheet.cell(i+2, 4)
 
     if close[i] == '':
         close_cell.value = 0
@@ -329,4 +329,4 @@ while i < len(cash_close_list):
 
     i += 1
 
-cashHL_wb.save(r'C:\Users\admin\PycharmProjects\daily data\algo high low.xlsx')
+algoHL_wb.save(r'C:\Users\admin\PycharmProjects\daily data\algo high low.xlsx')

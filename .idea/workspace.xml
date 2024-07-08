@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="308761e4-5648-47f3-bc32-acb2059bab82" name="Changes" comment="potential fix for color checking issue">
+    <list default="true" id="308761e4-5648-47f3-bc32-acb2059bab82" name="Changes" comment="changed MCDOWELL-N to UNITDSPRS">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm/date.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm/date.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/30 min csh.py" beforeDir="false" afterPath="$PROJECT_DIR$/30 min csh.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/AARTIIND.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/AARTIIND.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ABB.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ABB.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ABCAPITAL.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ABCAPITAL.xls" afterDir="false" />
@@ -151,7 +151,11 @@
       <change beforePath="$PROJECT_DIR$/data feed.py" beforeDir="false" afterPath="$PROJECT_DIR$/data feed.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/date_variables.py" beforeDir="false" afterPath="$PROJECT_DIR$/date_variables.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fo high low.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/fo high low.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fo.py" beforeDir="false" afterPath="$PROJECT_DIR$/fo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ltp prev.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/ltp prev.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/monthly closing creation/MWCL_creation_updation.py" beforeDir="false" afterPath="$PROJECT_DIR$/monthly closing creation/MWCL_creation_updation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nest trader auto.py" beforeDir="false" afterPath="$PROJECT_DIR$/nest trader auto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,14 +239,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1691935354080</updated>
-    </task>
-    <task id="LOCAL-00005" summary="first">
-      <option name="closed" value="true" />
-      <created>1692007325136</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1692007325136</updated>
     </task>
     <task id="LOCAL-00006" summary="till 30 min done">
       <option name="closed" value="true" />
@@ -628,7 +624,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717085175905</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="changed MCDOWELL-N to UNITDSPRS">
+      <option name="closed" value="true" />
+      <created>1718386586371</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1718386586371</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -672,7 +676,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added leetcode sheets to practice leetcode" />
     <MESSAGE value="added xls to xlsx in python itself and a running backup of xls hourlys every day" />
     <MESSAGE value="added algo" />
     <MESSAGE value="completed algo" />
@@ -697,7 +700,8 @@
     <MESSAGE value="modified according to samco, changed coordinates in nest trader auto, changed vol calc in fo" />
     <MESSAGE value="added fix for close scraping from NSE" />
     <MESSAGE value="potential fix for color checking issue" />
-    <option name="LAST_COMMIT_MESSAGE" value="potential fix for color checking issue" />
+    <MESSAGE value="changed MCDOWELL-N to UNITDSPRS" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed MCDOWELL-N to UNITDSPRS" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

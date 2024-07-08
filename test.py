@@ -92,28 +92,28 @@
 #     print(i)
 
 
-import pyautogui as pg
-import numpy as np
-from time import sleep
+# import pyautogui as pg
+# import numpy as np
+# from time import sleep
+# #
+# # pg.click((797, 1058))
+# # sleep(1)
+# # # # Take a screenshot of the specified region
+# # region = (929, 212, 6, 8)
+# # screenshot = pg.screenshot(region=region)
+# # #
+# # # # Convert the screenshot to a NumPy array
+# # pixels = np.array(screenshot)
+# #
+# # # Calculate the average color
+# # average_color = pixels.mean(axis=(0, 1)).astype(int)
+# #
+# # # Print the average color as an RGB tuple
+# # print(f"Average color: {tuple(average_color)}")
+#
 #
 # pg.click((797, 1058))
 # sleep(1)
-# # # Take a screenshot of the specified region
-# region = (929, 212, 6, 8)
-# screenshot = pg.screenshot(region=region)
-# #
-# # # Convert the screenshot to a NumPy array
-# pixels = np.array(screenshot)
-#
-# # Calculate the average color
-# average_color = pixels.mean(axis=(0, 1)).astype(int)
-#
-# # Print the average color as an RGB tuple
-# print(f"Average color: {tuple(average_color)}")
-
-
-pg.click((797, 1058))
-sleep(1)
 
 # def check_change():
 #     changed = False  # bool representing if screen has changed from black to showing vwap statistics
@@ -138,3 +138,66 @@ sleep(1)
 #
 #
 # check_change()
+
+
+# import os
+# from time import sleep
+#
+# f = ['AARTIIND', 'ABB', 'AMBUJACEM', 'APOLLOHOSP', 'APOLLOTYRE', 'ASHOKLEY', 'AUROPHARMA', 'BANKBARODA', 'BEL',
+#      'BSOFT', 'CANBK', 'CANFINHOME', 'CHAMBLFERT', 'CHOLAFIN', 'DIXON', 'DLF', 'ESCORTS', 'EXIDEIND', 'GNFC',
+#      'GODREJPROP', 'HAL', 'HAVELLS', 'HCLTECH', 'HINDALCO', 'HINDCOPPER', 'IGL', 'INDIACEM', 'INDUSINDBK', 'INDUSTOWER',
+#      'JINDALSTEL', 'JUBLFOOD', 'LALPATHLAB', 'LICHSGFIN', 'LUPIN', 'MANAPPURAM', 'MCX', 'METROPOLIS', 'MGL',
+#      'MUTHOOTFIN', 'NAM-INDIA', 'NMDC', 'NTPC', 'PETRONET', 'RAMCOCEM', 'RBLBANK', 'RECLTD', 'STAR', 'TRENT', 'VEDL']
+#
+#
+# for fl in f:
+#     path = rf'E:\Daily Data work\ALGORITHM\{fl}.xlsx'
+#     os.startfile(path)
+
+
+# import pandas as pd
+# from date_variables import yr, date, mnth
+# from zipfile import ZipFile
+#
+# share_list = ["BANKNIFTY", "NIFTY", "ADANIPORTS", "AUROPHARMA", "CANBK", "DLF", "HINDALCO",
+#               "ICICIBANK", "JINDALSTEL", "RELIANCE", "SBIN", "TATACONSUM", "TATAMOTORS",
+#               "TATASTEEL", "TCS", "TITAN"]
+#
+# md_path_zipped = rf"E:\chrome downloads\BhavCopy_NSE_FO_0_0_0_{yr}{date[3:5]}{date[:2]}_F_0000.csv.zip"     # .zip file path of downloaded cash bhavcopy
+# md_path = rf"E:\chrome downloads"
+#
+# # take data from col 22 and col 14 has month as cur month in caps and col 13 is null
+#
+# # extracting .zip file
+# with ZipFile(md_path_zipped, 'r') as zObject:
+#     zObject.extractall(path=md_path)
+#
+# md_file_path = rf"E:\Daily Data work\MD files\{yr}\{mnth}\fo{date[:2]}{mnth}20{date[6:]}bhav.xlsx"
+#
+# df = pd.read_csv(md_path_zipped[:-4])       # removing the .zip extension after unzipping
+# df = df.drop(df.columns[-9:], axis=1)
+# df = df.drop(columns=['BizDt', 'Src', 'FinInstrmTp', 'FinInstrmId', 'ISIN', 'SctySrs', 'OpnIntrst', 'ChngInOpnIntrst'])
+# df2 = df.copy()     # this one will actually be saved as md file
+# df = df[df['OptnTp'].isnull()]
+#
+# for share in share_list:
+#     ltp = df.loc[df['FinInstrmNm'].str.contains(share) & df['FinInstrmNm'].str.contains(mnth), 'SttlmPric'].iloc[0]
+#     print(f"{share}: {ltp}")
+
+
+# BANKNIFTY: 52560.5
+# NIFTY: 23638.9
+# ADANIPORTS: 1482.5
+# AUROPHARMA: 1308.35
+# CANBK: 115.45
+# DLF: 839.6
+# HINDALCO: 698.6
+# ICICIBANK: 1234.9
+# JINDALSTEL: 1031.3
+# RELIANCE: 3208.1
+# SBIN: 860.05
+# TATACONSUM: 1154.4
+# TATAMOTORS: 1006.75
+# TATASTEEL: 172.7
+# TCS: 3996.8
+# TITAN: 3171.35

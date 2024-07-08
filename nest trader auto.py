@@ -144,8 +144,8 @@ FO_30_min_shares = ['APOLLO', 'BAJFINSV', 'BAJFIN', 'BARODA', 'BN', 'COALIND', '
                     'TP', 'TS', 'TITAN', 'ULTRA', 'VEDL']
 
 EQ_30_min_shares = ["AARTIIND", "ADANI", "APOLLO", "BAJFINSV", "BAJFIN", "BANBK", "BARODA", "DLF", "EICHER",
-                    "FEDBANK",
-                    "HCL", "HINDALCO", "INDUSIND", "JIND", "LIC", "M&M", "M&MFIN", "NTPC", "SBIN", "SUNTV", "TM", "TP", "TS"]
+                    "ESCORTS", "FEDBANK", "HCL", "HINDALCO", "IGL", "INDUSIND", "JIND", "LIC", "M&M", "M&MFIN", "NTPC",
+                    "SBIN", "SUNTV", "TM", "TP", "TS", "VEDL"]
 
 ALGO_1_min_shares = ['AARTIIND', 'ABB', 'ABCAPITAL', 'ABFRL', 'ADANIENT', 'ADANIPORTS', 'ALKEM', 'AMBUJACEM',
                      'APOLLOHOSP', 'APOLLOTYRE', 'ASHOKLEY', 'ASTRAL', 'ATUL', 'AUBANK', 'AUROPHARMA', 'BAJAJFINSV',
