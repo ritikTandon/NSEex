@@ -1,4 +1,5 @@
 import os
+import re
 import shutil
 import pandas as pd
 from zipfile import ZipFile
@@ -235,7 +236,8 @@ df2 = df.copy()     # this one will actually be saved as md file
 df = df[df['OptnTp'].isnull()]
 
 for share in share_list:
-    ltp = df.loc[df['FinInstrmNm'].str.contains(share) & df['FinInstrmNm'].str.contains(mnth), 'SttlmPric'].iloc[0]
+    # match name with symbol and check if FinInstrmNm contains month name (it's the NIFTY24AUG24 full share name)
+    ltp = df.loc[(df['TckrSymb'] == share) & df['FinInstrmNm'].str.contains(mnth), 'SttlmPric'].iloc[0]
     foHL_sheet.cell(share_list[share], 5).value = ltp
 
 df2.to_excel(md_file_path, index=False)

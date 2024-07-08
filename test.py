@@ -155,34 +155,35 @@
 #     os.startfile(path)
 
 
-# import pandas as pd
-# from date_variables import yr, date, mnth
-# from zipfile import ZipFile
-#
-# share_list = ["BANKNIFTY", "NIFTY", "ADANIPORTS", "AUROPHARMA", "CANBK", "DLF", "HINDALCO",
-#               "ICICIBANK", "JINDALSTEL", "RELIANCE", "SBIN", "TATACONSUM", "TATAMOTORS",
-#               "TATASTEEL", "TCS", "TITAN"]
-#
-# md_path_zipped = rf"E:\chrome downloads\BhavCopy_NSE_FO_0_0_0_{yr}{date[3:5]}{date[:2]}_F_0000.csv.zip"     # .zip file path of downloaded cash bhavcopy
-# md_path = rf"E:\chrome downloads"
-#
-# # take data from col 22 and col 14 has month as cur month in caps and col 13 is null
+import pandas as pd
+import re
+from date_variables import yr, date, mnth
+from zipfile import ZipFile
+
+share_list = ["BANKNIFTY", "NIFTY", "ADANIPORTS", "AUROPHARMA", "CANBK", "DLF", "HINDALCO",
+              "ICICIBANK", "JINDALSTEL", "RELIANCE", "SBIN", "TATACONSUM", "TATAMOTORS",
+              "TATASTEEL", "TCS", "TITAN"]
+
+md_path_zipped = rf"E:\chrome downloads\BhavCopy_NSE_FO_0_0_0_{yr}{date[3:5]}{date[:2]}_F_0000.csv.zip"     # .zip file path of downloaded cash bhavcopy
+md_path = rf"E:\chrome downloads"
+
+# take data from col 22 and col 14 has month as cur month in caps and col 13 is null
 #
 # # extracting .zip file
 # with ZipFile(md_path_zipped, 'r') as zObject:
 #     zObject.extractall(path=md_path)
 #
-# md_file_path = rf"E:\Daily Data work\MD files\{yr}\{mnth}\fo{date[:2]}{mnth}20{date[6:]}bhav.xlsx"
-#
-# df = pd.read_csv(md_path_zipped[:-4])       # removing the .zip extension after unzipping
-# df = df.drop(df.columns[-9:], axis=1)
-# df = df.drop(columns=['BizDt', 'Src', 'FinInstrmTp', 'FinInstrmId', 'ISIN', 'SctySrs', 'OpnIntrst', 'ChngInOpnIntrst'])
-# df2 = df.copy()     # this one will actually be saved as md file
-# df = df[df['OptnTp'].isnull()]
-#
-# for share in share_list:
-#     ltp = df.loc[df['FinInstrmNm'].str.contains(share) & df['FinInstrmNm'].str.contains(mnth), 'SttlmPric'].iloc[0]
-#     print(f"{share}: {ltp}")
+md_file_path = rf"E:\Daily Data work\MD files\{yr}\{mnth}\fo{date[:2]}{mnth}20{date[6:]}bhav.xlsx"
+
+df = pd.read_csv(md_path_zipped[:-4])       # removing the .zip extension after unzipping
+df = df.drop(df.columns[-9:], axis=1)
+df = df.drop(columns=['BizDt', 'Src', 'FinInstrmTp', 'FinInstrmId', 'ISIN', 'SctySrs', 'OpnIntrst', 'ChngInOpnIntrst'])
+df2 = df.copy()     # this one will actually be saved as md file
+df = df[df['OptnTp'].isnull()]
+
+for share in share_list:
+    ltp = df.loc[(df['TckrSymb'] == share) & df['FinInstrmNm'].str.contains(mnth), 'SttlmPric'].iloc[0]
+    print(f"{share}: {ltp}")
 
 
 # BANKNIFTY: 52560.5
