@@ -1,8 +1,8 @@
 import os
-import re
 import shutil
 import pandas as pd
 from zipfile import ZipFile
+import calendar
 
 import openpyxl as xl
 from openpyxl.styles import PatternFill
@@ -17,6 +17,47 @@ fo_share_list = ["ADANI", "APORT", "APOLLO", "AURO", "AXIS", "BAJAJ", "BARODA", 
 
 fo_daily_aggregate_list = ["APORT", "AURO", "BN", "CANBK", "DLF", "HIND", "ICICI", "JIND", "NIFTY", "REL", "SBIN",
                            "TCON", "TM", "TS", "TCS", "TITAN"]
+
+
+# potential fix to check if we are or last thu of month, we start looking for next month's expiry
+def checkExpiry(day, month_abbr, year):
+    # Mapping of month abbreviations to month numbers
+    month_map = {
+        "JAN": 1, "FEB": 2, "MAR": 3, "APR": 4, "MAY": 5, "JUN": 6,
+        "JUL": 7, "AUG": 8, "SEP": 9, "OCT": 10, "NOV": 11, "DEC": 12
+    }
+
+    # Convert the month abbreviation to a month number
+    month = month_map.get(month_abbr.upper())
+
+    if month is None:
+        raise ValueError("Invalid month abbreviation")
+
+    # Get the number of days in the month
+    _, last_day_of_month = calendar.monthrange(year, month)
+
+    # Find the last Thursday of the month
+    last_date_of_month = datetime.date(year, month, last_day_of_month)
+    while last_date_of_month.weekday() != 3:  # 3 corresponds to Thursday
+        last_date_of_month -= datetime.timedelta(days=1)
+
+    # Check if the given day is greater than or equal to the last Thursday
+    given_date = datetime.date(year, month, day)
+    if given_date >= last_date_of_month:
+        # Move to the next month
+        if month == 12:
+            next_month = "JAN"
+        else:
+            next_month = list(month_map.keys())[list(month_map.values()).index(month) + 1]
+        return next_month
+    else:
+        return month_abbr
+
+
+# date variables converted to int to work with checkExpiry function
+d = int(date[:2])
+m = mnth
+y = int(yr)
 
 
 foHL_wb = xl.load_workbook(r'C:\Users\admin\PycharmProjects\daily data\fo high low.xlsx')
@@ -237,7 +278,7 @@ df = df[df['OptnTp'].isnull()]
 
 for share in share_list:
     # match name with symbol and check if FinInstrmNm contains month name (it's the NIFTY24AUG24 full share name)
-    ltp = df.loc[(df['TckrSymb'] == share) & df['FinInstrmNm'].str.contains(mnth), 'SttlmPric'].iloc[0]
+    ltp = df.loc[(df['TckrSymb'] == share) & df['FinInstrmNm'].str.contains(checkExpiry(d, m, y)), 'SttlmPric'].iloc[0]
     foHL_sheet.cell(share_list[share], 5).value = ltp
 
 df2.to_excel(md_file_path, index=False)
