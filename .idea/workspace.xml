@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="308761e4-5648-47f3-bc32-acb2059bab82" name="Changes" comment="added fix for issue #6">
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/ESCORTS.xls" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/IGL.xls" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/VEDL.xls" afterDir="false" />
+    <list default="true" id="308761e4-5648-47f3-bc32-acb2059bab82" name="Changes" comment="added ongc and bhel in algo and changed shares in 30 min">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/30 min csh.py" beforeDir="false" afterPath="$PROJECT_DIR$/30 min csh.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/AARTIIND.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/AARTIIND.xls" afterDir="false" />
@@ -145,20 +142,20 @@
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ZYDUSLIFE.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ZYDUSLIFE.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/AARTIIND.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/AARTIIND.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/NTPC.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/NTPC.xls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min fo/APORT.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/AARTIIND.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/AARTIIND.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/ESCORTS.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/ESCORTS.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/HINDALCO.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/HINDALCO.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/IGL.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/IGL.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/NTPC.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/NTPC.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/VEDL.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/VEDL.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/algo high low.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/algo high low.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algo.py" beforeDir="false" afterPath="$PROJECT_DIR$/algo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cash high low.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/cash high low.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data feed.py" beforeDir="false" afterPath="$PROJECT_DIR$/data feed.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/date_variables.py" beforeDir="false" afterPath="$PROJECT_DIR$/date_variables.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fo high low.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/fo high low.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ltp prev.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/ltp prev.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/monthly closing creation/MWCL_creation_updation.py" beforeDir="false" afterPath="$PROJECT_DIR$/monthly closing creation/MWCL_creation_updation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/new share create daily.py" beforeDir="false" afterPath="$PROJECT_DIR$/new share create daily.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nest trader auto.py" beforeDir="false" afterPath="$PROJECT_DIR$/nest trader auto.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,14 +239,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1691935354080</updated>
-    </task>
-    <task id="LOCAL-00009" summary="till 30 min done">
-      <option name="closed" value="true" />
-      <created>1692045128633</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1692045128633</updated>
     </task>
     <task id="LOCAL-00010" summary="done finally xD">
       <option name="closed" value="true" />
@@ -635,7 +624,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722269085979</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="added ongc and bhel in algo and changed shares in 30 min">
+      <option name="closed" value="true" />
+      <created>1725020562929</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1725020562930</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -679,7 +676,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="algo only works till providing wha calcs to do for next day's trade" />
     <MESSAGE value="added modular amount option to calc" />
     <MESSAGE value="created 2 new share but with no formatting and only daily" />
     <MESSAGE value="updated daily data" />
@@ -704,7 +700,8 @@
     <MESSAGE value="added IGL, ESCORTS, VEDL to 30 min, modified fo.py to work with new md file format" />
     <MESSAGE value="changed contains to equailty for nifty as it was taking fnnifty as it contained &quot;nifty&quot;" />
     <MESSAGE value="added fix for issue #6" />
-    <option name="LAST_COMMIT_MESSAGE" value="added fix for issue #6" />
+    <MESSAGE value="added ongc and bhel in algo and changed shares in 30 min" />
+    <option name="LAST_COMMIT_MESSAGE" value="added ongc and bhel in algo and changed shares in 30 min" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
