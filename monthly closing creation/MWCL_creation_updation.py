@@ -31,7 +31,7 @@ cash_share_list = ['03 AARTIIND', 'ADANIENT', '04 APOLLOTYRE', 'BAJAJFINSERV', '
                    'RELIANCE CHL', 'SBIN CHL', 'SUNTV', 'TATACHEM', '09 TATAMOTOR CHL', 'TATAPOWER', 'TATASTEEL chl',
                    'ULTRACHEM']
 
-add_share_list = []
+add_share_list = ['ONGC']
 
 # algo_share_list = ['ADANIENT']
 
@@ -190,12 +190,12 @@ def monthly_create():
         m_sheet.freeze_panes = m_sheet["A4"]
 
         # Monthly
-        m_start_date = datetime.datetime(2020, 1, 1)
+        m_start_date = datetime.datetime(2022, 1, 3)
         start_date = m_start_date
-        d_row = 3
-        m_row = 4
+        d_row = 527
+        m_row = 28
 
-        while d_row < 2700:
+        while d_row < 1200:
             cur_date = datetime.datetime.strptime(d_sheet.cell(d_row, 1).value, '%d-%b-%y')
             high = 0
             low = 999999
@@ -235,7 +235,7 @@ def monthly_create():
             d_row += buff
 
             m_sheet.cell(m_row, 1).value = f"{start_date.strftime('%d-%m-%y')} TO {end_date.strftime('%d-%m-%y')}"
-            if d_row < 1018:            # todo change this row num when doing this for shares in future, it ignores h,l,c writing after this row
+            if d_row < 1200:            # todo change this row num when doing this for shares in future, it ignores h,l,c writing after this row
                 m_sheet.cell(m_row, 2).value = f'=E{m_row-1}'
                 m_sheet.cell(m_row, 3).value = high
                 m_sheet.cell(m_row, 4).value = low
@@ -335,12 +335,12 @@ def closing_create():
         cl_sheet.freeze_panes = cl_sheet["A4"]
 
         # Closing
-        cl_start_date = datetime.datetime(2020, 1, 31)
+        cl_start_date = datetime.datetime(2022, 1, 3)
         start_date = cl_start_date
-        d_row = 25      # 31-JAN-2020
-        cl_row = 4
+        d_row = 527      # 03-JAN-2022
+        cl_row = 27
 
-        while d_row < 2700:
+        while d_row < 1213:
             cur_date = datetime.datetime.strptime(d_sheet.cell(d_row, 1).value, '%d-%b-%y')
             high = 0
             low = 999999
@@ -380,7 +380,7 @@ def closing_create():
             d_row += buff
 
             cl_sheet.cell(cl_row, 1).value = f"{start_date.strftime('%d-%m-%y')} TO {end_date.strftime('%d-%m-%y')}"
-            if d_row < 1018:            # todo change this row num when doing this for shares in future, it ignores h,l,c writing after this row
+            if d_row < 1213:            # todo change this row num when doing this for shares in future, it ignores h,l,c writing after this row
                 cl_sheet.cell(cl_row, 2).value = f'=E{cl_row-1}'
                 cl_sheet.cell(cl_row, 3).value = high
                 cl_sheet.cell(cl_row, 4).value = low

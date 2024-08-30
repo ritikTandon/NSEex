@@ -1,9 +1,11 @@
 import os
+import shutil
+
 import openpyxl as xl
 import send2trash
 from openpyxl.styles import Font, Alignment
 
-append = 236  # increment this daily. 236 is for 09-JUL-2024
+append = 274  # increment this daily. 274 is for 30-AUG-2024
 
 # styles
 red = Font("Arial", 11, color='ff0000', bold=True)
@@ -252,3 +254,13 @@ algo()
 delete_file(r'E:\Daily Data work\csh.xls')
 delete_file(r'E:\Daily Data work\fo1.xls')
 delete_file(r'E:\Daily Data work\algo.xls')
+
+# path = r'D:\Transfer'
+#
+# try:
+#     if os.path.exists(path):
+#         shutil.copy()
+#     else:
+#         print("Path doesn't exist!")
+# except FileNotFoundError:
+#     print("Pendrive not inserted!")

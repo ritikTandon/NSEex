@@ -160,9 +160,7 @@ import re
 from date_variables import yr, date, mnth
 from zipfile import ZipFile
 
-share_list = ["BANKNIFTY", "NIFTY", "ADANIPORTS", "AUROPHARMA", "CANBK", "DLF", "HINDALCO",
-              "ICICIBANK", "JINDALSTEL", "RELIANCE", "SBIN", "TATACONSUM", "TATAMOTORS",
-              "TATASTEEL", "TCS", "TITAN"]
+share_list = ["BANKNIFTY", "NIFTY"]
 
 md_path_zipped = rf"E:\chrome downloads\BhavCopy_NSE_FO_0_0_0_{yr}{date[3:5]}{date[:2]}_F_0000.csv.zip"     # .zip file path of downloaded cash bhavcopy
 md_path = rf"E:\chrome downloads"
@@ -181,9 +179,54 @@ df = df.drop(columns=['BizDt', 'Src', 'FinInstrmTp', 'FinInstrmId', 'ISIN', 'Sct
 df2 = df.copy()     # this one will actually be saved as md file
 df = df[df['OptnTp'].isnull()]
 
+import datetime
+import calendar
+from date_variables import date,mnth, yr
+
+
+def checkExpiry(day, month_abbr, year):
+    # Mapping of month abbreviations to month numbers
+    month_map = {
+        "JAN": 1, "FEB": 2, "MAR": 3, "APR": 4, "MAY": 5, "JUN": 6,
+        "JUL": 7, "AUG": 8, "SEP": 9, "OCT": 10, "NOV": 11, "DEC": 12
+    }
+
+    # Convert the month abbreviation to a month number
+    month = month_map.get(month_abbr.upper())
+
+    if month is None:
+        raise ValueError("Invalid month abbreviation")
+
+    # Get the number of days in the month
+    _, last_day_of_month = calendar.monthrange(year, month)
+
+    # Find the last Thursday of the month
+    last_date_of_month = datetime.date(year, month, last_day_of_month)
+    while last_date_of_month.weekday() != 3:  # 3 corresponds to Thursday
+        last_date_of_month -= datetime.timedelta(days=1)
+
+    # Check if the given day is greater than or equal to the last Thursday
+    given_date = datetime.date(year, month, day)
+    if given_date >= last_date_of_month:
+        # Move to the next month
+        if month == 12:
+            next_month = "JAN"
+        else:
+            next_month = list(month_map.keys())[list(month_map.values()).index(month) + 1]
+        return next_month
+    else:
+        return month_abbr
+
+
+d = int(date[:2])
+m = mnth
+y = int(yr)
+
+
 for share in share_list:
-    ltp = df.loc[(df['TckrSymb'] == share) & df['FinInstrmNm'].str.contains(mnth), 'SttlmPric'].iloc[0]
+    ltp = df.loc[(df['TckrSymb'] == share) & df['FinInstrmNm'].str.contains(checkExpiry(d, m, y)), 'SttlmPric'].iloc[0]
     print(f"{share}: {ltp}")
+
 
 
 # BANKNIFTY: 52560.5

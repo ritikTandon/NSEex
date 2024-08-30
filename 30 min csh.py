@@ -17,16 +17,16 @@ algoHL_wb = xl.load_workbook(r'C:\Users\admin\PycharmProjects\daily data\algo hi
 algoHL_sheet = algoHL_wb['Sheet1']
 
 # dict to store share names with their row in 'cash/algo/fo high low.xlsx' sheets respectively
-cash_30_min_list = {"AARTIIND": 2, "ADANI": 3, "APOLLO": 4, "BAJFINSV": 5, "BAJFIN": 6, "BANBK": 7, "BARODA": 8, "BN": 4,
+cash_30_min_list = {"ABB": 3, "ASHOKLEY": 12, "AARTIIND": 2, "ADANI": 3, "APOLLO": 4, "BAJFINSV": 5, "BAJFIN": 6, "BANBK": 7, "BARODA": 8, "BN": 4, "DIXON": 46,
                     "DLF": 10, "EICHER": 11, "ESCORTS": 48, "FEDBANK": 12, "HCL": 13, "HINDALCO": 15, "IGL": 68, "INDUSIND": 17, "JIND": 19,
-                    "LIC": 20, "M&M": 21, "M&MFIN": 22, "NIFTY": 10, "NTPC": 23, "SBIN": 25, "SUNTV": 26, "TM": 28,
+                    "LIC": 20, "M&M": 21, "M&MFIN": 22, "NIFTY": 10, "NTPC": 23, "ONGC": 105, "RECLTD": 115, "SBIN": 25, "SUNTV": 26, "TM": 28,
                     "TP": 29, "TS": 30, "VEDL": 131}
 
 # no decimal points in display
-format_list = ["NIFTY", "EICHER", "BN"]
+format_list = ["NIFTY", "EICHER", "BN", "DIXON", "ABB"]
 
 # shares that get their data from 'algo high low.xlsx', when adding shares that are in algo and not in cash, add to this
-algo_shares = ["ESCORTS", "IGL", "VEDL"]
+algo_shares = ["ESCORTS", "IGL", "VEDL", "ABB", "ASHOKLEY", "DIXON", "ONGC", "RECLTD"]
 
 # copying hourlys (.xls) as backup
 # path to source directory
