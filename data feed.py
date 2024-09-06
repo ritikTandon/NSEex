@@ -5,7 +5,7 @@ import openpyxl as xl
 import send2trash
 from openpyxl.styles import Font, Alignment
 
-append = 275  # increment this daily. 275 is for 02-SEP-2024
+append = 279  # increment this daily. 279 is for 06-SEP-2024
 
 # styles
 red = Font("Arial", 11, color='ff0000', bold=True)
@@ -26,15 +26,16 @@ def delete_file(path):
 def cash():
     i = 0  # main iterator variable
 
-    cash_shares = {'03 AARTIIND': 947, 'ADANIENT': 1579, '04 APOLLOTYRE': 2946, 'BAJAJFINSERV': 1579, 'BAJAJFINANCE': 1579,
-                   'BANDHANBANK': 1579, '05 BANKBARODA': 1579, 'COAL INDIA': 3232, '06 DLF CHL': 4058, 'EICHERMOTOR': 2715,
+    cash_shares = {'AARTIIND': 947, 'ADANIENT': 1579, 'APOLLOTYRE': 2946, 'BAJAJFINSERV': 1579, 'BAJAJFINANCE': 1579,
+                   'BANDHANBANK': 1579, ''
+                                        'BANKBARODA': 1579, 'COAL INDIA': 3232, '06 DLF CHL': 4058, 'EICHERMOTOR': 2715,
                    'FEDRAL BANK': 1579, 'HCLTECH': 1579, 'HDFC': 3936, 'HINDALCO': 947, 'ICICIBANK': 1579, 'INDUSINDBANK': 1579,
-                   'INFY': 2765, 'JINDALS chl': 5195, '07 LICHSGFIN': 1579, 'M&M': 1579, 'M&MFINANCE': 1579,
+                   'INFY': 2765, 'JINDALS chl': 5195, 'LICHSGFIN': 1579, 'M&M': 1579, '07 M&MFINANCE': 1579,
                    '08 NTPC': 947, 'RELIANCE CHL': 4793, 'SBIN CHL': 4860, 'SUNTV': 1579, 'TATACHEM': 1579,
-                   '09 TATAMOTOR CHL': 4434, 'TATAPOWER': 1579, 'TATASTEEL chl': 4570, 'ULTRACHEM': 2696}
+                   '11 TATAMOTOR CHL': 4434, '12 TATAPOWER': 1579, '13 TATASTEEL chl': 4570, 'ULTRACHEM': 2696}
 
-    cash_no_format_list = ['04 APOLLOTYRE', 'BANDHANBANK', '05 BANKBARODA', 'COAL INDIA', '06 DLF CHL', '09 TATAMOTOR CHL',
-                           'TATASTEEL chl', 'TATAPOWER', 'M&MFINANCE', 'FEDRAL BANK', 'HINDALCO', '08 NTPC']
+    cash_no_format_list = ['APOLLOTYRE', 'BANDHANBANK', 'BANKBARODA', 'COAL INDIA', 'DLF CHL', 'TATAMOTOR CHL',
+                           'TATASTEEL chl', 'TATAPOWER', 'M&MFINANCE', 'FEDRAL BANK', 'HINDALCO', 'NTPC']
 
     # loading 'cash high low.xlsx'
     cashHL_wb = xl.load_workbook(r'C:\Users\admin\PycharmProjects\daily data\cash high low.xlsx')
@@ -167,20 +168,22 @@ def algo():
     i = 0  # main iterator variable
     algo_row = 947
 
-    algo_share_list = ['AARTIIND', 'ABB', 'ABCAPITAL', 'ABFRL', 'ADANIENT', 'ADANIPORTS', 'ALKEM', 'AMBUJACEM',
-                         'APOLLOHOSP', 'APOLLOTYRE', 'ASHOKLEY', 'ASTRAL', 'ATUL', 'AUBANK', 'AUROPHARMA', 'BAJAJFINSV',
+    algo_copy_to_cash_list = ['02 ABB', '03 ASHOKLEY', '04 BHEL', '05 DIXON', '09 ONGC', '10 RECLTD']
+
+    algo_share_list = ['AARTIIND', '02 ABB', 'ABCAPITAL', 'ABFRL', 'ADANIENT', 'ADANIPORTS', 'ALKEM', 'AMBUJACEM',
+                         'APOLLOHOSP', 'APOLLOTYRE', '03 ASHOKLEY', 'ASTRAL', 'ATUL', 'AUBANK', 'AUROPHARMA', 'BAJAJFINSV',
                          'BAJFINANCE', 'BALKRISIND', 'BALRAMCHIN', 'BANDHANBNK', 'BANKBARODA', 'BATAINDIA', 'BEL',
-                         'BHARATFORG', 'BHEL', 'BIOCON', 'BRITANNIA', 'BSOFT', 'CANBK', 'CANFINHOME', 'CHAMBLFERT', 'CHOLAFIN',
+                         'BHARATFORG', '04 BHEL', 'BIOCON', 'BRITANNIA', 'BSOFT', 'CANBK', 'CANFINHOME', 'CHAMBLFERT', 'CHOLAFIN',
                          'CIPLA', 'COFORGE', 'CONCOR', 'COROMANDEL', 'CROMPTON', 'CUMMINSIND', 'DABUR', 'DALBHARAT',
-                         'DEEPAKFERT', 'DEEPAKNTR', 'DELTACORP', 'DIVISLAB', 'DIXON', 'DLF', 'DRREDDY', 'ESCORTS',
+                         'DEEPAKFERT', 'DEEPAKNTR', 'DELTACORP', 'DIVISLAB', '05 DIXON', 'DLF', 'DRREDDY', 'ESCORTS',
                          'EXIDEIND', 'GLENMARK', 'GLS', 'GNFC', 'GODREJCP', 'GODREJPROP', 'GRANULES', 'GRASIM', 'GUJGASLTD',
                          'HAL', 'HAVELLS', 'HCLTECH', 'HDFCAMC', 'HDFCLIFE', 'HINDALCO', 'HINDCOPPER', 'ICICIGI',
                          'ICICIPRULI', 'IEX', 'IGL', 'INDHOTEL', 'INDIACEM', 'INDIAMART', 'INDIGO', 'INDUSINDBK',
                          'INDUSTOWER', 'INTELLECT', 'IPCALAB', 'JINDALSTEL', 'JKCEMENT', 'JSWSTEEL', 'JUBLFOOD',
                          'KOTAKBANK', 'LALPATHLAB', 'LAURUSLABS', 'LICHSGFIN', 'LTIM', 'LTTS', 'LUPIN', 'M%26MFIN',
                          'MANAPPURAM', 'MARICO', 'MCDOWELL-N', 'MCX', 'METROPOLIS', 'MFSL', 'MGL', 'MPHASIS', 'MUTHOOTFIN',
-                         'NAM-INDIA', 'NAUKRI', 'NAVINFLUOR', 'NMDC', 'NTPC', 'OBEROIRLTY', 'ONGC', 'PEL', 'PERSISTENT', 'PETRONET',
-                         'PIDILITIND', 'POLYCAB', 'POWERGRID', 'RAIN', 'RAMCOCEM', 'RBLBANK', 'RECLTD', 'SBICARD',
+                         'NAM-INDIA', 'NAUKRI', 'NAVINFLUOR', 'NMDC', 'NTPC', 'OBEROIRLTY', '09 ONGC', 'PEL', 'PERSISTENT', 'PETRONET',
+                         'PIDILITIND', 'POLYCAB', 'POWERGRID', 'RAIN', 'RAMCOCEM', 'RBLBANK', '10 RECLTD', 'SBICARD',
                          'SBILIFE', 'SIEMENS', 'SRF', 'STAR', 'SUNPHARMA', 'SYNGENE', 'TATACOMM', 'TATAMOTORS', 'TECHM',
                          'TORNTPHARM', 'TORNTPOWER', 'TRENT', 'TVSMOTOR', 'UBL', 'ULTRACEMCO', 'UPL', 'VEDL', 'VOLTAS',
                          'ZEEL', 'ZYDUSLIFE']
@@ -240,7 +243,11 @@ def algo():
 
         print(f"{share} done!")
 
+        if share in algo_copy_to_cash_list:
+            wb.save(rf'E:\Daily Data work\CASH\{share}.xlsx')
+
         wb.save(path)
+
 
     print("----------------------------------ALGO DONE----------------------------------")
 
