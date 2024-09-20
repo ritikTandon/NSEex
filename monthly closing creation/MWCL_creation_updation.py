@@ -1,4 +1,5 @@
 import datetime
+import shutil
 from datetime import timedelta
 import calendar
 import openpyxl as xl
@@ -722,8 +723,8 @@ def closing_update(typ):
 # monthly_create()
 # closing_create()
 
-weekly_update("C")
-weekly_update("A")
+# weekly_update("C")
+# weekly_update("A")
 
 # monthly_update("C")
 # monthly_update("A")
@@ -731,3 +732,8 @@ weekly_update("A")
 # closing_update("C")
 # closing_update("A")
 
+algo_copy_to_cash_list = ['02 ABB', '03 ASHOKLEY', '04 BHEL', '05 DIXON', '09 ONGC', '10 RECLTD']
+
+for sh in algo_copy_to_cash_list:
+    shutil.copy(rf"E:\Daily Data work\ALGORITHM\{sh}.xlsx",
+                rf"E:\Daily Data work\CASH\{sh}.xlsx")
