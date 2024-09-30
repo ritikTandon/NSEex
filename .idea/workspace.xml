@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="308761e4-5648-47f3-bc32-acb2059bab82" name="Changes" comment="fixed pos in ltp prev of shares">
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BHEL.xls" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ONGC.xls" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/ABB.xls" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/ASHOKLEY.xls" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/BHEL.xls" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/DIXON.xls" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/ONGC.xls" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/RECLTD.xls" afterDir="false" />
+    <list default="true" id="308761e4-5648-47f3-bc32-acb2059bab82" name="Changes" comment="copying shares from algo to cash">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/AARTIIND.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/AARTIIND.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ABB.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ABB.xls" afterDir="false" />
@@ -38,6 +31,7 @@
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BATAINDIA.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BATAINDIA.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BEL.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BEL.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BHARATFORG.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BHARATFORG.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BHEL.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BHEL.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BIOCON.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BIOCON.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BRITANNIA.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BRITANNIA.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BSOFT.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BSOFT.xls" afterDir="false" />
@@ -116,6 +110,7 @@
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/NMDC.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/NMDC.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/NTPC.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/NTPC.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/OBEROIRLTY.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/OBEROIRLTY.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ONGC.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ONGC.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/PEL.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/PEL.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/PERSISTENT.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/PERSISTENT.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/PETRONET.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/PETRONET.xls" afterDir="false" />
@@ -150,10 +145,16 @@
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/AARTIIND.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/AARTIIND.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/NTPC.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/NTPC.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/AARTIIND.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/AARTIIND.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/ABB.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/ABB.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/ASHOKLEY.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/ASHOKLEY.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/BHEL.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/BHEL.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/DIXON.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/DIXON.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/ESCORTS.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/ESCORTS.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/HINDALCO.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/HINDALCO.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/IGL.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/IGL.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/NTPC.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/NTPC.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/ONGC.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/ONGC.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/RECLTD.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/RECLTD.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/VEDL.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/VEDL.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/algo high low.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/algo high low.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cash high low.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/cash high low.xlsx" afterDir="false" />
@@ -244,22 +245,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1691935354080</updated>
-    </task>
-    <task id="LOCAL-00013" summary="done finally xD">
-      <option name="closed" value="true" />
-      <created>1692375734821</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1692375734821</updated>
-    </task>
-    <task id="LOCAL-00014" summary="done till 1 min formatting and high low extraction">
-      <option name="closed" value="true" />
-      <created>1692786573096</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1692786573096</updated>
     </task>
     <task id="LOCAL-00015" summary="done till 1 min formatting and high low extraction">
       <option name="closed" value="true" />
@@ -637,7 +622,23 @@
       <option name="project" value="LOCAL" />
       <updated>1725035235321</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="changed share names in cash">
+      <option name="closed" value="true" />
+      <created>1725626671655</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1725626671655</updated>
+    </task>
+    <task id="LOCAL-00063" summary="copying shares from algo to cash">
+      <option name="closed" value="true" />
+      <created>1726841635089</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1726841635090</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -652,6 +653,31 @@
     </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/master" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="master" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
@@ -667,7 +693,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="origin/master" />
                       </list>
                     </value>
                   </entry>
@@ -681,8 +707,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="completed creation of 1 min sheets with formatting" />
-    <MESSAGE value="completed daily share creation for new shares and saving of 1 min and daily data for algo" />
     <MESSAGE value="finished daily actual trade algo automation and added NTPC and HINDALCO to 30 min as well" />
     <MESSAGE value="final touch ups" />
     <MESSAGE value="added weekly to algo data" />
@@ -706,7 +730,9 @@
     <MESSAGE value="fixed issues" />
     <MESSAGE value="added BHEL and ONGC to MWCL" />
     <MESSAGE value="fixed pos in ltp prev of shares" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed pos in ltp prev of shares" />
+    <MESSAGE value="changed share names in cash" />
+    <MESSAGE value="copying shares from algo to cash" />
+    <option name="LAST_COMMIT_MESSAGE" value="copying shares from algo to cash" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -723,8 +749,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/monthly closing creation/MWCL_creation_updation.py</url>
-          <line>494</line>
-          <option name="timeStamp" value="24" />
+          <line>495</line>
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
