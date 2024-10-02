@@ -120,3 +120,38 @@ changing date variables
 
 ACTUAL ALGO TRADING APP(CLI Probably)
     -
+
+
+30-SEP-2024
+    - FIX DATA ERROR IN ALGO (Maybe cash too) dated 6-JUN-24 and in that subsequent week, month and closing
+    - add h-l & weekly diff in percentages as well and color the trend col (move trend to end) for all shares in cash and
+      algo (d/w/m/cl)
+    - Fix h-l & weekly diff for days when the previous are a holiday (most likely can be fixed by Excel formula: check
+      if 1 or 2 days before are null, then take the prev day)
+
+    SOLN:  GOT formulas in abb for h-l day before problem and using conditional formatting for colors
+    TBD- by the end of 30-9-24
+
+    SOLN: check the names of all cash and algo sheets and whether they have the same column format, if not, make it the
+          same but check if it breaks the code or not. After that, fix the 6-JUN-24 data error and then write a script to
+          re-enter the correct formulas, add 2 columns for % and color the trend column using a formula
+
+    - Move nifty and bn fut data to 'fut' sheet in respective cash sheets
+
+    - delete shares from algo but keep current shares as backup inside algo folder (algo old)
+
+    - Remove hourlys for all removed sheets for FO (create them but don't put in pen-drive when transferring)
+
+    - stop making 30 min fo (don't remove tab as it will mess us coords but only generate nifty and bn 30 min fo and
+      save them with cash instead of copying like we do now)
+
+    - Keep an excel file that tracks changes made to the data (manual)
+
+    - ADD TCS, TITAN, BAJAJ-AUTO in cash but not daily chart and daily 30 min whatsapp images
+
+    - ADD TS, remove ASHOKLEY and M&MFIN from chart and renumber the cash shares to only reflect ones in daily chart
+
+    - weekly, monthly, closing close should be LTP
+
+
+
