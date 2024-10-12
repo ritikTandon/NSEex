@@ -138,14 +138,14 @@ FO_shares = ["ADANI", "APORT", "APOLLO", "AURO", "AXIS", "BAJAJ", "BARODA", "BN"
              "DLF", "DRREDDY", "EICHER", "HCL", "HDFC", "HIND", "HINDUNLVR", "ICICI", "INDUSIND", "JIND", "NIFTY", "REL",
              "SBIN", "TCHEM", "TCON", "TM", "TS", "TCS", "TITAN", "ULTRA", "VEDL"]
 
-FO_30_min_shares = ['APOLLO', 'BAJFINSV', 'BAJFIN', 'BARODA', 'BN', 'COALIND', 'DLF', 'EICHER', 'FEDBANK', 'HCL',
-                    'HDFC',
-                    'ICICI', 'INDUSIND', 'INFY', 'JIND', 'M&M', 'M&MFIN', 'NIFTY', 'REL', 'SBIN', 'SUNTV', 'TCON', 'TM',
-                    'TP', 'TS', 'TITAN', 'ULTRA', 'VEDL']
+# FO_30_min_shares = ['APOLLO', 'BAJFINSV', 'BAJFIN', 'BARODA', 'BN', 'COALIND', 'DLF', 'EICHER', 'FEDBANK', 'HCL',
+#                     'HDFC',
+#                     'ICICI', 'INDUSIND', 'INFY', 'JIND', 'M&M', 'M&MFIN', 'NIFTY', 'REL', 'SBIN', 'SUNTV', 'TCON', 'TM',
+#                     'TP', 'TS', 'TITAN', 'ULTRA', 'VEDL']
 
-EQ_30_min_shares = ["AARTIIND", "ABB", "ADANI", "APOLLO", "ASHOKLEY", "BAJFINSV", "BAJFIN", "BANBK", "BARODA", "BHEL", "DIXON", "DLF", "EICHER",
-                    "ESCORTS", "FEDBANK", "HCL", "HINDALCO", "IGL", "INDUSIND", "JIND", "LIC", "M&M", "M&MFIN", "NTPC",
-                    "ONGC", "RECLTD", "SBIN", "SUNTV", "TM", "TP", "TS", "VEDL"]
+EQ_30_min_shares = ["AARTIIND", "ABB", "ADANI", "APOLLO", "ASHOKLEY", "BAJFINSV", "BAJFIN", "BANBK", "BARODA", "BN",
+                    "BHEL", "DIXON", "DLF", "EICHER", "ESCORTS", "FEDBANK", "HCL", "HINDALCO", "IGL", "INDUSIND", "JIND",
+                    "LIC", "M&M", "M&MFIN", "NIFTY", "NTPC", "ONGC", "RECLTD", "SBIN", "SUNTV", "TM", "TP", "TS", "VEDL"]
 
 ALGO_1_min_shares = ['AARTIIND', 'ABB', 'ABCAPITAL', 'ABFRL', 'ADANIENT', 'ADANIPORTS', 'ALKEM', 'AMBUJACEM',
                      'APOLLOHOSP', 'APOLLOTYRE', 'ASHOKLEY', 'ASTRAL', 'ATUL', 'AUBANK', 'AUROPHARMA', 'BAJAJFINSV',
@@ -285,40 +285,40 @@ for share in ALGO_1_min_shares:
         save_share(share)
         sleep(1)
 
-# FO 30 min
-pg.click(imp_coord_dict["30minFO"])
-sleep(1)
-pg.click(imp_coord_dict["first share"])
-sleep(1)
-
-first = True
-for share in FO_30_min_shares:
-    print(share)
-    vwap()
-    sleep(1)
-
-    # if it's the first share, follow the first share protocol
-    if first:
-        path = PATHS_DICT["30minFO"]  # setting path for first share
-
-        pg.doubleClick(imp_coord_dict["time interval"])
-        sleep(2)
-        write("30")
-        sleep(1)
-        pg.press('enter')
-
-        sleep(1)
-        check_change()
-        save_share(share, path)
-        first = False
-        sleep(1)
-
-    else:
-        print('after first')
-        pg.press('enter')
-        check_change()
-        save_share(share)
-        sleep(1)
+# # FO 30 min
+# pg.click(imp_coord_dict["30minFO"])
+# sleep(1)
+# pg.click(imp_coord_dict["first share"])
+# sleep(1)
+#
+# first = True
+# for share in FO_30_min_shares:
+#     print(share)
+#     vwap()
+#     sleep(1)
+#
+#     # if it's the first share, follow the first share protocol
+#     if first:
+#         path = PATHS_DICT["30minFO"]  # setting path for first share
+#
+#         pg.doubleClick(imp_coord_dict["time interval"])
+#         sleep(2)
+#         write("30")
+#         sleep(1)
+#         pg.press('enter')
+#
+#         sleep(1)
+#         check_change()
+#         save_share(share, path)
+#         first = False
+#         sleep(1)
+#
+#     else:
+#         print('after first')
+#         pg.press('enter')
+#         check_change()
+#         save_share(share)
+#         sleep(1)
 
 # EQ 30 min
 pg.click(imp_coord_dict["30minCash"])
@@ -354,11 +354,11 @@ for share in EQ_30_min_shares:
         save_share(share)
         sleep(1)
 
-# copying NIFTY and BN from 30 min FO to 30 minute cash
-shutil.copy(rf"E:\Daily Data work\hourlys 30 minute FO\{yr}\{mnth}\{date}\NIFTY.xls",
-            rf"E:\Daily Data work\hourlys 30 minute CASH\{yr}\{mnth}\{date}")
-shutil.copy(rf"E:\Daily Data work\hourlys 30 minute FO\{yr}\{mnth}\{date}\BN.xls",
-            rf"E:\Daily Data work\hourlys 30 minute CASH\{yr}\{mnth}\{date}")
+# # copying NIFTY and BN from 30 min FO to 30 minute cash
+# shutil.copy(rf"E:\Daily Data work\hourlys 30 minute FO\{yr}\{mnth}\{date}\NIFTY.xls",
+#             rf"E:\Daily Data work\hourlys 30 minute CASH\{yr}\{mnth}\{date}")
+# shutil.copy(rf"E:\Daily Data work\hourlys 30 minute FO\{yr}\{mnth}\{date}\BN.xls",
+#             rf"E:\Daily Data work\hourlys 30 minute CASH\{yr}\{mnth}\{date}")
 
 end = time.time()
 print(f"Total runtime of the program is {int((end - begin) // 60)} minutes and {int((end - begin) % 60)} seconds")
