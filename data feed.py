@@ -5,7 +5,7 @@ import openpyxl as xl
 import send2trash
 from openpyxl.styles import Font, Alignment
 
-append = 298  # increment this daily. 298 is for 03-OCT-2024
+append = 305  # increment this daily. 305 is for 14-OCT-2024
 
 # styles
 red = Font("Arial", 11, color='ff0000', bold=True)
@@ -99,8 +99,10 @@ def cash():
 def fo():
     i = 0  # main iterator variable
 
+    # nifty and bn new data won't be updated in the future sheets but in FUT sheets in cash wb from now on (12/10/24)
+    # changed nifty row to reflect the correct row in nifty cash "FUT" sheet
     fo_shares = {'ADANI PORT': 2279, 'AUROPHARMA': 2789, '02 BANKNIFTY F': 3309, 'CANBK': 2016, 'DLF': 2831,
-                 'HINDALCO': 3989, 'ICICIBANK': 1093, 'JINDS': 2274, '01 NIFTY F': 2795, '03 RELIANCE': 2792, 'SBIN': 2793,
+                 'HINDALCO': 3989, 'ICICIBANK': 1093, 'JINDS': 2274, '01 NIFTY F': 5390, '03 RELIANCE': 2792, 'SBIN': 2793,
                  'TATACONSUM': 2276, '05 TATAMOTOR': 2791, '04 TATASTEEL': 2793, 'TCS': 4826, 'TITAN': 1762}
 
     fo_no_format_list = ['04 TATASTEEL']
@@ -111,10 +113,17 @@ def fo():
     foHL_row = 2
 
     for share in fo_shares:
-        path = rf'E:\Daily Data work\FO\{share}.xlsx'
+        if share in ['02 BANKNIFTY F', '01 NIFTY F']:
+            path = rf'E:\Daily Data work\CASH\{share}.xlsx'
 
-        wb = xl.load_workbook(path)
-        sheet = wb['D']
+            wb = xl.load_workbook(path)
+            sheet = wb['FUT']
+
+        else:
+            path = rf'E:\Daily Data work\FO\{share}.xlsx'
+
+            wb = xl.load_workbook(path)
+            sheet = wb['D']
 
         input_row = fo_shares[share] + append
 
