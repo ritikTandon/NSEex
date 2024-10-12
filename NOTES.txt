@@ -123,6 +123,16 @@ ACTUAL ALGO TRADING APP(CLI Probably)
 
 
 30-SEP-2024
+    - Keep an excel file that tracks changes made to the data (manual)
+
+    - ADD TCS, TITAN, BAJAJ-AUTO in cash but not daily chart and daily 30 min whatsapp images
+
+    - ADD TS, remove ASHOKLEY and M&MFIN from chart and renumber the cash shares to only reflect ones in daily chart
+
+
+
+DONE FOR ALGO:
+    - add an 'if' to check if today is holiday and also, non-decimal numbers are coming as XX., remove the .
     - FIX DATA ERROR IN ALGO (Maybe cash too) dated 6-JUN-24 and in that subsequent week, month and closing
     - add h-l & weekly diff in percentages as well and color the trend col (move trend to end) for all shares in cash and
       algo (d/w/m/cl)
@@ -136,22 +146,22 @@ ACTUAL ALGO TRADING APP(CLI Probably)
           same but check if it breaks the code or not. After that, fix the 6-JUN-24 data error and then write a script to
           re-enter the correct formulas, add 2 columns for % and color the trend column using a formula
 
-    - Move nifty and bn fut data to 'fut' sheet in respective cash sheets
+          !! bold arial 11 font throughout all F3-j3 till end // bold_font = Font(name='Arial', size=11, bold=True)
 
-    - delete shares from algo but keep current shares as backup inside algo folder (algo old)
+          % hl diff = hl diff / ltp * 100 (2 decimal pts)
+          % cl diff = cl diff / prev day ltp * 100 (2 decimal pts)
 
-    - Remove hourlys for all removed sheets for FO (create them but don't put in pen-drive when transferring)
+
+DONE:
+    - weekly, monthly, closing close should be LTP
 
     - stop making 30 min fo (don't remove tab as it will mess us coords but only generate nifty and bn 30 min fo and
       save them with cash instead of copying like we do now)
+      SOLN: move NIFTY and BN to 30 min CSH and stop copying from 30 min FO
 
-    - Keep an excel file that tracks changes made to the data (manual)
+    - Move nifty and bn fut data to 'fut' sheet in respective cash sheets
 
-    - ADD TCS, TITAN, BAJAJ-AUTO in cash but not daily chart and daily 30 min whatsapp images
+    - Remove hourlys for all removed sheets for FO (create them but don't put in pen-drive when transferring)
 
-    - ADD TS, remove ASHOKLEY and M&MFIN from chart and renumber the cash shares to only reflect ones in daily chart
-
-    - weekly, monthly, closing close should be LTP
-
-
+    - rename algo folder to algo old and now only copy certain shares into algo folder that will go to papa pc
 

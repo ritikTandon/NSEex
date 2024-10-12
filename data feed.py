@@ -197,6 +197,19 @@ def algo():
                          'TORNTPHARM', 'TORNTPOWER', 'TRENT', 'TVSMOTOR', 'UBL', 'ULTRACEMCO', 'UPL', 'VEDL', 'VOLTAS',
                          'ZEEL', 'ZYDUSLIFE']
 
+    algo_copy_list = ['AARTIIND', '02 ABB', 'ABFRL', 'ADANIENT', 'ADANIPORTS', 'AMBUJACEM','APOLLOHOSP', 'APOLLOTYRE',
+                      '03 ASHOKLEY', 'AUROPHARMA', 'BAJAJFINSV','BAJFINANCE', 'BALKRISIND', 'BALRAMCHIN', 'BANDHANBNK',
+                      'BANKBARODA', 'BEL','BHARATFORG', '04 BHEL', 'BIOCON', 'BRITANNIA', 'BSOFT', 'CANBK', 'CANFINHOME',
+                      'CHAMBLFERT', 'CHOLAFIN', 'CIPLA', 'COFORGE', 'CROMPTON', 'CUMMINSIND', 'DIVISLAB', '05 DIXON',
+                      'DLF', 'DRREDDY', 'ESCORTS','EXIDEIND', 'GLENMARK', 'GNFC', 'GODREJPROP', 'HAL', 'HAVELLS',
+                      'HCLTECH', 'HDFCAMC', 'HDFCLIFE', 'HINDALCO', 'HINDCOPPER', 'ICICIGI', 'ICICIPRULI', 'IEX', 'IGL',
+                      'INDIACEM', 'INDIGO', 'INDUSINDBK', 'INDUSTOWER', 'INTELLECT', 'IPCALAB', 'KOTAKBANK', 'LALPATHLAB',
+                      'LAURUSLABS', 'LICHSGFIN', 'LTIM', 'LTTS', 'LUPIN', 'M%26MFIN', 'MANAPPURAM', 'MCDOWELL-N', 'MCX',
+                      'METROPOLIS', 'MFSL', 'MGL', 'MPHASIS', 'MUTHOOTFIN', 'NAM-INDIA', 'NAUKRI', 'NMDC', 'NTPC',
+                      '09 ONGC', 'PEL', 'PERSISTENT', 'PETRONET', 'POLYCAB', 'POWERGRID', 'RBLBANK', '10 RECLTD',
+                      'SBICARD', 'SIEMENS', 'SUNPHARMA', 'TATAMOTORS', 'TECHM', 'TRENT', 'TVSMOTOR', 'UBL', 'ULTRACEMCO',
+                      'VEDL', 'VOLTAS']
+
     algo_no_format_list = []
 
     # loading 'algo high low.xlsx'
@@ -205,7 +218,7 @@ def algo():
     algoHL_row = 2
 
     for share in algo_share_list:
-        path = rf'E:\Daily Data work\ALGORITHM\{share}.xlsx'
+        path = rf'E:\Daily Data work\ALGORITHM\ALGORITHM OLD\{share}.xlsx'
 
         wb = xl.load_workbook(path)
         sheet = wb['D']
@@ -255,8 +268,11 @@ def algo():
         if share in algo_copy_to_cash_list:
             wb.save(rf'E:\Daily Data work\CASH\{share}.xlsx')
 
-        wb.save(path)
+        # copying relevant shares to ALGO (new) folder
+        if share in algo_copy_list:
+            wb.save(rf'E:\Daily Data work\ALGORITHM\{share}.xlsx')
 
+        wb.save(path)
 
     print("----------------------------------ALGO DONE----------------------------------")
 
