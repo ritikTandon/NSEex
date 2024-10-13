@@ -125,6 +125,8 @@ ACTUAL ALGO TRADING APP(CLI Probably)
 30-SEP-2024
     - Keep an excel file that tracks changes made to the data (manual)
 
+    - 15 MAR DATA ERROR IN SHARES ALGO, FIX PLS
+
     - ADD TCS, TITAN, BAJAJ-AUTO in cash but not daily chart and daily 30 min whatsapp images
 
     - ADD TS, remove ASHOKLEY and M&MFIN from chart and renumber the cash shares to only reflect ones in daily chart

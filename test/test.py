@@ -304,143 +304,201 @@ border = Border(
 red_text_rule = CellIsRule(operator='lessThan', formula=['0'], font=red)
 blue_text_rule = CellIsRule(operator='greaterThanOrEqual', formula=['0'], font=blue)
 
-# sh_row = 2
-# d_row = 1160
-# w_row = 233
-# m_row = 57
-# cl_row = 56
-# w_range = [1157, 1161]
-# m_range = [1157, 1176]
-# cl_range = [1156, 1175]
+sh_row = 2
+d_row = 1101
+w_row = 221
+m_row = 54
+cl_row = 53
+w_range = [1097, 1101]
+m_range = [1091, 1110]
+cl_range = [1091, 1110]
 sh_count = 0
-# left = (1105, 530)
-# ll = (888, 575)
-# ld = (1021, 667)
+
+xp_high = '/html/body/div[11]/div/div/section/div/div/div/div/div/div[2]/div/div/div/div[4]/div/div[1]/section/div/div[3]/div/table/tbody/tr/td[4]'
+xp_low = '/html/body/div[11]/div/div/section/div/div/div/div/div/div[2]/div/div/div/div[4]/div/div[1]/section/div/div[3]/div/table/tbody/tr/td[5]'
+
+options = Options()
+# options.add_argument('--headless=new')
+options.add_argument("--disable-blink-features=AutomationControlled")
+options.add_argument("--start-maximized")
+
+# Exclude the collection of enable-automation switches
+options.add_experimental_option("excludeSwitches", ["enable-automation"])
+
+# Turn-off userAutomationExtension
+options.add_experimental_option("useAutomationExtension", False)
+
+# algo_close_list = [
+#                      'CIPLA', 'COFORGE', 'CONCOR', 'COROMANDEL', 'CROMPTON', 'CUMMINSIND', 'DABUR', 'DALBHARAT',
+#                      'DEEPAKFERT', 'DEEPAKNTR', 'DELTACORP', 'DIVISLAB', 'DIXON', 'DLF', 'DRREDDY', 'ESCORTS',
+#                      'EXIDEIND', 'GLENMARK', 'GLS', 'GNFC', 'GODREJCP', 'GODREJPROP', 'GRANULES', 'GRASIM', 'GUJGASLTD',
+#                      'HAL', 'HAVELLS', 'HCLTECH', 'HDFCAMC', 'HDFCLIFE', 'HINDALCO', 'HINDCOPPER', 'ICICIGI',
+#                      'ICICIPRULI', 'IEX', 'IGL', 'INDHOTEL', 'INDIACEM', 'INDIAMART', 'INDIGO', 'INDUSINDBK',
+#                      'INDUSTOWER', 'INTELLECT', 'IPCALAB', 'JINDALSTEL', 'JKCEMENT', 'JSWSTEEL', 'JUBLFOOD',
+#                      'KOTAKBANK', 'LALPATHLAB', 'LAURUSLABS', 'LICHSGFIN', 'LTIM', 'LTTS', 'LUPIN', 'M%26MFIN',
+#                      'MANAPPURAM', 'MARICO', 'UNITDSPR', 'MCX', 'METROPOLIS', 'MFSL', 'MGL', 'MPHASIS', 'MUTHOOTFIN',
+#                      'NAM-INDIA', 'NAUKRI', 'NAVINFLUOR', 'NMDC', 'NTPC', 'OBEROIRLTY', 'ONGC', 'PEL', 'PERSISTENT', 'PETRONET',
+#                      'PIDILITIND', 'POLYCAB', 'POWERGRID', 'RAIN', 'RAMCOCEM', 'RBLBANK', 'RECLTD', 'SBICARD',
+#                      'SBILIFE', 'SIEMENS', 'SRF', 'STAR', 'SUNPHARMA', 'SYNGENE', 'TATACOMM', 'TATAMOTORS', 'TECHM',
+#                      'TORNTPHARM', 'TORNTPOWER', 'TRENT', 'TVSMOTOR', 'UBL', 'ULTRACEMCO', 'UPL', 'VEDL', 'VOLTAS',
+#                      'ZEEL', 'ZYDUSLIFE']
 #
-# right = (1387, 532)
-# rl = (1172, 573)
-# rd = (1300, 669)
-# filter = (1467, 527)
+#
+# doub = ['ADANIPORTS', 'CHOLAFIN']
+# add = 0
+# sh_row = 34
+# for share in algo_close_list:
+#     # if share takes 2 line as name
+#     if share in doub:
+#         add = 20
+#     left = (1105, 530+add)
+#     ll = (888, 575+add)  # 6
+#     ldate = (1052, 701+add)
+#     hist_data = (593, 439+add)
+#     right = (1387, 532+add)
+#     rl = (1172, 573+add)  # 7
+#     rdate = (1334, 702+add)
+#     flter = (1467, 527+add)
+#     hlwb = xl.load_workbook(rf'C:\Users\admin\PycharmProjects\daily data\test\hl_test.xlsx')
+#     hlsh = hlwb['Sheet2']
+#     driver = webdriver.Chrome(options=options)
+#
+#     driver.get(f"https://www.nseindia.com/get-quotes/equity?symbol={share}")
+#
+#
+#
+#     try:
+#         myElem = WebDriverWait(driver, 20).until(ec.presence_of_element_located((By.ID, 'historic_data')))
+#         sleep(2)
+#         pg.click(hist_data)
+#         sleep(2)
+#         pg.click(left)
+#         sleep(2)
+#         pg.click(ll, clicks=6, interval=0.6)
+#         sleep(2)
+#         pg.click(ldate)
+#         sleep(2)
+#         pg.click(right)
+#         sleep(2)
+#         pg.click(rl, clicks=7, interval=0.6)
+#         sleep(2)
+#         pg.click(rdate)
+#         sleep(2)
+#         pg.click(flter)
+#         sleep(2)
+#         he = WebDriverWait(driver, 20).until(ec.presence_of_element_located((By.XPATH, xp_high)))
+#         high = float(driver.find_element(By.XPATH, xp_high).text.replace(",", ""))
+#         low = float(driver.find_element(By.XPATH, xp_low).text.replace(",", ""))
+#
+#         hlsh.cell(sh_row, 2).value = high
+#         hlsh.cell(sh_row, 3).value = low
+#         sh_row += 1
+#
+#         hlwb.save(rf'C:\Users\admin\PycharmProjects\daily data\test\hl_test.xlsx')
+#         print(f"{high} {low} {share}")
+#
+#     except TimeoutException:
+#         print(f"Loading took too much time for {share}!")
+#
+#     driver.close()
+
+
+# # copying high and low from algo hl sheet (after putting correct high and low values for that date)
+# for share in algo_share_list:
+#     hlwb = xl.load_workbook(rf'C:\Users\admin\PycharmProjects\daily data\test\hl_test.xlsx')
+#     hlsh = hlwb['Sheet2']
+#
+#     wb = xl.load_workbook(rf'E:\Daily Data work\ALGORITHM\ALGORITHM OLD\{share}.xlsx')
+#     sh = wb['D']
+#
+#     sh.cell(d_row, 2).value = hlsh.cell(sh_row, 2).value        # high copy
+#     sh.cell(d_row, 3).value = hlsh.cell(sh_row, 3).value        # low copy
+#
+#     wb.save(rf'C:\Users\admin\PycharmProjects\daily data\test\algo\{share}.xlsx')
+#     sh_row += 1
+#     sh_count += 1
+#
+#     print(f"{share} done")
+#
+# print(f"{sh_count} shares done")
+
 
 for share in algo_share_list:
-    wb1 = xl.load_workbook(rf'E:\Daily Data work\ALGORITHM\{share}.xlsx')
-    d = wb1['D']
-    w = wb1['W']
-    m = wb1['M']
-    cl = wb1['Cl']
+    wb = xl.load_workbook(rf'E:\Daily Data work\ALGORITHM\ALGORITHM OLD\{share}.xlsx')
+    d = wb['D']
+    w = wb['W']
+    m = wb['M']
+    cl = wb['Cl']
 
-    # headings daily
-    d.cell(2, 8).value = "H/L DIFF"
-    d.cell(2, 9).value = "H/L %"
-    d.cell(2, 10).value = "LTP DIFF"
-    d.cell(2, 11).value = "LTP %"
+    high = 0
+    low = 9999999
 
-    # headings weekly
-    w.cell(3, 5).value = "H/L DIFF"
-    w.cell(3, 6).value = "H/L %"
-    w.cell(3, 7).value = "LTP DIFF"
-    w.cell(3, 8).value = "LTP %"
-    w.cell(3, 9).value = "TREND"
+    # weekly
+    for row in range(w_range[0], w_range[1]+1):
+        high_cell = d.cell(row, 2)
+        low_cell = d.cell(row, 3)
 
-    # headings monthly
-    m.cell(3, 6).value = "H/L DIFF"
-    m.cell(3, 7).value = "H/L %"
-    m.cell(3, 8).value = "LTP DIFF"
-    m.cell(3, 9).value = "LTP %"
-    m.cell(3, 10).value = "TREND"
+        if high_cell.value is not None and high_cell.value > high:
+            high = high_cell.value
 
-    # headings closing
-    cl.cell(3, 6).value = "H/L DIFF"
-    cl.cell(3, 7).value = "H/L %"
-    cl.cell(3, 8).value = "LTP DIFF"
-    cl.cell(3, 9).value = "LTP %"
-    cl.cell(3, 10).value = "TREND"
+        if low_cell.value is not None and low_cell.value < low and low_cell.value != 0:
+            low = low_cell.value
 
-    # daily pattern filling
-    for row in range(2, 3000):
-        for col in range(8, 12):
-            cell = d.cell(row, col)
-            cell.font = font
-            cell.alignment = alignment
-            cell.number_format = '0.##'
+    w.cell(w_row, 2).value = high
+    w.cell(w_row, 3).value = low
 
-            if row >= 4:
-                d.cell(row, 8).value = f'=IF(B{row}="", "", B{row}-C{row})'    # hl diff
-                d.cell(row, 9).value = f'=IF(B{row}="", "",H{row}/E{row}*100)'    # %
-                d.cell(row, 10).value = f'=IF(B{row}="", "",IF(E{row-1}="", IF(E{row-2}="", E{row}-E{row-3}, E{row}-E{row-2}), E{row}-E{row-1}))'    # ltp diff
-                d.cell(row, 11).value = f'=IF(B{row}="", "", J{row}*100/(IF(E{row-1}="", IF(E{row-2}="", E{row-3}, E{row-2}), E{row-1})))'    # %
+    high = 0
+    low = 9999999
 
-            if row < 3:
-                cell.fill = fill
-                cell.font = heading_font
-                if col > 9:
-                    d.cell(1, col).fill = fill
+    # weekly
+    for row in range(m_range[0], m_range[1] + 1):
+        high_cell = d.cell(row, 2)
+        low_cell = d.cell(row, 3)
 
-    d.conditional_formatting.add(daily_cell_range, red_text_rule)
-    d.conditional_formatting.add(daily_cell_range, blue_text_rule)
+        if high_cell.value is not None and high_cell.value > high:
+            high = high_cell.value
 
-    # # weekly pattern filling
-    # for row in range(3, 1001):
-    #     for col in range(5, 10):
-    #         cell = w.cell(row, col)
-    #         cell.font = font
-    #         cell.alignment = alignment
-    #         cell.number_format = '0.##'
-    #         cell.border = border
-    #
-    #         if row >= 4:
-    #             w.cell(row, 5).value = f'=B{row}-C{row}'  # hl diff
-    #             w.cell(row, 6).value = f'=E{row}/D{row}*100'  # %
-    #             w.cell(row, 7).value = f'=D{row}-D{row-1}'  # ltp diff
-    #             w.cell(row, 8).value = f'=G{row}*100/D{row-1}'  # %
-    #
-    # w.conditional_formatting.add(weekly_cell_range, red_text_rule)
-    # w.conditional_formatting.add(weekly_cell_range, blue_text_rule)
-    #
-    # # monthly and cl pattern filling
-    # for row in range(3, 1001):
-    #     for col in range(6, 11):
-    #         cell = m.cell(row, col)
-    #         cell.font = font
-    #         cell.alignment = alignment
-    #         cell.number_format = '0.##'
-    #         cell.border = border
-    #
-    #         cell2 = cl.cell(row, col)
-    #         cell2.font = font
-    #         cell2.alignment = alignment
-    #         cell2.number_format = '0.##'
-    #         cell2.border = border
-    #
-    #         if row >= 4:
-    #             m.cell(row, 5).value = f'=C{row}-D{row}'  # hl diff
-    #             m.cell(row, 6).value = f'=E{row}/D{row}*100'  # %
-    #             m.cell(row, 7).value = f'=D{row}-D{row - 1}'  # ltp diff
-    #             m.cell(row, 8).value = f'=G{row}*100/D{row - 1}'  # %
-    #
-    #             cl.cell(row, 5).value = f'=C{row}-D{row}'  # hl diff
-    #             cl.cell(row, 6).value = f'=E{row}/D{row}*100'  # %
-    #             cl.cell(row, 7).value = f'=D{row}-D{row - 1}'  # ltp diff
-    #             cl.cell(row, 8).value = f'=G{row}*100/D{row - 1}'  # %
-    #
-    # m.conditional_formatting.add(other_cell_range, red_text_rule)
-    # m.conditional_formatting.add(other_cell_range, blue_text_rule)
-    # cl.conditional_formatting.add(other_cell_range, red_text_rule)
-    # cl.conditional_formatting.add(other_cell_range, blue_text_rule)
+        if low_cell.value is not None and low_cell.value < low and low_cell.value != 0:
+            low = low_cell.value
 
+    m.cell(m_row, 3).value = high
+    m.cell(m_row, 4).value = low
+
+    high = 0
+    low = 9999999
+
+    # closing
+    for row in range(cl_range[0], cl_range[1] + 1):
+        high_cell = d.cell(row, 2)
+        low_cell = d.cell(row, 3)
+
+        if high_cell.value is not None and high_cell.value > high:
+            high = high_cell.value
+
+        if low_cell.value is not None and low_cell.value < low and low_cell.value != 0:
+            low = low_cell.value
+
+    cl.cell(cl_row, 3).value = high
+    cl.cell(cl_row, 4).value = low
+
+    wb.save(rf'C:\Users\admin\PycharmProjects\daily data\test\algo\{share}.xlsx')
     print(f'{share} done')
-    sh_count += 1
-    wb1.save(rf'C:\Users\admin\PycharmProjects\daily data\test\algo\{share}.xlsx')
 
-print(sh_count)
-
-
-# def apply_borders(ws, cell_range):
-#     for row in ws[cell_range]:
-#         for cell in row:
-#             cell.border = border
+# for share in algo_share_list:
+#     wb = xl.load_workbook(rf'E:\Daily Data work\ALGORITHM\ALGORITHM OLD\{share}.xlsx')
+#     sh = wb['D']
 #
+#     h = sh.cell(mar_15, 2).value
+#     l = sh.cell(mar_15, 3).value
+#     c = sh.cell(mar_15, 4).value
+#     ltp = sh.cell(mar_15, 5).value
 #
+#     if h > c > l and h > ltp > l:
+#         print(f"{share} good!")
+#     else:
+#         print(f"{share} bad!")
+
+
 # for share in algo_share_list:
 #     wb1 = xl.load_workbook(rf'E:\Daily Data work\ALGORITHM\{share}.xlsx')
 #     d = wb1['D']
@@ -448,12 +506,131 @@ print(sh_count)
 #     m = wb1['M']
 #     cl = wb1['Cl']
 #
-#     apply_borders(w, weekly_cell_range)
-#     apply_borders(m, other_cell_range)
-#     apply_borders(cl, other_cell_range)
+#     # headings daily
+#     d.cell(2, 8).value = "H/L DIFF"
+#     d.cell(2, 9).value = "H/L %"
+#     d.cell(2, 10).value = "LTP DIFF"
+#     d.cell(2, 11).value = "LTP %"
+#
+#     # headings weekly
+#     w.cell(3, 5).value = "H/L DIFF"
+#     w.cell(3, 6).value = "H/L %"
+#     w.cell(3, 7).value = "LTP DIFF"
+#     w.cell(3, 8).value = "LTP %"
+#     w.cell(3, 9).value = "TREND"
+#
+#     # headings monthly
+#     m.cell(3, 6).value = "H/L DIFF"
+#     m.cell(3, 7).value = "H/L %"
+#     m.cell(3, 8).value = "LTP DIFF"
+#     m.cell(3, 9).value = "LTP %"
+#     m.cell(3, 10).value = "TREND"
+#
+#     # headings closing
+#     cl.cell(3, 6).value = "H/L DIFF"
+#     cl.cell(3, 7).value = "H/L %"
+#     cl.cell(3, 8).value = "LTP DIFF"
+#     cl.cell(3, 9).value = "LTP %"
+#     cl.cell(3, 10).value = "TREND"
+#
+#     # daily pattern filling
+#     for row in range(2, 3000):
+#         for col in range(8, 12):
+#             cell = d.cell(row, col)
+#             cell.font = font
+#             cell.alignment = alignment
+#             cell.number_format = '0.##'
+#
+#             if row >= 4:
+#                 d.cell(row, 8).value = f'=IF(B{row}="", "", B{row}-C{row})'    # hl diff
+#                 d.cell(row, 9).value = f'=IF(B{row}="", "",H{row}/E{row}*100)'    # %
+#                 d.cell(row, 10).value = f'=IF(B{row}="", "",IF(E{row-1}="", IF(E{row-2}="", E{row}-E{row-3}, E{row}-E{row-2}), E{row}-E{row-1}))'    # ltp diff
+#                 d.cell(row, 11).value = f'=IF(B{row}="", "", J{row}*100/(IF(E{row-1}="", IF(E{row-2}="", E{row-3}, E{row-2}), E{row-1})))'    # %
+#
+#             if row < 3:
+#                 cell.fill = fill
+#                 cell.font = heading_font
+#                 if col > 9:
+#                     d.cell(1, col).fill = fill
+#
+#     d.conditional_formatting.add(daily_cell_range, red_text_rule)
+#     d.conditional_formatting.add(daily_cell_range, blue_text_rule)
+#
+#     # # weekly pattern filling
+#     # for row in range(3, 1001):
+#     #     for col in range(5, 10):
+#     #         cell = w.cell(row, col)
+#     #         cell.font = font
+#     #         cell.alignment = alignment
+#     #         cell.number_format = '0.##'
+#     #         cell.border = border
+#     #
+#     #         if row >= 4:
+#     #             w.cell(row, 5).value = f'=B{row}-C{row}'  # hl diff
+#     #             w.cell(row, 6).value = f'=E{row}/D{row}*100'  # %
+#     #             w.cell(row, 7).value = f'=D{row}-D{row-1}'  # ltp diff
+#     #             w.cell(row, 8).value = f'=G{row}*100/D{row-1}'  # %
+#     #
+#     # w.conditional_formatting.add(weekly_cell_range, red_text_rule)
+#     # w.conditional_formatting.add(weekly_cell_range, blue_text_rule)
+#     #
+#     # # monthly and cl pattern filling
+#     # for row in range(3, 1001):
+#     #     for col in range(6, 11):
+#     #         cell = m.cell(row, col)
+#     #         cell.font = font
+#     #         cell.alignment = alignment
+#     #         cell.number_format = '0.##'
+#     #         cell.border = border
+#     #
+#     #         cell2 = cl.cell(row, col)
+#     #         cell2.font = font
+#     #         cell2.alignment = alignment
+#     #         cell2.number_format = '0.##'
+#     #         cell2.border = border
+#     #
+#     #         if row >= 4:
+#     #             m.cell(row, 5).value = f'=C{row}-D{row}'  # hl diff
+#     #             m.cell(row, 6).value = f'=E{row}/D{row}*100'  # %
+#     #             m.cell(row, 7).value = f'=D{row}-D{row - 1}'  # ltp diff
+#     #             m.cell(row, 8).value = f'=G{row}*100/D{row - 1}'  # %
+#     #
+#     #             cl.cell(row, 5).value = f'=C{row}-D{row}'  # hl diff
+#     #             cl.cell(row, 6).value = f'=E{row}/D{row}*100'  # %
+#     #             cl.cell(row, 7).value = f'=D{row}-D{row - 1}'  # ltp diff
+#     #             cl.cell(row, 8).value = f'=G{row}*100/D{row - 1}'  # %
+#     #
+#     # m.conditional_formatting.add(other_cell_range, red_text_rule)
+#     # m.conditional_formatting.add(other_cell_range, blue_text_rule)
+#     # cl.conditional_formatting.add(other_cell_range, red_text_rule)
+#     # cl.conditional_formatting.add(other_cell_range, blue_text_rule)
 #
 #     print(f'{share} done')
+#     sh_count += 1
 #     wb1.save(rf'C:\Users\admin\PycharmProjects\daily data\test\algo\{share}.xlsx')
+#
+# print(sh_count)
+#
+#
+# # def apply_borders(ws, cell_range):
+# #     for row in ws[cell_range]:
+# #         for cell in row:
+# #             cell.border = border
+# #
+# #
+# # for share in algo_share_list:
+# #     wb1 = xl.load_workbook(rf'E:\Daily Data work\ALGORITHM\{share}.xlsx')
+# #     d = wb1['D']
+# #     w = wb1['W']
+# #     m = wb1['M']
+# #     cl = wb1['Cl']
+# #
+# #     apply_borders(w, weekly_cell_range)
+# #     apply_borders(m, other_cell_range)
+# #     apply_borders(cl, other_cell_range)
+# #
+# #     print(f'{share} done')
+# #     wb1.save(rf'C:\Users\admin\PycharmProjects\daily data\test\algo\{share}.xlsx')
 
 
 
