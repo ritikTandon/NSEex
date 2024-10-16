@@ -79,7 +79,7 @@ def weekly_create():
                 try:
                     h = float(d_sheet.cell(d_row, 2).value)
                     l = float(d_sheet.cell(d_row, 3).value)
-                    c = float(d_sheet.cell(d_row, 4).value)
+                    c = float(d_sheet.cell(d_row, 5).value)
                 except TypeError:
                     d_row += 1
                     continue
@@ -96,7 +96,7 @@ def weekly_create():
             close = c
             if not close or close == 0:
                 while not c or c == 0:
-                    c = d_sheet.cell(d_row, 4).value
+                    c = d_sheet.cell(d_row, 5).value
 
                     d_row -= 1
                     buff += 1
@@ -108,7 +108,7 @@ def weekly_create():
             if d_row < 1018:
                 w_sheet.cell(w_row, 2).value = high
                 w_sheet.cell(w_row, 3).value = low
-                w_sheet.cell(w_row, 4).value = close
+                w_sheet.cell(w_row, 5).value = close
 
             w_row += 1
 
@@ -208,7 +208,7 @@ def monthly_create():
                 try:
                     h = float(d_sheet.cell(d_row, 2).value)
                     l = float(d_sheet.cell(d_row, 3).value)
-                    c = float(d_sheet.cell(d_row, 4).value)
+                    c = float(d_sheet.cell(d_row, 5).value)
                 except TypeError:
                     d_row += 1
                     cur_date = datetime.datetime.strptime(d_sheet.cell(d_row, 1).value, '%d-%b-%y')
@@ -227,7 +227,7 @@ def monthly_create():
             close = c
             if not close or close == 0:
                 while not c or c == 0:
-                    c = d_sheet.cell(d_row, 4).value
+                    c = d_sheet.cell(d_row, 5).value
 
                     d_row -= 1
                     buff += 1
@@ -353,7 +353,7 @@ def closing_create():
                 try:
                     h = float(d_sheet.cell(d_row, 2).value)
                     l = float(d_sheet.cell(d_row, 3).value)
-                    c = float(d_sheet.cell(d_row, 4).value)
+                    c = float(d_sheet.cell(d_row, 5).value)
                 except TypeError:
                     d_row += 1
                     cur_date = datetime.datetime.strptime(d_sheet.cell(d_row, 1).value, '%d-%b-%y')
@@ -372,7 +372,7 @@ def closing_create():
             close = c
             if not close or close == 0:
                 while not c or c == 0:
-                    c = d_sheet.cell(d_row, 4).value
+                    c = d_sheet.cell(d_row, 5).value
 
                     d_row -= 1
                     buff += 1
@@ -499,7 +499,7 @@ def weekly_update(typ, val=0):
                 l = float(d_sheet.cell(d_row, 3).value)
 
                 if not cl_found:
-                    close = float(d_sheet.cell(d_row, 4).value)
+                    close = float(d_sheet.cell(d_row, 5).value)
                     cl_found = True
             except TypeError:
                 d_row -= 1
@@ -576,7 +576,7 @@ def monthly_update(typ):
                 l = float(d_sheet.cell(d_row, 3).value)
 
                 if not cl_found:
-                    close = float(d_sheet.cell(d_row, 4).value)
+                    close = float(d_sheet.cell(d_row, 5).value)
                     cl_found = True
             except TypeError:
                 d_row -= 1
@@ -680,7 +680,7 @@ def closing_update(typ):
                 l = float(d_sheet.cell(d_row, 3).value)
 
                 if not cl_found:
-                    close = float(d_sheet.cell(d_row, 4).value)
+                    close = float(d_sheet.cell(d_row, 5).value)
                     cl_found = True
             except TypeError:
                 d_row -= 1

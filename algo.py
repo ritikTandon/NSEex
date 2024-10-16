@@ -17,8 +17,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import TimeoutException
 
-# headers = {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0'}
-
 algo_share_list = ['AARTIIND', 'ABB', 'ABCAPITAL', 'ABFRL', 'ADANIENT', 'ADANIPORTS', 'ALKEM', 'AMBUJACEM',
                      'APOLLOHOSP', 'APOLLOTYRE', 'ASHOKLEY', 'ASTRAL', 'ATUL', 'AUBANK', 'AUROPHARMA', 'BAJAJFINSV',
                      'BAJFINANCE', 'BALKRISIND', 'BALRAMCHIN', 'BANDHANBNK', 'BANKBARODA', 'BATAINDIA', 'BEL',
@@ -37,7 +35,7 @@ algo_share_list = ['AARTIIND', 'ABB', 'ABCAPITAL', 'ABFRL', 'ADANIENT', 'ADANIPO
                      'TORNTPHARM', 'TORNTPOWER', 'TRENT', 'TVSMOTOR', 'UBL', 'ULTRACEMCO', 'UPL', 'VEDL', 'VOLTAS',
                      'ZEEL', 'ZYDUSLIFE']
 
-# algo_share_list = ["ADANI"]
+# algo_share_list = ["ADANI"]   # list to test few shares after making code changes
 
 algoHL_wb = xl.load_workbook(r'C:\Users\admin\PycharmProjects\daily data\algo high low.xlsx')
 algoHL_sheet = algoHL_wb['Sheet1']
@@ -50,9 +48,9 @@ x2x = XLS2XLSX(r'E:\Daily Data work\algo.xls')
 wb = x2x.to_xlsx()
 wb.save(r'E:\Daily Data work\algo.xlsx')
 
-csh_wb = xl.load_workbook(r'E:\Daily Data work\algo.xlsx')
-csh_sheet = csh_wb['algo-Sheet1']
-csh_row = 2
+algo_wb = xl.load_workbook(r'E:\Daily Data work\algo.xlsx')
+algo_sheet = algo_wb['algo-Sheet1']
+algo_row = 2
 
 fl_9_25 = 0.392361111       # 9:25 time value in general format
 
@@ -69,25 +67,23 @@ for file_name in src_files:
     full_file_name = os.path.join(src_dir, file_name)
     if os.path.isfile(full_file_name):
         shutil.copy(full_file_name, dest_dir)
+
 print("Files copied as backup!")
 
 
 for share in algo_share_list:
+    # converting .xls shares to .xlsx
     path = rf"E:\Daily Data work\hourlys 1 minute ALGO\{yr}\{mnth}\{date}\{share}.xlsx"
     xls_path = rf"E:\Daily Data work\hourlys 1 minute ALGO\{yr}\{mnth}\{date}\{share}.xls"
-    # try:      # cant use this skip unless I update algo high low values of a share and reload wb after every loop
-    #     x2x = XLS2XLSX(xls_path)
-    # except FileNotFoundError:
-    #     continue
     x2x = XLS2XLSX(xls_path)
 
     wb = x2x.to_xlsx()
-    # wb = xl.load_workbook(path)
     sheet = wb[f"{share}-Sheet1"]
 
     start_row = 2
     time_cell = sheet.cell(start_row, 7)
 
+    # incrementing starting row till we reach 9:25 am row
     while time_cell.value < fl_9_25:
         start_row += 1
         time_cell = sheet.cell(start_row, 7)
@@ -138,7 +134,6 @@ for share in algo_share_list:
         low_cell = sheet.cell(start_row, 5)
 
         cur_time = time_cell.value
-        # print(cur_time)
 
         if high_cell.value is not None and high_cell.value > HIGH:
             HIGH = high_cell.value
@@ -155,10 +150,10 @@ for share in algo_share_list:
     algoHL_sheet.cell(algoHL_row, 3).value = LOW
 
     # LTP
-    algoHL_sheet.cell(algoHL_row, 5).value = csh_sheet.cell(csh_row, 2).value
+    algoHL_sheet.cell(algoHL_row, 5).value = algo_sheet.cell(algo_row, 2).value
 
     # vol
-    volume = csh_sheet.cell(csh_row, 5).value
+    volume = algo_sheet.cell(algo_row, 5).value
     volume = volume // 100000
 
     algoHL_sheet.cell(algoHL_row, 6).value = volume
@@ -167,7 +162,7 @@ for share in algo_share_list:
     algoHL_sheet.cell(algoHL_row, 7).value = cl_9_25
 
     algoHL_row += 1
-    csh_row += 1
+    algo_row += 1
 
     HIGH = 0
     LOW = 9999999
@@ -188,12 +183,8 @@ for share in algo_share_list:
         high_cell = sheet.cell(start_row, 4)
         low_cell = sheet.cell(start_row, 5)
 
-        # print(cur_time)
-
         if high_cell.value is not None and high_cell.value > HIGH:
             HIGH = high_cell.value
-            # if HIGH == 375:
-            #     print('k')
 
         if low_cell.value is not None and low_cell.value < LOW and low_cell.value != 0:
             LOW = low_cell.value
@@ -207,6 +198,7 @@ for share in algo_share_list:
             if sheet.cell(start_row, 3).value == 0 or sheet.cell(start_row, 3).value is None:
                 temp_row = start_row
 
+                # iterating backwards till we find a close value
                 while sheet.cell(temp_row, 3).value == 0 or sheet.cell(temp_row, 3).value is None:
                     temp_row -= 1
 
@@ -241,7 +233,6 @@ for share in algo_share_list:
 
 # for close filling
 options = Options()
-# options.add_argument('--headless=new')
 options.add_argument("--disable-blink-features=AutomationControlled")
 
 # Exclude the collection of enable-automation switches
@@ -272,9 +263,6 @@ algo_close_list = ['AARTIIND', 'ABB', 'ABCAPITAL', 'ABFRL', 'ADANIENT', 'ADANIPO
 
 manual = []         # list to keep track of the shares whose values selenium couldn't get
 close = []
-# close = ['2446.95', '398.5', '1478.0', '7005.0', '227.65', '188.4', '234.15', '470.1', '3337.8', '132.8', '1170.0',
-# '1608.5', '448.85', '959.0', '1387.8', '1392.95', '662.9', '421.45', '1544.95', '1544.95', '2573.2', '561.0', '548.9',
-# '1000.05', '606.8', '230.95', '117.85', '8024.95']
 
 for share in algo_close_list:
     driver = webdriver.Chrome(options=options)
@@ -284,7 +272,6 @@ for share in algo_close_list:
     try:
         sleep(2)
         myElem = WebDriverWait(driver, 20).until(ec.presence_of_element_located((By.ID, 'quoteLtp')))
-        # sleep(5)
         close_val = driver.find_element(By.ID, "quoteLtp").text
 
         while close_val == '':
@@ -316,7 +303,6 @@ print(close)
 print(manual)
 
 i = 0
-# close = ['627.0', '8318.0', '222.0', '263.95', '3034.05', '1342.0', '5301.15', '615.0', '5920.0', '489.0', '206.55', '2276.0', '5900.1', '621.5', '1160.1', '1593.95', '6731.0', '2590.0', '378.4', '180.2', '263.8', '1334.95', '239.75', '1489.75', '308.95', '5142.8', '616.9', '113.9', '762.0', '403.5', '1268.8', '1420.65', '4675.9', '1037.9', '1246.7', '338.6', '3737.3', '543.0', '1793.45', '557.9', '2453.0', '120.9', '3918.3', '8235.0', '845.05', '5829.0', '3749.0', '473.25', '1009.0', '825.6', '666.0', '1301.05', '2872.0', '402.0', '2379.0', '553.15', '4637.9', '1776.9', '1347.15', '3855.9', '566.1', '652.3', '378.5', '1675.05', '590.15', '148.4', '441.5', '568.25', '208.6', '2633.0', '4299.9', '1410.0', '341.5', '879.9', '1286.35', '1005.5', '3864.0', '884.0', '471.5', '1670.9', '2515.9', '445.0', '655.8', '4764.1', '4515.0', '1658.55', '267.75', '185.7', '593.9', '1179.0', '3940.0', '1862.0', '1000.95', '1312.9', '2370.0', '1694.0', '582.0', '5875.3', '3310.65', '265.1', '361.0', '1721.0', '826.4', '3518.0', '312.5', '3017.35', '6478.0', '312.3', '161.9', '768.75', '252.05', '541.1', '713.9', '1450.2', '7070.0', '2274.0', '869.5', '1530.05', '687.1', '1800.0', '939.2', '1304.0', '2703.95', '1345.9', '4596.5', '2124.3', '1902.5', '9700.0', '510.15', '433.6', '1322.95', '133.0', '1009.0']
 while i < len(algo_close_list):
     close_cell = algoHL_sheet.cell(i+2, 4)
 

@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="308761e4-5648-47f3-bc32-acb2059bab82" name="Changes" comment="copying shares from algo to cash">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="308761e4-5648-47f3-bc32-acb2059bab82" name="Changes" comment="added script to fix 1 day high low wrong in test.py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/30 min csh.py" beforeDir="false" afterPath="$PROJECT_DIR$/30 min csh.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/AARTIIND.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/AARTIIND.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ABB.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ABB.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ABCAPITAL.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ABCAPITAL.xls" afterDir="false" />
@@ -156,12 +156,17 @@
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/ONGC.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/ONGC.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/RECLTD.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/RECLTD.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/VEDL.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/VEDL.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NOTES.txt" beforeDir="false" afterPath="$PROJECT_DIR$/NOTES.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/algo high low.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/algo high low.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algo.py" beforeDir="false" afterPath="$PROJECT_DIR$/algo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cash high low.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/cash high low.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cash.py" beforeDir="false" afterPath="$PROJECT_DIR$/cash.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data feed.py" beforeDir="false" afterPath="$PROJECT_DIR$/data feed.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/date_variables.py" beforeDir="false" afterPath="$PROJECT_DIR$/date_variables.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fo high low.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/fo high low.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fo.py" beforeDir="false" afterPath="$PROJECT_DIR$/fo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ltp prev.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/ltp prev.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nest trader auto.py" beforeDir="false" afterPath="$PROJECT_DIR$/nest trader auto.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,6 +181,19 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="dev" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -218,19 +236,21 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/admin/PycharmProjects/daily data&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/admin/PycharmProjects/daily data/test/algo&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\PycharmProjects\daily data\test\algo" />
       <recent name="C:\Users\admin\PycharmProjects\daily data\NEST Trader groups" />
       <recent name="C:\Users\admin\PycharmProjects\daily data\leetcode" />
       <recent name="C:\Users\admin\PycharmProjects\daily data\monthly closing creation" />
       <recent name="C:\Users\admin\PycharmProjects\daily data" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\PycharmProjects\daily data\test" />
       <recent name="C:\Users\admin\PycharmProjects\daily data\monthly closing creation" />
       <recent name="C:\Users\admin\PycharmProjects\daily data" />
       <recent name="C:\Users\admin\PycharmProjects\daily data\Algorithm" />
@@ -245,54 +265,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1691935354080</updated>
-    </task>
-    <task id="LOCAL-00015" summary="done till 1 min formatting and high low extraction">
-      <option name="closed" value="true" />
-      <created>1692806190061</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1692806190061</updated>
-    </task>
-    <task id="LOCAL-00016" summary="done till 1 min formatting and high low extraction">
-      <option name="closed" value="true" />
-      <created>1692810329695</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1692810329695</updated>
-    </task>
-    <task id="LOCAL-00017" summary="final done sonia data">
-      <option name="closed" value="true" />
-      <created>1692811449655</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1692811449655</updated>
-    </task>
-    <task id="LOCAL-00018" summary="final done sonia data, cleaned the files for warnings">
-      <option name="closed" value="true" />
-      <created>1692811611804</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1692811611804</updated>
-    </task>
-    <task id="LOCAL-00019" summary="started work on nest automation">
-      <option name="closed" value="true" />
-      <created>1692979127068</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1692979127068</updated>
-    </task>
-    <task id="LOCAL-00020" summary="done for 1 min csh">
-      <option name="closed" value="true" />
-      <created>1692986056614</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1692986056614</updated>
     </task>
     <task id="LOCAL-00021" summary="DONE NEST AUTOMATION(VER 1)">
       <option name="closed" value="true" />
@@ -638,7 +610,55 @@
       <option name="project" value="LOCAL" />
       <updated>1726841635090</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="fixed 6 jun 24 error in algo shares">
+      <option name="closed" value="true" />
+      <created>1727889011565</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1727889011565</updated>
+    </task>
+    <task id="LOCAL-00065" summary="changed MWCL to take col 5(LTP) instead of col 4(close) as closing">
+      <option name="closed" value="true" />
+      <created>1728731693613</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1728731693613</updated>
+    </task>
+    <task id="LOCAL-00066" summary="moved NIFTY and BN 30 min FO to 30 min CSH in nest trader and modified code to remove copying 30 min FO NIFTY and BN sheets and removed the 30 min FO sheet saving">
+      <option name="closed" value="true" />
+      <created>1728732399046</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1728732399046</updated>
+    </task>
+    <task id="LOCAL-00067" summary="changed nifty row to reflect the correct row in nifty cash &quot;FUT&quot; sheet and added data feed for nifty and bn in their cash &quot;FUT&quot; sheets">
+      <option name="closed" value="true" />
+      <created>1728733708575</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1728733708575</updated>
+    </task>
+    <task id="LOCAL-00068" summary="moved algo folder and will only keep new algo shares in algo folder, all shares (new + old) get put in algo old">
+      <option name="closed" value="true" />
+      <created>1728735177190</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1728735177190</updated>
+    </task>
+    <task id="LOCAL-00069" summary="added script to fix 1 day high low wrong in test.py">
+      <option name="closed" value="true" />
+      <created>1728840725536</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1728840725536</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -658,6 +678,11 @@
         <entry key="Branch">
           <value>
             <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="dev" />
+                </option>
+              </RecentGroup>
               <RecentGroup>
                 <option name="FILTER_VALUES">
                   <option value="origin/master" />
@@ -693,7 +718,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/master" />
+                        <option value="dev" />
                       </list>
                     </value>
                   </entry>
@@ -707,12 +732,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="finished daily actual trade algo automation and added NTPC and HINDALCO to 30 min as well" />
-    <MESSAGE value="final touch ups" />
-    <MESSAGE value="added weekly to algo data" />
-    <MESSAGE value="ign" />
-    <MESSAGE value="safety commit" />
-    <MESSAGE value="added facility to update closing, monthly and weekly values in both cash and algo(need to test monthly and closing)" />
     <MESSAGE value="added {entry-exit} and holding time to algo" />
     <MESSAGE value="fixed bug where weekly hcl wouldnt compute if there was a gap in data" />
     <MESSAGE value="closing dates were wrong for algo" />
@@ -732,7 +751,13 @@
     <MESSAGE value="fixed pos in ltp prev of shares" />
     <MESSAGE value="changed share names in cash" />
     <MESSAGE value="copying shares from algo to cash" />
-    <option name="LAST_COMMIT_MESSAGE" value="copying shares from algo to cash" />
+    <MESSAGE value="fixed 6 jun 24 error in algo shares" />
+    <MESSAGE value="changed MWCL to take col 5(LTP) instead of col 4(close) as closing" />
+    <MESSAGE value="moved NIFTY and BN 30 min FO to 30 min CSH in nest trader and modified code to remove copying 30 min FO NIFTY and BN sheets and removed the 30 min FO sheet saving" />
+    <MESSAGE value="changed nifty row to reflect the correct row in nifty cash &quot;FUT&quot; sheet and added data feed for nifty and bn in their cash &quot;FUT&quot; sheets" />
+    <MESSAGE value="moved algo folder and will only keep new algo shares in algo folder, all shares (new + old) get put in algo old" />
+    <MESSAGE value="added script to fix 1 day high low wrong in test.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="added script to fix 1 day high low wrong in test.py" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -741,11 +766,6 @@
           <url>file://$PROJECT_DIR$/new share create daily.py</url>
           <line>46</line>
           <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/algo.py</url>
-          <line>97</line>
-          <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/monthly closing creation/MWCL_creation_updation.py</url>

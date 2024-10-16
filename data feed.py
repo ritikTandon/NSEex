@@ -5,7 +5,7 @@ import openpyxl as xl
 import send2trash
 from openpyxl.styles import Font, Alignment
 
-append = 295  # increment this daily. 295 is for 30-SEP-2024
+append = 307  # increment this daily. 307 is for 16-OCT-2024
 
 # styles
 red = Font("Arial", 11, color='ff0000', bold=True)
@@ -27,8 +27,7 @@ def cash():
     i = 0  # main iterator variable
 
     cash_shares = {'AARTIIND': 947, 'ADANIENT': 1579, 'APOLLOTYRE': 2946, 'BAJAJFINSERV': 1579, 'BAJAJFINANCE': 1579,
-                   'BANDHANBANK': 1579, ''
-                                        'BANKBARODA': 1579, 'COAL INDIA': 3232, '06 DLF CHL': 4058, 'EICHERMOTOR': 2715,
+                   'BANDHANBANK': 1579, 'BANKBARODA': 1579, 'COAL INDIA': 3232, '06 DLF CHL': 4058, 'EICHERMOTOR': 2715,
                    'FEDRAL BANK': 1579, 'HCLTECH': 1579, 'HDFC': 3936, 'HINDALCO': 947, 'ICICIBANK': 1579, 'INDUSINDBANK': 1579,
                    'INFY': 2765, 'JINDALS chl': 5195, 'LICHSGFIN': 1579, 'M&M': 1579, '07 M&MFINANCE': 1579,
                    '08 NTPC': 947, 'RELIANCE CHL': 4793, 'SBIN CHL': 4860, 'SUNTV': 1579, 'TATACHEM': 1579,
@@ -99,8 +98,10 @@ def cash():
 def fo():
     i = 0  # main iterator variable
 
+    # nifty and bn new data won't be updated in the future sheets but in FUT sheets in cash wb from now on (12/10/24)
+    # changed nifty row to reflect the correct row in nifty cash "FUT" sheet
     fo_shares = {'ADANI PORT': 2279, 'AUROPHARMA': 2789, '02 BANKNIFTY F': 3309, 'CANBK': 2016, 'DLF': 2831,
-                 'HINDALCO': 3989, 'ICICIBANK': 1093, 'JINDS': 2274, '01 NIFTY F': 2795, '03 RELIANCE': 2792, 'SBIN': 2793,
+                 'HINDALCO': 3989, 'ICICIBANK': 1093, 'JINDS': 2274, '01 NIFTY F': 5390, '03 RELIANCE': 2792, 'SBIN': 2793,
                  'TATACONSUM': 2276, '05 TATAMOTOR': 2791, '04 TATASTEEL': 2793, 'TCS': 4826, 'TITAN': 1762}
 
     fo_no_format_list = ['04 TATASTEEL']
@@ -111,10 +112,19 @@ def fo():
     foHL_row = 2
 
     for share in fo_shares:
-        path = rf'E:\Daily Data work\FO\{share}.xlsx'
+        if share == '02 BANKNIFTY F':
+            path = rf'E:\Daily Data work\CASH\BANKNIFTY C.xlsx'         # MAKE A LIST WHERE CHANGING A SHEET NAME AFFECTS THE CODE
+            wb = xl.load_workbook(path)
+            sheet = wb['FUT']
+        elif share == '01 NIFTY F':
+            path = rf'E:\Daily Data work\CASH\01 NIFTY CHL C.xlsx'
+            wb = xl.load_workbook(path)
+            sheet = wb['FUT']
+        else:
+            path = rf'E:\Daily Data work\FO\{share}.xlsx'
 
-        wb = xl.load_workbook(path)
-        sheet = wb['D']
+            wb = xl.load_workbook(path)
+            sheet = wb['D']
 
         input_row = fo_shares[share] + append
 
@@ -188,6 +198,19 @@ def algo():
                          'TORNTPHARM', 'TORNTPOWER', 'TRENT', 'TVSMOTOR', 'UBL', 'ULTRACEMCO', 'UPL', 'VEDL', 'VOLTAS',
                          'ZEEL', 'ZYDUSLIFE']
 
+    algo_copy_list = ['AARTIIND', '02 ABB', 'ABFRL', 'ADANIENT', 'ADANIPORTS', 'AMBUJACEM','APOLLOHOSP', 'APOLLOTYRE',
+                      '03 ASHOKLEY', 'AUROPHARMA', 'BAJAJFINSV','BAJFINANCE', 'BALKRISIND', 'BALRAMCHIN', 'BANDHANBNK',
+                      'BANKBARODA', 'BEL','BHARATFORG', '04 BHEL', 'BIOCON', 'BRITANNIA', 'BSOFT', 'CANBK', 'CANFINHOME',
+                      'CHAMBLFERT', 'CHOLAFIN', 'CIPLA', 'COFORGE', 'CROMPTON', 'CUMMINSIND', 'DIVISLAB', '05 DIXON',
+                      'DLF', 'DRREDDY', 'ESCORTS','EXIDEIND', 'GLENMARK', 'GNFC', 'GODREJPROP', 'HAL', 'HAVELLS',
+                      'HCLTECH', 'HDFCAMC', 'HDFCLIFE', 'HINDALCO', 'HINDCOPPER', 'ICICIGI', 'ICICIPRULI', 'IEX', 'IGL',
+                      'INDIACEM', 'INDIGO', 'INDUSINDBK', 'INDUSTOWER', 'INTELLECT', 'IPCALAB', 'KOTAKBANK', 'LALPATHLAB',
+                      'LAURUSLABS', 'LICHSGFIN', 'LTIM', 'LTTS', 'LUPIN', 'M%26MFIN', 'MANAPPURAM', 'MCDOWELL-N', 'MCX',
+                      'METROPOLIS', 'MFSL', 'MGL', 'MPHASIS', 'MUTHOOTFIN', 'NAM-INDIA', 'NAUKRI', 'NMDC', 'NTPC',
+                      '09 ONGC', 'PEL', 'PERSISTENT', 'PETRONET', 'POLYCAB', 'POWERGRID', 'RBLBANK', '10 RECLTD',
+                      'SBICARD', 'SIEMENS', 'SUNPHARMA', 'TATAMOTORS', 'TECHM', 'TRENT', 'TVSMOTOR', 'UBL', 'ULTRACEMCO',
+                      'VEDL', 'VOLTAS']
+
     algo_no_format_list = []
 
     # loading 'algo high low.xlsx'
@@ -196,7 +219,7 @@ def algo():
     algoHL_row = 2
 
     for share in algo_share_list:
-        path = rf'E:\Daily Data work\ALGORITHM\{share}.xlsx'
+        path = rf'E:\Daily Data work\ALGORITHM\ALGORITHM OLD\{share}.xlsx'
 
         wb = xl.load_workbook(path)
         sheet = wb['D']
@@ -246,8 +269,11 @@ def algo():
         if share in algo_copy_to_cash_list:
             wb.save(rf'E:\Daily Data work\CASH\{share}.xlsx')
 
-        wb.save(path)
+        # copying relevant shares to ALGO (new) folder
+        if share in algo_copy_list:
+            wb.save(rf'E:\Daily Data work\ALGORITHM\{share}.xlsx')
 
+        wb.save(path)
 
     print("----------------------------------ALGO DONE----------------------------------")
 

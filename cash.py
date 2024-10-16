@@ -17,22 +17,18 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import TimeoutException
 
-# headers = {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0'}
-
 cash_share_list = ["AARTIIND", "ADANI", "APOLLO", "BAJFINSV", "BAJFIN", "BANBK", "BARODA", "COALIND", "DLF", "EICHER",
                    "FEDBANK", "HCL", "HDFC", "HIND", "ICICI", "INDUSIND", "INFY", "JIND", "LIC", "M&M", "M&MFIN", "NTPC",
                    "REL", "SBIN", "SUNTV", "TCHEM", "TM", "TP", "TS", "ULTRA"]
 
-# cash_share_list = ["ADANI"]
+# cash_share_list = ["ADANI"]   # list to test few shares after making code changes
 
 cashHL_wb = xl.load_workbook(r'C:\Users\admin\PycharmProjects\daily data\cash high low.xlsx')
 cashHL_sheet = cashHL_wb['Sheet1']
 cashHL_row = 2
 
-
 # converting xls to xlsx for csh sheet
 x2x = XLS2XLSX(r'E:\Daily Data work\csh.xls')
-
 wb = x2x.to_xlsx()
 wb.save(r'E:\Daily Data work\csh.xlsx')
 
@@ -55,25 +51,22 @@ for file_name in src_files:
     full_file_name = os.path.join(src_dir, file_name)
     if os.path.isfile(full_file_name):
         shutil.copy(full_file_name, dest_dir)
+
 print("Files copied as backup!")
 
-
 for share in cash_share_list:
+    # converting .xls shares to .xlsx
     path = rf"E:\Daily Data work\hourlys 1 minute CASH\{yr}\{mnth}\{date}\{share}.xlsx"
     xls_path = rf"E:\Daily Data work\hourlys 1 minute CASH\{yr}\{mnth}\{date}\{share}.xls"
-    # try:      # cant use this skip unless I update cash high low values of a share and reload wb after every loop
-    #     x2x = XLS2XLSX(xls_path)
-    # except FileNotFoundError:
-    #     continue
     x2x = XLS2XLSX(xls_path)
 
     wb = x2x.to_xlsx()
-    # wb = xl.load_workbook(path)
     sheet = wb[f"{share}-Sheet1"]
 
     start_row = 2
     time_cell = sheet.cell(start_row, 7)
 
+    # incrementing starting row till we reach 9:25 am row
     while time_cell.value < fl_9_25:
         start_row += 1
         time_cell = sheet.cell(start_row, 7)
@@ -120,7 +113,6 @@ for share in cash_share_list:
         low_cell = sheet.cell(start_row, 5)
 
         cur_time = time_cell.value
-        # print(cur_time)
 
         if high_cell.value is not None and high_cell.value > HIGH:
             HIGH = high_cell.value
@@ -170,12 +162,8 @@ for share in cash_share_list:
         high_cell = sheet.cell(start_row, 4)
         low_cell = sheet.cell(start_row, 5)
 
-        # print(cur_time)
-
         if high_cell.value is not None and high_cell.value > HIGH:
             HIGH = high_cell.value
-            # if HIGH == 375:
-            #     print('k')
 
         if low_cell.value is not None and low_cell.value < LOW and low_cell.value != 0:
             LOW = low_cell.value
@@ -189,6 +177,7 @@ for share in cash_share_list:
             if sheet.cell(start_row, 3).value == 0 or sheet.cell(start_row, 3).value is None:
                 temp_row = start_row
 
+                # iterating backwards till we find a close value
                 while sheet.cell(temp_row, 3).value == 0 or sheet.cell(temp_row, 3).value is None:
                     temp_row -= 1
 
@@ -223,7 +212,6 @@ for share in cash_share_list:
 
 # for close filling
 options = Options()
-# options.add_argument('--headless=new')
 options.add_argument("--disable-blink-features=AutomationControlled")
 
 # Exclude the collection of enable-automation switches
@@ -241,9 +229,6 @@ cash_close_list = ["AARTIIND", "ADANIENT", "APOLLOTYRE", "BAJAJFINSV", "BAJFINAN
 
 manual = []         # list to keep track of the shares whose values selenium couldn't get
 close = []
-# close = ['2446.95', '398.5', '1478.0', '7005.0', '227.65', '188.4', '234.15', '470.1', '3337.8', '132.8', '1170.0',
-# '1608.5', '448.85', '959.0', '1387.8', '1392.95', '662.9', '421.45', '1544.95', '1544.95', '2573.2', '561.0', '548.9',
-# '1000.05', '606.8', '230.95', '117.85', '8024.95']
 
 for share in cash_close_list:
     driver = webdriver.Chrome(options=options)
