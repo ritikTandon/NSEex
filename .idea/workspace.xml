@@ -4,146 +4,169 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="308761e4-5648-47f3-bc32-acb2059bab82" name="Changes" comment="moved algo folder and will only keep new algo shares in algo folder, all shares (new + old) get put in algo old">
+    <list default="true" id="308761e4-5648-47f3-bc32-acb2059bab82" name="Changes" comment="added script to fix 1 day high low wrong in test.py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/30 min csh.py" beforeDir="false" afterPath="$PROJECT_DIR$/30 min csh.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/AARTIIND.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/AARTIIND.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ABB.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ABB.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ABCAPITAL.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ABCAPITAL.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ABFRL.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ABFRL.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ADANIENT.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ADANIENT.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ADANIPORTS.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ADANIPORTS.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ALKEM.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ALKEM.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/AMBUJACEM.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/AMBUJACEM.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/APOLLOHOSP.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/APOLLOHOSP.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/APOLLOTYRE.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/APOLLOTYRE.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ASHOKLEY.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ASHOKLEY.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ASTRAL.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ASTRAL.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ATUL.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ATUL.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/AUBANK.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/AUBANK.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/AUROPHARMA.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/AUROPHARMA.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BAJAJFINSV.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BAJAJFINSV.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BAJFINANCE.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BAJFINANCE.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BALKRISIND.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BALKRISIND.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BALRAMCHIN.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BALRAMCHIN.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BANDHANBNK.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BANDHANBNK.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BANKBARODA.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BANKBARODA.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BATAINDIA.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BATAINDIA.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BEL.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BEL.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BHARATFORG.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BHARATFORG.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BHEL.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BHEL.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BIOCON.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BIOCON.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BRITANNIA.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BRITANNIA.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BSOFT.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/BSOFT.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/CANBK.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/CANBK.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/CANFINHOME.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/CANFINHOME.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/CHAMBLFERT.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/CHAMBLFERT.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/CHOLAFIN.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/CHOLAFIN.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/CIPLA.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/CIPLA.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/COFORGE.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/COFORGE.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/CONCOR.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/CONCOR.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/COROMANDEL.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/COROMANDEL.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/CROMPTON.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/CROMPTON.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/CUMMINSIND.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/CUMMINSIND.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/DABUR.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/DABUR.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/DALBHARAT.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/DALBHARAT.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/DEEPAKFERT.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/DEEPAKFERT.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/DEEPAKNTR.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/DEEPAKNTR.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/DELTACORP.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/DELTACORP.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/DIVISLAB.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/DIVISLAB.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/DIXON.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/DIXON.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/DLF.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/DLF.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/DRREDDY.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/DRREDDY.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ESCORTS.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ESCORTS.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/EXIDEIND.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/EXIDEIND.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/GLENMARK.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/GLENMARK.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/GLS.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/GLS.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/GNFC.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/GNFC.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/GODREJCP.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/GODREJCP.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/GODREJPROP.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/GODREJPROP.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/GRANULES.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/GRANULES.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/GRASIM.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/GRASIM.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/GUJGASLTD.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/GUJGASLTD.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/HAL.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/HAL.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/HAVELLS.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/HAVELLS.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/HCLTECH.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/HCLTECH.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/HDFCAMC.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/HDFCAMC.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/HDFCLIFE.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/HDFCLIFE.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/HINDALCO.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/HINDALCO.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/HINDCOPPER.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/HINDCOPPER.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ICICIGI.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ICICIGI.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ICICIPRULI.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ICICIPRULI.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/IEX.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/IEX.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/IGL.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/IGL.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/INDHOTEL.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/INDHOTEL.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/INDIACEM.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/INDIACEM.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/INDIAMART.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/INDIAMART.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/INDIGO.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/INDIGO.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/INDUSINDBK.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/INDUSINDBK.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/INDUSTOWER.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/INDUSTOWER.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/INTELLECT.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/INTELLECT.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/IPCALAB.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/IPCALAB.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/JINDALSTEL.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/JINDALSTEL.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/JKCEMENT.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/JKCEMENT.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/JSWSTEEL.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/JSWSTEEL.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/JUBLFOOD.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/JUBLFOOD.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/KOTAKBANK.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/KOTAKBANK.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/LALPATHLAB.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/LALPATHLAB.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/LAURUSLABS.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/LAURUSLABS.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/LICHSGFIN.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/LICHSGFIN.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/LTIM.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/LTIM.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/LTTS.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/LTTS.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/LUPIN.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/LUPIN.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/M&amp;MFIN.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/M&amp;MFIN.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/MANAPPURAM.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/MANAPPURAM.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/MARICO.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/MARICO.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/MCDOWELL-N.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/MCDOWELL-N.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/MCX.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/MCX.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/METROPOLIS.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/METROPOLIS.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/MFSL.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/MFSL.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/MGL.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/MGL.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/MPHASIS.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/MPHASIS.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/MUTHOOTFIN.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/MUTHOOTFIN.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/NAM-INDIA.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/NAM-INDIA.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/NAUKRI.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/NAUKRI.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/NAVINFLUOR.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/NAVINFLUOR.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/NMDC.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/NMDC.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/NTPC.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/NTPC.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/OBEROIRLTY.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/OBEROIRLTY.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ONGC.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ONGC.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/PEL.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/PEL.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/PERSISTENT.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/PERSISTENT.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/PETRONET.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/PETRONET.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/PIDILITIND.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/PIDILITIND.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/POLYCAB.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/POLYCAB.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/POWERGRID.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/POWERGRID.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/RAIN.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/RAIN.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/RAMCOCEM.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/RAMCOCEM.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/RBLBANK.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/RBLBANK.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/RECLTD.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/RECLTD.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/SBICARD.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/SBICARD.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/SBILIFE.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/SBILIFE.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/SIEMENS.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/SIEMENS.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/SRF.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/SRF.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/STAR.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/STAR.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/SUNPHARMA.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/SUNPHARMA.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/SYNGENE.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/SYNGENE.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/TATACOMM.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/TATACOMM.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/TATAMOTORS.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/TATAMOTORS.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/TECHM.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/TECHM.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/TORNTPHARM.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/TORNTPHARM.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/TORNTPOWER.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/TORNTPOWER.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/TRENT.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/TRENT.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/TVSMOTOR.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/TVSMOTOR.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/UBL.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/UBL.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ULTRACEMCO.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ULTRACEMCO.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/UPL.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/UPL.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/VEDL.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/VEDL.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/VOLTAS.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/VOLTAS.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ZEEL.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ZEEL.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ZYDUSLIFE.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ZYDUSLIFE.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/AARTIIND.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/AARTIIND.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/NTPC.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min csh/NTPC.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/AARTIIND.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/AARTIIND.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/ABB.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/ABB.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/ASHOKLEY.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/ASHOKLEY.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/BHEL.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/BHEL.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/DIXON.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/DIXON.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/ESCORTS.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/ESCORTS.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/HINDALCO.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/HINDALCO.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/IGL.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/IGL.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/NTPC.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/NTPC.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/ONGC.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/ONGC.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/RECLTD.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/RECLTD.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/VEDL.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/VEDL.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NOTES.txt" beforeDir="false" afterPath="$PROJECT_DIR$/NOTES.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/02 ABB.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/02 ABB.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/03 ASHOKLEY.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/03 ASHOKLEY.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/04 BHEL.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/04 BHEL.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/05 DIXON.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/05 DIXON.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/09 ONGC.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/09 ONGC.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/10 RECLTD.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/10 RECLTD.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/AARTIIND.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/AARTIIND.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/ABCAPITAL.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/ABCAPITAL.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/ABFRL.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/ABFRL.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/ADANIENT.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/ADANIENT.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/ADANIPORTS.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/ADANIPORTS.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/ALKEM.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/ALKEM.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/AMBUJACEM.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/AMBUJACEM.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/APOLLOHOSP.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/APOLLOHOSP.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/APOLLOTYRE.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/APOLLOTYRE.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/ASTRAL.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/ASTRAL.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/ATUL.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/ATUL.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/AUBANK.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/AUBANK.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/AUROPHARMA.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/AUROPHARMA.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/BAJAJFINSV.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/BAJAJFINSV.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/BAJFINANCE.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/BAJFINANCE.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/BALKRISIND.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/BALKRISIND.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/BALRAMCHIN.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/BALRAMCHIN.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/BANDHANBNK.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/BANDHANBNK.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/BANKBARODA.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/BANKBARODA.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/BATAINDIA.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/BATAINDIA.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/BEL.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/BEL.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/BHARATFORG.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/BHARATFORG.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/BIOCON.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/BIOCON.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/BRITANNIA.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/BRITANNIA.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/BSOFT.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/BSOFT.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/CANBK.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/CANBK.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/CANFINHOME.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/CANFINHOME.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/CHAMBLFERT.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/CHAMBLFERT.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/CHOLAFIN.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/CHOLAFIN.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/CIPLA.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/CIPLA.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/COFORGE.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/COFORGE.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/CONCOR.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/CONCOR.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/COROMANDEL.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/COROMANDEL.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/CROMPTON.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/CROMPTON.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/CUMMINSIND.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/CUMMINSIND.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/DABUR.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/DABUR.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/DALBHARAT.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/DALBHARAT.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/DEEPAKFERT.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/DEEPAKFERT.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/DEEPAKNTR.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/DEEPAKNTR.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/DELTACORP.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/DELTACORP.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/DIVISLAB.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/DIVISLAB.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/DLF.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/DLF.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/DRREDDY.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/DRREDDY.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/ESCORTS.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/ESCORTS.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/EXIDEIND.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/EXIDEIND.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/GLENMARK.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/GLENMARK.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/GLS.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/GLS.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/GNFC.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/GNFC.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/GODREJCP.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/GODREJCP.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/GODREJPROP.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/GODREJPROP.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/GRANULES.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/GRANULES.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/GRASIM.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/GRASIM.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/GUJGASLTD.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/GUJGASLTD.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/HAL.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/HAL.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/HAVELLS.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/HAVELLS.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/HCLTECH.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/HCLTECH.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/HDFCAMC.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/HDFCAMC.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/HDFCLIFE.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/HDFCLIFE.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/HINDALCO.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/HINDALCO.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/HINDCOPPER.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/HINDCOPPER.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/ICICIGI.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/ICICIGI.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/ICICIPRULI.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/ICICIPRULI.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/IEX.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/IEX.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/IGL.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/IGL.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/INDHOTEL.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/INDHOTEL.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/INDIACEM.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/INDIACEM.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/INDIAMART.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/INDIAMART.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/INDIGO.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/INDIGO.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/INDUSINDBK.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/INDUSINDBK.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/INDUSTOWER.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/INDUSTOWER.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/INTELLECT.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/INTELLECT.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/IPCALAB.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/IPCALAB.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/JINDALSTEL.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/JINDALSTEL.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/JKCEMENT.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/JKCEMENT.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/JSWSTEEL.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/JSWSTEEL.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/JUBLFOOD.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/JUBLFOOD.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/KOTAKBANK.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/KOTAKBANK.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/LALPATHLAB.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/LALPATHLAB.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/LAURUSLABS.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/LAURUSLABS.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/LICHSGFIN.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/LICHSGFIN.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/LTIM.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/LTIM.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/LTTS.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/LTTS.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/LUPIN.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/LUPIN.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/M%26MFIN.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/M%26MFIN.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/MANAPPURAM.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/MANAPPURAM.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/MARICO.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/MARICO.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/MCDOWELL-N.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/MCDOWELL-N.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/MCX.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/MCX.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/METROPOLIS.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/METROPOLIS.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/MFSL.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/MFSL.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/MGL.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/MGL.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/MPHASIS.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/MPHASIS.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/MUTHOOTFIN.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/MUTHOOTFIN.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/NAM-INDIA.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/NAM-INDIA.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/NAUKRI.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/NAUKRI.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/NAVINFLUOR.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/NAVINFLUOR.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/NMDC.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/NMDC.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/NTPC.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/NTPC.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/OBEROIRLTY.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/OBEROIRLTY.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/PEL.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/PEL.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/PERSISTENT.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/PERSISTENT.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/PETRONET.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/PETRONET.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/PIDILITIND.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/PIDILITIND.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/POLYCAB.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/POLYCAB.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/POWERGRID.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/POWERGRID.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/RAIN.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/RAIN.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/RAMCOCEM.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/RAMCOCEM.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/RBLBANK.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/RBLBANK.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/SBICARD.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/SBICARD.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/SBILIFE.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/SBILIFE.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/SIEMENS.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/SIEMENS.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/SRF.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/SRF.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/STAR.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/STAR.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/SUNPHARMA.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/SUNPHARMA.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/SYNGENE.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/SYNGENE.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/TATACOMM.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/TATACOMM.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/TATAMOTORS.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/TATAMOTORS.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/TECHM.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/TECHM.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/TORNTPHARM.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/TORNTPHARM.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/TORNTPOWER.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/TORNTPOWER.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/TRENT.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/TRENT.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/TVSMOTOR.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/TVSMOTOR.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/UBL.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/UBL.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/ULTRACEMCO.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/ULTRACEMCO.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/UPL.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/UPL.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/VEDL.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/VEDL.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/VOLTAS.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/VOLTAS.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/ZEEL.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/ZEEL.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/algo/ZYDUSLIFE.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/algo/ZYDUSLIFE.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/hl_test.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test/hl_test.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algo high low.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/algo high low.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algo.py" beforeDir="false" afterPath="$PROJECT_DIR$/algo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cash high low.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/cash high low.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cash.py" beforeDir="false" afterPath="$PROJECT_DIR$/cash.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data feed.py" beforeDir="false" afterPath="$PROJECT_DIR$/data feed.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/date_variables.py" beforeDir="false" afterPath="$PROJECT_DIR$/date_variables.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fo high low.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/fo high low.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fo.py" beforeDir="false" afterPath="$PROJECT_DIR$/fo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ltp prev.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/ltp prev.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nest trader auto.py" beforeDir="false" afterPath="$PROJECT_DIR$/nest trader auto.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,14 +265,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1691935354080</updated>
-    </task>
-    <task id="LOCAL-00020" summary="done for 1 min csh">
-      <option name="closed" value="true" />
-      <created>1692986056614</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1692986056614</updated>
     </task>
     <task id="LOCAL-00021" summary="DONE NEST AUTOMATION(VER 1)">
       <option name="closed" value="true" />
@@ -635,7 +650,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728735177190</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="added script to fix 1 day high low wrong in test.py">
+      <option name="closed" value="true" />
+      <created>1728840725536</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1728840725536</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -709,7 +732,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added facility to update closing, monthly and weekly values in both cash and algo(need to test monthly and closing)" />
     <MESSAGE value="added {entry-exit} and holding time to algo" />
     <MESSAGE value="fixed bug where weekly hcl wouldnt compute if there was a gap in data" />
     <MESSAGE value="closing dates were wrong for algo" />
@@ -734,7 +756,8 @@
     <MESSAGE value="moved NIFTY and BN 30 min FO to 30 min CSH in nest trader and modified code to remove copying 30 min FO NIFTY and BN sheets and removed the 30 min FO sheet saving" />
     <MESSAGE value="changed nifty row to reflect the correct row in nifty cash &quot;FUT&quot; sheet and added data feed for nifty and bn in their cash &quot;FUT&quot; sheets" />
     <MESSAGE value="moved algo folder and will only keep new algo shares in algo folder, all shares (new + old) get put in algo old" />
-    <option name="LAST_COMMIT_MESSAGE" value="moved algo folder and will only keep new algo shares in algo folder, all shares (new + old) get put in algo old" />
+    <MESSAGE value="added script to fix 1 day high low wrong in test.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="added script to fix 1 day high low wrong in test.py" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -743,11 +766,6 @@
           <url>file://$PROJECT_DIR$/new share create daily.py</url>
           <line>46</line>
           <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/algo.py</url>
-          <line>97</line>
-          <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/monthly closing creation/MWCL_creation_updation.py</url>

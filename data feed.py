@@ -5,7 +5,7 @@ import openpyxl as xl
 import send2trash
 from openpyxl.styles import Font, Alignment
 
-append = 305  # increment this daily. 305 is for 14-OCT-2024
+append = 307  # increment this daily. 307 is for 16-OCT-2024
 
 # styles
 red = Font("Arial", 11, color='ff0000', bold=True)
@@ -27,8 +27,7 @@ def cash():
     i = 0  # main iterator variable
 
     cash_shares = {'AARTIIND': 947, 'ADANIENT': 1579, 'APOLLOTYRE': 2946, 'BAJAJFINSERV': 1579, 'BAJAJFINANCE': 1579,
-                   'BANDHANBANK': 1579, ''
-                                        'BANKBARODA': 1579, 'COAL INDIA': 3232, '06 DLF CHL': 4058, 'EICHERMOTOR': 2715,
+                   'BANDHANBANK': 1579, 'BANKBARODA': 1579, 'COAL INDIA': 3232, '06 DLF CHL': 4058, 'EICHERMOTOR': 2715,
                    'FEDRAL BANK': 1579, 'HCLTECH': 1579, 'HDFC': 3936, 'HINDALCO': 947, 'ICICIBANK': 1579, 'INDUSINDBANK': 1579,
                    'INFY': 2765, 'JINDALS chl': 5195, 'LICHSGFIN': 1579, 'M&M': 1579, '07 M&MFINANCE': 1579,
                    '08 NTPC': 947, 'RELIANCE CHL': 4793, 'SBIN CHL': 4860, 'SUNTV': 1579, 'TATACHEM': 1579,
@@ -113,12 +112,14 @@ def fo():
     foHL_row = 2
 
     for share in fo_shares:
-        if share in ['02 BANKNIFTY F', '01 NIFTY F']:
-            path = rf'E:\Daily Data work\CASH\{share}.xlsx'
-
+        if share == '02 BANKNIFTY F':
+            path = rf'E:\Daily Data work\CASH\BANKNIFTY C.xlsx'         # MAKE A LIST WHERE CHANGING A SHEET NAME AFFECTS THE CODE
             wb = xl.load_workbook(path)
             sheet = wb['FUT']
-
+        elif share == '01 NIFTY F':
+            path = rf'E:\Daily Data work\CASH\01 NIFTY CHL C.xlsx'
+            wb = xl.load_workbook(path)
+            sheet = wb['FUT']
         else:
             path = rf'E:\Daily Data work\FO\{share}.xlsx'
 

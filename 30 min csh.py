@@ -42,14 +42,9 @@ for file_name in src_files:
     full_file_name = os.path.join(src_dir, file_name)
     if os.path.isfile(full_file_name):
         shutil.copy(full_file_name, dest_dir)
+
 print("Files copied as backup!")
 
-# index for getting values from cash/fo high low sheets
-# index_30_min = [2, 3, 4, 5, 6, 7, 4, 9, 10, 11, 12, 14, 16, 18, 19, 20, 21, 10, 22, 24, 25, 27, 28, 29]
-
-# cash_30_min_list = ["ADANI"]
-
-# idx = 0
 
 # LTP and PREV
 ltp_wb = xl.load_workbook(rf'C:\Users\admin\PycharmProjects\daily data\LTP PREV.xlsx')
@@ -70,7 +65,6 @@ while ltp_row <= len(ltp_sheet["A"]):
         ltp_sheet.cell(ltp_row, 2).value = cashHL_sheet.cell(cash_30_min_list[share_name], 5).value
 
     ltp_row += 1
-    # idx += 1
 
 idx = 0
 ltp_row = 2

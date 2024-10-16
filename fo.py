@@ -77,8 +77,6 @@ fo1_row = 2
 
 fl_9_25 = 0.392361111       # 9:25 time value in general format
 
-# bhav_link = rf"archives.nseindia.com/content/historical/DEREVATIVES/2023/SEP/fo{date[:2]}{mnth}20{date[6:]}bhav.csv.zip"
-
 # copying hourlys (.xls) as backup
 # path to source directory
 src_dir = rf"E:\Daily Data work\hourlys 1 minute FO\{yr}\{mnth}\{date}"
@@ -92,6 +90,7 @@ for file_name in src_files:
     full_file_name = os.path.join(src_dir, file_name)
     if os.path.isfile(full_file_name):
         shutil.copy(full_file_name, dest_dir)
+
 print("Files copied as backup!")
 
 for share in fo_share_list:
@@ -152,7 +151,6 @@ for share in fo_share_list:
         low_cell = sheet.cell(start_row, 5)
 
         cur_time = time_cell.value
-        # print(cur_time)
 
         if high_cell.value is not None and high_cell.value > HIGH:
             HIGH = high_cell.value

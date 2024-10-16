@@ -131,6 +131,9 @@ ACTUAL ALGO TRADING APP(CLI Probably)
 
     - ADD TS, remove ASHOKLEY and M&MFIN from chart and renumber the cash shares to only reflect ones in daily chart
 
+    - make files/modules for every possible task related to this project so when it's needed in the future, it's in a
+      good place
+
 
 
 DONE FOR ALGO:
