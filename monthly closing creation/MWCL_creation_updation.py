@@ -44,7 +44,7 @@ alignment = Alignment(horizontal='center')
 
 def weekly_create():
     for share in add_share_list:
-        path = rf'E:\Daily Data work\ALGORITHM\{share}.xlsx'
+        path = rf'E:\Daily Data work\ALGORITHM\ALGORITHM OLD\{share}.xlsx'
 
         wb = xl.load_workbook(path)
 
@@ -177,7 +177,7 @@ def calc_m_end_date(s_date):
 
 def monthly_create():
     for share in add_share_list:
-        path = rf'E:\Daily Data work\ALGORITHM\{share}.xlsx'
+        path = rf'E:\Daily Data work\ALGORITHM\ALGORITHM OLD\{share}.xlsx'
 
         wb = xl.load_workbook(path)
 
@@ -322,7 +322,7 @@ def calc_cl_end_date(s_date: datetime.datetime):
 
 def closing_create():
     for share in add_share_list:
-        path = rf'E:\Daily Data work\ALGORITHM\{share}.xlsx'
+        path = rf'E:\Daily Data work\ALGORITHM\ALGORITHM OLD\{share}.xlsx'
 
         wb = xl.load_workbook(path)
 
@@ -476,7 +476,7 @@ def weekly_update(typ, val=0):
         if typ == 'C':
             path = rf'E:\Daily Data work\CASH\{share}.xlsx'
         else:
-            path = rf'E:\Daily Data work\ALGORITHM\{share}.xlsx'
+            path = rf'E:\Daily Data work\ALGORITHM\ALGORITHM OLD\{share}.xlsx'
 
         wb = xl.load_workbook(path)
 
@@ -543,7 +543,7 @@ def monthly_update(typ):
         if typ == 'C':
             path = rf'E:\Daily Data work\CASH\{share}.xlsx'
         else:
-            path = rf'E:\Daily Data work\ALGORITHM\{share}.xlsx'
+            path = rf'E:\Daily Data work\ALGORITHM\ALGORITHM OLD\{share}.xlsx'
 
         wb = xl.load_workbook(path)
 
@@ -644,7 +644,7 @@ def closing_update(typ):
         if typ == 'C':
             path = rf'E:\Daily Data work\CASH\{share}.xlsx'
         else:
-            path = rf'E:\Daily Data work\ALGORITHM\{share}.xlsx'
+            path = rf'E:\Daily Data work\ALGORITHM\ALGORITHM OLD\{share}.xlsx'
 
         wb = xl.load_workbook(path)
 
@@ -735,5 +735,5 @@ def closing_update(typ):
 algo_copy_to_cash_list = ['02 ABB', '03 ASHOKLEY', '04 BHEL', '05 DIXON', '09 ONGC', '10 RECLTD']
 
 for sh in algo_copy_to_cash_list:
-    shutil.copy(rf"E:\Daily Data work\ALGORITHM\{sh}.xlsx",
+    shutil.copy(rf"E:\Daily Data work\ALGORITHM\ALGORITHM OLD\{sh}.xlsx",
                 rf"E:\Daily Data work\CASH\{sh}.xlsx")

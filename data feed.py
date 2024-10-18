@@ -5,7 +5,7 @@ import openpyxl as xl
 import send2trash
 from openpyxl.styles import Font, Alignment
 
-append = 307  # increment this daily. 307 is for 16-OCT-2024
+append = 310    # increment this daily. 310 is for 21-OCT-2024
 
 # styles
 red = Font("Arial", 11, color='ff0000', bold=True)
