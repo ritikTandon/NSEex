@@ -134,6 +134,10 @@ ACTUAL ALGO TRADING APP(CLI Probably)
     - make files/modules for every possible task related to this project so when it's needed in the future, it's in a
       good place
 
+    - put all the shares list in one place, so I only have to edit shares in one script and that should reflect in all
+      relevant places
+
+    - WRITE PROPER STEPS ON WHAT TO CHANGE AND WHERE WHEN ADDING A NEW SHARE OR REMOVING A SHARE
 
 
 DONE FOR ALGO:
