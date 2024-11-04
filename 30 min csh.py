@@ -18,9 +18,9 @@ algoHL_sheet = algoHL_wb['Sheet1']
 
 # dict to store share names with their row in 'cash/algo/fo high low.xlsx' sheets respectively
 cash_30_min_list = {"AARTIIND": 2, "ABB": 3, "ADANI": 3, "APOLLO": 4, "ASHOKLEY": 12, "BAJFINSV": 5, "BAJFIN": 6, "BANBK": 7,
-                    "BHEL": 26, "BARODA": 8, "BN": 4, "DIXON": 46, "DLF": 10, "EICHER": 11, "ESCORTS": 49, "FEDBANK": 12, "HCL": 13,
-                    "HINDALCO": 15, "IGL": 69, "INDUSIND": 17, "JIND": 19, "LIC": 20, "M&M": 21, "M&MFIN": 22,
-                    "NIFTY": 10, "NTPC": 23, "ONGC": 105, "RECLTD": 115, "SBIN": 25, "SUNTV": 26, "TM": 28,
+                    "BHEL": 27, "BARODA": 8, "BN": 4, "DIXON": 47, "DLF": 10, "EICHER": 11, "ESCORTS": 50, "FEDBANK": 12, "HCL": 13,
+                    "HINDALCO": 15, "IGL": 70, "INDUSIND": 17, "JIND": 19, "LIC": 20, "M&M": 21, "M&MFIN": 22,
+                    "NIFTY": 10, "NTPC": 23, "ONGC": 106, "RECLTD": 116, "REL": 24, "SBIN": 25, "SUNTV": 26, "TM": 28,
                     "TP": 29, "TS": 30, "VEDL": 133}
 
 # no decimal points in display

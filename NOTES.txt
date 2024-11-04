@@ -139,6 +139,11 @@ ACTUAL ALGO TRADING APP(CLI Probably)
 
     - WRITE PROPER STEPS ON WHAT TO CHANGE AND WHERE WHEN ADDING A NEW SHARE OR REMOVING A SHARE
 
+    - add exception handling for nifty and bn if they are open during daily data fo data feed, it should save the files
+      in a temp folder
+
+    - ADD BASIC LOGGING FOR MWCL SO I KNOW WHEN AND IF I RAN IT
+
 
 DONE FOR ALGO:
     - add an 'if' to check if today is holiday and also, non-decimal numbers are coming as XX., remove the .
