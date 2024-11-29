@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="308761e4-5648-47f3-bc32-acb2059bab82" name="Changes" comment="fixed MWCL code to work to just add data and not format it. Changed names of ongc, bhel and ashokley. ADDED TCS, TITAN, BAJAJAUTO">
-      <change afterPath="$PROJECT_DIR$/12M high low algo.xlsx" afterDir="false" />
+    <list default="true" id="308761e4-5648-47f3-bc32-acb2059bab82" name="Changes" comment="changed fo shares to only NIFTY and BN">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/30 min csh.py" beforeDir="false" afterPath="$PROJECT_DIR$/30 min csh.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/AARTIIND.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/AARTIIND.xls" afterDir="false" />
@@ -163,9 +162,8 @@
       <change beforePath="$PROJECT_DIR$/data feed.py" beforeDir="false" afterPath="$PROJECT_DIR$/data feed.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/date_variables.py" beforeDir="false" afterPath="$PROJECT_DIR$/date_variables.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fo high low.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/fo high low.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fo.py" beforeDir="false" afterPath="$PROJECT_DIR$/fo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ltp prev.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/ltp prev.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc.py" beforeDir="false" afterPath="$PROJECT_DIR$/misc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/monthly closing creation/MWCL_creation_updation.py" beforeDir="false" afterPath="$PROJECT_DIR$/monthly closing creation/MWCL_creation_updation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nest trader auto.py" beforeDir="false" afterPath="$PROJECT_DIR$/nest trader auto.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -228,26 +226,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/admin/PycharmProjects/daily data/test/algo&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/admin/PycharmProjects/daily data/Daily Backup hourlys",
+    "run.code.analysis.last.selected.profile": "aDefault",
+    "settings.editor.selected.configurable": "preferences.editor"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\PycharmProjects\daily data\Daily Backup hourlys" />
       <recent name="C:\Users\admin\PycharmProjects\daily data\test\algo" />
       <recent name="C:\Users\admin\PycharmProjects\daily data\NEST Trader groups" />
       <recent name="C:\Users\admin\PycharmProjects\daily data\leetcode" />
       <recent name="C:\Users\admin\PycharmProjects\daily data\monthly closing creation" />
-      <recent name="C:\Users\admin\PycharmProjects\daily data" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\admin\PycharmProjects\daily data\test" />
@@ -265,22 +263,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1691935354080</updated>
-    </task>
-    <task id="LOCAL-00024" summary="added leetcode sheets to practice leetcode">
-      <option name="closed" value="true" />
-      <created>1694069907343</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1694069907343</updated>
-    </task>
-    <task id="LOCAL-00025" summary="added xls to xlsx in python itself and a running backup of xls hourlys every day">
-      <option name="closed" value="true" />
-      <created>1694084747017</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1694084747017</updated>
     </task>
     <task id="LOCAL-00026" summary="added xls to xlsx in python itself and a running backup of xls hourlys every day">
       <option name="closed" value="true" />
@@ -658,7 +640,23 @@
       <option name="project" value="LOCAL" />
       <updated>1729505453799</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="ADD REL IN 30 MIN">
+      <option name="closed" value="true" />
+      <created>1730736239075</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1730736239091</updated>
+    </task>
+    <task id="LOCAL-00074" summary="comma fix">
+      <option name="closed" value="true" />
+      <created>1730742821448</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1730742821448</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -732,8 +730,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="comment added" />
-    <MESSAGE value="backup commit" />
     <MESSAGE value="cleanup commit" />
     <MESSAGE value="modified according to samco, changed coordinates in nest trader auto, changed vol calc in fo" />
     <MESSAGE value="added fix for close scraping from NSE" />
@@ -757,7 +753,9 @@
     <MESSAGE value="cleanup and comments" />
     <MESSAGE value="added new algo path to MWCL creation updation.py" />
     <MESSAGE value="fixed MWCL code to work to just add data and not format it. Changed names of ongc, bhel and ashokley. ADDED TCS, TITAN, BAJAJAUTO" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed MWCL code to work to just add data and not format it. Changed names of ongc, bhel and ashokley. ADDED TCS, TITAN, BAJAJAUTO" />
+    <MESSAGE value="ADD REL IN 30 MIN" />
+    <MESSAGE value="comma fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="comma fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

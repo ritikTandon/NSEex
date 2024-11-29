@@ -140,9 +140,7 @@ EQ_shares = ["AARTIIND", "ADANI", "APOLLO", "BAJFINSV", "BAJFIN", "BANBK", "BARO
              "HCL", "HDFC", "HIND", "ICICI", "INDUSIND", "INFY", "JIND", "LIC", "M&M", "M&MFIN", "NTPC", "REL", "SBIN",
              "SUNTV", "TCHEM", "TM", "TP", "TS", "ULTRA"]
 
-FO_shares = ["ADANI", "APORT", "APOLLO", "AURO", "AXIS", "BAJAJ", "BARODA", "BN", "AIRTEL", "BHEL", "CANBK", "COALIND",
-             "DLF", "DRREDDY", "EICHER", "HCL", "HDFC", "HIND", "HINDUNLVR", "ICICI", "INDUSIND", "JIND", "NIFTY", "REL",
-             "SBIN", "TCHEM", "TCON", "TM", "TS", "TCS", "TITAN", "ULTRA", "VEDL"]
+FO_shares = ["BN", "NIFTY"]
 
 EQ_30_min_shares = ["AARTIIND", "ABB", "ADANI", "APOLLO", "ASHOKLEY", "BAJFINSV", "BAJFIN", "BANBK", "BARODA", "BN",
                     "BHEL", "DIXON", "DLF", "EICHER", "ESCORTS", "FEDBANK", "HCL", "HINDALCO", "IGL", "INDUSIND", "JIND",

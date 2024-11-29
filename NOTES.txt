@@ -165,6 +165,8 @@ DONE FOR ALGO:
           % hl diff = hl diff / ltp * 100 (2 decimal pts)
           % cl diff = cl diff / prev day ltp * 100 (2 decimal pts)
 
+bdfidsufhddhRANDOMnfndj  DONT RE RUN SHARE IF THEY ARE ALREDAY IN XLSX FORMAT ( THOSE SHARES ARE ALREADY DONE)
+                          CHECKED THAT IT DOES NOT MESS UP ALGO/ CASH HIGH LOW (IF DID CHANGE MANULLY)
 
 DONE:
     - weekly, monthly, closing close should be LTP
