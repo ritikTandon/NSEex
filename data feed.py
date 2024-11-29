@@ -5,7 +5,7 @@ import openpyxl as xl
 import send2trash
 from openpyxl.styles import Font, Alignment
 
-append = 339  # increment this daily. 339 is for 29-NOV-2024 YESTARDAY ALGO DATA IS WRONG HIGH LOW
+append = 339  # increment this daily. 339 is for 29-NOV-2024
 
 # styles
 red = Font("Arial", 11, color='ff0000', bold=True)

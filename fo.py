@@ -250,7 +250,7 @@ for share in fo_share_list:
 
 # MD file (new (changed on 8 jul 2024)) BhavCopy_NSE_FO_0_0_0_20240708_F_0000.csv
 # dict containing share names (NSE) and their respective rows in 'fo high low.xlsx'
-share_list = {"BANKNIFTY": 1, "NIFTY": 2}
+share_list = {"BANKNIFTY": 2, "NIFTY": 3}
 
 md_path_zipped = rf"E:\chrome downloads\BhavCopy_NSE_FO_0_0_0_{yr}{date[3:5]}{date[:2]}_F_0000.csv.zip"     # .zip file path of downloaded cash bhavcopy
 md_path = rf"E:\chrome downloads"

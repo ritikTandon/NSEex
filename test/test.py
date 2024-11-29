@@ -314,8 +314,8 @@ m_range = [1091, 1110]
 cl_range = [1091, 1110]
 sh_count = 0
 
-xp_high = '/html/body/div[11]/div/div/section/div/div/div/div/div/div[2]/div/div/div/div[4]/div/div[1]/section/div/div[3]/div/table/tbody/tr/td[4]'
-xp_low = '/html/body/div[11]/div/div/section/div/div/div/div/div/div[2]/div/div/div/div[4]/div/div[1]/section/div/div[3]/div/table/tbody/tr/td[5]'
+xp_high = '/html/body/div[11]/div/div/section/div/div/div/div/div/div[2]/div/div/div/div[2]/div/div[1]/section/div/div[3]/div/table/tbody/tr[2]/td[4]'
+xp_low = '/html/body/div[11]/div/div/section/div/div/div/div/div/div[2]/div/div/div/div[2]/div/div[1]/section/div/div[3]/div/table/tbody/tr[2]/td[5]'
 
 options = Options()
 # options.add_argument('--headless=new')
@@ -328,79 +328,82 @@ options.add_experimental_option("excludeSwitches", ["enable-automation"])
 # Turn-off userAutomationExtension
 options.add_experimental_option("useAutomationExtension", False)
 
-# algo_close_list = [
-#                      'CIPLA', 'COFORGE', 'CONCOR', 'COROMANDEL', 'CROMPTON', 'CUMMINSIND', 'DABUR', 'DALBHARAT',
-#                      'DEEPAKFERT', 'DEEPAKNTR', 'DELTACORP', 'DIVISLAB', 'DIXON', 'DLF', 'DRREDDY', 'ESCORTS',
-#                      'EXIDEIND', 'GLENMARK', 'GLS', 'GNFC', 'GODREJCP', 'GODREJPROP', 'GRANULES', 'GRASIM', 'GUJGASLTD',
-#                      'HAL', 'HAVELLS', 'HCLTECH', 'HDFCAMC', 'HDFCLIFE', 'HINDALCO', 'HINDCOPPER', 'ICICIGI',
-#                      'ICICIPRULI', 'IEX', 'IGL', 'INDHOTEL', 'INDIACEM', 'INDIAMART', 'INDIGO', 'INDUSINDBK',
-#                      'INDUSTOWER', 'INTELLECT', 'IPCALAB', 'JINDALSTEL', 'JKCEMENT', 'JSWSTEEL', 'JUBLFOOD',
-#                      'KOTAKBANK', 'LALPATHLAB', 'LAURUSLABS', 'LICHSGFIN', 'LTIM', 'LTTS', 'LUPIN', 'M%26MFIN',
-#                      'MANAPPURAM', 'MARICO', 'UNITDSPR', 'MCX', 'METROPOLIS', 'MFSL', 'MGL', 'MPHASIS', 'MUTHOOTFIN',
-#                      'NAM-INDIA', 'NAUKRI', 'NAVINFLUOR', 'NMDC', 'NTPC', 'OBEROIRLTY', 'ONGC', 'PEL', 'PERSISTENT', 'PETRONET',
-#                      'PIDILITIND', 'POLYCAB', 'POWERGRID', 'RAIN', 'RAMCOCEM', 'RBLBANK', 'RECLTD', 'SBICARD',
-#                      'SBILIFE', 'SIEMENS', 'SRF', 'STAR', 'SUNPHARMA', 'SYNGENE', 'TATACOMM', 'TATAMOTORS', 'TECHM',
-#                      'TORNTPHARM', 'TORNTPOWER', 'TRENT', 'TVSMOTOR', 'UBL', 'ULTRACEMCO', 'UPL', 'VEDL', 'VOLTAS',
-#                      'ZEEL', 'ZYDUSLIFE']
-#
-#
-# doub = ['ADANIPORTS', 'CHOLAFIN']
-# add = 0
-# sh_row = 34
-# for share in algo_close_list:
-#     # if share takes 2 line as name
-#     if share in doub:
-#         add = 20
-#     left = (1105, 530+add)
-#     ll = (888, 575+add)  # 6
-#     ldate = (1052, 701+add)
-#     hist_data = (593, 439+add)
-#     right = (1387, 532+add)
-#     rl = (1172, 573+add)  # 7
-#     rdate = (1334, 702+add)
-#     flter = (1467, 527+add)
-#     hlwb = xl.load_workbook(rf'C:\Users\admin\PycharmProjects\daily data\test\hl_test.xlsx')
-#     hlsh = hlwb['Sheet2']
-#     driver = webdriver.Chrome(options=options)
-#
-#     driver.get(f"https://www.nseindia.com/get-quotes/equity?symbol={share}")
-#
-#
-#
-#     try:
-#         myElem = WebDriverWait(driver, 20).until(ec.presence_of_element_located((By.ID, 'historic_data')))
-#         sleep(2)
-#         pg.click(hist_data)
-#         sleep(2)
-#         pg.click(left)
-#         sleep(2)
-#         pg.click(ll, clicks=6, interval=0.6)
-#         sleep(2)
-#         pg.click(ldate)
-#         sleep(2)
-#         pg.click(right)
-#         sleep(2)
-#         pg.click(rl, clicks=7, interval=0.6)
-#         sleep(2)
-#         pg.click(rdate)
-#         sleep(2)
-#         pg.click(flter)
-#         sleep(2)
-#         he = WebDriverWait(driver, 20).until(ec.presence_of_element_located((By.XPATH, xp_high)))
-#         high = float(driver.find_element(By.XPATH, xp_high).text.replace(",", ""))
-#         low = float(driver.find_element(By.XPATH, xp_low).text.replace(",", ""))
-#
-#         hlsh.cell(sh_row, 2).value = high
-#         hlsh.cell(sh_row, 3).value = low
-#         sh_row += 1
-#
-#         hlwb.save(rf'C:\Users\admin\PycharmProjects\daily data\test\hl_test.xlsx')
-#         print(f"{high} {low} {share}")
-#
-#     except TimeoutException:
-#         print(f"Loading took too much time for {share}!")
-#
-#     driver.close()
+algo_close_list = ['AARTIIND', 'ABB', 'ABCAPITAL', 'ABFRL', 'ADANIENT', 'ADANIPORTS', 'ALKEM', 'AMBUJACEM',
+                     'APOLLOHOSP', 'APOLLOTYRE', 'ASHOKLEY', 'ASTRAL', 'ATUL', 'AUBANK', 'AUROPHARMA', 'BAJAJ-AUTO', 'BAJAJFINSV',
+                     'BAJFINANCE', 'BALKRISIND', 'BALRAMCHIN', 'BANDHANBNK', 'BANKBARODA', 'BATAINDIA', 'BEL',
+                     'BHARATFORG', 'BHEL', 'BIOCON', 'BRITANNIA', 'BSOFT', 'CANBK', 'CANFINHOME', 'CHAMBLFERT', 'CHOLAFIN',
+                     'CIPLA', 'COFORGE', 'CONCOR', 'COROMANDEL', 'CROMPTON', 'CUMMINSIND', 'DABUR', 'DALBHARAT',
+                     'DEEPAKFERT', 'DEEPAKNTR', 'DELTACORP', 'DIVISLAB', 'DIXON', 'DLF', 'DRREDDY', 'ESCORTS',
+                     'EXIDEIND', 'GLENMARK', 'GLS', 'GNFC', 'GODREJCP', 'GODREJPROP', 'GRANULES', 'GRASIM', 'GUJGASLTD',
+                     'HAL', 'HAVELLS', 'HCLTECH', 'HDFCAMC', 'HDFCLIFE', 'HINDALCO', 'HINDCOPPER', 'ICICIGI',
+                     'ICICIPRULI', 'IEX', 'IGL', 'INDHOTEL', 'INDIACEM', 'INDIAMART', 'INDIGO', 'INDUSINDBK',
+                     'INDUSTOWER', 'INTELLECT', 'IPCALAB', 'JINDALSTEL', 'JKCEMENT', 'JSWSTEEL', 'JUBLFOOD',
+                     'KOTAKBANK', 'LALPATHLAB', 'LAURUSLABS', 'LICHSGFIN', 'LTIM', 'LTTS', 'LUPIN', 'M%26MFIN',
+                     'MANAPPURAM', 'MARICO', 'UNITDSPR', 'MCX', 'METROPOLIS', 'MFSL', 'MGL', 'MPHASIS', 'MUTHOOTFIN',
+                     'NAM-INDIA', 'NAUKRI', 'NAVINFLUOR', 'NMDC', 'NTPC', 'OBEROIRLTY', 'ONGC', 'PEL', 'PERSISTENT', 'PETRONET',
+                     'PIDILITIND', 'POLYCAB', 'POWERGRID', 'RAIN', 'RAMCOCEM', 'RBLBANK', 'RECLTD', 'SBICARD',
+                     'SBILIFE', 'SIEMENS', 'SRF', 'STAR', 'SUNPHARMA', 'SYNGENE', 'TATACOMM', 'TATAMOTORS', 'TCS', 'TECHM',
+                     'TITAN', 'TORNTPHARM', 'TORNTPOWER', 'TRENT', 'TVSMOTOR', 'UBL', 'ULTRACEMCO', 'UPL', 'VEDL', 'VOLTAS',
+                     'ZEEL', 'ZYDUSLIFE']
+
+
+doub = ['ADANIPORTS', 'CHOLAFIN']
+add = 0
+sh_row = 34
+for share in algo_close_list:
+    # if share takes 2 line as name
+    if share in doub:
+        add = 20
+    left = (1105, 530+add)
+    ll = (888, 575+add)  # 6
+    ldate = (1052, 701+add)
+    hist_data = (593, 439+add)
+    right = (1387, 532+add)
+    rl = (1172, 573+add)  # 7
+    rdate = (1334, 702+add)
+    flter = (1467, 527+add)
+    hlwb = xl.load_workbook(rf'C:\Users\admin\PycharmProjects\daily data\test\hl_test.xlsx')
+    hlsh = hlwb['Sheet2']
+    driver = webdriver.Chrome(options=options)
+
+    driver.get(f"https://www.nseindia.com/get-quotes/equity?symbol={share}")
+
+
+
+    try:
+        myElem = WebDriverWait(driver, 20).until(ec.presence_of_element_located((By.ID, 'historic_data')))
+        sleep(2)
+        pg.click(hist_data)
+        sleep(2)
+        # pg.click(left)
+        # sleep(2)
+        # pg.click(ll, clicks=6, interval=0.6)
+        # sleep(2)
+        # pg.click(ldate)
+        # sleep(2)
+        # pg.click(right)
+        # sleep(2)
+        # pg.click(rl, clicks=7, interval=0.6)
+        # sleep(2)
+        # pg.click(rdate)
+        # sleep(2)
+        # pg.click(flter)
+        # sleep(2)
+        he = WebDriverWait(driver, 20).until(ec.presence_of_element_located((By.XPATH, xp_high)))
+        high = float(driver.find_element(By.XPATH, xp_high).text.replace(",", ""))
+        low = float(driver.find_element(By.XPATH, xp_low).text.replace(",", ""))
+
+        hlsh.cell(sh_row, 2).value = high
+        hlsh.cell(sh_row, 3).value = low
+        sh_row += 1
+
+        hlwb.save(rf'C:\Users\admin\PycharmProjects\daily data\test\hl_test.xlsx')
+        print(f"{high} {low} {share}")
+
+    except TimeoutException:
+        print(f"Loading took too much time for {share}!")
+
+    driver.close()
 
 
 # # copying high and low from algo hl sheet (after putting correct high and low values for that date)
@@ -423,66 +426,66 @@ options.add_experimental_option("useAutomationExtension", False)
 # print(f"{sh_count} shares done")
 
 
-for share in algo_share_list:
-    wb = xl.load_workbook(rf'E:\Daily Data work\ALGORITHM\ALGORITHM OLD\{share}.xlsx')
-    d = wb['D']
-    w = wb['W']
-    m = wb['M']
-    cl = wb['Cl']
-
-    high = 0
-    low = 9999999
-
-    # weekly
-    for row in range(w_range[0], w_range[1]+1):
-        high_cell = d.cell(row, 2)
-        low_cell = d.cell(row, 3)
-
-        if high_cell.value is not None and high_cell.value > high:
-            high = high_cell.value
-
-        if low_cell.value is not None and low_cell.value < low and low_cell.value != 0:
-            low = low_cell.value
-
-    w.cell(w_row, 2).value = high
-    w.cell(w_row, 3).value = low
-
-    high = 0
-    low = 9999999
-
-    # weekly
-    for row in range(m_range[0], m_range[1] + 1):
-        high_cell = d.cell(row, 2)
-        low_cell = d.cell(row, 3)
-
-        if high_cell.value is not None and high_cell.value > high:
-            high = high_cell.value
-
-        if low_cell.value is not None and low_cell.value < low and low_cell.value != 0:
-            low = low_cell.value
-
-    m.cell(m_row, 3).value = high
-    m.cell(m_row, 4).value = low
-
-    high = 0
-    low = 9999999
-
-    # closing
-    for row in range(cl_range[0], cl_range[1] + 1):
-        high_cell = d.cell(row, 2)
-        low_cell = d.cell(row, 3)
-
-        if high_cell.value is not None and high_cell.value > high:
-            high = high_cell.value
-
-        if low_cell.value is not None and low_cell.value < low and low_cell.value != 0:
-            low = low_cell.value
-
-    cl.cell(cl_row, 3).value = high
-    cl.cell(cl_row, 4).value = low
-
-    wb.save(rf'C:\Users\admin\PycharmProjects\daily data\test\algo\{share}.xlsx')
-    print(f'{share} done')
+# for share in algo_share_list:
+#     wb = xl.load_workbook(rf'E:\Daily Data work\ALGORITHM\ALGORITHM OLD\{share}.xlsx')
+#     d = wb['D']
+#     w = wb['W']
+#     m = wb['M']
+#     cl = wb['Cl']
+#
+#     high = 0
+#     low = 9999999
+#
+#     # weekly
+#     for row in range(w_range[0], w_range[1]+1):
+#         high_cell = d.cell(row, 2)
+#         low_cell = d.cell(row, 3)
+#
+#         if high_cell.value is not None and high_cell.value > high:
+#             high = high_cell.value
+#
+#         if low_cell.value is not None and low_cell.value < low and low_cell.value != 0:
+#             low = low_cell.value
+#
+#     w.cell(w_row, 2).value = high
+#     w.cell(w_row, 3).value = low
+#
+#     high = 0
+#     low = 9999999
+#
+#     # weekly
+#     for row in range(m_range[0], m_range[1] + 1):
+#         high_cell = d.cell(row, 2)
+#         low_cell = d.cell(row, 3)
+#
+#         if high_cell.value is not None and high_cell.value > high:
+#             high = high_cell.value
+#
+#         if low_cell.value is not None and low_cell.value < low and low_cell.value != 0:
+#             low = low_cell.value
+#
+#     m.cell(m_row, 3).value = high
+#     m.cell(m_row, 4).value = low
+#
+#     high = 0
+#     low = 9999999
+#
+#     # closing
+#     for row in range(cl_range[0], cl_range[1] + 1):
+#         high_cell = d.cell(row, 2)
+#         low_cell = d.cell(row, 3)
+#
+#         if high_cell.value is not None and high_cell.value > high:
+#             high = high_cell.value
+#
+#         if low_cell.value is not None and low_cell.value < low and low_cell.value != 0:
+#             low = low_cell.value
+#
+#     cl.cell(cl_row, 3).value = high
+#     cl.cell(cl_row, 4).value = low
+#
+#     wb.save(rf'C:\Users\admin\PycharmProjects\daily data\test\algo\{share}.xlsx')
+#     print(f'{share} done')
 
 # for share in algo_share_list:
 #     wb = xl.load_workbook(rf'E:\Daily Data work\ALGORITHM\ALGORITHM OLD\{share}.xlsx')
