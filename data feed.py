@@ -5,7 +5,7 @@ import openpyxl as xl
 import send2trash
 from openpyxl.styles import Font, Alignment
 
-append = 339  # increment this daily. 339 is for 29-NOV-2024
+append = 340  # increment this daily. 340 is for 02-DEC-2024
 
 # styles
 red = Font("Arial", 11, color='ff0000', bold=True)
@@ -100,9 +100,7 @@ def fo():
 
     # nifty and bn new data won't be updated in the future sheets but in FUT sheets in cash wb from now on (12/10/24)
     # changed nifty row to reflect the correct row in nifty cash "FUT" sheet
-    fo_shares = {'ADANI PORT': 2279, 'AUROPHARMA': 2789, '02 BANKNIFTY F': 3309, 'CANBK': 2016, 'DLF': 2831,
-                 'HINDALCO': 3989, 'ICICIBANK': 1093, 'JINDS': 2274, '01 NIFTY F': 5390, '03 RELIANCE': 2792, 'SBIN': 2793,
-                 'TATACONSUM': 2276, '05 TATAMOTOR': 2791, '04 TATASTEEL': 2793, 'TCS': 4826, 'TITAN': 1762}
+    fo_shares = {'02 BANKNIFTY F': 3309, '01 NIFTY F': 5390}
 
     fo_no_format_list = ['04 TATASTEEL']
 
@@ -199,8 +197,8 @@ def algo():
                          'ZEEL', 'ZYDUSLIFE']
 
     algo_copy_list = ['AARTIIND', '02 ABB', 'ABFRL', 'ADANIENT', 'ADANIPORTS', 'AMBUJACEM', 'APOLLOHOSP', 'APOLLOTYRE',
-                      'ASHOKLEY', 'AUROPHARMA', 'BAJAJFINSV','BAJFINANCE', 'BALKRISIND', 'BALRAMCHIN', 'BANDHANBNK',
-                      'BANKBARODA', 'BEL','BHARATFORG', 'BHEL', 'BIOCON', 'BRITANNIA', 'BSOFT', 'CANBK', 'CANFINHOME',
+                      'ASHOKLEY', 'AUROPHARMA', 'BAJAJFINSV', 'BAJFINANCE', 'BALKRISIND', 'BALRAMCHIN', 'BANDHANBNK',
+                      'BANKBARODA', 'BEL', 'BHARATFORG', 'BHEL', 'BIOCON', 'BRITANNIA', 'BSOFT', 'CANBK', 'CANFINHOME',
                       'CHAMBLFERT', 'CHOLAFIN', 'CIPLA', 'COFORGE', 'CROMPTON', 'CUMMINSIND', 'DIVISLAB', '05 DIXON',
                       'DLF', 'DRREDDY', 'ESCORTS', 'EXIDEIND', 'GLENMARK', 'GNFC', 'GODREJPROP', 'HAL', 'HAVELLS',
                       'HCLTECH', 'HDFCAMC', 'HDFCLIFE', 'HINDALCO', 'HINDCOPPER', 'ICICIGI', 'ICICIPRULI', 'IEX', 'IGL',

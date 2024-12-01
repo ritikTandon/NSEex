@@ -754,11 +754,11 @@ def closing_update(typ):
 # monthly_create()
 # closing_create()
 
-weekly_update("C")
-weekly_update("A")
+# weekly_update("C")
+# weekly_update("A")
 
-monthly_update("C")
-monthly_update("A")
+# monthly_update("C")
+# monthly_update("A")
 
 # closing_update("C")
 # closing_update("A")
@@ -768,3 +768,21 @@ algo_copy_to_cash_list = ['02 ABB', 'ASHOKLEY', 'BHEL', '05 DIXON', 'ONGC', '10 
 for sh in algo_copy_to_cash_list:
     shutil.copy(rf"E:\Daily Data work\ALGORITHM\ALGORITHM OLD\{sh}.xlsx",
                 rf"E:\Daily Data work\CASH\{sh}.xlsx")
+
+algo_copy_list = ['AARTIIND', '02 ABB', 'ABFRL', 'ADANIENT', 'ADANIPORTS', 'AMBUJACEM', 'APOLLOHOSP', 'APOLLOTYRE',
+                  'ASHOKLEY', 'AUROPHARMA', 'BAJAJFINSV','BAJFINANCE', 'BALKRISIND', 'BALRAMCHIN', 'BANDHANBNK',
+                  'BANKBARODA', 'BEL','BHARATFORG', 'BHEL', 'BIOCON', 'BRITANNIA', 'BSOFT', 'CANBK', 'CANFINHOME',
+                  'CHAMBLFERT', 'CHOLAFIN', 'CIPLA', 'COFORGE', 'CROMPTON', 'CUMMINSIND', 'DIVISLAB', '05 DIXON',
+                  'DLF', 'DRREDDY', 'ESCORTS', 'EXIDEIND', 'GLENMARK', 'GNFC', 'GODREJPROP', 'HAL', 'HAVELLS',
+                  'HCLTECH', 'HDFCAMC', 'HDFCLIFE', 'HINDALCO', 'HINDCOPPER', 'ICICIGI', 'ICICIPRULI', 'IEX', 'IGL',
+                  'INDIACEM', 'INDIGO', 'INDUSINDBK', 'INDUSTOWER', 'INTELLECT', 'IPCALAB', 'KOTAKBANK', 'LALPATHLAB',
+                  'LAURUSLABS', 'LICHSGFIN', 'LTIM', 'LTTS', 'LUPIN', 'M%26MFIN', 'MANAPPURAM', 'MCDOWELL-N', 'MCX',
+                  'METROPOLIS', 'MFSL', 'MGL', 'MPHASIS', 'MUTHOOTFIN', 'NAM-INDIA', 'NAUKRI', 'NMDC', 'NTPC',
+                  'ONGC', 'PEL', 'PERSISTENT', 'PETRONET', 'POLYCAB', 'POWERGRID', 'RBLBANK', '10 RECLTD',
+                  'SBICARD', 'SIEMENS', 'SUNPHARMA', 'TATAMOTORS', 'TECHM', 'TRENT', 'TVSMOTOR', 'UBL', 'ULTRACEMCO',
+                  'VEDL', 'VOLTAS', 'JUBLFOOD', 'OBEROIRLTY']
+
+# copying relevant shares to ALGO (new) folder
+for sh in algo_copy_list:
+    shutil.copy(rf"E:\Daily Data work\ALGORITHM\ALGORITHM OLD\{sh}.xlsx",
+                rf"E:\Daily Data work\ALGORITHM\{sh}.xlsx")
