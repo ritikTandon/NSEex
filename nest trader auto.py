@@ -143,7 +143,7 @@ EQ_shares = ["AARTIIND", "ADANI", "APOLLO", "BAJFINSV", "BAJFIN", "BANBK", "BARO
 FO_shares = ["BN", "NIFTY"]
 
 EQ_30_min_shares = ["AARTIIND", "ABB", "ADANI", "APOLLO", "ASHOKLEY", "BAJFINSV", "BAJFIN", "BANBK", "BARODA", "BN",
-                    "BHEL", "DIXON", "DLF", "EICHER", "ESCORTS", "FEDBANK", "HCL", "HINDALCO", "IGL", "INDUSIND", "JIND",
+                    "BHEL", "CHAMBAL", "DIXON", "DLF", "EICHER", "ESCORTS", "FEDBANK", "HCL", "HINDALCO", "IGL", "INDUSIND", "JIND",
                     "LIC", "M&M", "M&MFIN", "NIFTY", "NTPC", "ONGC", "RECLTD", "REL", "SBIN", "SUNTV", "TM", "TP", "TS", "VEDL"]
 
 # same as algo share list in algo.py
