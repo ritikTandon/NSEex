@@ -260,14 +260,14 @@ md_path = rf"E:\chrome downloads"
 with ZipFile(md_path_zipped, 'r') as zObject:
     zObject.extractall(path=md_path)
 
-md_file_path = rf"E:\Daily Data work\MD files\{yr}\{mnth}\fo{date[:2]}{mnth}20{date[6:]}bhav1.xlsx"
+md_file_path = rf"E:\Daily Data work\MD files\{yr}\{mnth}\fo{date[:2]}{mnth}20{date[6:]}bhav.xlsx"
 
 df = pd.read_csv(md_path_zipped[:-4])       # removing the .zip extension after unzipping
 df = df.drop(df.columns[-9:], axis=1)
-df = df.drop(columns=['BizDt', 'Src', 'FinInstrmTp', 'FinInstrmId', 'ISIN', 'SctySrs', 'OpnIntrst', 'ChngInOpnIntrst',
+df2 = df.drop(columns=['BizDt', 'Src', 'FinInstrmTp', 'FinInstrmId', 'ISIN', 'SctySrs', 'OpnIntrst', 'ChngInOpnIntrst',
                       'TradDt', 'Sgmt', 'TckrSymb', 'XpryDt', 'FininstrmActlXpryDt', 'StrkPric', 'OptnTp'])
 
-df2 = df.sort_values(by='FinInstrmNm', ascending=True)     # this one will actually be saved as md file, and will sort with name of fin instrument
+df2 = df2.sort_values(by='FinInstrmNm', ascending=True)     # this one will actually be saved as md file, and will sort with name of fin instrument
 df = df[df['OptnTp'].isnull()]
 
 for share in share_list:
