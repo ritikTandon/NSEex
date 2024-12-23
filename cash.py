@@ -27,10 +27,13 @@ cashHL_wb = xl.load_workbook(r'C:\Users\admin\PycharmProjects\daily data\cash hi
 cashHL_sheet = cashHL_wb['Sheet1']
 cashHL_row = 2
 
-# converting xls to xlsx for csh sheet
-x2x = XLS2XLSX(r'E:\Daily Data work\csh.xls')
-wb = x2x.to_xlsx()
-wb.save(r'E:\Daily Data work\csh.xlsx')
+# converting xls to xlsx for csh sheet if it doesn't already exist
+try:
+    x2x = XLS2XLSX(r'E:\Daily Data work\csh.xls')
+    wb = x2x.to_xlsx()
+    wb.save(r'E:\Daily Data work\csh.xlsx')
+except FileNotFoundError:
+    print("csh.xlsx already exists!")
 
 csh_wb = xl.load_workbook(r'E:\Daily Data work\csh.xlsx')
 csh_sheet = csh_wb['csh-Sheet1']

@@ -43,11 +43,13 @@ algoHL_sheet = algoHL_wb['Sheet1']
 algoHL_row = 2
 
 
-# converting xls to xlsx for algo sheet
-x2x = XLS2XLSX(r'E:\Daily Data work\algo.xls')
-
-wb = x2x.to_xlsx()
-wb.save(r'E:\Daily Data work\algo.xlsx')
+# converting xls to xlsx for algo sheet if it doesn't already exist
+try:
+    x2x = XLS2XLSX(r'E:\Daily Data work\algo.xls')
+    wb = x2x.to_xlsx()
+    wb.save(r'E:\Daily Data work\algo.xlsx')
+except FileNotFoundError:
+    print("algo.xlsx already exists!")
 
 algo_wb = xl.load_workbook(r'E:\Daily Data work\algo.xlsx')
 algo_sheet = algo_wb['algo-Sheet1']
