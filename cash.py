@@ -131,8 +131,8 @@ for share in cash_share_list:
     # low
     cashHL_sheet.cell(cashHL_row, 3).value = LOW
 
-    # LTP
-    cashHL_sheet.cell(cashHL_row, 5).value = csh_sheet.cell(csh_row, 2).value
+    # # LTP
+    # cashHL_sheet.cell(cashHL_row, 5).value = csh_sheet.cell(csh_row, 2).value
 
     # vol
     volume = csh_sheet.cell(csh_row, 5).value
@@ -213,7 +213,7 @@ for share in cash_share_list:
 
     print(f"{share} done")
 
-# for close filling
+# for close and LTP filling from NSE
 options = Options()
 options.add_argument("--disable-blink-features=AutomationControlled")
 
@@ -232,7 +232,10 @@ cash_close_list = ["AARTIIND", "ADANIENT", "APOLLOTYRE", "BAJAJFINSV", "BAJFINAN
 
 manual = []         # list to keep track of the shares whose values selenium couldn't get
 close = []
+ltp = []
+ltp_xpath = '/html/body/div[11]/div/div/section/div/div/div/div/div/div[2]/div/section/div/div/div/aside[2]/div/div/table/tbody/tr/td[5]'
 
+print(f"Share: Close-LTP")
 for share in cash_close_list:
     driver = webdriver.Chrome(options=options)
 
@@ -243,39 +246,54 @@ for share in cash_close_list:
         myElem = WebDriverWait(driver, 20).until(ec.presence_of_element_located((By.ID, 'quoteLtp')))
         # sleep(5)
         close_val = driver.find_element(By.ID, "quoteLtp").text
+        ltp_val = driver.find_element(By.XPATH, ltp_xpath).text
 
-        while close_val == '':
+        while close_val == '' and ltp_val == '':
             driver.refresh()
             WebDriverWait(driver, 10).until(ec.presence_of_element_located((By.ID, 'quoteLtp')))
+            WebDriverWait(driver, 10).until(ec.presence_of_element_located((By.XPATH, ltp_xpath)))
             close_val = driver.find_element(By.ID, "quoteLtp").text
+            ltp_val = driver.find_element(By.XPATH, ltp_xpath).text
             sleep(0.5)
 
         close_val = close_val.replace(",", "")
+        ltp_val = ltp_val.replace(",", "")
 
         # truncating last 0
-        if close_val[len(close_val)-1:len(close_val)] == '0':
-            close_val = close_val[:len(close_val)-1]
+        if close_val[-1] == '0':
+            close_val = close_val[:-1]
+
+        # truncating last 0
+        if ltp_val[-1] == '0':
+            ltp_val = ltp_val[:-1]
 
         close.append(close_val)
+        ltp.append(ltp_val)
 
-        print(f'{share}: {close_val}')
+        print(f'{share}: {close_val}-{ltp_val}')
         if close_val == '':
-            manual.append(share)
+            manual.append(f"{share}Close")
+
+        if ltp_val == '':
+            manual.append(f"{share}LTP")
 
     except TimeoutException:        # added temp fix for timeoutexception, will need to check if it works properly or nah
         close.append('')
-        manual.append(share)
+        manual.append('')
+        manual.append(f"{share} Timeout")
         print(f"Loading took too much time for {share}!")
 
     driver.close()
 
 print(close)
+print(ltp)
 print(manual)
 
-i = 0
+i = 0  # first row is heading
 
 while i < len(cash_close_list):
     close_cell = cashHL_sheet.cell(i+2, 4)
+    ltp_cell = cashHL_sheet.cell(i+2, 5)
 
     if close[i] == '':
         close_cell.value = 0
@@ -283,6 +301,13 @@ while i < len(cash_close_list):
     else:
         close_cell.value = float(close[i])
         close_cell.number_format = "0.00"
+
+    if ltp[i] == '':
+        ltp_cell.value = 0
+
+    else:
+        ltp_cell.value = float(ltp[i])
+        ltp_cell.number_format = "0.00"
 
     i += 1
 

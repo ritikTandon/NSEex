@@ -181,3 +181,10 @@ DONE:
 
     - rename algo folder to algo old and now only copy certain shares into algo folder that will go to papa pc
 
+
+
+
+
+ADD CLOSING CLEARING DATES TO SHARE
+
+NSE CLOSE IS LTP , 14-1 25 NTPC LTP IS 310(CLOSE FROM NSE ) BUT TOOK LTP 312 WHICH WAS WRONG
