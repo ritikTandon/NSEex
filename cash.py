@@ -213,6 +213,13 @@ for share in cash_share_list:
 
     print(f"{share} done")
 
+# saving to save h l c data
+cashHL_wb.save(r'C:\Users\admin\PycharmProjects\daily data\cash high low.xlsx')
+cashHL_wb = xl.load_workbook(r'C:\Users\admin\PycharmProjects\daily data\cash high low.xlsx')
+
+cashHL_sheet = cashHL_wb['Sheet1']
+cashHL_row = 2
+
 # for close and LTP filling from NSE
 options = Options()
 options.add_argument("--disable-blink-features=AutomationControlled")
@@ -279,9 +286,14 @@ for share in cash_close_list:
 
     except TimeoutException:        # added temp fix for timeoutexception, will need to check if it works properly or nah
         close.append('')
-        manual.append('')
+        ltp.append('')
         manual.append(f"{share} Timeout")
         print(f"Loading took too much time for {share}!")
+    except Exception as e:
+        close.append('')
+        ltp.append('')
+        manual.append(f"{share} error")
+        print(e)
 
     driver.close()
 
@@ -299,15 +311,25 @@ while i < len(cash_close_list):
         close_cell.value = 0
 
     else:
-        close_cell.value = float(close[i])
-        close_cell.number_format = "0.00"
+        try:
+            close_cell.value = float(close[i])
+            close_cell.number_format = "0.00"
+        except Exception as e:
+            print(e)
+            close_cell.value = 0
+            close_cell.number_format = "0.00"
 
     if ltp[i] == '':
         ltp_cell.value = 0
 
     else:
-        ltp_cell.value = float(ltp[i])
-        ltp_cell.number_format = "0.00"
+        try:
+            ltp_cell.value = float(ltp[i])
+            ltp_cell.number_format = "0.00"
+        except Exception as e:
+            print(e)
+            ltp_cell.value = 0
+            ltp_cell.number_format = "0.00"
 
     i += 1
 

@@ -234,6 +234,13 @@ for share in algo_share_list:
 
     print(f"{share} done")
 
+# saving to save h l c data
+algoHL_wb.save(r'C:\Users\admin\PycharmProjects\daily data\algo high low.xlsx')
+
+algo_wb = xl.load_workbook(r'E:\Daily Data work\algo.xlsx')
+algo_sheet = algo_wb['algo-Sheet1']
+algo_row = 2
+
 # for close and LTP filling from NSE
 options = Options()
 options.add_argument("--disable-blink-features=AutomationControlled")
@@ -250,7 +257,7 @@ algo_close_list = ['AARTIIND', 'ABB', 'ABCAPITAL', 'ABFRL', 'ADANIENT', 'ADANIPO
                      'BHARATFORG', 'BHEL', 'BIOCON', 'BRITANNIA', 'BSOFT', 'CANBK', 'CANFINHOME', 'CHAMBLFERT', 'CHOLAFIN',
                      'CIPLA', 'COFORGE', 'CONCOR', 'COROMANDEL', 'CROMPTON', 'CUMMINSIND', 'DABUR', 'DALBHARAT',
                      'DEEPAKFERT', 'DEEPAKNTR', 'DELTACORP', 'DIVISLAB', 'DIXON', 'DLF', 'DRREDDY', 'ESCORTS',
-                     'EXIDEIND', 'GLENMARK', 'GLS', 'GNFC', 'GODREJCP', 'GODREJPROP', 'GRANULES', 'GRASIM', 'GUJGASLTD',
+                     'EXIDEIND', 'GLENMARK', 'ALIVUS', 'GNFC', 'GODREJCP', 'GODREJPROP', 'GRANULES', 'GRASIM', 'GUJGASLTD',
                      'HAL', 'HAVELLS', 'HCLTECH', 'HDFCAMC', 'HDFCLIFE', 'HINDALCO', 'HINDCOPPER', 'ICICIGI',
                      'ICICIPRULI', 'IEX', 'IGL', 'INDHOTEL', 'INDIACEM', 'INDIAMART', 'INDIGO', 'INDUSINDBK',
                      'INDUSTOWER', 'INTELLECT', 'IPCALAB', 'JINDALSTEL', 'JKCEMENT', 'JSWSTEEL', 'JUBLFOOD',
@@ -311,9 +318,14 @@ for share in algo_close_list:
 
     except TimeoutException:        # added temp fix for timeoutexception, will need to check if it works properly or nah
         close.append('')
-        manual.append('')
+        ltp.append('')
         manual.append(f"{share} Timeout")
         print(f"Loading took too much time for {share}!")
+    except Exception as e:
+        close.append('')
+        ltp.append('')
+        manual.append(f"{share} error")
+        print(e)
 
     driver.close()
 
@@ -331,15 +343,25 @@ while i < len(algo_close_list):
         close_cell.value = 0
 
     else:
-        close_cell.value = float(close[i])
-        close_cell.number_format = "0.00"
+        try:
+            close_cell.value = float(close[i])
+            close_cell.number_format = "0.00"
+        except Exception as e:
+            print(e)
+            close_cell.value = 0
+            close_cell.number_format = "0.00"
 
     if ltp[i] == '':
         ltp_cell.value = 0
 
     else:
-        ltp_cell.value = float(ltp[i])
-        ltp_cell.number_format = "0.00"
+        try:
+            ltp_cell.value = float(ltp[i])
+            ltp_cell.number_format = "0.00"
+        except Exception as e:
+            print(e)
+            ltp_cell.value = 0
+            ltp_cell.number_format = "0.00"
 
     i += 1
 
