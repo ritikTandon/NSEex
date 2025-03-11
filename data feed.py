@@ -5,7 +5,7 @@ import openpyxl as xl
 import send2trash
 from openpyxl.styles import Font, Alignment
 
-append = 385  # increment this daily. 385 is for 01-FEB-2025
+append = 413  # increment this daily. 413 is for 12-MAR-2025
 
 # styles
 red = Font("Arial", 11, color='ff0000', bold=True)
@@ -100,7 +100,7 @@ def fo():
 
     # nifty and bn new data won't be updated in the future sheets but in FUT sheets in cash wb from now on (12/10/24)
     # changed nifty row to reflect the correct row in nifty cash "FUT" sheet
-    fo_shares = {'02 BANKNIFTY F': 3309, '01 NIFTY F': 5390}
+    fo_shares = {'02 BANKNIFTY F': 3310, '01 NIFTY F': 5391}
 
     fo_no_format_list = ['04 TATASTEEL']
 

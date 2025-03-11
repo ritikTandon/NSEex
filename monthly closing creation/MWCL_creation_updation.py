@@ -612,7 +612,11 @@ def monthly_update(typ):
             except TypeError:
                 d_row -= 1
                 if type(d_sheet.cell(d_row, 1).value) == str:
-                    end_date = datetime.datetime.strptime(d_sheet.cell(d_row, 1).value, "%d-%b-%y")
+                    try:
+                        end_date = datetime.datetime.strptime(d_sheet.cell(d_row, 1).value, "%d-%b-%y")
+                    except Exception:
+                        end_date = datetime.datetime.strptime(d_sheet.cell(d_row, 1).value, "%d-%m-%y")
+
                 else:  # if already in datetime.datetime format
                     end_date = d_sheet.cell(d_row, 1).value
                 continue
@@ -625,7 +629,10 @@ def monthly_update(typ):
 
             d_row -= 1
             if type(d_sheet.cell(d_row, 1).value) == str:
-                end_date = datetime.datetime.strptime(d_sheet.cell(d_row, 1).value, "%d-%b-%y")
+                try:
+                    end_date = datetime.datetime.strptime(d_sheet.cell(d_row, 1).value, "%d-%b-%y")
+                except Exception:
+                    end_date = datetime.datetime.strptime(d_sheet.cell(d_row, 1).value, "%d-%m-%y")
             else:       # if already in datetime.datetime format
                 end_date = d_sheet.cell(d_row, 1).value
         # for i in range(month_length):
@@ -700,10 +707,13 @@ def closing_update(typ):
         start_date = datetime.datetime.strptime(start_date_str, date_format)
         end_date = datetime.datetime.strptime(end_date_str, date_format)
 
-        if typ != 'C':
-            start_date = start_date - timedelta(days=1)     # todo untested hotfix for closing dates being wrong
-            cl_sheet.cell(cl_row, 1).value = f'{start_date.date().strftime(date_format)} TO {end_date.date().strftime(date_format)}'
-            print(f'{start_date.date().strftime(date_format)} TO {end_date.date().strftime(date_format)}')
+        # # checking if there is more than one day gap between end date of prev closing and start date of next cl because some shares have 2 days gaps. Actual fix is to correct the dates
+        # next_start_date = datetime.datetime.strptime(str(cl_sheet.cell(cl_row-1, 1).value).split(" TO ")[0], date_format)
+
+        # if next_start_date - timedelta(days=1) != end_date:     # if the next start date is more than one day behind last closing date
+        #     start_date = start_date - timedelta(days=1)     # todo untested hotfix for closing dates being wrong
+        #     cl_sheet.cell(cl_row, 1).value = f'{start_date.date().strftime(date_format)} TO {end_date.date().strftime(date_format)}'
+        #     print(f'{start_date.date().strftime(date_format)} TO {end_date.date().strftime(date_format)}')
 
         while start_date <= end_date:
             try:
@@ -716,7 +726,11 @@ def closing_update(typ):
             except TypeError:
                 d_row -= 1
                 if type(d_sheet.cell(d_row, 1).value) == str:
-                    end_date = datetime.datetime.strptime(d_sheet.cell(d_row, 1).value, "%d-%b-%y")
+                    try:        # this try catch is solely because of 1st feb being written in files n dmy format and not dby
+                        end_date = datetime.datetime.strptime(d_sheet.cell(d_row, 1).value, "%d-%b-%y")
+                    except ValueError:
+                        end_date = datetime.datetime.strptime(d_sheet.cell(d_row, 1).value, "%d-%m-%y")
+
                 else:  # if already in datetime.datetime format
                     end_date = d_sheet.cell(d_row, 1).value
                 continue
@@ -729,7 +743,11 @@ def closing_update(typ):
 
             d_row -= 1
             if type(d_sheet.cell(d_row, 1).value) == str:
-                end_date = datetime.datetime.strptime(d_sheet.cell(d_row, 1).value, "%d-%b-%y")
+                try:
+                    end_date = datetime.datetime.strptime(d_sheet.cell(d_row, 1).value, "%d-%b-%y")
+                except ValueError:
+                    end_date = datetime.datetime.strptime(d_sheet.cell(d_row, 1).value, "%d-%m-%y")
+
             else:       # if already in datetime.datetime format
                 end_date = d_sheet.cell(d_row, 1).value
 

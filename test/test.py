@@ -878,6 +878,7 @@
 # print(close)
 # print(ltp)
 # print(manual)
+import datetime
 import os
 
 algo_share_list = ['AARTIIND', 'ABB', 'ABCAPITAL', 'ABFRL', 'ADANIENT', 'ADANIPORTS', 'ALKEM', 'AMBUJACEM',
@@ -912,5 +913,246 @@ cash_30_min_list = {"AARTIIND": 2, "ABB": 3, "ADANI": 3, "APOLLO": 4, "ASHOKLEY"
                     "HINDALCO": 15, "IGL": 70, "INDUSIND": 17, "JIND": 19, "LIC": 20, "M&M": 21, "M&MFIN": 22,
                     "NIFTY": 3, "NTPC": 23, "ONGC": 106, "RECLTD": 116, "REL": 24, "SBIN": 25, "SUNTV": 26, "TM": 28,
                     "TP": 29, "TS": 30, "VEDL": 136}
-for i, l in enumerate(os.listdir(r'E:\Daily Data work\hourlys 30 minute CASH\2025\JAN\31.01.25')):
-    print(l[:-4] == list(cash_30_min_list.keys())[i])
+# for i, l in enumerate(os.listdir(r'E:\Daily Data work\hourlys 30 minute CASH\2025\JAN\31.01.25')):
+#     print(l[:-4] == list(cash_30_min_list.keys())[i])
+
+
+cash_shares = {'AARTIIND': 947, 'ADANIENT': 1579, 'APOLLOTYRE': 2946, 'BAJAJFINSERV': 1579, 'BAJAJFINANCE': 1579,
+                   'BANDHANBANK': 1579, 'BANKBARODA': 1579, 'COAL INDIA': 3232, '06 DLF CHL': 4058, 'EICHERMOTOR': 2715,
+                   'FEDRAL BANK': 1579, 'HCLTECH': 1579, 'HDFC': 3936, 'HINDALCO': 947, 'ICICIBANK': 1579, 'INDUSINDBANK': 1579,
+                   'INFY': 2765, 'JINDALS chl': 5195, 'LICHSGFIN': 1579, 'M&M': 1579, '07 M&MFINANCE': 1579,
+                   '08 NTPC': 947, 'RELIANCE CHL': 4793, 'SBIN CHL': 4860, 'SUNTV': 1579, 'TATACHEM': 1579,
+                   '11 TATAMOTOR CHL': 4434, '12 TATAPOWER': 1579, '13 TATASTEEL chl': 4570, 'ULTRACHEM': 2696}
+
+algo_share_list = ['AARTIIND', '02 ABB', 'ABCAPITAL', 'ABFRL', 'ADANIENT', 'ADANIPORTS', 'ALKEM', 'AMBUJACEM',
+                   'APOLLOHOSP', 'APOLLOTYRE', 'ASHOKLEY', 'ASTRAL', 'ATUL', 'AUBANK', 'AUROPHARMA', 'BAJAJAUTO',
+                   'BAJAJFINSV',
+                   'BAJFINANCE', 'BALKRISIND', 'BALRAMCHIN', 'BANDHANBNK', 'BANKBARODA', 'BATAINDIA', 'BEL',
+                   'BHARATFORG', 'BHEL', 'BIOCON', 'BRITANNIA', 'BSOFT', 'CANBK', 'CANFINHOME', 'CHAMBLFERT',
+                   'CHOLAFIN',
+                   'CIPLA', 'COFORGE', 'CONCOR', 'COROMANDEL', 'CROMPTON', 'CUMMINSIND', 'DABUR', 'DALBHARAT',
+                   'DEEPAKFERT', 'DEEPAKNTR', 'DELTACORP', 'DIVISLAB', '05 DIXON', 'DLF', 'DRREDDY', 'ESCORTS',
+                   'EXIDEIND', 'GLENMARK', 'GLS', 'GNFC', 'GODREJCP', 'GODREJPROP', 'GRANULES', 'GRASIM', 'GUJGASLTD',
+                   'HAL', 'HAVELLS', 'HCLTECH', 'HDFCAMC', 'HDFCLIFE', 'HINDALCO', 'HINDCOPPER', 'ICICIGI',
+                   'ICICIPRULI', 'IEX', 'IGL', 'INDHOTEL', 'INDIACEM', 'INDIAMART', 'INDIGO', 'INDUSINDBK',
+                   'INDUSTOWER', 'INTELLECT', 'IPCALAB', 'JINDALSTEL', 'JKCEMENT', 'JSWSTEEL', 'JUBLFOOD',
+                   'KOTAKBANK', 'LALPATHLAB', 'LAURUSLABS', 'LICHSGFIN', 'LTIM', 'LTTS', 'LUPIN', 'M%26MFIN',
+                   'MANAPPURAM', 'MARICO', 'MCDOWELL-N', 'MCX', 'METROPOLIS', 'MFSL', 'MGL', 'MPHASIS', 'MUTHOOTFIN',
+                   'NAM-INDIA', 'NAUKRI', 'NAVINFLUOR', 'NMDC', 'NTPC', 'OBEROIRLTY', 'ONGC', 'PEL', 'PERSISTENT',
+                   'PETRONET',
+                   'PIDILITIND', 'POLYCAB', 'POWERGRID', 'RAIN', 'RAMCOCEM', 'RBLBANK', '10 RECLTD', 'SBICARD',
+                   'SBILIFE', 'SIEMENS', 'SRF', 'STAR', 'SUNPHARMA', 'SYNGENE', 'TATACOMM', 'TATAMOTORS', 'TCS',
+                   'TECHM',
+                   'TITAN', 'TORNTPHARM', 'TORNTPOWER', 'TRENT', 'TVSMOTOR', 'UBL', 'ULTRACEMCO', 'UPL', 'VEDL',
+                   'VOLTAS',
+                   'ZEEL', 'ZYDUSLIFE']
+
+import openpyxl as xl
+
+def get_last_row(sheet, empty=True):
+    row = sheet.max_row
+
+    while True:
+        if sheet.cell(row, 3).value is not None:
+            if empty:
+                return row+1
+            else:
+                return row
+
+        row -= 1
+
+
+# for share in cash_shares:
+#     path = rf'E:\Daily Data work\CASH\{share}.xlsx'
+#     wb = xl.load_workbook(path)
+#     sheet = wb['Cl']
+#
+#     print(share + " " + sheet.cell(get_last_row(sheet), 1).value)
+#
+# for share in algo_share_list:
+#     path = rf'E:\Daily Data work\ALGORITHM\ALGORITHM OLD\{share}.xlsx'
+#     wb = xl.load_workbook(path)
+#     sheet = wb['Cl']
+#
+#     print(share + " " + sheet.cell(get_last_row(sheet), 1).value)
+
+
+
+strs = """31-01-25 TO 27-02-25
+28-02-25 TO 27-03-25
+28-03-25 TO 01-05-25
+02-05-25 TO 29-05-25
+30-05-25 TO 26-06-25
+27-06-25 TO 31-07-25
+01-08-25 TO 28-08-25
+29-08-25 TO 25-09-25
+26-09-25 TO 30-10-25
+31-10-25 TO 27-11-25
+28-11-25 TO 01-01-26
+02-01-26 TO 29-01-26
+30-01-26 TO 26-02-26
+27-02-26 TO 26-03-26
+27-03-26 TO 30-04-26
+01-05-26 TO 28-05-26
+29-05-26 TO 25-06-26
+26-06-26 TO 30-07-26
+31-07-26 TO 27-08-26
+28-08-26 TO 01-10-26
+02-10-26 TO 29-10-26
+30-10-26 TO 26-11-26
+27-11-26 TO 31-12-26
+01-01-27 TO 28-01-27
+29-01-27 TO 25-02-27
+26-02-27 TO 01-04-27
+02-04-27 TO 29-04-27
+30-04-27 TO 27-05-27
+28-05-27 TO 01-07-27
+02-07-27 TO 29-07-27
+30-07-27 TO 26-08-27
+27-08-27 TO 30-09-27
+01-10-27 TO 28-10-27
+29-10-27 TO 25-11-27
+26-11-27 TO 30-12-27
+31-12-27 TO 27-01-28
+28-01-28 TO 24-02-28
+25-02-28 TO 30-03-28
+31-03-28 TO 27-04-28
+28-04-28 TO 01-06-28
+02-06-28 TO 29-06-28
+30-06-28 TO 27-07-28
+28-07-28 TO 31-08-28
+01-09-28 TO 28-09-28
+29-09-28 TO 26-10-28
+27-10-28 TO 30-11-28
+01-12-28 TO 28-12-28
+29-12-28 TO 01-02-29
+02-02-29 TO 01-03-29
+02-03-29 TO 29-03-29
+30-03-29 TO 26-04-29
+27-04-29 TO 31-05-29
+01-06-29 TO 28-06-29
+29-06-29 TO 26-07-29
+27-07-29 TO 30-08-29
+31-08-29 TO 27-09-29
+28-09-29 TO 01-11-29
+02-11-29 TO 29-11-29
+30-11-29 TO 27-12-29
+28-12-29 TO 31-01-30
+01-02-30 TO 28-02-30
+01-03-30 TO 28-03-30
+29-03-30 TO 25-04-30
+26-04-30 TO 30-05-30
+31-05-30 TO 27-06-30
+28-06-30 TO 01-08-30
+02-08-30 TO 29-08-30
+30-08-30 TO 26-09-30
+27-09-30 TO 31-10-30
+01-11-30 TO 28-11-30
+29-11-30 TO 26-12-30
+27-12-30 TO 30-01-31
+31-01-31 TO 27-02-31
+28-02-31 TO 27-03-31
+28-03-31 TO 01-05-31
+02-05-31 TO 29-05-31
+30-05-31 TO 26-06-31
+27-06-31 TO 31-07-31
+01-08-31 TO 28-08-31
+29-08-31 TO 25-09-31
+26-09-31 TO 30-10-31
+31-10-31 TO 27-11-31
+28-11-31 TO 01-01-32
+02-01-32 TO 29-01-32
+30-01-32 TO 26-02-32
+27-02-32 TO 01-04-32
+02-04-32 TO 29-04-32
+30-04-32 TO 27-05-32
+28-05-32 TO 01-07-32
+02-07-32 TO 29-07-32
+30-07-32 TO 26-08-32
+27-08-32 TO 30-09-32
+01-10-32 TO 28-10-32
+29-10-32 TO 25-11-32
+26-11-32 TO 30-12-32
+31-12-32 TO 27-01-33
+28-01-33 TO 24-02-33
+25-02-33 TO 31-03-33
+01-04-33 TO 28-04-33
+29-04-33 TO 26-05-33
+27-05-33 TO 30-06-33
+01-07-33 TO 28-07-33
+29-07-33 TO 01-09-33
+02-09-33 TO 29-09-33
+30-09-33 TO 27-10-33
+28-10-33 TO 01-12-33
+02-12-33 TO 29-12-33
+30-12-33 TO 26-01-34
+27-01-34 TO 23-02-34
+24-02-34 TO 30-03-34
+31-03-34 TO 27-04-34
+28-04-34 TO 01-06-34
+02-06-34 TO 29-06-34
+30-06-34 TO 27-07-34
+28-07-34 TO 31-08-34
+01-09-34 TO 28-09-34
+29-09-34 TO 26-10-34
+27-10-34 TO 30-11-34
+01-12-34 TO 28-12-34
+29-12-34 TO 01-02-35
+02-02-35 TO 01-03-35
+02-03-35 TO 29-03-35
+30-03-35 TO 26-04-35
+27-04-35 TO 31-05-35
+01-06-35 TO 28-06-35
+29-06-35 TO 26-07-35
+27-07-35 TO 30-08-35
+31-08-35 TO 27-09-35
+28-09-35 TO 01-11-35
+02-11-35 TO 29-11-35
+30-11-35 TO 27-12-35"""
+
+# # generate closing dates
+# start = datetime.datetime(2025, 1, 31)
+# end = datetime.datetime(2025, 2, 27)
+# # print(start + " TO " + end)
+# prev_m = 1
+# cur = start
+# thu = datetime.datetime.now()
+# for i in range(4000):
+#     if cur.weekday() == 3:
+#         thu = cur
+#
+#     m = cur.month
+#     if m != prev_m:
+#         print(datetime.datetime.strftime(start, "%d-%m-%y") + " TO " + datetime.datetime.strftime(thu, "%d-%m-%y"))
+#         prev_m = m
+#         start = thu + datetime.timedelta(days=1)
+#
+#     cur += datetime.timedelta(days=1)
+
+
+for share in cash_shares:
+    path = rf'E:\Daily Data work\CASH\{share}.xlsx'
+    wb = xl.load_workbook(path)
+    sheet = wb['Cl']
+    lr = get_last_row(sheet)
+    i = 0
+    for d in strs.split("\n"):
+        sheet.cell(lr+i, 1).value = d
+        i += 1
+
+    wb.save(path)
+    # print(share + " " + sheet.cell(get_last_row(sheet), 1).value)
+
+for share in algo_share_list:
+    path = rf'E:\Daily Data work\ALGORITHM\ALGORITHM OLD\{share}.xlsx'
+    wb = xl.load_workbook(path)
+    sheet = wb['Cl']
+
+    lr = get_last_row(sheet)
+    i = 0
+    for d in strs.split("\n"):
+        sheet.cell(lr + i, 1).value = d
+        i += 1
+
+    wb.save(path)
+    # print(share + " " + sheet.cell(get_last_row(sheet), 1).value)
