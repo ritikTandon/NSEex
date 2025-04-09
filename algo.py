@@ -222,6 +222,7 @@ for share in algo_share_list:
         time_cell = sheet.cell(start_row, 7)
         cur_time = time_cell.value
 
+
     # last any left aggregate (< 30 mins)
     sheet.cell(start_row-1, 14).value = HIGH
     sheet.cell(start_row-1, 15).value = LOW

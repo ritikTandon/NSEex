@@ -5,7 +5,7 @@ import openpyxl as xl
 import send2trash
 from openpyxl.styles import Font, Alignment
 
-append = 413  # increment this daily. 413 is for 12-MAR-2025
+append = 435  # increment this daily. 435 is for 11-APR-2025
 
 # styles
 red = Font("Arial", 11, color='ff0000', bold=True)
@@ -26,7 +26,7 @@ def delete_file(path):
 def cash():
     i = 0  # main iterator variable
 
-    cash_shares = {'AARTIIND': 947, 'ADANIENT': 1579, 'APOLLOTYRE': 2946, 'BAJAJFINSERV': 1579, 'BAJAJFINANCE': 1579,
+    cash_shares = {'AARTIIND': 947, 'ADANIENT': 1579, 'APOLLOTYRE': 947, 'BAJAJFINSERV': 1579, 'BAJAJFINANCE': 1579,
                    'BANDHANBANK': 1579, 'BANKBARODA': 1579, 'COAL INDIA': 3232, '06 DLF CHL': 4058, 'EICHERMOTOR': 2715,
                    'FEDRAL BANK': 1579, 'HCLTECH': 1579, 'HDFC': 3936, 'HINDALCO': 947, 'ICICIBANK': 1579, 'INDUSINDBANK': 1579,
                    'INFY': 2765, 'JINDALS chl': 5195, 'LICHSGFIN': 1579, 'M&M': 1579, '07 M&MFINANCE': 1579,

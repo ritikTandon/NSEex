@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="308761e4-5648-47f3-bc32-acb2059bab82" name="Changes" comment="changed GLS to alvius and added a mid run save point for csh and algo so that the high lows get saved in case theres an error in the close extraction">
+    <list default="true" id="308761e4-5648-47f3-bc32-acb2059bab82" name="Changes" comment="Changed bn row &amp; fixed closing dates in MWCL">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/AARTIIND.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/AARTIIND.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ABB.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/1 min algo/ABB.xls" afterDir="false" />
@@ -158,14 +158,11 @@
       <change beforePath="$PROJECT_DIR$/algo high low.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/algo high low.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/algo.py" beforeDir="false" afterPath="$PROJECT_DIR$/algo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cash high low.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/cash high low.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cash.py" beforeDir="false" afterPath="$PROJECT_DIR$/cash.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data feed.py" beforeDir="false" afterPath="$PROJECT_DIR$/data feed.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/date_variables.py" beforeDir="false" afterPath="$PROJECT_DIR$/date_variables.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fo high low.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/fo high low.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ltp prev.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/ltp prev.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/monthly closing creation/MWCL_creation_updation.py" beforeDir="false" afterPath="$PROJECT_DIR$/monthly closing creation/MWCL_creation_updation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/monthly closing creation/m_test.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/monthly closing creation/m_test.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test.py" afterDir="false" />
     </list>
     <list id="d3c54dfa-2305-4934-95d2-4f6c46301c67" name="Name change" comment="change gls to alivus in algo close list" />
     <option name="SHOW_DIALOG" value="false" />
@@ -269,14 +266,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1691935354080</updated>
-    </task>
-    <task id="LOCAL-00034" summary="updated daily data">
-      <option name="closed" value="true" />
-      <created>1699915778295</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1699915778295</updated>
     </task>
     <task id="LOCAL-00035" summary="completed creation of 1 min sheets with formatting">
       <option name="closed" value="true" />
@@ -662,7 +651,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738349662304</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="Changed bn row &amp; fixed closing dates in MWCL">
+      <option name="closed" value="true" />
+      <created>1741702628518</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1741702628518</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -736,7 +733,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added ongc and bhel in algo and changed shares in 30 min" />
     <MESSAGE value="fixed issues" />
     <MESSAGE value="added BHEL and ONGC to MWCL" />
     <MESSAGE value="fixed pos in ltp prev of shares" />
@@ -761,7 +757,8 @@
     <MESSAGE value="added exception handling for when csh.xlsx already exists. algo.xlsx too!" />
     <MESSAGE value="added colaind and changed LTP to be taken from NSE site instead of csh.xlsx or algo.xlsx" />
     <MESSAGE value="changed GLS to alvius and added a mid run save point for csh and algo so that the high lows get saved in case theres an error in the close extraction" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed GLS to alvius and added a mid run save point for csh and algo so that the high lows get saved in case theres an error in the close extraction" />
+    <MESSAGE value="Changed bn row &amp; fixed closing dates in MWCL" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed bn row &amp; fixed closing dates in MWCL" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -773,11 +770,6 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/monthly closing creation/MWCL_creation_updation.py</url>
-          <line>526</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/monthly closing creation/MWCL_creation_updation.py</url>
           <line>198</line>
           <option name="timeStamp" value="29" />
         </line-breakpoint>
@@ -785,6 +777,11 @@
           <url>file://$PROJECT_DIR$/monthly closing creation/MWCL_creation_updation.py</url>
           <line>357</line>
           <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/monthly closing creation/MWCL_creation_updation.py</url>
+          <line>707</line>
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
