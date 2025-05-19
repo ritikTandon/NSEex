@@ -238,8 +238,8 @@ for share in algo_share_list:
 # saving to save h l c data
 algoHL_wb.save(r'C:\Users\admin\PycharmProjects\daily data\algo high low.xlsx')
 
-algo_wb = xl.load_workbook(r'E:\Daily Data work\algo.xlsx')
-algo_sheet = algo_wb['algo-Sheet1']
+algoHL_wb = xl.load_workbook(r'C:\Users\admin\PycharmProjects\daily data\algo high low.xlsx')
+algoHL_sheet = algoHL_wb['Sheet1']
 algo_row = 2
 
 # for close and LTP filling from NSE
