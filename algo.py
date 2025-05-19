@@ -273,7 +273,7 @@ algo_close_list = ['AARTIIND', 'ABB', 'ABCAPITAL', 'ABFRL', 'ADANIENT', 'ADANIPO
 manual = []         # list to keep track of the shares whose values selenium couldn't get
 close = []
 ltp = []
-ltp_xpath = '/html/body/div[11]/div/div/section/div/div/div/div/div/div[2]/div/section/div/div/div/aside[2]/div/div/table/tbody/tr/td[5]'
+ltp_xpath = '/html/body/div[12]/div/div/section/div/div/div/div/div/div[2]/div/section/div/div/div[1]/aside[2]/div/div/table/tbody/tr/td[5]'
 
 print(f"Share: Close-LTP")
 for share in algo_close_list:

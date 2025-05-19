@@ -156,13 +156,11 @@
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/RECLTD.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/RECLTD.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/VEDL.xls" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Backup hourlys/30 min csh/VEDL.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/algo high low.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/algo high low.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algo.py" beforeDir="false" afterPath="$PROJECT_DIR$/algo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cash high low.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/cash high low.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data feed.py" beforeDir="false" afterPath="$PROJECT_DIR$/data feed.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/date_variables.py" beforeDir="false" afterPath="$PROJECT_DIR$/date_variables.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fo high low.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/fo high low.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ltp prev.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/ltp prev.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/monthly closing creation/MWCL_creation_updation.py" beforeDir="false" afterPath="$PROJECT_DIR$/monthly closing creation/MWCL_creation_updation.py" afterDir="false" />
     </list>
     <list id="d3c54dfa-2305-4934-95d2-4f6c46301c67" name="Name change" comment="change gls to alivus in algo close list" />
     <option name="SHOW_DIALOG" value="false" />
@@ -236,7 +234,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/admin/PycharmProjects/daily data/Daily Backup hourlys&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/admin/PycharmProjects/daily data&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;
   }
@@ -781,7 +779,7 @@
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/monthly closing creation/MWCL_creation_updation.py</url>
           <line>707</line>
-          <option name="timeStamp" value="33" />
+          <option name="timeStamp" value="34" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
