@@ -16,6 +16,7 @@ from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.chrome.service import Service
 
 # same as algo 1 min shares in nest trader auto.py
 algo_share_list = ['AARTIIND', 'ABB', 'ABCAPITAL', 'ABFRL', 'ADANIENT', 'ADANIPORTS', 'ALKEM', 'AMBUJACEM',
@@ -238,9 +239,13 @@ for share in algo_share_list:
 # saving to save h l c data
 algoHL_wb.save(r'C:\Users\admin\PycharmProjects\daily data\algo high low.xlsx')
 
+# Close and LTP
 algoHL_wb = xl.load_workbook(r'C:\Users\admin\PycharmProjects\daily data\algo high low.xlsx')
 algoHL_sheet = algoHL_wb['Sheet1']
 algo_row = 2
+
+chrome_driver_path = r"C:\Webdrivers\chromedriver.exe"
+service = Service(executable_path=chrome_driver_path)
 
 # for close and LTP filling from NSE
 options = Options()
@@ -277,7 +282,7 @@ ltp_xpath = '/html/body/div[12]/div/div/section/div/div/div/div/div/div[2]/div/s
 
 print(f"Share: Close-LTP")
 for share in algo_close_list:
-    driver = webdriver.Chrome(options=options)
+    driver = webdriver.Chrome(service=service, options=options)
 
     driver.get(f"https://www.nseindia.com/get-quotes/equity?symbol={share}")
 

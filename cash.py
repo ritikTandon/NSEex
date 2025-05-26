@@ -16,12 +16,13 @@ from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.chrome.service import Service
 
 cash_share_list = ["AARTIIND", "ADANI", "APOLLO", "BAJFINSV", "BAJFIN", "BANBK", "BARODA", "COALIND", "DLF", "EICHER",
                    "FEDBANK", "HCL", "HDFC", "HIND", "ICICI", "INDUSIND", "INFY", "JIND", "LIC", "M&M", "M&MFIN", "NTPC",
                    "REL", "SBIN", "SUNTV", "TCHEM", "TM", "TP", "TS", "ULTRA"]
 
-# cash_share_list = ["ADANI"]   # list to test few shares after making code changes
+cash_share_list = ["ADANI"]   # list to test few shares after making code changes
 
 cashHL_wb = xl.load_workbook(r'C:\Users\admin\PycharmProjects\daily data\cash high low.xlsx')
 cashHL_sheet = cashHL_wb['Sheet1']
@@ -215,10 +216,15 @@ for share in cash_share_list:
 
 # saving to save h l c data
 cashHL_wb.save(r'C:\Users\admin\PycharmProjects\daily data\cash high low.xlsx')
+
+# Close and LTP
 cashHL_wb = xl.load_workbook(r'C:\Users\admin\PycharmProjects\daily data\cash high low.xlsx')
 
 cashHL_sheet = cashHL_wb['Sheet1']
 cashHL_row = 2
+
+chrome_driver_path = r"C:\Webdrivers\chromedriver.exe"
+service = Service(executable_path=chrome_driver_path)
 
 # for close and LTP filling from NSE
 options = Options()
@@ -244,7 +250,7 @@ ltp_xpath = '/html/body/div[12]/div/div/section/div/div/div/div/div/div[2]/div/s
 
 print(f"Share: Close-LTP")
 for share in cash_close_list:
-    driver = webdriver.Chrome(options=options)
+    driver = webdriver.Chrome(service=service, options=options)
 
     driver.get(f"https://www.nseindia.com/get-quotes/equity?symbol={share}")
 
