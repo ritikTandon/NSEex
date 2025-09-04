@@ -24,7 +24,7 @@ cash_30_min_list = {"AARTIIND": 2, "ABB": 3, "ADANI": 3, "APOLLO": 4, "ASHOKLEY"
                     "TP": 29, "TS": 30, "VEDL": 136}
 
 # dict to store share names with their row in 'cash/algo/fo high low.xlsx' sheets respectively
-cash_15_min_list = {"ABB": 3, "APOLLO": 4, "AUROPHARMA": 16, "BAJFINSV": 5, "BAJFIN": 6, "BHEL": 27, "BSOFT": 30,
+cash_15_min_list = {"ABB": 3, "APOLLOHOSP": 10, "AUROPHARMA": 16, "BAJFINSV": 5, "BAJFIN": 6, "BHEL": 27, "BSOFT": 30,
                     "CHAMBAL": 33, "COFORGE": 36, "DIXON": 47, "DLF": 10, "GLENMARK": 52, "HAL": 60, "LAURUSLABS": 85,
                     "MCX": 94, "NIFTY": 3, "REL": 24, "TM": 28}
 
@@ -37,7 +37,8 @@ algo_shares = ["ESCORTS", "IGL", "VEDL", "ABB", "ASHOKLEY", "DIXON", "ONGC", "RE
 
 # 15 min shares that get their data from 'algo high low.xlsx', when adding shares that are in algo and not in cash, add to this
 algo_shares_15_min = ["ABB", "AUROPHARMA", "DIXON", "BSOFT", "BHEL", "CHAMBAL", "COFORGE", "GLENMARK", "HAL",
-                      "LAURUSLABS", "MCX"]
+                      "LAURUSLABS", "MCX", "APOLLOHOSP"]
+
 
 # copying 30 min hourlys (.xls) as backup
 # path to source directory
@@ -104,12 +105,12 @@ while ltp_row <= len(ltp_sheet_15["A"]):
     share_name = ltp_sheet_15.cell(ltp_row, 1).value
 
     if share_name in ["BN", "NIFTY"]:    # separate for NIFTY and BN as their data LTP come from 'fo high low.xlsx'
-        ltp_sheet_15.cell(ltp_row, 2).value = foHL_sheet.cell(cash_30_min_list[share_name], 5).value
+        ltp_sheet_15.cell(ltp_row, 2).value = foHL_sheet.cell(cash_15_min_list[share_name], 5).value
 
     elif share_name in algo_shares:  # separate for shares who's LTP come from 'algo high low.xlsx'
-        ltp_sheet_15.cell(ltp_row, 2).value = algoHL_sheet.cell(cash_30_min_list[share_name], 5).value
+        ltp_sheet_15.cell(ltp_row, 2).value = algoHL_sheet.cell(cash_15_min_list[share_name], 5).value
     else:
-        ltp_sheet_15.cell(ltp_row, 2).value = cashHL_sheet.cell(cash_30_min_list[share_name], 5).value
+        ltp_sheet_15.cell(ltp_row, 2).value = cashHL_sheet.cell(cash_15_min_list[share_name], 5).value
 
     ltp_row += 1
 
