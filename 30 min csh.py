@@ -24,9 +24,9 @@ cash_30_min_list = {"AARTIIND": 2, "ABB": 3, "ADANI": 3, "APOLLO": 4, "ASHOKLEY"
                     "TP": 29, "TS": 30, "VEDL": 136}
 
 # dict to store share names with their row in 'cash/algo/fo high low.xlsx' sheets respectively
-cash_15_min_list = {"ABB": 3, "APOLLO": 4, "BAJFINSV": 5, "BAJFIN": 6, "BHEL": 27, "BSOFT": 30, "CHAMBAL": 33, "COFORGE": 36,
-                    "DIXON": 47, "DLF": 10, "GLENMARK": 52, "HAL": 60, "LAURUSLABS": 85, "MCX": 94, "NIFTY": 3,
-                    "REL": 24, "TM": 28}
+cash_15_min_list = {"ABB": 3, "APOLLO": 4, "AUROPHARMA": 16, "BAJFINSV": 5, "BAJFIN": 6, "BHEL": 27, "BSOFT": 30,
+                    "CHAMBAL": 33, "COFORGE": 36, "DIXON": 47, "DLF": 10, "GLENMARK": 52, "HAL": 60, "LAURUSLABS": 85,
+                    "MCX": 94, "NIFTY": 3, "REL": 24, "TM": 28}
 
 # no decimal points in display
 
@@ -36,7 +36,8 @@ format_list = ["NIFTY", "EICHER", "BN", "DIXON", "ABB"]
 algo_shares = ["ESCORTS", "IGL", "VEDL", "ABB", "ASHOKLEY", "DIXON", "ONGC", "RECLTD", "BHEL", "CHAMBAL"]
 
 # 15 min shares that get their data from 'algo high low.xlsx', when adding shares that are in algo and not in cash, add to this
-algo_shares_15_min = ["ABB", "DIXON", "BSOFT", "BHEL", "CHAMBAL", "COFORGE", "GLENMARK", "HAL", "LAURUSLABS", "MCX"]
+algo_shares_15_min = ["ABB", "AUROPHARMA", "DIXON", "BSOFT", "BHEL", "CHAMBAL", "COFORGE", "GLENMARK", "HAL",
+                      "LAURUSLABS", "MCX"]
 
 # copying 30 min hourlys (.xls) as backup
 # path to source directory
