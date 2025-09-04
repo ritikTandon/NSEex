@@ -37,8 +37,6 @@ algo_share_list = ['AARTIIND', 'ABB', 'ABCAPITAL', 'ABFRL', 'ADANIENT', 'ADANIPO
                      'TITAN', 'TORNTPHARM', 'TORNTPOWER', 'TRENT', 'TVSMOTOR', 'UBL', 'ULTRACEMCO', 'UPL', 'VEDL', 'VOLTAS',
                      'ZEEL', 'ZYDUSLIFE']
 
-# algo_share_list = ["ADANI"]   # list to test few shares after making code changes
-
 algoHL_wb = xl.load_workbook(r'C:\Users\admin\PycharmProjects\daily data\algo high low.xlsx')
 algoHL_sheet = algoHL_wb['Sheet1']
 algoHL_row = 2
