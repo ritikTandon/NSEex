@@ -107,7 +107,7 @@ while ltp_row <= len(ltp_sheet_15["A"]):
     if share_name in ["BN", "NIFTY"]:    # separate for NIFTY and BN as their data LTP come from 'fo high low.xlsx'
         ltp_sheet_15.cell(ltp_row, 2).value = foHL_sheet.cell(cash_15_min_list[share_name], 5).value
 
-    elif share_name in algo_shares:  # separate for shares who's LTP come from 'algo high low.xlsx'
+    elif share_name in algo_shares_15_min:  # separate for shares who's LTP come from 'algo high low.xlsx'
         ltp_sheet_15.cell(ltp_row, 2).value = algoHL_sheet.cell(cash_15_min_list[share_name], 5).value
     else:
         ltp_sheet_15.cell(ltp_row, 2).value = cashHL_sheet.cell(cash_15_min_list[share_name], 5).value
@@ -255,8 +255,9 @@ for share in cash_15_min_list:
 
     new_15_min_sheet.cell(7, 6).number_format = '0'     # for the 9:25 cl formatting
 
-    # deleting 4:00 pm row
-    # new_15_min_sheet.delete_rows(22, 1) # check if this is needed
+    # deleting 3:45 and 4:00 pm row
+    new_15_min_sheet.delete_rows(35, 1)  # check if this is needed
+    new_15_min_sheet.delete_rows(34, 1)  # check if this is needed
 
     # filling LTP and PREV
     new_15_min_sheet.cell(7, 9).value = ltp_sheet_15.cell(ltp_row, 2).value  # LTP
@@ -269,7 +270,7 @@ for share in cash_15_min_list:
         new_15_min_sheet.cell(7, 7).value = foHL_sheet.cell(cash_15_min_list[share], 2).value   # HIGH
         new_15_min_sheet.cell(7, 8).value = foHL_sheet.cell(cash_15_min_list[share], 3).value   # LOW
 
-    elif share in algo_shares:
+    elif share in algo_shares_15_min:
         new_15_min_sheet.cell(7, 6).value = algoHL_sheet.cell(cash_15_min_list[share], 7).value  # 9:25 cl
         new_15_min_sheet.cell(7, 7).value = algoHL_sheet.cell(cash_15_min_list[share], 2).value  # HIGH
         new_15_min_sheet.cell(7, 8).value = algoHL_sheet.cell(cash_15_min_list[share], 3).value  # LOW

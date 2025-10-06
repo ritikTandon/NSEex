@@ -35,6 +35,7 @@ cash_share_list = ['AARTIIND', 'ADANIENT', 'APOLLOTYRE', 'BAJAJFINSERV', 'BAJAJF
 add_share_list = ['TCS', 'TITAN']
 
 # algo_share_list = ['ADANIENT']
+# cash_share_list = ['AARTIIND']
 
 red = Font("Arial", 12, color='ff0000', bold=True)
 blue = Font("Arial", 12, color="0000ff", bold=True)
@@ -774,11 +775,11 @@ def closing_update(typ):
 
 # weekly_update("C")
 # weekly_update("A")
-#
-#
+# #
+# #
 # monthly_update("C")
 # monthly_update("A")
-
+#
 # closing_update("C")
 # closing_update("A")
 

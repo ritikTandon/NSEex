@@ -182,77 +182,77 @@ pg.click(imp_coord_dict["nest icon taskbar"])
 pg.press('esc')
 sleep(1)
 #
-# # saving consolidated sheets
-# sheetSave()
-#
-# # EQ 1 min
-# pg.click(imp_coord_dict["EQ"])
-# sleep(1)
-# pg.click(imp_coord_dict["first share"])
-# sleep(1)
-#
-# first = True
-# for share in EQ_shares:
-#     print(share)
-#     vwap()
-#     sleep(1)
-#
-#     # if it's the first share, follow the first share protocol
-#     if first:
-#         path = PATHS_DICT["EQ"]  # setting path for first share
-#
-#         pg.doubleClick(imp_coord_dict["time interval"])
-#         pg.press("1")
-#         sleep(1)
-#         pg.press('enter')
-#         sleep(2)
-#
-#         check_change()
-#         save_share(share, path)
-#         first = False
-#         sleep(1)
-#
-#     else:
-#         print('after first')
-#         pg.press('enter')
-#         sleep(2)
-#         check_change()
-#         save_share(share)
-#         sleep(1)
-#
-# # FO 1 min
-# pg.click(imp_coord_dict["FO"])
-# sleep(1)
-# pg.click(imp_coord_dict["first share"])
-# sleep(1)
-#
-# first = True
-# for share in FO_shares:
-#     print(share)
-#     vwap()
-#     sleep(1)
-#
-#     # if it's the first share, follow the first share protocol
-#     if first:
-#         path = PATHS_DICT["FO"]  # setting path for first share
-#
-#         pg.doubleClick(imp_coord_dict["time interval"])
-#         pg.press("1")
-#         pg.press('enter')
-#         sleep(2)
-#
-#         check_change()
-#         save_share(share, path)
-#         first = False
-#         sleep(1)
-#
-#     else:
-#         print('after first')
-#         pg.press('enter')
-#         sleep(2)
-#         check_change()
-#         save_share(share)
-#         sleep(1)
+# saving consolidated sheets
+sheetSave()
+
+# EQ 1 min
+pg.click(imp_coord_dict["EQ"])
+sleep(1)
+pg.click(imp_coord_dict["first share"])
+sleep(1)
+
+first = True
+for share in EQ_shares:
+    print(share)
+    vwap()
+    sleep(1)
+
+    # if it's the first share, follow the first share protocol
+    if first:
+        path = PATHS_DICT["EQ"]  # setting path for first share
+
+        pg.doubleClick(imp_coord_dict["time interval"])
+        pg.press("1")
+        sleep(1)
+        pg.press('enter')
+        sleep(2)
+
+        check_change()
+        save_share(share, path)
+        first = False
+        sleep(1)
+
+    else:
+        print('after first')
+        pg.press('enter')
+        sleep(2)
+        check_change()
+        save_share(share)
+        sleep(1)
+
+# FO 1 min
+pg.click(imp_coord_dict["FO"])
+sleep(1)
+pg.click(imp_coord_dict["first share"])
+sleep(1)
+
+first = True
+for share in FO_shares:
+    print(share)
+    vwap()
+    sleep(1)
+
+    # if it's the first share, follow the first share protocol
+    if first:
+        path = PATHS_DICT["FO"]  # setting path for first share
+
+        pg.doubleClick(imp_coord_dict["time interval"])
+        pg.press("1")
+        pg.press('enter')
+        sleep(2)
+
+        check_change()
+        save_share(share, path)
+        first = False
+        sleep(1)
+
+    else:
+        print('after first')
+        pg.press('enter')
+        sleep(2)
+        check_change()
+        save_share(share)
+        sleep(1)
 
 # ALGO 1 min
 pg.click(imp_coord_dict["ALGO"])

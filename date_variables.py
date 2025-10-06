@@ -1,3 +1,3 @@
-date = r"04.09.25"
-mnth = r"SEP"
+date = r"06.10.25"
+mnth = r"OCT"
 yr = r'2025'
