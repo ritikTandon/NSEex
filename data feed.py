@@ -5,7 +5,7 @@ import openpyxl as xl
 import send2trash
 from openpyxl.styles import Font, Alignment
 
-append = 307  # increment this daily. 307 is for 16-OCT-2024
+append = 561  # increment this daily. 561 is for 06-OCT-2025
 
 # styles
 red = Font("Arial", 11, color='ff0000', bold=True)
@@ -26,7 +26,7 @@ def delete_file(path):
 def cash():
     i = 0  # main iterator variable
 
-    cash_shares = {'AARTIIND': 947, 'ADANIENT': 1579, 'APOLLOTYRE': 2946, 'BAJAJFINSERV': 1579, 'BAJAJFINANCE': 1579,
+    cash_shares = {'AARTIIND': 947, 'ADANIENT': 1579, 'APOLLOTYRE': 947, 'BAJAJFINSERV': 1579, 'BAJAJFINANCE': 1579,
                    'BANDHANBANK': 1579, 'BANKBARODA': 1579, 'COAL INDIA': 3232, '06 DLF CHL': 4058, 'EICHERMOTOR': 2715,
                    'FEDRAL BANK': 1579, 'HCLTECH': 1579, 'HDFC': 3936, 'HINDALCO': 947, 'ICICIBANK': 1579, 'INDUSINDBANK': 1579,
                    'INFY': 2765, 'JINDALS chl': 5195, 'LICHSGFIN': 1579, 'M&M': 1579, '07 M&MFINANCE': 1579,
@@ -100,9 +100,7 @@ def fo():
 
     # nifty and bn new data won't be updated in the future sheets but in FUT sheets in cash wb from now on (12/10/24)
     # changed nifty row to reflect the correct row in nifty cash "FUT" sheet
-    fo_shares = {'ADANI PORT': 2279, 'AUROPHARMA': 2789, '02 BANKNIFTY F': 3309, 'CANBK': 2016, 'DLF': 2831,
-                 'HINDALCO': 3989, 'ICICIBANK': 1093, 'JINDS': 2274, '01 NIFTY F': 5390, '03 RELIANCE': 2792, 'SBIN': 2793,
-                 'TATACONSUM': 2276, '05 TATAMOTOR': 2791, '04 TATASTEEL': 2793, 'TCS': 4826, 'TITAN': 1762}
+    fo_shares = {'02 BANKNIFTY F': 3310, '01 NIFTY F': 5391}
 
     fo_no_format_list = ['04 TATASTEEL']
 
@@ -178,12 +176,12 @@ def algo():
     i = 0  # main iterator variable
     algo_row = 947
 
-    algo_copy_to_cash_list = ['02 ABB', '03 ASHOKLEY', '04 BHEL', '05 DIXON', '09 ONGC', '10 RECLTD']
+    algo_copy_to_cash_list = ['02 ABB', 'ASHOKLEY', 'BHEL', '05 DIXON', 'ONGC', '10 RECLTD']
 
     algo_share_list = ['AARTIIND', '02 ABB', 'ABCAPITAL', 'ABFRL', 'ADANIENT', 'ADANIPORTS', 'ALKEM', 'AMBUJACEM',
-                         'APOLLOHOSP', 'APOLLOTYRE', '03 ASHOKLEY', 'ASTRAL', 'ATUL', 'AUBANK', 'AUROPHARMA', 'BAJAJFINSV',
+                         'APOLLOHOSP', 'APOLLOTYRE', 'ASHOKLEY', 'ASTRAL', 'ATUL', 'AUBANK', 'AUROPHARMA', 'BAJAJAUTO', 'BAJAJFINSV',
                          'BAJFINANCE', 'BALKRISIND', 'BALRAMCHIN', 'BANDHANBNK', 'BANKBARODA', 'BATAINDIA', 'BEL',
-                         'BHARATFORG', '04 BHEL', 'BIOCON', 'BRITANNIA', 'BSOFT', 'CANBK', 'CANFINHOME', 'CHAMBLFERT', 'CHOLAFIN',
+                         'BHARATFORG', 'BHEL', 'BIOCON', 'BRITANNIA', 'BSOFT', 'CANBK', 'CANFINHOME', 'CHAMBLFERT', 'CHOLAFIN',
                          'CIPLA', 'COFORGE', 'CONCOR', 'COROMANDEL', 'CROMPTON', 'CUMMINSIND', 'DABUR', 'DALBHARAT',
                          'DEEPAKFERT', 'DEEPAKNTR', 'DELTACORP', 'DIVISLAB', '05 DIXON', 'DLF', 'DRREDDY', 'ESCORTS',
                          'EXIDEIND', 'GLENMARK', 'GLS', 'GNFC', 'GODREJCP', 'GODREJPROP', 'GRANULES', 'GRASIM', 'GUJGASLTD',
@@ -192,24 +190,24 @@ def algo():
                          'INDUSTOWER', 'INTELLECT', 'IPCALAB', 'JINDALSTEL', 'JKCEMENT', 'JSWSTEEL', 'JUBLFOOD',
                          'KOTAKBANK', 'LALPATHLAB', 'LAURUSLABS', 'LICHSGFIN', 'LTIM', 'LTTS', 'LUPIN', 'M%26MFIN',
                          'MANAPPURAM', 'MARICO', 'MCDOWELL-N', 'MCX', 'METROPOLIS', 'MFSL', 'MGL', 'MPHASIS', 'MUTHOOTFIN',
-                         'NAM-INDIA', 'NAUKRI', 'NAVINFLUOR', 'NMDC', 'NTPC', 'OBEROIRLTY', '09 ONGC', 'PEL', 'PERSISTENT', 'PETRONET',
+                         'NAM-INDIA', 'NAUKRI', 'NAVINFLUOR', 'NMDC', 'NTPC', 'OBEROIRLTY', 'ONGC', 'PEL', 'PERSISTENT', 'PETRONET',
                          'PIDILITIND', 'POLYCAB', 'POWERGRID', 'RAIN', 'RAMCOCEM', 'RBLBANK', '10 RECLTD', 'SBICARD',
-                         'SBILIFE', 'SIEMENS', 'SRF', 'STAR', 'SUNPHARMA', 'SYNGENE', 'TATACOMM', 'TATAMOTORS', 'TECHM',
-                         'TORNTPHARM', 'TORNTPOWER', 'TRENT', 'TVSMOTOR', 'UBL', 'ULTRACEMCO', 'UPL', 'VEDL', 'VOLTAS',
+                         'SBILIFE', 'SIEMENS', 'SRF', 'STAR', 'SUNPHARMA', 'SYNGENE', 'TATACOMM', 'TATAMOTORS', 'TCS', 'TECHM',
+                         'TITAN', 'TORNTPHARM', 'TORNTPOWER', 'TRENT', 'TVSMOTOR', 'UBL', 'ULTRACEMCO', 'UPL', 'VEDL', 'VOLTAS',
                          'ZEEL', 'ZYDUSLIFE']
 
-    algo_copy_list = ['AARTIIND', '02 ABB', 'ABFRL', 'ADANIENT', 'ADANIPORTS', 'AMBUJACEM','APOLLOHOSP', 'APOLLOTYRE',
-                      '03 ASHOKLEY', 'AUROPHARMA', 'BAJAJFINSV','BAJFINANCE', 'BALKRISIND', 'BALRAMCHIN', 'BANDHANBNK',
-                      'BANKBARODA', 'BEL','BHARATFORG', '04 BHEL', 'BIOCON', 'BRITANNIA', 'BSOFT', 'CANBK', 'CANFINHOME',
+    algo_copy_list = ['AARTIIND', '02 ABB', 'ABFRL', 'ADANIENT', 'ADANIPORTS', 'AMBUJACEM', 'APOLLOHOSP', 'APOLLOTYRE',
+                      'ASHOKLEY', 'AUROPHARMA', 'BAJAJFINSV', 'BAJFINANCE', 'BALKRISIND', 'BALRAMCHIN', 'BANDHANBNK',
+                      'BANKBARODA', 'BEL', 'BHARATFORG', 'BHEL', 'BIOCON', 'BRITANNIA', 'BSOFT', 'CANBK', 'CANFINHOME',
                       'CHAMBLFERT', 'CHOLAFIN', 'CIPLA', 'COFORGE', 'CROMPTON', 'CUMMINSIND', 'DIVISLAB', '05 DIXON',
-                      'DLF', 'DRREDDY', 'ESCORTS','EXIDEIND', 'GLENMARK', 'GNFC', 'GODREJPROP', 'HAL', 'HAVELLS',
+                      'DLF', 'DRREDDY', 'ESCORTS', 'EXIDEIND', 'GLENMARK', 'GNFC', 'GODREJPROP', 'HAL', 'HAVELLS',
                       'HCLTECH', 'HDFCAMC', 'HDFCLIFE', 'HINDALCO', 'HINDCOPPER', 'ICICIGI', 'ICICIPRULI', 'IEX', 'IGL',
                       'INDIACEM', 'INDIGO', 'INDUSINDBK', 'INDUSTOWER', 'INTELLECT', 'IPCALAB', 'KOTAKBANK', 'LALPATHLAB',
                       'LAURUSLABS', 'LICHSGFIN', 'LTIM', 'LTTS', 'LUPIN', 'M%26MFIN', 'MANAPPURAM', 'MCDOWELL-N', 'MCX',
                       'METROPOLIS', 'MFSL', 'MGL', 'MPHASIS', 'MUTHOOTFIN', 'NAM-INDIA', 'NAUKRI', 'NMDC', 'NTPC',
-                      '09 ONGC', 'PEL', 'PERSISTENT', 'PETRONET', 'POLYCAB', 'POWERGRID', 'RBLBANK', '10 RECLTD',
+                      'ONGC', 'PEL', 'PERSISTENT', 'PETRONET', 'POLYCAB', 'POWERGRID', 'RBLBANK', '10 RECLTD',
                       'SBICARD', 'SIEMENS', 'SUNPHARMA', 'TATAMOTORS', 'TECHM', 'TRENT', 'TVSMOTOR', 'UBL', 'ULTRACEMCO',
-                      'VEDL', 'VOLTAS']
+                      'VEDL', 'VOLTAS', 'JUBLFOOD', 'OBEROIRLTY']
 
     algo_no_format_list = []
 

@@ -130,7 +130,7 @@ def sheetSave():
 imp_coord_dict = {"nest icon taskbar": (797, 1058), "EQ": (152, 992), "first share": (73, 173), "FO": (184, 992),
                   "FO1": (213, 992), "30minFO": (266, 992), "30minCash": (33, 992), "time interval": (537, 58),
                   "get stats": (629, 55), "color change": (929, 212), "path": (1298, 312),
-                  "share name textbox": (831, 699),
+                  "share name textbox": (831, 699), "15minCash": (363, 992),
                   "save": (1415, 774), "excel icon taskbar": (901, 1054), "excel close": (897, 1014), "TL": (635, 265),
                   "BR": (1579, 796), "ALGO": (311, 993)}    # TL and BR are "save as" window cords
 
@@ -140,16 +140,18 @@ EQ_shares = ["AARTIIND", "ADANI", "APOLLO", "BAJFINSV", "BAJFIN", "BANBK", "BARO
              "HCL", "HDFC", "HIND", "ICICI", "INDUSIND", "INFY", "JIND", "LIC", "M&M", "M&MFIN", "NTPC", "REL", "SBIN",
              "SUNTV", "TCHEM", "TM", "TP", "TS", "ULTRA"]
 
-FO_shares = ["ADANI", "APORT", "APOLLO", "AURO", "AXIS", "BAJAJ", "BARODA", "BN", "AIRTEL", "BHEL", "CANBK", "COALIND",
-             "DLF", "DRREDDY", "EICHER", "HCL", "HDFC", "HIND", "HINDUNLVR", "ICICI", "INDUSIND", "JIND", "NIFTY", "REL",
-             "SBIN", "TCHEM", "TCON", "TM", "TS", "TCS", "TITAN", "ULTRA", "VEDL"]
+FO_shares = ["BN", "NIFTY"]
 
 EQ_30_min_shares = ["AARTIIND", "ABB", "ADANI", "APOLLO", "ASHOKLEY", "BAJFINSV", "BAJFIN", "BANBK", "BARODA", "BN",
-                    "BHEL", "DIXON", "DLF", "EICHER", "ESCORTS", "FEDBANK", "HCL", "HINDALCO", "IGL", "INDUSIND", "JIND",
-                    "LIC", "M&M", "M&MFIN", "NIFTY", "NTPC", "ONGC", "RECLTD", "SBIN", "SUNTV", "TM", "TP", "TS", "VEDL"]
+                    "BHEL", "CHAMBAL", "COALIND", "DIXON", "DLF", "EICHER", "ESCORTS", "FEDBANK", "HCL", "HINDALCO", "IGL", "INDUSIND", "JIND",
+                    "LIC", "M&M", "M&MFIN", "NIFTY", "NTPC", "ONGC", "RECLTD", "REL", "SBIN", "SUNTV", "TM", "TP", "TS", "VEDL"]
 
+EQ_15_min_shares = ["ABB", "APOLLOHOSP", "AUROPHARMA", "BAJFINSV", "BAJFIN", "BHEL", "BSOFT", "CHAMBAL", "COFORGE", "DIXON",
+                    "DLF", "GLENMARK", "HAL", "LAURUSLABS", "MCX", "NIFTY", "REL", "TM"]
+
+# same as algo share list in algo.py
 ALGO_1_min_shares = ['AARTIIND', 'ABB', 'ABCAPITAL', 'ABFRL', 'ADANIENT', 'ADANIPORTS', 'ALKEM', 'AMBUJACEM',
-                     'APOLLOHOSP', 'APOLLOTYRE', 'ASHOKLEY', 'ASTRAL', 'ATUL', 'AUBANK', 'AUROPHARMA', 'BAJAJFINSV',
+                     'APOLLOHOSP', 'APOLLOTYRE', 'ASHOKLEY', 'ASTRAL', 'ATUL', 'AUBANK', 'AUROPHARMA', 'BAJAJAUTO', 'BAJAJFINSV',
                      'BAJFINANCE', 'BALKRISIND', 'BALRAMCHIN', 'BANDHANBNK', 'BANKBARODA', 'BATAINDIA', 'BEL',
                      'BHARATFORG', 'BHEL', 'BIOCON', 'BRITANNIA', 'BSOFT', 'CANBK', 'CANFINHOME', 'CHAMBLFERT', 'CHOLAFIN',
                      'CIPLA', 'COFORGE', 'CONCOR', 'COROMANDEL', 'CROMPTON', 'CUMMINSIND', 'DABUR', 'DALBHARAT',
@@ -162,14 +164,15 @@ ALGO_1_min_shares = ['AARTIIND', 'ABB', 'ABCAPITAL', 'ABFRL', 'ADANIENT', 'ADANI
                      'MANAPPURAM', 'MARICO', 'MCDOWELL-N', 'MCX', 'METROPOLIS', 'MFSL', 'MGL', 'MPHASIS', 'MUTHOOTFIN',
                      'NAM-INDIA', 'NAUKRI', 'NAVINFLUOR', 'NMDC', 'NTPC', 'OBEROIRLTY', 'ONGC', 'PEL', 'PERSISTENT', 'PETRONET',
                      'PIDILITIND', 'POLYCAB', 'POWERGRID', 'RAIN', 'RAMCOCEM', 'RBLBANK', 'RECLTD', 'SBICARD',
-                     'SBILIFE', 'SIEMENS', 'SRF', 'STAR', 'SUNPHARMA', 'SYNGENE', 'TATACOMM', 'TATAMOTORS', 'TECHM',
-                     'TORNTPHARM', 'TORNTPOWER', 'TRENT', 'TVSMOTOR', 'UBL', 'ULTRACEMCO', 'UPL', 'VEDL', 'VOLTAS',
+                     'SBILIFE', 'SIEMENS', 'SRF', 'STAR', 'SUNPHARMA', 'SYNGENE', 'TATACOMM', 'TATAMOTORS', 'TCS', 'TECHM',
+                     'TITAN', 'TORNTPHARM', 'TORNTPOWER', 'TRENT', 'TVSMOTOR', 'UBL', 'ULTRACEMCO', 'UPL', 'VEDL', 'VOLTAS',
                      'ZEEL', 'ZYDUSLIFE']
 
 PATHS_DICT = {"EQ": rf'E:\Daily Data work\hourlys 1 minute CASH\{yr}\{mnth}\{date}',
               "FO": rf'E:\Daily Data work\hourlys 1 minute FO\{yr}\{mnth}\{date}',
               "ALGO": rf'E:\Daily Data work\hourlys 1 minute ALGO\{yr}\{mnth}\{date}',
               "30minCash": rf'E:\Daily Data work\hourlys 30 minute CASH\{yr}\{mnth}\{date}',
+              "15minCash": rf'E:\Daily Data work\hourlys 15 minute CASH\{yr}\{mnth}\{date}',
               "30minFO": rf'E:\Daily Data work\hourlys 30 minute FO\{yr}\{mnth}\{date}',
               "daily data work": rf'E:\Daily Data work'}
 
@@ -178,7 +181,7 @@ PATHS_DICT = {"EQ": rf'E:\Daily Data work\hourlys 1 minute CASH\{yr}\{mnth}\{dat
 pg.click(imp_coord_dict["nest icon taskbar"])
 pg.press('esc')
 sleep(1)
-
+#
 # saving consolidated sheets
 sheetSave()
 
@@ -305,6 +308,40 @@ for share in EQ_30_min_shares:
 
         pg.doubleClick(imp_coord_dict["time interval"])
         write("30")
+        sleep(1)
+        pg.press('enter')
+
+        sleep(1)
+        check_change()
+        save_share(share, path)
+        first = False
+        sleep(1)
+
+    else:
+        print('after first')
+        pg.press('enter')
+        check_change()
+        save_share(share)
+        sleep(1)
+
+# EQ 15 min
+pg.click(imp_coord_dict["15minCash"])
+sleep(1)
+pg.click(imp_coord_dict["first share"])
+sleep(1)
+
+first = True
+for share in EQ_15_min_shares:
+    print(share)
+    vwap()
+    sleep(1)
+
+    # if it's the first share, follow the first share protocol
+    if first:
+        path = PATHS_DICT["15minCash"]  # setting path for first share
+
+        pg.doubleClick(imp_coord_dict["time interval"])
+        write("15")
         sleep(1)
         pg.press('enter')
 

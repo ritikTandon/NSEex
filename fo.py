@@ -10,13 +10,10 @@ import datetime
 from xls2xlsx import XLS2XLSX
 from date_variables import date, mnth, yr
 
-fo_share_list = ["ADANI", "APORT", "APOLLO", "AURO", "AXIS", "BAJAJ", "BARODA", "AIRTEL", "BHEL", "BN", "CANBK", "COALIND",
-                 "DLF", "DRREDDY", "EICHER", "HCL", "HDFC", "HIND", "HINDUNLVR", "ICICI", "INDUSIND", "JIND", "NIFTY", "REL",
-                 "SBIN", "TCHEM", "TCON", "TM", "TS", "TCS", "TITAN", "ULTRA", "VEDL"]
+fo_share_list = ["BN", "NIFTY"]
 # fo_share_list = ["ADANI"]
 
-fo_daily_aggregate_list = ["APORT", "AURO", "BN", "CANBK", "DLF", "HIND", "ICICI", "JIND", "NIFTY", "REL", "SBIN",
-                           "TCON", "TM", "TS", "TCS", "TITAN"]
+fo_daily_aggregate_list = ["BN", "NIFTY"]
 
 
 # potential fix to check if we are or last thu of month, we start looking for next month's expiry
@@ -253,15 +250,12 @@ for share in fo_share_list:
 
 # MD file (new (changed on 8 jul 2024)) BhavCopy_NSE_FO_0_0_0_20240708_F_0000.csv
 # dict containing share names (NSE) and their respective rows in 'fo high low.xlsx'
-share_list = {"BANKNIFTY": 4, "NIFTY": 10, "ADANIPORTS": 2, "AUROPHARMA": 3, "CANBK": 5, "DLF": 6, "HINDALCO": 7,
-              "ICICIBANK": 8, "JINDALSTEL": 9, "RELIANCE": 11, "SBIN": 12, "TATACONSUM": 13, "TATAMOTORS": 14,
-              "TATASTEEL": 15, "TCS": 16, "TITAN": 17}
+share_list = {"BANKNIFTY": 2, "NIFTY": 3}
 
 md_path_zipped = rf"E:\chrome downloads\BhavCopy_NSE_FO_0_0_0_{yr}{date[3:5]}{date[:2]}_F_0000.csv.zip"     # .zip file path of downloaded cash bhavcopy
 md_path = rf"E:\chrome downloads"
 
 # take data from col 22 and col 14 has month as cur month in caps and col 13 is null
-
 # extracting .zip file
 with ZipFile(md_path_zipped, 'r') as zObject:
     zObject.extractall(path=md_path)
@@ -270,8 +264,10 @@ md_file_path = rf"E:\Daily Data work\MD files\{yr}\{mnth}\fo{date[:2]}{mnth}20{d
 
 df = pd.read_csv(md_path_zipped[:-4])       # removing the .zip extension after unzipping
 df = df.drop(df.columns[-9:], axis=1)
-df = df.drop(columns=['BizDt', 'Src', 'FinInstrmTp', 'FinInstrmId', 'ISIN', 'SctySrs', 'OpnIntrst', 'ChngInOpnIntrst'])
-df2 = df.copy()     # this one will actually be saved as md file
+df2 = df.drop(columns=['BizDt', 'Src', 'FinInstrmTp', 'FinInstrmId', 'ISIN', 'SctySrs', 'OpnIntrst', 'ChngInOpnIntrst',
+                      'TradDt', 'Sgmt', 'TckrSymb', 'XpryDt', 'FininstrmActlXpryDt', 'StrkPric', 'OptnTp'])
+
+df2 = df2.sort_values(by='FinInstrmNm', ascending=True)     # this one will actually be saved as md file, and will sort with name of fin instrument
 df = df[df['OptnTp'].isnull()]
 
 for share in share_list:

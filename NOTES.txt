@@ -134,6 +134,15 @@ ACTUAL ALGO TRADING APP(CLI Probably)
     - make files/modules for every possible task related to this project so when it's needed in the future, it's in a
       good place
 
+    - put all the shares list in one place, so I only have to edit shares in one script and that should reflect in all
+      relevant places
+
+    - WRITE PROPER STEPS ON WHAT TO CHANGE AND WHERE WHEN ADDING A NEW SHARE OR REMOVING A SHARE
+
+    - add exception handling for nifty and bn if they are open during daily data fo data feed, it should save the files
+      in a temp folder
+
+    - ADD BASIC LOGGING FOR MWCL SO I KNOW WHEN AND IF I RAN IT
 
 
 DONE FOR ALGO:
@@ -156,6 +165,8 @@ DONE FOR ALGO:
           % hl diff = hl diff / ltp * 100 (2 decimal pts)
           % cl diff = cl diff / prev day ltp * 100 (2 decimal pts)
 
+bdfidsufhddhRANDOMnfndj  DONT RE RUN SHARE IF THEY ARE ALREDAY IN XLSX FORMAT ( THOSE SHARES ARE ALREADY DONE)
+                          CHECKED THAT IT DOES NOT MESS UP ALGO/ CASH HIGH LOW (IF DID CHANGE MANULLY)
 
 DONE:
     - weekly, monthly, closing close should be LTP
@@ -170,3 +181,10 @@ DONE:
 
     - rename algo folder to algo old and now only copy certain shares into algo folder that will go to papa pc
 
+
+
+
+
+ADD CLOSING CLEARING DATES TO SHARE
+
+NSE CLOSE IS LTP , 14-1 25 NTPC LTP IS 310(CLOSE FROM NSE ) BUT TOOK LTP 312 WHICH WAS WRONG

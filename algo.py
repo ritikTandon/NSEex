@@ -16,9 +16,11 @@ from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.chrome.service import Service
 
+# same as algo 1 min shares in nest trader auto.py
 algo_share_list = ['AARTIIND', 'ABB', 'ABCAPITAL', 'ABFRL', 'ADANIENT', 'ADANIPORTS', 'ALKEM', 'AMBUJACEM',
-                     'APOLLOHOSP', 'APOLLOTYRE', 'ASHOKLEY', 'ASTRAL', 'ATUL', 'AUBANK', 'AUROPHARMA', 'BAJAJFINSV',
+                     'APOLLOHOSP', 'APOLLOTYRE', 'ASHOKLEY', 'ASTRAL', 'ATUL', 'AUBANK', 'AUROPHARMA', 'BAJAJAUTO', 'BAJAJFINSV',
                      'BAJFINANCE', 'BALKRISIND', 'BALRAMCHIN', 'BANDHANBNK', 'BANKBARODA', 'BATAINDIA', 'BEL',
                      'BHARATFORG', 'BHEL', 'BIOCON', 'BRITANNIA', 'BSOFT', 'CANBK', 'CANFINHOME', 'CHAMBLFERT', 'CHOLAFIN',
                      'CIPLA', 'COFORGE', 'CONCOR', 'COROMANDEL', 'CROMPTON', 'CUMMINSIND', 'DABUR', 'DALBHARAT',
@@ -31,22 +33,22 @@ algo_share_list = ['AARTIIND', 'ABB', 'ABCAPITAL', 'ABFRL', 'ADANIENT', 'ADANIPO
                      'MANAPPURAM', 'MARICO', 'MCDOWELL-N', 'MCX', 'METROPOLIS', 'MFSL', 'MGL', 'MPHASIS', 'MUTHOOTFIN',
                      'NAM-INDIA', 'NAUKRI', 'NAVINFLUOR', 'NMDC', 'NTPC', 'OBEROIRLTY', 'ONGC', 'PEL', 'PERSISTENT', 'PETRONET',
                      'PIDILITIND', 'POLYCAB', 'POWERGRID', 'RAIN', 'RAMCOCEM', 'RBLBANK', 'RECLTD', 'SBICARD',
-                     'SBILIFE', 'SIEMENS', 'SRF', 'STAR', 'SUNPHARMA', 'SYNGENE', 'TATACOMM', 'TATAMOTORS', 'TECHM',
-                     'TORNTPHARM', 'TORNTPOWER', 'TRENT', 'TVSMOTOR', 'UBL', 'ULTRACEMCO', 'UPL', 'VEDL', 'VOLTAS',
+                     'SBILIFE', 'SIEMENS', 'SRF', 'STAR', 'SUNPHARMA', 'SYNGENE', 'TATACOMM', 'TATAMOTORS', 'TCS', 'TECHM',
+                     'TITAN', 'TORNTPHARM', 'TORNTPOWER', 'TRENT', 'TVSMOTOR', 'UBL', 'ULTRACEMCO', 'UPL', 'VEDL', 'VOLTAS',
                      'ZEEL', 'ZYDUSLIFE']
-
-# algo_share_list = ["ADANI"]   # list to test few shares after making code changes
 
 algoHL_wb = xl.load_workbook(r'C:\Users\admin\PycharmProjects\daily data\algo high low.xlsx')
 algoHL_sheet = algoHL_wb['Sheet1']
 algoHL_row = 2
 
 
-# converting xls to xlsx for algo sheet
-x2x = XLS2XLSX(r'E:\Daily Data work\algo.xls')
-
-wb = x2x.to_xlsx()
-wb.save(r'E:\Daily Data work\algo.xlsx')
+# converting xls to xlsx for algo sheet if it doesn't already exist
+try:
+    x2x = XLS2XLSX(r'E:\Daily Data work\algo.xls')
+    wb = x2x.to_xlsx()
+    wb.save(r'E:\Daily Data work\algo.xlsx')
+except FileNotFoundError:
+    print("algo.xlsx already exists!")
 
 algo_wb = xl.load_workbook(r'E:\Daily Data work\algo.xlsx')
 algo_sheet = algo_wb['algo-Sheet1']
@@ -149,8 +151,8 @@ for share in algo_share_list:
     # low
     algoHL_sheet.cell(algoHL_row, 3).value = LOW
 
-    # LTP
-    algoHL_sheet.cell(algoHL_row, 5).value = algo_sheet.cell(algo_row, 2).value
+    # # LTP
+    # algoHL_sheet.cell(algoHL_row, 5).value = algo_sheet.cell(algo_row, 2).value
 
     # vol
     volume = algo_sheet.cell(algo_row, 5).value
@@ -219,6 +221,7 @@ for share in algo_share_list:
         time_cell = sheet.cell(start_row, 7)
         cur_time = time_cell.value
 
+
     # last any left aggregate (< 30 mins)
     sheet.cell(start_row-1, 14).value = HIGH
     sheet.cell(start_row-1, 15).value = LOW
@@ -231,7 +234,18 @@ for share in algo_share_list:
 
     print(f"{share} done")
 
-# for close filling
+# saving to save h l c data
+algoHL_wb.save(r'C:\Users\admin\PycharmProjects\daily data\algo high low.xlsx')
+
+# Close and LTP
+algoHL_wb = xl.load_workbook(r'C:\Users\admin\PycharmProjects\daily data\algo high low.xlsx')
+algoHL_sheet = algoHL_wb['Sheet1']
+algo_row = 2
+
+chrome_driver_path = r"C:\Webdrivers\chromedriver.exe"
+service = Service(executable_path=chrome_driver_path)
+
+# for close and LTP filling from NSE
 options = Options()
 options.add_argument("--disable-blink-features=AutomationControlled")
 
@@ -242,12 +256,12 @@ options.add_experimental_option("excludeSwitches", ["enable-automation"])
 options.add_experimental_option("useAutomationExtension", False)
 
 algo_close_list = ['AARTIIND', 'ABB', 'ABCAPITAL', 'ABFRL', 'ADANIENT', 'ADANIPORTS', 'ALKEM', 'AMBUJACEM',
-                     'APOLLOHOSP', 'APOLLOTYRE', 'ASHOKLEY', 'ASTRAL', 'ATUL', 'AUBANK', 'AUROPHARMA', 'BAJAJFINSV',
+                     'APOLLOHOSP', 'APOLLOTYRE', 'ASHOKLEY', 'ASTRAL', 'ATUL', 'AUBANK', 'AUROPHARMA', 'BAJAJ-AUTO', 'BAJAJFINSV',
                      'BAJFINANCE', 'BALKRISIND', 'BALRAMCHIN', 'BANDHANBNK', 'BANKBARODA', 'BATAINDIA', 'BEL',
                      'BHARATFORG', 'BHEL', 'BIOCON', 'BRITANNIA', 'BSOFT', 'CANBK', 'CANFINHOME', 'CHAMBLFERT', 'CHOLAFIN',
                      'CIPLA', 'COFORGE', 'CONCOR', 'COROMANDEL', 'CROMPTON', 'CUMMINSIND', 'DABUR', 'DALBHARAT',
                      'DEEPAKFERT', 'DEEPAKNTR', 'DELTACORP', 'DIVISLAB', 'DIXON', 'DLF', 'DRREDDY', 'ESCORTS',
-                     'EXIDEIND', 'GLENMARK', 'GLS', 'GNFC', 'GODREJCP', 'GODREJPROP', 'GRANULES', 'GRASIM', 'GUJGASLTD',
+                     'EXIDEIND', 'GLENMARK', 'ALIVUS', 'GNFC', 'GODREJCP', 'GODREJPROP', 'GRANULES', 'GRASIM', 'GUJGASLTD',
                      'HAL', 'HAVELLS', 'HCLTECH', 'HDFCAMC', 'HDFCLIFE', 'HINDALCO', 'HINDCOPPER', 'ICICIGI',
                      'ICICIPRULI', 'IEX', 'IGL', 'INDHOTEL', 'INDIACEM', 'INDIAMART', 'INDIGO', 'INDUSINDBK',
                      'INDUSTOWER', 'INTELLECT', 'IPCALAB', 'JINDALSTEL', 'JKCEMENT', 'JSWSTEEL', 'JUBLFOOD',
@@ -255,63 +269,103 @@ algo_close_list = ['AARTIIND', 'ABB', 'ABCAPITAL', 'ABFRL', 'ADANIENT', 'ADANIPO
                      'MANAPPURAM', 'MARICO', 'UNITDSPR', 'MCX', 'METROPOLIS', 'MFSL', 'MGL', 'MPHASIS', 'MUTHOOTFIN',
                      'NAM-INDIA', 'NAUKRI', 'NAVINFLUOR', 'NMDC', 'NTPC', 'OBEROIRLTY', 'ONGC', 'PEL', 'PERSISTENT', 'PETRONET',
                      'PIDILITIND', 'POLYCAB', 'POWERGRID', 'RAIN', 'RAMCOCEM', 'RBLBANK', 'RECLTD', 'SBICARD',
-                     'SBILIFE', 'SIEMENS', 'SRF', 'STAR', 'SUNPHARMA', 'SYNGENE', 'TATACOMM', 'TATAMOTORS', 'TECHM',
-                     'TORNTPHARM', 'TORNTPOWER', 'TRENT', 'TVSMOTOR', 'UBL', 'ULTRACEMCO', 'UPL', 'VEDL', 'VOLTAS',
+                     'SBILIFE', 'SIEMENS', 'SRF', 'STAR', 'SUNPHARMA', 'SYNGENE', 'TATACOMM', 'TATAMOTORS', 'TCS', 'TECHM',
+                     'TITAN', 'TORNTPHARM', 'TORNTPOWER', 'TRENT', 'TVSMOTOR', 'UBL', 'ULTRACEMCO', 'UPL', 'VEDL', 'VOLTAS',
                      'ZEEL', 'ZYDUSLIFE']
-
-# algo_close_list1 = ["M%26M"]
 
 manual = []         # list to keep track of the shares whose values selenium couldn't get
 close = []
+ltp = []
+ltp_xpath = '/html/body/div[12]/div/div/section/div/div/div/div/div/div[2]/div/section/div/div/div[1]/aside[2]/div/div/table/tbody/tr/td[5]'
 
+print(f"Share: Close-LTP")
 for share in algo_close_list:
-    driver = webdriver.Chrome(options=options)
+    driver = webdriver.Chrome(service=service, options=options)
 
     driver.get(f"https://www.nseindia.com/get-quotes/equity?symbol={share}")
 
     try:
         sleep(2)
         myElem = WebDriverWait(driver, 20).until(ec.presence_of_element_located((By.ID, 'quoteLtp')))
+        # sleep(5)
         close_val = driver.find_element(By.ID, "quoteLtp").text
+        ltp_val = driver.find_element(By.XPATH, ltp_xpath).text
 
-        while close_val == '':
+        while close_val == '' and ltp_val == '':
             driver.refresh()
             WebDriverWait(driver, 10).until(ec.presence_of_element_located((By.ID, 'quoteLtp')))
+            WebDriverWait(driver, 10).until(ec.presence_of_element_located((By.XPATH, ltp_xpath)))
             close_val = driver.find_element(By.ID, "quoteLtp").text
+            ltp_val = driver.find_element(By.XPATH, ltp_xpath).text
             sleep(0.5)
 
         close_val = close_val.replace(",", "")
+        ltp_val = ltp_val.replace(",", "")
 
         # truncating last 0
-        if close_val[len(close_val)-1:len(close_val)] == '0':
-            close_val = close_val[:len(close_val)-1]
+        if close_val[-1] == '0':
+            close_val = close_val[:-1]
+
+        # truncating last 0
+        if ltp_val[-1] == '0':
+            ltp_val = ltp_val[:-1]
 
         close.append(close_val)
+        ltp.append(ltp_val)
 
-        print(f'{share}: {close_val}')
+        print(f'{share}: {close_val}-{ltp_val}')
         if close_val == '':
-            manual.append(share)
+            manual.append(f"{share}Close")
 
-    except TimeoutException:
-        print(f"Loading took too much time for {share}!")
+        if ltp_val == '':
+            manual.append(f"{share}LTP")
+
+    except TimeoutException:        # added temp fix for timeoutexception, will need to check if it works properly or nah
         close.append('')
-        manual.append(share)
+        ltp.append('')
+        manual.append(f"{share} Timeout")
+        print(f"Loading took too much time for {share}!")
+    except Exception as e:
+        close.append('')
+        ltp.append('')
+        manual.append(f"{share} error")
+        print(e)
 
     driver.close()
 
 print(close)
+print(ltp)
 print(manual)
 
-i = 0
+i = 0  # first row is heading
+
 while i < len(algo_close_list):
     close_cell = algoHL_sheet.cell(i+2, 4)
+    ltp_cell = algoHL_sheet.cell(i+2, 5)
 
     if close[i] == '':
         close_cell.value = 0
 
     else:
-        close_cell.value = float(close[i])
-        close_cell.number_format = "0.00"
+        try:
+            close_cell.value = float(close[i])
+            close_cell.number_format = "0.00"
+        except Exception as e:
+            print(e)
+            close_cell.value = 0
+            close_cell.number_format = "0.00"
+
+    if ltp[i] == '':
+        ltp_cell.value = 0
+
+    else:
+        try:
+            ltp_cell.value = float(ltp[i])
+            ltp_cell.number_format = "0.00"
+        except Exception as e:
+            print(e)
+            ltp_cell.value = 0
+            ltp_cell.number_format = "0.00"
 
     i += 1
 

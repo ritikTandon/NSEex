@@ -8,9 +8,9 @@ from openpyxl.utils import get_column_letter
 from openpyxl.worksheet.dimensions import DimensionHolder, ColumnDimension
 
 algo_share_list = ['AARTIIND', '02 ABB', 'ABCAPITAL', 'ABFRL', 'ADANIENT', 'ADANIPORTS', 'ALKEM', 'AMBUJACEM',
-                   'APOLLOHOSP', 'APOLLOTYRE', '03 ASHOKLEY', 'ASTRAL', 'ATUL', 'AUBANK', 'AUROPHARMA', 'BAJAJFINSV',
+                   'APOLLOHOSP', 'APOLLOTYRE', 'ASHOKLEY', 'ASTRAL', 'ATUL', 'AUBANK', 'AUROPHARMA', 'BAJAJAUTO', 'BAJAJFINSV',
                    'BAJFINANCE', 'BALKRISIND', 'BALRAMCHIN', 'BANDHANBNK', 'BANKBARODA', 'BATAINDIA', 'BEL',
-                   'BHARATFORG', '04 BHEL', 'BIOCON', 'BRITANNIA', 'BSOFT', 'CANBK', 'CANFINHOME', 'CHAMBLFERT','CHOLAFIN',
+                   'BHARATFORG', 'BHEL', 'BIOCON', 'BRITANNIA', 'BSOFT', 'CANBK', 'CANFINHOME', 'CHAMBLFERT','CHOLAFIN',
                    'CIPLA', 'COFORGE', 'CONCOR', 'COROMANDEL', 'CROMPTON', 'CUMMINSIND', 'DABUR', 'DALBHARAT',
                    'DEEPAKFERT', 'DEEPAKNTR', 'DELTACORP', 'DIVISLAB', '05 DIXON', 'DLF', 'DRREDDY', 'ESCORTS',
                    'EXIDEIND', 'GLENMARK', 'GLS', 'GNFC', 'GODREJCP', 'GODREJPROP', 'GRANULES', 'GRASIM', 'GUJGASLTD',
@@ -19,10 +19,10 @@ algo_share_list = ['AARTIIND', '02 ABB', 'ABCAPITAL', 'ABFRL', 'ADANIENT', 'ADAN
                    'INDUSTOWER', 'INTELLECT', 'IPCALAB', 'JINDALSTEL', 'JKCEMENT', 'JSWSTEEL', 'JUBLFOOD',
                    'KOTAKBANK', 'LALPATHLAB', 'LAURUSLABS', 'LICHSGFIN', 'LTIM', 'LTTS', 'LUPIN', 'M%26MFIN',
                    'MANAPPURAM', 'MARICO', 'MCDOWELL-N', 'MCX', 'METROPOLIS', 'MFSL', 'MGL', 'MPHASIS', 'MUTHOOTFIN',
-                   'NAM-INDIA', 'NAUKRI', 'NAVINFLUOR', 'NMDC', 'NTPC', 'OBEROIRLTY', '09 ONGC', 'PEL', 'PERSISTENT', 'PETRONET',
+                   'NAM-INDIA', 'NAUKRI', 'NAVINFLUOR', 'NMDC', 'NTPC', 'OBEROIRLTY', 'ONGC', 'PEL', 'PERSISTENT', 'PETRONET',
                    'PIDILITIND', 'POLYCAB', 'POWERGRID', 'RAIN', 'RAMCOCEM', 'RBLBANK', '10 RECLTD', 'SBICARD',
-                   'SBILIFE', 'SIEMENS', 'SRF', 'STAR', 'SUNPHARMA', 'SYNGENE', 'TATACOMM', 'TATAMOTORS', 'TECHM',
-                   'TORNTPHARM', 'TORNTPOWER', 'TRENT', 'TVSMOTOR', 'UBL', 'ULTRACEMCO', 'UPL', 'VEDL', 'VOLTAS',
+                   'SBILIFE', 'SIEMENS', 'SRF', 'STAR', 'SUNPHARMA', 'SYNGENE', 'TATACOMM', 'TATAMOTORS', 'TCS', 'TECHM',
+                   'TITAN', 'TORNTPHARM', 'TORNTPOWER', 'TRENT', 'TVSMOTOR', 'UBL', 'ULTRACEMCO', 'UPL', 'VEDL', 'VOLTAS',
                    'ZEEL', 'ZYDUSLIFE']
 
 cash_share_list = ['AARTIIND', 'ADANIENT', 'APOLLOTYRE', 'BAJAJFINSERV', 'BAJAJFINANCE',
@@ -32,9 +32,10 @@ cash_share_list = ['AARTIIND', 'ADANIENT', 'APOLLOTYRE', 'BAJAJFINSERV', 'BAJAJF
                    'RELIANCE CHL', 'SBIN CHL', 'SUNTV', 'TATACHEM', '11 TATAMOTOR CHL',
                    '12 TATAPOWER', '13 TATASTEEL chl', 'ULTRACHEM']
 
-add_share_list = []
+add_share_list = ['TCS', 'TITAN']
 
 # algo_share_list = ['ADANIENT']
+# cash_share_list = ['AARTIIND']
 
 red = Font("Arial", 12, color='ff0000', bold=True)
 blue = Font("Arial", 12, color="0000ff", bold=True)
@@ -44,7 +45,7 @@ alignment = Alignment(horizontal='center')
 
 def weekly_create():
     for share in add_share_list:
-        path = rf'E:\Daily Data work\ALGORITHM\{share}.xlsx'
+        path = rf'E:\Daily Data work\ALGORITHM\ALGORITHM OLD\{share}.xlsx'
 
         wb = xl.load_workbook(path)
 
@@ -177,27 +178,33 @@ def calc_m_end_date(s_date):
 
 def monthly_create():
     for share in add_share_list:
-        path = rf'E:\Daily Data work\ALGORITHM\{share}.xlsx'
+        path = rf'E:\Daily Data work\ALGORITHM\ALGORITHM OLD\{share}.xlsx'
 
         wb = xl.load_workbook(path)
 
-        if 'M' in wb.sheetnames:
-            del wb['M']
-
-        wb.create_sheet('M')
+        # if 'M' in wb.sheetnames:
+        #     del wb['M']
+        #
+        # wb.create_sheet('M')
 
         d_sheet = wb['D']
         m_sheet = wb['M']
-        m_sheet.freeze_panes = m_sheet["A4"]
+        # m_sheet.freeze_panes = m_sheet["A4"]
 
         # Monthly
-        m_start_date = datetime.datetime(2022, 1, 3)
+        m_start_date = datetime.datetime(2020, 1, 1)
         start_date = m_start_date
-        d_row = 527
-        m_row = 28
+        d_row = 3
+        m_row = 4
 
-        while d_row < 1200:
-            cur_date = datetime.datetime.strptime(d_sheet.cell(d_row, 1).value, '%d-%b-%y')
+        while d_row < 1243:     # put the last row + 1 of last month you want to fill
+            date = d_sheet.cell(d_row, 1).value
+
+            if isinstance(date, datetime.datetime):
+                cur_date = date
+            else:
+                cur_date = datetime.datetime.strptime(date, '%d-%b-%y')
+
             high = 0
             low = 999999
             c = 0
@@ -211,7 +218,10 @@ def monthly_create():
                     c = float(d_sheet.cell(d_row, 5).value)
                 except TypeError:
                     d_row += 1
-                    cur_date = datetime.datetime.strptime(d_sheet.cell(d_row, 1).value, '%d-%b-%y')
+                    if isinstance(date, datetime.datetime):
+                        cur_date = date
+                    else:
+                        cur_date = datetime.datetime.strptime(date, '%d-%b-%y')
                     continue
 
                 if h > high:
@@ -221,7 +231,12 @@ def monthly_create():
                     low = l
 
                 d_row += 1
-                cur_date = datetime.datetime.strptime(d_sheet.cell(d_row, 1).value, '%d-%b-%y')
+                date = d_sheet.cell(d_row, 1).value
+
+                if isinstance(date, datetime.datetime):
+                    cur_date = date
+                else:
+                    cur_date = datetime.datetime.strptime(date, '%d-%b-%y')
 
             buff = 0
             close = c
@@ -235,9 +250,9 @@ def monthly_create():
 
             d_row += buff
 
-            m_sheet.cell(m_row, 1).value = f"{start_date.strftime('%d-%m-%y')} TO {end_date.strftime('%d-%m-%y')}"
-            if d_row < 1200:            # todo change this row num when doing this for shares in future, it ignores h,l,c writing after this row
-                m_sheet.cell(m_row, 2).value = f'=E{m_row-1}'
+            # m_sheet.cell(m_row, 1).value = f"{start_date.strftime('%d-%m-%y')} TO {end_date.strftime('%d-%m-%y')}"
+            if d_row < 1246:            # todo change this row num when doing this for shares in future, it ignores h,l,c writing after this row
+                # m_sheet.cell(m_row, 2).value = f'=E{m_row-1}'
                 m_sheet.cell(m_row, 3).value = high
                 m_sheet.cell(m_row, 4).value = low
                 m_sheet.cell(m_row, 5).value = close
@@ -245,62 +260,62 @@ def monthly_create():
             start_date = datetime.datetime((cur_date + timedelta(days=1)).year, (cur_date + timedelta(days=1)).month, 1)
             m_row += 1
 
-        # formatting and headings
-        m_sheet.merge_cells(start_row=1, start_column=1, end_row=2, end_column=8)
-        m_sheet.cell(1, 1).value = share
-        m_sheet.cell(1, 1).fill = PatternFill(patternType='solid', fgColor="0000ff")
-        m_sheet.cell(1, 1).font = Font("Arial", 11, bold=True, color='00ffffff')
-        m_sheet.cell(1, 1).alignment = alignment
-
-        for c in range(1, 8):
-            m_sheet.cell(2, c).fill = PatternFill(patternType='solid', fgColor="0000ff")
-
-        m_sheet.cell(3, 1).value = 'SETTLEMENT PERIOD'
-        m_sheet.cell(3, 2).value = 'CL START'
-        m_sheet.cell(3, 3).value = 'HIGH'
-        m_sheet.cell(3, 4).value = 'LOW'
-        m_sheet.cell(3, 5).value = 'CL END'
-        m_sheet.cell(3, 6).value = 'TREND'
-        m_sheet.cell(3, 7).value = 'H/L D'
-        m_sheet.cell(3, 8).value = 'W/D'
-
-        m_row = 2
-        while m_row < 251:
-            if m_row >= 4:
-                m_sheet.cell(m_row, 7).value = f'=C{m_row}-D{m_row}'
-                m_sheet.cell(m_row, 8).value = f'=E{m_row}-E{m_row-1}'
-                m_sheet.cell(m_row, 2).value = f'=E{m_row-1}'
-
-            col = 1
-
-            while col < 9:
-                if col == 3 and m_row >= 3:
-                    m_sheet.cell(m_row, col).font = blue
-                elif col == 4 and m_row >= 3:
-                    m_sheet.cell(m_row, col).font = red
-                else:
-                    m_sheet.cell(m_row, col).font = bold
-                m_sheet.cell(m_row, col).alignment = alignment
-                m_sheet.cell(m_row, col).border = Border(left=Side(style='thin'), right=Side(style='thin'), bottom=Side(style='thin'), top=Side(style='thin'))
-
-                col += 1
-
-            m_row += 1
-
-        # putting 0 in first cl start cell and cl diff cell
-        m_sheet.cell(4, 2). value = 0
-        m_sheet.cell(4, 7). value = 0
-
-        dim_holder = DimensionHolder(worksheet=m_sheet)
-
-        for col in range(2, 12):
-            dim_holder[get_column_letter(col)] = ColumnDimension(m_sheet, min=col, max=col, width=13.57)
-
-        dim_holder[1] = ColumnDimension(m_sheet, min=1, max=1, width=23)
-        m_sheet.column_dimensions = dim_holder
-
-        m_sheet.sheet_view.zoomScale = 115
-        d_sheet.sheet_view.zoomScale = 115
+        # # formatting and headings
+        # m_sheet.merge_cells(start_row=1, start_column=1, end_row=2, end_column=8)
+        # m_sheet.cell(1, 1).value = share
+        # m_sheet.cell(1, 1).fill = PatternFill(patternType='solid', fgColor="0000ff")
+        # m_sheet.cell(1, 1).font = Font("Arial", 11, bold=True, color='00ffffff')
+        # m_sheet.cell(1, 1).alignment = alignment
+        #
+        # for c in range(1, 8):
+        #     m_sheet.cell(2, c).fill = PatternFill(patternType='solid', fgColor="0000ff")
+        #
+        # m_sheet.cell(3, 1).value = 'SETTLEMENT PERIOD'
+        # m_sheet.cell(3, 2).value = 'CL START'
+        # m_sheet.cell(3, 3).value = 'HIGH'
+        # m_sheet.cell(3, 4).value = 'LOW'
+        # m_sheet.cell(3, 5).value = 'CL END'
+        # m_sheet.cell(3, 6).value = 'TREND'
+        # m_sheet.cell(3, 7).value = 'H/L D'
+        # m_sheet.cell(3, 8).value = 'W/D'
+        #
+        # m_row = 2
+        # while m_row < 251:
+        #     if m_row >= 4:
+        #         m_sheet.cell(m_row, 7).value = f'=C{m_row}-D{m_row}'
+        #         m_sheet.cell(m_row, 8).value = f'=E{m_row}-E{m_row-1}'
+        #         m_sheet.cell(m_row, 2).value = f'=E{m_row-1}'
+        #
+        #     col = 1
+        #
+        #     while col < 9:
+        #         if col == 3 and m_row >= 3:
+        #             m_sheet.cell(m_row, col).font = blue
+        #         elif col == 4 and m_row >= 3:
+        #             m_sheet.cell(m_row, col).font = red
+        #         else:
+        #             m_sheet.cell(m_row, col).font = bold
+        #         m_sheet.cell(m_row, col).alignment = alignment
+        #         m_sheet.cell(m_row, col).border = Border(left=Side(style='thin'), right=Side(style='thin'), bottom=Side(style='thin'), top=Side(style='thin'))
+        #
+        #         col += 1
+        #
+        #     m_row += 1
+        #
+        # # putting 0 in first cl start cell and cl diff cell
+        # m_sheet.cell(4, 2). value = 0
+        # m_sheet.cell(4, 7). value = 0
+        #
+        # dim_holder = DimensionHolder(worksheet=m_sheet)
+        #
+        # for col in range(2, 12):
+        #     dim_holder[get_column_letter(col)] = ColumnDimension(m_sheet, min=col, max=col, width=13.57)
+        #
+        # dim_holder[1] = ColumnDimension(m_sheet, min=1, max=1, width=23)
+        # m_sheet.column_dimensions = dim_holder
+        #
+        # m_sheet.sheet_view.zoomScale = 115
+        # d_sheet.sheet_view.zoomScale = 115
 
         wb.save(path)
         # wb.save('m_test.xlsx')
@@ -322,32 +337,39 @@ def calc_cl_end_date(s_date: datetime.datetime):
 
 def closing_create():
     for share in add_share_list:
-        path = rf'E:\Daily Data work\ALGORITHM\{share}.xlsx'
+        path = rf'E:\Daily Data work\ALGORITHM\ALGORITHM OLD\{share}.xlsx'
 
         wb = xl.load_workbook(path)
 
-        if 'Cl' in wb.sheetnames:
-            del wb['Cl']
-
-        wb.create_sheet('Cl')
+        # if 'Cl' in wb.sheetnames:
+        #     del wb['Cl']
+        #
+        # wb.create_sheet('Cl')
 
         d_sheet = wb['D']
         cl_sheet = wb['Cl']
-        cl_sheet.freeze_panes = cl_sheet["A4"]
+        # cl_sheet.freeze_panes = cl_sheet["A4"]
 
         # Closing
-        cl_start_date = datetime.datetime(2022, 1, 3)
+        cl_start_date = datetime.datetime(2020, 1, 31)
         start_date = cl_start_date
-        d_row = 527      # 03-JAN-2022
-        cl_row = 27
+        d_row = 25      # 31-JAN-2020
+        cl_row = 4
 
-        while d_row < 1213:
-            cur_date = datetime.datetime.strptime(d_sheet.cell(d_row, 1).value, '%d-%b-%y')
+        while d_row < 1241:     # 26-09-24 + 1 row
+            date = d_sheet.cell(d_row, 1).value
+
+            if isinstance(date, datetime.datetime):
+                cur_date = date
+            else:
+                cur_date = datetime.datetime.strptime(date, '%d-%b-%y')
+
             high = 0
             low = 999999
             c = 0
 
             end_date = calc_cl_end_date(start_date)
+            print(end_date.strftime("%d-%b-%y"))
 
             while cur_date <= end_date:
                 try:
@@ -356,7 +378,12 @@ def closing_create():
                     c = float(d_sheet.cell(d_row, 5).value)
                 except TypeError:
                     d_row += 1
-                    cur_date = datetime.datetime.strptime(d_sheet.cell(d_row, 1).value, '%d-%b-%y')
+                    date = d_sheet.cell(d_row, 1).value
+
+                    if isinstance(date, datetime.datetime):
+                        cur_date = date
+                    else:
+                        cur_date = datetime.datetime.strptime(date, '%d-%b-%y')
                     continue
 
                 if h > high:
@@ -366,7 +393,12 @@ def closing_create():
                     low = l
 
                 d_row += 1
-                cur_date = datetime.datetime.strptime(d_sheet.cell(d_row, 1).value, '%d-%b-%y')
+                date = d_sheet.cell(d_row, 1).value
+
+                if isinstance(date, datetime.datetime):
+                    cur_date = date
+                else:
+                    cur_date = datetime.datetime.strptime(date, '%d-%b-%y')
 
             buff = 0
             close = c
@@ -380,9 +412,9 @@ def closing_create():
 
             d_row += buff
 
-            cl_sheet.cell(cl_row, 1).value = f"{start_date.strftime('%d-%m-%y')} TO {end_date.strftime('%d-%m-%y')}"
-            if d_row < 1213:            # todo change this row num when doing this for shares in future, it ignores h,l,c writing after this row
-                cl_sheet.cell(cl_row, 2).value = f'=E{cl_row-1}'
+            # cl_sheet.cell(cl_row, 1).value = f"{start_date.strftime('%d-%m-%y')} TO {end_date.strftime('%d-%m-%y')}"
+            if d_row < 1242:            # todo change this row num when doing this for shares in future, it ignores h,l,c writing after this row
+                # cl_sheet.cell(cl_row, 2).value = f'=E{cl_row-1}'
                 cl_sheet.cell(cl_row, 3).value = high
                 cl_sheet.cell(cl_row, 4).value = low
                 cl_sheet.cell(cl_row, 5).value = close
@@ -390,62 +422,62 @@ def closing_create():
             start_date = cur_date + timedelta(days=1)
             cl_row += 1
 
-        # formatting and headings
-        cl_sheet.merge_cells(start_row=1, start_column=1, end_row=2, end_column=8)
-        cl_sheet.cell(1, 1).value = share
-        cl_sheet.cell(1, 1).fill = PatternFill(patternType='solid', fgColor="0000ff")
-        cl_sheet.cell(1, 1).font = Font("Arial", 11, bold=True, color='00ffffff')
-        cl_sheet.cell(1, 1).alignment = alignment
-
-        for c in range(1, 8):
-            cl_sheet.cell(2, c).fill = PatternFill(patternType='solid', fgColor="0000ff")
-
-        cl_sheet.cell(3, 1).value = 'SETTLEMENT PERIOD'
-        cl_sheet.cell(3, 2).value = 'CL START'
-        cl_sheet.cell(3, 3).value = 'HIGH'
-        cl_sheet.cell(3, 4).value = 'LOW'
-        cl_sheet.cell(3, 5).value = 'CL END'
-        cl_sheet.cell(3, 6).value = 'TREND'
-        cl_sheet.cell(3, 7).value = 'H/L D'
-        cl_sheet.cell(3, 8).value = 'W/D'
-
-        cl_row = 2
-        while cl_row < 251:
-            if cl_row >= 4:
-                cl_sheet.cell(cl_row, 7).value = f'=C{cl_row}-D{cl_row}'
-                cl_sheet.cell(cl_row, 8).value = f'=E{cl_row}-E{cl_row-1}'
-                cl_sheet.cell(cl_row, 2).value = f'=E{cl_row-1}'
-
-            col = 1
-
-            while col < 9:
-                if col == 3 and cl_row >= 3:
-                    cl_sheet.cell(cl_row, col).font = blue
-                elif col == 4 and cl_row >= 3:
-                    cl_sheet.cell(cl_row, col).font = red
-                else:
-                    cl_sheet.cell(cl_row, col).font = bold
-                cl_sheet.cell(cl_row, col).alignment = alignment
-                cl_sheet.cell(cl_row, col).border = Border(left=Side(style='thin'), right=Side(style='thin'), bottom=Side(style='thin'), top=Side(style='thin'))
-
-                col += 1
-
-            cl_row += 1
-
-        # putting 0 in first cl start cell and cl diff cell
-        cl_sheet.cell(4, 2). value = 0
-        cl_sheet.cell(4, 7). value = 0
-
-        dim_holder = DimensionHolder(worksheet=cl_sheet)
-
-        for col in range(2, 12):
-            dim_holder[get_column_letter(col)] = ColumnDimension(cl_sheet, min=col, max=col, width=13.57)
-
-        dim_holder[1] = ColumnDimension(cl_sheet, min=1, max=1, width=23)
-        cl_sheet.column_dimensions = dim_holder
-
-        cl_sheet.sheet_view.zoomScale = 115
-        d_sheet.sheet_view.zoomScale = 115
+        # # formatting and headings
+        # cl_sheet.merge_cells(start_row=1, start_column=1, end_row=2, end_column=8)
+        # cl_sheet.cell(1, 1).value = share
+        # cl_sheet.cell(1, 1).fill = PatternFill(patternType='solid', fgColor="0000ff")
+        # cl_sheet.cell(1, 1).font = Font("Arial", 11, bold=True, color='00ffffff')
+        # cl_sheet.cell(1, 1).alignment = alignment
+        #
+        # for c in range(1, 8):
+        #     cl_sheet.cell(2, c).fill = PatternFill(patternType='solid', fgColor="0000ff")
+        #
+        # cl_sheet.cell(3, 1).value = 'SETTLEMENT PERIOD'
+        # cl_sheet.cell(3, 2).value = 'CL START'
+        # cl_sheet.cell(3, 3).value = 'HIGH'
+        # cl_sheet.cell(3, 4).value = 'LOW'
+        # cl_sheet.cell(3, 5).value = 'CL END'
+        # cl_sheet.cell(3, 6).value = 'TREND'
+        # cl_sheet.cell(3, 7).value = 'H/L D'
+        # cl_sheet.cell(3, 8).value = 'W/D'
+        #
+        # cl_row = 2
+        # while cl_row < 251:
+        #     if cl_row >= 4:
+        #         cl_sheet.cell(cl_row, 7).value = f'=C{cl_row}-D{cl_row}'
+        #         cl_sheet.cell(cl_row, 8).value = f'=E{cl_row}-E{cl_row-1}'
+        #         cl_sheet.cell(cl_row, 2).value = f'=E{cl_row-1}'
+        #
+        #     col = 1
+        #
+        #     while col < 9:
+        #         if col == 3 and cl_row >= 3:
+        #             cl_sheet.cell(cl_row, col).font = blue
+        #         elif col == 4 and cl_row >= 3:
+        #             cl_sheet.cell(cl_row, col).font = red
+        #         else:
+        #             cl_sheet.cell(cl_row, col).font = bold
+        #         cl_sheet.cell(cl_row, col).alignment = alignment
+        #         cl_sheet.cell(cl_row, col).border = Border(left=Side(style='thin'), right=Side(style='thin'), bottom=Side(style='thin'), top=Side(style='thin'))
+        #
+        #         col += 1
+        #
+        #     cl_row += 1
+        #
+        # # putting 0 in first cl start cell and cl diff cell
+        # cl_sheet.cell(4, 2). value = 0
+        # cl_sheet.cell(4, 7). value = 0
+        #
+        # dim_holder = DimensionHolder(worksheet=cl_sheet)
+        #
+        # for col in range(2, 12):
+        #     dim_holder[get_column_letter(col)] = ColumnDimension(cl_sheet, min=col, max=col, width=13.57)
+        #
+        # dim_holder[1] = ColumnDimension(cl_sheet, min=1, max=1, width=23)
+        # cl_sheet.column_dimensions = dim_holder
+        #
+        # cl_sheet.sheet_view.zoomScale = 115
+        # d_sheet.sheet_view.zoomScale = 115
 
         wb.save(path)
         # wb.save('m_test.xlsx')
@@ -476,7 +508,7 @@ def weekly_update(typ, val=0):
         if typ == 'C':
             path = rf'E:\Daily Data work\CASH\{share}.xlsx'
         else:
-            path = rf'E:\Daily Data work\ALGORITHM\{share}.xlsx'
+            path = rf'E:\Daily Data work\ALGORITHM\ALGORITHM OLD\{share}.xlsx'
 
         wb = xl.load_workbook(path)
 
@@ -543,7 +575,7 @@ def monthly_update(typ):
         if typ == 'C':
             path = rf'E:\Daily Data work\CASH\{share}.xlsx'
         else:
-            path = rf'E:\Daily Data work\ALGORITHM\{share}.xlsx'
+            path = rf'E:\Daily Data work\ALGORITHM\ALGORITHM OLD\{share}.xlsx'
 
         wb = xl.load_workbook(path)
 
@@ -581,7 +613,11 @@ def monthly_update(typ):
             except TypeError:
                 d_row -= 1
                 if type(d_sheet.cell(d_row, 1).value) == str:
-                    end_date = datetime.datetime.strptime(d_sheet.cell(d_row, 1).value, "%d-%b-%y")
+                    try:
+                        end_date = datetime.datetime.strptime(d_sheet.cell(d_row, 1).value, "%d-%b-%y")
+                    except Exception:
+                        end_date = datetime.datetime.strptime(d_sheet.cell(d_row, 1).value, "%d-%m-%y")
+
                 else:  # if already in datetime.datetime format
                     end_date = d_sheet.cell(d_row, 1).value
                 continue
@@ -594,7 +630,10 @@ def monthly_update(typ):
 
             d_row -= 1
             if type(d_sheet.cell(d_row, 1).value) == str:
-                end_date = datetime.datetime.strptime(d_sheet.cell(d_row, 1).value, "%d-%b-%y")
+                try:
+                    end_date = datetime.datetime.strptime(d_sheet.cell(d_row, 1).value, "%d-%b-%y")
+                except Exception:
+                    end_date = datetime.datetime.strptime(d_sheet.cell(d_row, 1).value, "%d-%m-%y")
             else:       # if already in datetime.datetime format
                 end_date = d_sheet.cell(d_row, 1).value
         # for i in range(month_length):
@@ -644,7 +683,7 @@ def closing_update(typ):
         if typ == 'C':
             path = rf'E:\Daily Data work\CASH\{share}.xlsx'
         else:
-            path = rf'E:\Daily Data work\ALGORITHM\{share}.xlsx'
+            path = rf'E:\Daily Data work\ALGORITHM\ALGORITHM OLD\{share}.xlsx'
 
         wb = xl.load_workbook(path)
 
@@ -669,10 +708,13 @@ def closing_update(typ):
         start_date = datetime.datetime.strptime(start_date_str, date_format)
         end_date = datetime.datetime.strptime(end_date_str, date_format)
 
-        if typ != 'C':
-            start_date = start_date - timedelta(days=1)     # todo untested hotfix for closing dates being wrong
-            cl_sheet.cell(cl_row, 1).value = f'{start_date.date().strftime(date_format)} TO {end_date.date().strftime(date_format)}'
-            print(f'{start_date.date().strftime(date_format)} TO {end_date.date().strftime(date_format)}')
+        # # checking if there is more than one day gap between end date of prev closing and start date of next cl because some shares have 2 days gaps. Actual fix is to correct the dates
+        # next_start_date = datetime.datetime.strptime(str(cl_sheet.cell(cl_row-1, 1).value).split(" TO ")[0], date_format)
+
+        # if next_start_date - timedelta(days=1) != end_date:     # if the next start date is more than one day behind last closing date
+        #     start_date = start_date - timedelta(days=1)     # todo untested hotfix for closing dates being wrong
+        #     cl_sheet.cell(cl_row, 1).value = f'{start_date.date().strftime(date_format)} TO {end_date.date().strftime(date_format)}'
+        #     print(f'{start_date.date().strftime(date_format)} TO {end_date.date().strftime(date_format)}')
 
         while start_date <= end_date:
             try:
@@ -685,7 +727,11 @@ def closing_update(typ):
             except TypeError:
                 d_row -= 1
                 if type(d_sheet.cell(d_row, 1).value) == str:
-                    end_date = datetime.datetime.strptime(d_sheet.cell(d_row, 1).value, "%d-%b-%y")
+                    try:        # this try catch is solely because of 1st feb being written in files n dmy format and not dby
+                        end_date = datetime.datetime.strptime(d_sheet.cell(d_row, 1).value, "%d-%b-%y")
+                    except ValueError:
+                        end_date = datetime.datetime.strptime(d_sheet.cell(d_row, 1).value, "%d-%m-%y")
+
                 else:  # if already in datetime.datetime format
                     end_date = d_sheet.cell(d_row, 1).value
                 continue
@@ -698,7 +744,11 @@ def closing_update(typ):
 
             d_row -= 1
             if type(d_sheet.cell(d_row, 1).value) == str:
-                end_date = datetime.datetime.strptime(d_sheet.cell(d_row, 1).value, "%d-%b-%y")
+                try:
+                    end_date = datetime.datetime.strptime(d_sheet.cell(d_row, 1).value, "%d-%b-%y")
+                except ValueError:
+                    end_date = datetime.datetime.strptime(d_sheet.cell(d_row, 1).value, "%d-%m-%y")
+
             else:       # if already in datetime.datetime format
                 end_date = d_sheet.cell(d_row, 1).value
 
@@ -725,15 +775,34 @@ def closing_update(typ):
 
 # weekly_update("C")
 # weekly_update("A")
-
+# #
+# #
 # monthly_update("C")
 # monthly_update("A")
-
+#
 # closing_update("C")
 # closing_update("A")
 
-algo_copy_to_cash_list = ['02 ABB', '03 ASHOKLEY', '04 BHEL', '05 DIXON', '09 ONGC', '10 RECLTD']
+algo_copy_to_cash_list = ['02 ABB', 'ASHOKLEY', 'BHEL', '05 DIXON', 'ONGC', '10 RECLTD']
 
 for sh in algo_copy_to_cash_list:
-    shutil.copy(rf"E:\Daily Data work\ALGORITHM\{sh}.xlsx",
+    shutil.copy(rf"E:\Daily Data work\ALGORITHM\ALGORITHM OLD\{sh}.xlsx",
                 rf"E:\Daily Data work\CASH\{sh}.xlsx")
+
+algo_copy_list = ['AARTIIND', '02 ABB', 'ABFRL', 'ADANIENT', 'ADANIPORTS', 'AMBUJACEM', 'APOLLOHOSP', 'APOLLOTYRE',
+                  'ASHOKLEY', 'AUROPHARMA', 'BAJAJFINSV','BAJFINANCE', 'BALKRISIND', 'BALRAMCHIN', 'BANDHANBNK',
+                  'BANKBARODA', 'BEL','BHARATFORG', 'BHEL', 'BIOCON', 'BRITANNIA', 'BSOFT', 'CANBK', 'CANFINHOME',
+                  'CHAMBLFERT', 'CHOLAFIN', 'CIPLA', 'COFORGE', 'CROMPTON', 'CUMMINSIND', 'DIVISLAB', '05 DIXON',
+                  'DLF', 'DRREDDY', 'ESCORTS', 'EXIDEIND', 'GLENMARK', 'GNFC', 'GODREJPROP', 'HAL', 'HAVELLS',
+                  'HCLTECH', 'HDFCAMC', 'HDFCLIFE', 'HINDALCO', 'HINDCOPPER', 'ICICIGI', 'ICICIPRULI', 'IEX', 'IGL',
+                  'INDIACEM', 'INDIGO', 'INDUSINDBK', 'INDUSTOWER', 'INTELLECT', 'IPCALAB', 'KOTAKBANK', 'LALPATHLAB',
+                  'LAURUSLABS', 'LICHSGFIN', 'LTIM', 'LTTS', 'LUPIN', 'M%26MFIN', 'MANAPPURAM', 'MCDOWELL-N', 'MCX',
+                  'METROPOLIS', 'MFSL', 'MGL', 'MPHASIS', 'MUTHOOTFIN', 'NAM-INDIA', 'NAUKRI', 'NMDC', 'NTPC',
+                  'ONGC', 'PEL', 'PERSISTENT', 'PETRONET', 'POLYCAB', 'POWERGRID', 'RBLBANK', '10 RECLTD',
+                  'SBICARD', 'SIEMENS', 'SUNPHARMA', 'TATAMOTORS', 'TECHM', 'TRENT', 'TVSMOTOR', 'UBL', 'ULTRACEMCO',
+                  'VEDL', 'VOLTAS', 'JUBLFOOD', 'OBEROIRLTY']
+
+# copying relevant shares to ALGO (new) folder
+for sh in algo_copy_list:
+    shutil.copy(rf"E:\Daily Data work\ALGORITHM\ALGORITHM OLD\{sh}.xlsx",
+                rf"E:\Daily Data work\ALGORITHM\{sh}.xlsx")
