@@ -35,7 +35,7 @@ def checkExpiry(day, month_abbr, year):
 
     # Find the last Thursday of the month
     last_date_of_month = datetime.date(year, month, last_day_of_month)
-    while last_date_of_month.weekday() != 3:  # 3 corresponds to Thursday
+    while last_date_of_month.weekday() != 1:  # 3 corresponds to Thursday
         last_date_of_month -= datetime.timedelta(days=1)
 
     # Check if the given day is greater than or equal to the last Thursday

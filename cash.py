@@ -236,7 +236,7 @@ options.add_experimental_option("useAutomationExtension", False)
 
 cash_close_list = ["AARTIIND", "ADANIENT", "APOLLOTYRE", "BAJAJFINSV", "BAJFINANCE", "BANDHANBNK", "BANKBARODA", "COALINDIA",
                    "DLF", "EICHERMOT", "FEDERALBNK", "HCLTECH", "HDFCBANK", "HINDALCO", "ICICIBANK", "INDUSINDBK", "INFY",
-                   "JINDALSTEL", "LICHSGFIN", "M%26M", "M%26MFIN", "NTPC", "RELIANCE", "SBIN", "SUNTV", "TATACHEM", "TATAMOTORS",
+                   "JINDALSTEL", "LICHSGFIN", "M%26M", "M%26MFIN", "NTPC", "RELIANCE", "SBIN", "SUNTV", "TATACHEM", "TMPV",
                    "TATAPOWER", "TATASTEEL", "ULTRACEMCO"]
 
 # cash_close_list1 = ["M%26M"]
@@ -244,7 +244,8 @@ cash_close_list = ["AARTIIND", "ADANIENT", "APOLLOTYRE", "BAJAJFINSV", "BAJFINAN
 manual = []         # list to keep track of the shares whose values selenium couldn't get
 close = []
 ltp = []
-ltp_xpath = '/html/body/div[12]/div/div/section/div/div/div/div/div/div[2]/div/section/div/div/div[1]/aside[2]/div/div/table/tbody/tr/td[5]'
+close_xpath = '/html/body/main/div[2]/div[2]/div/div[1]/div/div[1]/span[2]'
+ltp_xpath = '/html/body/main/div[2]/div[3]/div/div[1]/div/div/div/div/div/div[5]/div[2]'
 
 print(f"Share: Close-LTP")
 for share in cash_close_list:
@@ -254,16 +255,16 @@ for share in cash_close_list:
 
     try:
         sleep(2)
-        myElem = WebDriverWait(driver, 20).until(ec.presence_of_element_located((By.ID, 'quoteLtp')))
-        # sleep(5)
-        close_val = driver.find_element(By.ID, "quoteLtp").text
+        myElem = WebDriverWait(driver, 20).until(ec.presence_of_element_located((By.XPATH, close_xpath)))
+        sleep(5)
+        close_val = driver.find_element(By.XPATH, close_xpath).text
         ltp_val = driver.find_element(By.XPATH, ltp_xpath).text
 
         while close_val == '' and ltp_val == '':
             driver.refresh()
-            WebDriverWait(driver, 10).until(ec.presence_of_element_located((By.ID, 'quoteLtp')))
+            WebDriverWait(driver, 10).until(ec.presence_of_element_located((By.XPATH, close_xpath)))
             WebDriverWait(driver, 10).until(ec.presence_of_element_located((By.XPATH, ltp_xpath)))
-            close_val = driver.find_element(By.ID, "quoteLtp").text
+            close_val = driver.find_element(By.XPATH, close_xpath).text
             ltp_val = driver.find_element(By.XPATH, ltp_xpath).text
             sleep(0.5)
 
